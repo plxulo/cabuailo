@@ -53,13 +53,27 @@ section p {
 }
   
 /* imagens */
+.imgs {
+  display: flex;
+  justify-content: center;
+}
+
 section img {
-  width: calc(25% - 20px);
-  height: 200px;
+  width: 311px;
+  height: 310px;
+  border-radius: 10px;
   float: left;
   margin: 10px;
 }
-  
+
+.retangulo {
+  position: absolute;
+  min-width: 2560px;
+  height: 540px;
+  left: 0px;
+  top: 540px;
+  background: #1488F5;
+}
 /* footer */
 footer {
   background-color: #333;
