@@ -1,11 +1,34 @@
-/* geral */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+/*
+ centralizar qualquer objeto em tela, não tem como errar com todos
+ os atributos possíveis né só trocar row ou column no flex
+ direction e vai ser feliz
+*/
+
+.centralizar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+/*
+ configurações de estilo gerais, overflow hidden para esconder scrollbars indesejadas
+*/
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   overflow: hidden;
 }
   
-/* navbar */
+/* 
+ barra de navegação
+*/
+
 header {
   background-color: #333;
   color: #fff;
@@ -17,7 +40,10 @@ header nav a {
   color: #fff;
   display: inline-block;
   padding: 10px 20px;
+  margin-left: 75px;
+  margin-right: 75px;
   text-decoration: none;
+  transition: 1s;
 }
   
 header nav a:hover {
@@ -32,15 +58,20 @@ header nav a:hover {
   background: #fff;
   text-align: center;
 }
+
 .btn:hover {
   background: #851111;
   transition: background 1s;
 }
   
-/* titulo / subtitulo */
+/*
+ titulo / subtitulo 
+*/
+
 section h1 {
   text-align: center;
-  font-size: 4rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 9.3rem;
   margin-top: 50px;
   margin-bottom: 0px;
 }
@@ -52,34 +83,63 @@ section p {
   margin-top: 15px;
 }
   
-/* imagens */
+/*
+ imagens não selecionadas então fique com esse placeholder
+ são quadrados com cores que já existem no documento
+ seu texto é centralizado e a propriedade margin serve para espaçar
+*/
+
+.quadrado-placeholder {
+  background: #333;
+  color: #ddd;
+  width: 311px;
+  height: 310px;
+  border-radius: 15px;
+  margin: 20px;
+  transition: 1s;
+}
+
+.quadrado-placeholder:hover {
+  background: #ddd;
+  color: #333;
+}
+
+/*
+ direção dos quadrados se estarão em linha / coluna
+*/
+
 .imgs {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/*
+ retangulo azul no fundo contendo os placeholders
+*/
+
+.retangulo {
+  height: 540px;
+  left: 0px;
+  top: 540px;
+  background: #1488F5;
 }
 
 section img {
   width: 311px;
   height: 310px;
   border-radius: 10px;
-  float: left;
   margin: 10px;
 }
 
-.retangulo {
-  position: absolute;
-  min-width: 2560px;
-  height: 540px;
-  left: 0px;
-  top: 540px;
-  background: #1488F5;
-}
-/* footer */
+/*
+ footer 
+*/
+
 footer {
   background-color: #333;
   color: #fff;
   padding: 20px;
-  text-align: center;
   position: absolute;
   bottom: 0;
   width: 100%;
