@@ -96,12 +96,44 @@ section p {
   height: 310px;
   border-radius: 15px;
   margin: 20px;
-  transition: 1s;
 }
+
+/*
+
+TO PARECENDO UM MALUCO:
+
+@keyframes quadrado_voa
+{
+  0% { left: 560px; top:250px; rotate: 0deg; }
+  50% { left: 270px; top:500px; rotate: 180deg; }
+  100% { left: 180px; top:750px; rotate: 360deg; }
+}
+*/
 
 .quadrado-placeholder:hover {
   background: #ddd;
   color: #333;
+  animation: mover 2s infinite alternate;
+}
+
+@keyframes mover {
+
+  0% { 
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: 90deg;
+  }
+
+  50% {
+    rotate: 180deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+
 }
 
 /*
