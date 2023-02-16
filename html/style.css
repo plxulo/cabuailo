@@ -90,12 +90,14 @@ section p {
 */
 
 .quadrado-placeholder {
+  position: relative;
   background: #333;
   color: #ddd;
   width: 311px;
   height: 310px;
   border-radius: 15px;
   margin: 20px;
+  animation-fill-mode: forwards;
 }
 
 /*
@@ -113,24 +115,40 @@ TO PARECENDO UM MALUCO:
 .quadrado-placeholder:hover {
   background: #ddd;
   color: #333;
-  animation: mover 2s infinite alternate;
+  animation: mover 2s alternate;
 }
 
-@keyframes mover {
+  @keyframes mover {
 
-  0% { 
-    rotate: 0deg;
+    0% { 
+      transform: translate(0px, 0px);
+      rotate: 0deg;
+    }
+
+    25% {
+      transform: translate(50px, 50px);
+      rotate: 90deg;
+    }
+
+    50% {
+      transform: translate(0px, 0px);
+      rotate: 180deg;
+    }
+
+    100% {
+      transform: translate(-50px, -50px);
+      rotate: 360deg;
+    }
+
   }
 
-  25% {
-    rotate: 90deg;
-  }
+.quadrado-placeholder:not(:hover) {
+  animation: retorno 2s;
+}
 
-  50% {
-    rotate: 180deg;
-  }
+@keyframes retorno {
 
-  100% {
+  0% {
     rotate: 360deg;
   }
 
