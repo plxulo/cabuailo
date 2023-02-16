@@ -97,7 +97,7 @@ section p {
   height: 310px;
   border-radius: 15px;
   margin: 20px;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; /* TENTANDO MANTER O ESTADO FINAL DA ANIMAÇÃO */
 }
 
 /*
@@ -112,11 +112,24 @@ TO PARECENDO UM MALUCO:
 }
 */
 
+/*
+  isso move o quadrado assim que eu passo o mouse
+  por cima dele, a animação dura dois segundos
+  e retorna a seu estado inicial pelo caminho de ida
+*/
+
 .quadrado-placeholder:hover {
   background: #ddd;
   color: #333;
   animation: mover 2s alternate;
 }
+
+/*
+ keyframes da animação fazendo com que ela
+ rotacione e mova de posição pela tela
+ enquanto o mouse está em cima
+ (e chamada ao passar o mouse no quadrado)
+*/
 
   @keyframes mover {
 
@@ -142,9 +155,18 @@ TO PARECENDO UM MALUCO:
 
   }
 
+/*
+ quando o mouse não estiver em cima
+ do quadrado uma animação chamada retorno
+*/
+
 .quadrado-placeholder:not(:hover) {
   animation: retorno 2s;
 }
+
+/*
+ no inicio da animação o quadrado gira 360deg
+*/
 
 @keyframes retorno {
 
