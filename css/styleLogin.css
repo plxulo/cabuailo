@@ -49,8 +49,24 @@ input {
     justify-content: center; /*alinha na direita (eixo X)*/
     align-items: center; /*alinha na vertical*/
     width: 500px;
-    background: linear-gradient(cornflowerblue, purple);
     height: 100vh;
+    background-image: linear-gradient(-90deg, cornflowerblue, purple);
+    background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
+    animation: gradientAnimation 5s ease infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .form {
