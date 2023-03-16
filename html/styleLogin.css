@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+/*
+ centralizar qualquer objeto em tela, não tem como errar com todos
+ os atributos possíveis né só trocar row ou column no flex
+ direction e vai ser feliz
+*/
+
+.centralizar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+/*
+ configurações de estilo gerais, overflow hidden para esconder scrollbars indesejadas
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*
+ ajustar o formulário para exibir conteúdo
+ um em cima do outro ( flex direction column)
+*/
+
+.form-inv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    height: 75vh;
+    margin: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background: #F2F2F2;
+}
+
+/*
+ ajustar posicionamento da div
+ checkbox 
+*/
+
+.checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    background: none;
+}
+
+input {
+    background: none;
+    border-radius: 15px ;
+}
+
+button {
+    background: none;
+    padding: 5px;
+    border-radius: 15px;
+}
