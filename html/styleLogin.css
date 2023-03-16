@@ -25,10 +25,17 @@ body {
   margin: 0;
 }
 
+h1 {
+    padding: 0;
+    margin-top: 0; /*ajustar espaçamento, fica agradável*/
+}
+
 input {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
+    background: none;
+    border-radius: 15px;
 }
 
 /*
@@ -38,16 +45,19 @@ input {
 
 .form-inv {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 250px;
-    height: 75vh;
-    margin: 10px;
+    flex-direction: row;
+    justify-content: center; /*alinha na direita (eixo X)*/
+    align-items: center; /*alinha na vertical*/
+    width: 500px;
+    background: linear-gradient(cornflowerblue, purple);
+    height: 100vh;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    padding: 50px;
+    border-radius: 20px;
     background: #F2F2F2;
 }
 
@@ -61,11 +71,6 @@ input {
     margin-bottom: 5px;
     width: fit-content;
     background: none;
-}
-
-input {
-    background: none;
-    border-radius: 15px ;
 }
 
 button {
