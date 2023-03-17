@@ -12,7 +12,8 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Utilizar display:flex ou tables para organização de conteúdo
     - Criar página de login seguindo princípios estabelecidos ácima
 
-    A parte da página que envolve o formulário está pronta, talvez altere algo depois
+- Resumo 16/03
+    - A parte da página que envolve o formulário está pronta, talvez altere algo depois
     fiz bom uso do display:flex e alterei algumas formas das divs principais
     para dar um efeito bacana. Utilizei de gradientes com cores que remetam ao software ( CABUAILO )
     * talvez mude as cores depois, vou ver
