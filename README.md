@@ -11,4 +11,11 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Alterar HTML e CSS para otimizar a compreenção do código
     - Utilizar display:flex ou tables para organização de conteúdo
     - Criar página de login seguindo princípios estabelecidos ácima
-FIM
+
+    A parte da página que envolve o formulário está pronta, talvez altere algo depois
+    fiz bom uso do display:flex e alterei algumas formas das divs principais
+    para dar um efeito bacana. Utilizei de gradientes com cores que remetam ao software ( CABUAILO )
+    * talvez mude as cores depois, vou ver
+
+- *(17/03/2023)*
+    - Caso tenha tempo, finalizar página de login (uma das três necessárias para prox. etapa da entrega)
