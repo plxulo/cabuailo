@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
 :root {
-    --gradient: linear-gradient(-90deg, cornflowerblue, purple);
+    --gradient: linear-gradient(-45deg, black, rgba(255, 255, 255, 0));
+    --transparencia: linear-gradient(-90deg, black, rgba(255, 255, 255, 0));
 }
 
 /*
@@ -25,6 +26,9 @@
 
 body {
   font-family: Arial, sans-serif;
+  background-image: url("cara-barbeando.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
   padding: 0;
   margin: 0;
 }
@@ -41,7 +45,7 @@ body {
     align-items: center; /*alinha na vertical*/
     width: 700px;
     height: 90vh;
-    border: 4px solid white;
+    border: 2px solid white;
     border-radius: 0 0 100% 0/0 0 50% 0; /* CRIAR FORMATO */
     background-image: var(--gradient);
     background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
