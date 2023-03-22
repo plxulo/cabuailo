@@ -32,7 +32,6 @@ body {
   font-family: Arial, sans-serif;
   /*background-image: url("cara-barbeando.jpg");*/
   background: var(--gradient);
-  background-size: 100%;
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
