@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
 :root {
-    --gradient: linear-gradient(-45deg, black, rgba(255, 255, 255, 0));
-    --transparencia: linear-gradient(-90deg, black, rgba(255, 255, 255, 0));
+    --transparencia: linear-gradient(-45deg, black, hsla(0, 0%, 100%, 0));
+    --gradient: linear-gradient(-90deg, purple, orange, blue);
+}
+
+.cor {
+    color: white;
 }
 
 /*
@@ -26,12 +30,30 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url("cara-barbeando.jpg");
+  /*background-image: url("cara-barbeando.jpg");*/
+  background: var(--gradient);
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
+  background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
+  animation: gradientAnimation2 10s ease infinite alternate;
 }
+
+@keyframes gradientAnimation2 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 /*
  ajustar o formulário para exibir conteúdo
@@ -40,15 +62,16 @@ body {
 
 .form-inv {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center; /*alinha na direita (eixo X)*/
     align-items: center; /*alinha na vertical*/
-    width: 700px;
-    height: 90vh;
-    border: 2px solid white;
-    border-radius: 0 0 100% 0/0 0 50% 0; /* CRIAR FORMATO */
-    background-image: var(--gradient);
+    width: 1000px;
+    height: 100vh;
+    border-right: 2px solid white;
+    /* border-radius: 0 0 100% 0/0 0 50% 0; /* CRIAR FORMATO */
+    background: #1c1c1c;
     background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
+    backdrop-filter: blur(10vmax);
     animation: gradientAnimation 10s ease infinite alternate;
 }
 
@@ -66,19 +89,30 @@ body {
     }
 }
 
-.form {
+/* alinhar titulo na esquerda */
+.texto {
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    border: solid white;
-    border-radius: 20px;
-    background: none;
+    align-items: left;
+    align-self: left;
+    align-content: left;
+    width: 50em;
 }
+
+/* 
+ TEXTO DO TITULO 
+ FAZER LOGIN
+ NÃO TEM CONTA? CADASTRE-SE
+*/
 
 h1 {
     padding: 0;
-    margin-top: 0; /*ajustar espaçamento, fica agradável*/
-    color: white;
+    margin: 0; /*ajustar espaçamento, fica agradável*/
+    font-size: 5em;
+}
+
+p {
+    font-size: 1rem;
 }
 
 input {
@@ -86,38 +120,50 @@ input {
     margin-top: 5px;
     margin-bottom: 5px;
     background: none;
-    border: solid white;
-    border-radius: 15px;
+    border: solid 1px;
+}
+
+/* 
+ FORMULARIO --
+ EXIBIR CONTEUDO EM PILHA
+*/
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+    background: none;
 }
 
 input:focus {
     outline: none;
-    caret-color: white;
 }
 
 ::placeholder {
+    font-size: 1rem;
     color: white;
 }
 
 /*
- ajustar posicionamento da div
- checkbox 
+ POSICIONAR DIV CHECKBOX:
 */
-
 .checkbox {
     margin-top: 5px;
     margin-bottom: 5px;
     width: fit-content;
     background: none;
-    color: white;
 }
 
+/*
+ CONFIGURAÇÃO DO BOTÃO
+ ENVIAR
+ LIMPAR
+ ( ENTRAR / LIMPAR )
+*/
 button {
     background: none;
-    padding: 5px;
-    border: solid white;
-    color: white;
-    border-radius: 15px;
+    padding: 20px;
+    border: solid 1px white;
+    font-size: 1.5rem;
     transition: 1s;
 }
 
@@ -127,9 +173,12 @@ button:hover {
     cursor: pointer;
 }
 
+/* CONFIG LINKS */
 a {
     color: white;
+    font-weight: bold   ;
     transition: .5s;
+    text-decoration: none;
 }
 
 a:hover {
