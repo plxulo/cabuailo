@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/styleLogin.css" type="text/css" rel="stylesheet">
+    <script src="../js/scriptLimpar.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 
     <!-- CONTAINER DO FORMULÁRIO -->
 
-    <div class="form-inv">
+    <div class="form-container">
 
 
         <!-- TITULO E SUBTITULO -->
@@ -30,11 +31,11 @@
 
             <p>Email ou nome de usuário: </p>
             <!-- EMAIL DO USUÁRIO -->
-            <input type="email" placeholder="" required="" class="cor">
+            <input type="email" placeholder="" required="" class="cor" id="campo1">
 
             <p>Senha: </p>
             <!-- SENHA DO USUÁRIO -->
-            <input type="password" placeholder="" required="" class="cor">
+            <input type="password" placeholder="" required="" class="cor" id="campo2">
 
 
             <!-- CHECKBOX LEMBRAR DE MIM-->
@@ -44,7 +45,7 @@
 
             <button class="cor">Entrar</button>
             <br>
-            <button class="cor">Limpar</button>
+            <button onclick="limparCampos()" class="cor">Limpar</button>
             <br>
 
         </div>

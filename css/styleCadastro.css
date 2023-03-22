@@ -59,7 +59,7 @@ body {
  um em cima do outro ( flex direction column)
 */
 
-.form-inv {
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center; /*alinha na direita (eixo X)*/

@@ -60,7 +60,7 @@ body {
  um em cima do outro ( flex direction column)
 */
 
-.form-inv {
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center; /*alinha na direita (eixo X)*/
@@ -99,7 +99,7 @@ body {
 /* 
  TEXTO DO TITULO 
  FAZER LOGIN
- NÃO TEM CONTA? CADASTRE-SE
+ NÃO TEM CONTA? CADASTRE-SE vai tomar no cu paulo seu gay viado de merda fudido
 */
 
 h1 {
