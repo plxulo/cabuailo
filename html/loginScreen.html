@@ -20,31 +20,46 @@
     <div class="form-container">
 
 
-        <!-- TITULO E SUBTITULO -->
+        <!-- TITULO E SUBTITULO
+            (não tem conta? cadastre-se)
+        -->
         <div class="texto">
-            <h1 class="cor">FAZER LOGIN</h1>
-            <p class="cor">não tem conta? <a href="../html/cadastroCliente.html">cadastre-se</a></p>
+            <h1 class="cor--branca">
+                FAZER LOGIN
+            </h1>
+            <p class="cor--branca">
+                não tem conta? 
+                <a href="../html/cadastroCliente.html">
+                    cadastre-se
+                </a>
+            </p>
         </div>
 
-        <div class="form cor">
+        <div class="form cor--branca">
 
-            <p>Email ou nome de usuário: </p>
+            <p>
+                Email ou nome de usuário: 
+            </p>
             <!-- EMAIL DO USUÁRIO -->
-            <input type="email" placeholder="" required="" class="limpavel cor">
-
-            <p>Senha: </p>
+                <input type="email" required="" class="limpavel cor--branca">
+            <p>
+                Senha: 
+            </p>
             <!-- SENHA DO USUÁRIO -->
-            <input type="password" placeholder="" required="" class="limpavel cor">
-
+                <input type="password" required="" class="limpavel cor--branca">
 
             <!-- CHECKBOX LEMBRAR DE MIM-->
             <div class="checkbox cor">
-                <input type="checkbox" name="lembrar" class="checkbox cor"> &nbsp; Lembrar de mim
+                <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
             </div>
-
-            <button class="cor">Entrar</button>
+            <!-- BOTÕES ENTRAR E LIMPAR -->
+            <button class="cor--branca">
+                Entrar
+            </button>
             <br>
-            <button onclick="limparCampos()" id="limpar" class="cor">Limpar</button>
+            <button onclick="limparCampos()" id="limpar" class="cor--branca">
+                Limpar
+            </button>
             <br>
 
         </div>
