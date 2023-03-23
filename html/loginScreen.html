@@ -8,22 +8,9 @@
     <title>Login</title>
 </head>
 <body>
-
-    <!-- 
-        FORMULARIO DEVE TER CAMPO 
-        EMAIL SENHA
-        CHECKBOX LEMBRAR DE MIM
-    -->
-
-    <!-- CONTAINER DO FORMULÁRIO -->
-
+    <!-- bg + container formulário -->
     <div class="form-container">
-
-
-        <!-- TITULO E SUBTITULO
-            (não tem conta? cadastre-se)
-        -->
-        <div class="texto">
+        <div class="main--text">
             <h1 class="cor--branca">
                 FAZER LOGIN
             </h1>
@@ -35,37 +22,26 @@
             </p>
         </div>
 
-        <div class="form cor--branca">
-
-            <p>
-                Email ou nome de usuário: 
-            </p>
-            <!-- EMAIL DO USUÁRIO -->
-                <input type="email" required="" class="limpavel cor--branca">
-            <p>
-                Senha: 
-            </p>
-            <!-- SENHA DO USUÁRIO -->
-                <input type="password" required="" class="limpavel cor--branca">
-
-            <!-- CHECKBOX LEMBRAR DE MIM-->
-            <div class="checkbox cor">
-                <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
+        <!-- Login e senha -->
+            <div class="form-login cor--branca">
+                <p>Email ou nome de usuário: </p>
+                    <input type="email" required="" class="limpavel--botao cor--branca">
+                <p>Senha: </p>
+                    <input type="password" required="" class="limpavel--botao cor--branca">
+                <div class="checkbox cor--branca">
+                    <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
+                </div>
+                <button class="cor--branca">
+                    Entrar
+                </button>
+                <br>
+                <button onclick="limparCampos()" id="limpar" class="cor--branca">
+                    Limpar
+                </button>
+                <br>
             </div>
-            <!-- BOTÕES ENTRAR E LIMPAR -->
-            <button class="cor--branca">
-                Entrar
-            </button>
-            <br>
-            <button onclick="limparCampos()" id="limpar" class="cor--branca">
-                Limpar
-            </button>
-            <br>
-
-        </div>
     </div>
-
+    <!-- Script botão limpar -->
     <script src="../js/scriptLimpar.js"></script>
-
 </body>
 </html>
