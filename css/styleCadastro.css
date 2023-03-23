@@ -5,15 +5,9 @@
     --gradient: linear-gradient(-90deg, purple, orange, blue);
 }
 
-.cor {
+.cor--branca {
     color: white;
 }
-
-/*
- centralizar qualquer objeto em tela, não tem como errar com todos
- os atributos possíveis né só trocar row ou column no flex
- direction e vai ser feliz
-*/
 
 .centralizar {
   display: flex;
@@ -24,13 +18,8 @@
   justify-content: center;
 }
 
-/*
- configurações de estilo gerais, overflow hidden para esconder scrollbars indesejadas
-*/
-
 body {
   font-family: Arial, sans-serif;
-  /*background-image: url("cara-barbeando.jpg");*/
   background: var(--gradient);
   background-repeat: no-repeat;
   padding: 0;
@@ -53,7 +42,6 @@ body {
     }
 }
 
-
 /*
  ajustar o formulário para exibir conteúdo
  um em cima do outro ( flex direction column)
@@ -67,9 +55,8 @@ body {
     width: 800px;
     height: 100vh;
     border-right: 2px solid white;
-    /* border-radius: 0 0 100% 0/0 0 50% 0; /* CRIAR FORMATO */
     background: #1c1c1c;
-    background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
+    background-size: 400% 400%;
     backdrop-filter: blur(10vmax);
     animation: gradientAnimation 10s ease infinite alternate;
 }
@@ -88,18 +75,11 @@ body {
     }
 }
 
-/* alinhar titulo na esquerda */
-.texto {
+.main--text {
     display: flex;
     flex-direction: column;
     width: 40em;
 }
-
-/* 
- TEXTO DO TITULO 
- FAZER LOGIN
- NÃO TEM CONTA? CADASTRE-SE
-*/
 
 h1 {
     padding: 0;
@@ -111,12 +91,15 @@ p {
     font-size: 1rem;
 }
 
-input {
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: none;
-    border: solid 1px;
+a {
+    color: white;
+    font-weight: bold   ;
+    transition: .5s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
 }
 
 /* 
@@ -130,11 +113,15 @@ input {
     background: none;
 }
 
-input:focus {
+input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: none;
+    border: solid 1px;
+} input:focus {
     outline: none;
-}
-
-::placeholder {
+} ::placeholder {
     font-size: 1rem;
     color: white;
 }
@@ -150,10 +137,7 @@ input:focus {
 }
 
 /*
- CONFIGURAÇÃO DO BOTÃO
- ENVIAR
- LIMPAR
- ( ENTRAR / LIMPAR )
+ Btn enviar/limpar
 */
 button {
     background: none;
@@ -168,16 +152,4 @@ button:hover {
     background: white;
     color: black;
     cursor: pointer;
-}
-
-/* CONFIG LINKS */
-a {
-    color: white;
-    font-weight: bold   ;
-    transition: .5s;
-    text-decoration: none;
-}
-
-a:hover {
-    color: red;
 }
