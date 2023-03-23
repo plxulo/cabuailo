@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/styleCadastro.css" type="text/css" rel="stylesheet">
-    <script src="../js/scriptLimpar.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -29,25 +28,26 @@
 
             <p>Nome de usuário: </p>
             <!-- EMAIL DO USUÁRIO -->
-            <input type="email" placeholder="Seu nome" required="" class="cor" id="campo1">
+            <input type="email" placeholder="Seu nome" required="" class="limpavel cor">
 
             <p>Email: </p>
             <!-- EMAIL DO USUÁRIO -->
-            <input type="email" placeholder="Seu email" required="" class="cor" id="campo2">
+            <input type="email" placeholder="Seu email" required="" class="limpavel cor">
 
             <p>Senha: </p>
             <!-- SENHA DO USUÁRIO -->
-            <input type="password" placeholder="Sua senha" required="" class="cor" id="campo3">
+            <input type="password" placeholder="Sua senha" required="" class="limpavel cor">
 
             <p>Confirmar senha: </p>
             <!-- SENHA DO USUÁRIO -->
-            <input type="password" placeholder="Sua senha" required="" class="cor" id="campo4">
+            <input type="password" placeholder="Sua senha" required="" class="limpavel cor">
 
             <button class="cor">Criar conta</button>
-            <button onclick="limparCampos()" class="cor">Limpar</button>
+            <button onclick="limparCampos()" id="limpar" class="cor">Limpar</button>
 
         </div>
     </div>
 
+    <script src="../js/scriptLimpar.js"></script>
 </body>
 </html>
