@@ -1,6 +1,8 @@
-function limparCampos() {
-    document.getElementById("campo1").value = "";
-    document.getElementById("campo2").value = "";
-    document.getElementById("campo3").value = "";
-    document.getElementById("campo4").value = "";
-}
+const limparButton = document.getElementById("limpar")
+const inputsLimpaveis = [...document.getElementsByClassName("limpavel")];;
+
+function limparCampos () {
+    inputsLimpaveis.forEach(function (input) {
+        input.value = "";
+      });
+};

@@ -37,7 +37,7 @@ body {
   padding: 0;
   margin: 0;
   background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
-  animation: gradientAnimation2 10s ease infinite alternate;
+  animation: gradientAnimation2 15s ease infinite alternate;
 }
 
 @keyframes gradientAnimation2 {
