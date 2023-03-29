@@ -44,25 +44,7 @@ body {
     width: 800px;
     height: 100vh;
     filter: drop-shadow(0 -25px 20px #1c1c1c);
-    /* border-radius: 0 0 100% 0/0 0 50% 0; /* CRIAR FORMATO */
     background: #1c1c1c;
-    background-size: 400% 400%;
-    backdrop-filter: blur(10vmax);
-    animation: gradientAnimation 10s ease infinite alternate;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* Estilos titulo */
