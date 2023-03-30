@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
     min-height: 100vh;
     background: url('../imagens/fundo_menu_cabuailo.png');
@@ -12,7 +13,8 @@ body {
     display: flex;
     flex-direction: column
 }
-header {
+
+navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,15 +28,19 @@ header {
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     z-index: 9999;
 }
-header {
+
+navbar {
     transition: all 700ms ease-in-out;
 }
-.scroll-down header {
+
+.scroll-down navbar {
     transform: translate3d(0, -100%, 0);
 }
-.scroll-up header {
+
+.scroll-up navbar {
     filter: drop-shadow(0 -10px 20px rgb(170,170,170));
 }
+
 .navbar a {
     color: white;
     font-size: 25px;
@@ -42,16 +48,31 @@ header {
     margin-left: 70px;
     transition: 0.3s;
 }
+
 .navbar a:hover {
     color: #3299CC	;    
 }
+
 .d2 {
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
+
+.cabuailo--titulo {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    position: fixed;
+}
+
+.--title {
+    font-size: 15em;
+}
+
 .d3 {
     height: 100vh;
     aspect-ratio: 1;
