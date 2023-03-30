@@ -35,3 +35,4 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Otimização das telas de login / cadastro
     - Fazer validação utilizando JavaScript
     - Adicionar informações na tela de início
+    - Criação da branch secondary
