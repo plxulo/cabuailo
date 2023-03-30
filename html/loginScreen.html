@@ -26,11 +26,12 @@
                 <p>Email ou nome de usuário: </p>
                     <input type="email" required="" class="limpavel--botao cor--branca">
                 <p>Senha: </p>
-                    <input type="password" required="" class="limpavel--botao cor--branca">
+                    <input type="password" required="" id="inputSenha" class="limpavel--botao cor--branca">
+                <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
                 <div class="checkbox cor--branca">
                     <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
                 </div>
-                <button class="cor--branca">
+                <button onclick="validarSenha()" class="cor--branca">
                     Entrar
                 </button>
                 <br>
@@ -41,5 +42,6 @@
             </div>
     </div>
     <script src="../js/scriptLimpar.js"></script>
+    <script src="../js/scriptValidar.js"></script>
 </body>
 </html>

@@ -9,6 +9,10 @@
     color: white;
 }
 
+.--escondido {
+    display: none;
+}
+
 /*
  centralizar elementos em tela
 */
