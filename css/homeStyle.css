@@ -41,6 +41,14 @@ navbar {
     filter: drop-shadow(0 -10px 20px rgb(170,170,170));
 }
 
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .navbar a {
     color: white;
     font-size: 25px;
@@ -50,7 +58,7 @@ navbar {
 }
 
 .navbar a:hover {
-    color: #3299CC	;    
+    color: #3299CC	;
 }
 
 .d2 {
@@ -62,9 +70,19 @@ navbar {
     align-items: center;
 }
 
+header {
+    width: 100%;
+    height: 60%;
+    padding: 0px 80px;
+}
+
+p {
+    font-size: 2em;
+}
+
 .cabuailo--titulo {
     color: white;
-    text-align: center;
+    text-align: right;
     text-transform: uppercase;
     position: fixed;
 }
