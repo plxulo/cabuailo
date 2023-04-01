@@ -111,6 +111,6 @@ button:hover {
 .d3 {
     height: 100vh;
     aspect-ratio: 1;
-    background: #C7BCA1;
+    background: #675D50;
     filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
 }
