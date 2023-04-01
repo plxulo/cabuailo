@@ -1,7 +1,6 @@
-
 function scrollSuave() {
     window.scrollTo({
-        top: 700,
+        top: 1000,
         left: 0,
         behavior: "smooth"
     })

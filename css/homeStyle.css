@@ -106,7 +106,7 @@ button:hover {
     color: #3299CC;
 }
 
-.section-background {
+.quadrado {
     height: 100vh;
     aspect-ratio: 1;
     background: #675D50;
@@ -125,14 +125,28 @@ section {
 .container-button {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    text-align: center;
     height: 50%;
     aspect-ratio: 1;
+    color: white;
 }
 
-.--text {
+.text {
     color: white;
     padding: 0px 80px;
     height: 50%;
+}
+
+/* estes estilos são aplicados apenas a classe animated-text */
+.hidden .animated-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible .animated-text {
+    opacity: 1;
+    transform: translateY(0);
 }
