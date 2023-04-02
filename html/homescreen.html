@@ -34,7 +34,19 @@
 
     <!-- seção dois animada com hidden -->
     <!-- section class="hidden" seleciona todos os elementos filho -->
-    <div class="quadrado">
+    <div class="sec1">
+        <section class="hidden">
+            <div class="text animated-text">
+                <h1 class="main-title">LOREM IPSUM</h1>
+                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime soluta vero voluptate earum natus fuga est, deleniti consequatur unde minima ratione voluptatum, pariatur aliquam quos sequi veniam accusamus illo reprehenderit!</p>
+            </div>
+            <div class="container-button animated-text">
+                <p class="">descubra:</p>&nbsp;&nbsp;&nbsp;<button class="">PLACEHOLDER</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="sec2">
         <section class="hidden">
             <div class="text animated-text">
                 <h1 class="main-title">LOREM IPSUM</h1>
@@ -49,12 +61,19 @@
 </body>
 <script>
     const textElement = document.querySelector(".hidden"); // pegar os elementos de classe hidden
+    const textElement2 = document.querySelector(".sec2 .hidden");
+
 
     function mostrarTexto() {
         if (window.pageYOffset >= 1000) { // quando a posição Y da pagina for >= 1000
             textElement.classList.add("visible"); // o estilo css visible será adicionado
         } else {
             textElement.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+        }
+        if (window.pageYOffset >= 2000) {
+            textElement2.classList.add("visible"); // o estilo css visible será adicionado
+        } else {
+            textElement2.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
         }
     }
 

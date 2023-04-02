@@ -106,7 +106,7 @@ button:hover {
     color: #3299CC;
 }
 
-.quadrado {
+.sec1 {
     height: 100vh;
     aspect-ratio: 1;
     background: #675D50;
@@ -149,4 +149,11 @@ section {
 .visible .animated-text {
     opacity: 1;
     transform: translateY(0);
+}
+
+.sec2 {
+    height: 100vh;
+    aspect-ratio: 1;
+    background: #EDDBC7;
+    filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
 }
