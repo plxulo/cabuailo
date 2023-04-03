@@ -139,6 +139,10 @@ section {
     height: 50%;
 }
 
+.hidden-titulo {
+    display: none;
+}
+
 /* estes estilos são aplicados apenas a classe animated-text */
 .hidden .animated-text {
     opacity: 0;
@@ -156,4 +160,39 @@ section {
     aspect-ratio: 1;
     background: #EDDBC7;
     filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
+}
+
+/* mudar depois : */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    background: #EDDBC7;
+    z-index: 1;
+}
+
+footer button {
+    color: black;
+    background: white;
+    transition: 1s;
+}
+
+footer button:hover {
+    background: #3299CC;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form input {
+    padding: 1em;
 }
