@@ -21,6 +21,7 @@ body {
     display: flex;
     align-items: center;
     padding: 80px 250px 0;
+    justify-content: space-between;
 }
 
 /* DIVs para ESTILIZAÇÃO*/
@@ -60,8 +61,21 @@ navbar {
     transition: 0.3s;
 }
 
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+
 .navbar a:hover {
-    color: #3299CC	;    
+    transform: scaleX(1);
 }
 
 /*Estilização container2*/
@@ -124,6 +138,9 @@ navbar {
     border: 1px solid white;
     outline: none;
     border-radius: 40px;
+    font-size: 1em;
+    color: white;
+    padding: 0 25px 0 45px;
 }
 
 .input-box label {
@@ -133,6 +150,14 @@ navbar {
     transform: translateY(-50%);
     font-size: 1.2em;
     color: white;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    font-size: 0.8em;
+    top: -14px;
+    left: 17px;
 }
 
 .input-box .icon {
@@ -154,5 +179,41 @@ navbar {
 .lembrarDeMim label input {         
     accent-color: red;  /*Mudar a COR da CHECKBOX */
     margin-right: 10px;
-    
+}
+
+.login .btn-login {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;   
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(19, 19, 19);
+    font-weight: 500;
+    font-family: font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.5s;
+}
+
+.login .btn-login:hover {
+    background-color: rgb(177, 177, 177);
+}
+
+.login .registrar {
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login .registrar p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.login .registrar p a:hover {
+    text-decoration: underline;
 }
