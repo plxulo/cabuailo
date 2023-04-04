@@ -1,3 +1,69 @@
+/* responsividade */
+
+@media (max-width: 1280px) {
+
+        .navlinks {
+        display: none;
+    }
+
+    header.--titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+
+    .--titulo h1 {
+        font-size: 8em; 
+    }
+}
+
+@media (max-width: 750px) {
+
+    header.--titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .--titulo h1 {
+        font-size: 5em; 
+        text-align: center;
+    }
+}
+
+.hamburger {
+    display: none;
+}
+  
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 5px;
+}
+
+/*
+.--titulo {
+    color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 60%;
+    padding: 0px 80px;
+}
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +73,7 @@
 
 body {
     min-height: 100vh;
-    background: url('../imagens/fundo_menu_cabuailo.png');
+    background: url('/imagens/fundo_menu_cabuailo.png');
     background-size: cover;
     background-position: center;
     display: flex;
