@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link href="../css/styleLogin.css" type="text/css" rel="stylesheet">
     <title>Login</title>
 </head>
+
 <body>
     <div class="form-container">
         <div class="main--text">
@@ -16,26 +18,27 @@
         </div>
 
         <!-- Login e senha -->
-            <div class="form-login cor--branca">
-                <p>Email ou nome de usuário: </p>
-                    <input type="email" required="" class="limpavel--botao cor--branca">
-                <p>Senha: </p>
-                    <input type="password" required="" id="inputSenha" class="limpavel--botao cor--branca">
-                <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
-                <div class="checkbox cor--branca">
-                    <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
-                </div>
-                <button type="submit" onclick="validarSenha()" class="cor--branca">
-                    Entrar
-                </button>
-                <br>
-                <button onclick="limparCampos()" id="limpar" class="cor--branca">
-                    Limpar
-                </button>
-                <br>
+        <form class="form-login cor--branca" action="/php/db.php" method="post">
+            <p>Email ou nome de usuário: </p>
+            <input type="email" name="usuario" class="limpavel--botao cor--branca">
+            <p>Senha: </p>
+            <input type="password" name="senha" id="inputSenha" class="limpavel--botao cor--branca">
+            <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
+            <div class="checkbox cor--branca">
+                <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
             </div>
+            <button type="submit" onclick="validarSenha()" class="cor--branca">
+                Entrar
+            </button>
+            <br>
+            <button onclick="limparCampos()" id="limpar" class="cor--branca">
+                Limpar
+            </button>
+            <br>
+        </form>
     </div>
     <script src="../js/private/scriptLimpar.js"></script>
     <script src="../js/private/scriptValidar.js"></script>
 </body>
+
 </html>
