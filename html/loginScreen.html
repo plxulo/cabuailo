@@ -5,40 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/styleLogin.css" type="text/css" rel="stylesheet">
-    <title>Login</title>
+    <link rel="stylesheet" href="../css/styleLogin.css">
+    <title>Faça seu login</title>
+    <link rel="icon" href="icone.ico" widht="100%">
 </head>
 
 <body>
-    <div class="form-container">
-        <div class="main--text">
-            <p><a href="../html/homescreen.html">voltar ao início</a></p>
-            <h1 class="cor--branca">FAZER LOGIN</h1>
-            <p class="cor--branca">não tem conta? <a href="../html/cadastroCliente.html">cadastre-se</a></p>
+    <div class="container2">
+        <div class="content">
+            <h2>Cabuailo</h2>
+            <p>O cabuailo é o chuairmi do hosmen</p>
+            <a href="#">Cadastrar</a>
         </div>
-
-        <!-- Login e senha -->
-        <form class="form-login cor--branca" action="/php/db.php" method="post">
-            <p>Email ou nome de usuário: </p>
-            <input type="email" name="usuario" class="limpavel--botao cor--branca">
-            <p>Senha: </p>
-            <input type="password" name="senha" id="inputSenha" class="limpavel--botao cor--branca">
-            <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
-            <div class="checkbox cor--branca">
-                <input type="checkbox" name="lembrar" class="checkbox"> &nbsp; Lembrar de mim
-            </div>
-            <button type="submit" onclick="validarSenha()" class="cor--branca">
-                Entrar
-            </button>
-            <br>
-            <button onclick="limparCampos()" id="limpar" class="cor--branca">
-                Limpar
-            </button>
-            <br>
-        </form>
+        <div class="login">
+            <h2>Faça Login</h2>
+            <form action="../php/db.php" method="post">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required name="email">
+                    <label>Seu E-mail</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required name="password">
+                    <label>Sua senha</label>
+                </div>
+                <div class="lembrarDeMim">
+                    <label><input type="checkbox">Lembre de mim</label>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                <div class="registrar">
+                    <p>Não possui uma conta?<a href="/html/cadastroCliente.html">Registre-se </a></p>
+                </div>
+            </form>
+        </div>
     </div>
-    <script src="../js/private/scriptLimpar.js"></script>
-    <script src="../js/private/scriptValidar.js"></script>
 </body>
+<script src="../js/sBar.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
