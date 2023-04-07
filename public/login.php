@@ -1,6 +1,7 @@
 <?php
-    use mysqli;
     namespace Cabuailo;
+
+    use mysqli;
 
     class gerenciamentoSenha
     {
@@ -20,7 +21,7 @@
 
         public function getMail()
         {
-            return $this->user;
+            return $this-> user;
         }
     }
 
@@ -31,6 +32,7 @@
 
     echo("<br>");
     echo("Seu email é: " . $user->getMail()); //exibir email
+    echo("<br>");
 
     //acima apenas checagens de funcionamento / recebimento de entradas
     //abaixo inserção no banco de dados:
@@ -38,8 +40,8 @@
     //realizar conexão com o banco de dados, segue comandos admin
 
     $servername = 'localhost';
-    $username = 'paulo';
-    $password = 'paulo123';
+    $username = 'cabuailo';
+    $password = '9o5oYO3WJrASZin-';
     $dbname = 'cabuailo';
 
     //criar a conexão:
@@ -65,5 +67,4 @@
     }
 
     $conn->close();
-
 ?>

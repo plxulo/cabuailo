@@ -87,7 +87,7 @@
 
 body {
     min-height: 100vh;
-    background: url('/imagens/fundo_menu_cabuailo.png');
+    background: url('../imagens/fundo_menu_cabuailo.png');
     background-size: cover;
     background-position: center;
     display: flex;

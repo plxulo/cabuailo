@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleLogin.css">
     <title>Faça seu login</title>
+    <link rel="stylesheet" href="../css/styleLogin.css">
     <link rel="icon" href="icone.ico" widht="100%">
 </head>
 
@@ -15,11 +15,11 @@
         <div class="content">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
-            <a href="#">Cadastrar</a>
+            <a href="../html/cadastroCliente.html">Cadastrar</a>
         </div>
         <div class="login">
             <h2>Faça Login</h2>
-            <form action="../php/db.php" method="post">
+            <form action="/cabuailo/public/login.php" method="post">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="email" required name="email">
@@ -35,7 +35,7 @@
                 </div>
                 <button type="submit" class="btn-login">Login</button>
                 <div class="registrar">
-                    <p>Não possui uma conta?<a href="/html/cadastroCliente.html">Registre-se </a></p>
+                    <p>Não possui uma conta?<a href="../html/cadastroCliente.html">Registre-se </a></p>
                 </div>
             </form>
         </div>
