@@ -28,3 +28,9 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Criação de um arquivo JavaScript, para funcionamento de botões específicos "limpar" formulário (procurar forma melhor de realizar a função)
     - Nomes de arquivos organizados
     * Talvez a página de login esteja feita
+    
+- *(11/04/2023)*
+    - Início da implementação de um design responsivo
+    - Design do layout sendo trabalhado no FIGMA
+    - Tela de Login e Cadastro quase concluídas
+    - Desenvolvimento do banco de dados (já salva dados como email e senha em um banco de dados)
