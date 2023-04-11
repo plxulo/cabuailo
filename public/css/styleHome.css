@@ -108,20 +108,11 @@
 body {
   min-height: 100vh;
   background: url("../imagens/fundo_menu_cabuailo.png");
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-}
-
-p {
-  font-size: 2em;
-}
-
-h1 {
-  font-size: 11em;
-  font-weight: 900;
-  font-style: normal;
 }
 
 navbar {
@@ -158,7 +149,7 @@ navbar {
   color: white;
   font-size: 25px;
   text-decoration: none;
-  margin-left: 70px;
+  margin-left: 125px;
   transition: 0.3s;
 }
 
@@ -170,8 +161,8 @@ navbar {
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -180,28 +171,66 @@ navbar {
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
   padding: 0px 80px;
+  gap: 20px;
+  width: 40%;
+}
+
+p {
+  font-size: 2em;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
   gap: 10px;
+}
+
+.botao_positivo {
+  background: rgba(217, 217, 217, 0.01);
+  border: 3px solid #21EB00;
+  border-radius: 40px;
+  color: #21EB00;
+  backdrop-filter: blur(15px);
+}
+
+.botao_saiba {
+  width: 15em;
+  padding: 1em;
+  font-size: 1.5em;
+  text-align: left;
+  color: white;
+  border-left: solid 5px #FFF;
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  background: none;
+  transition: 1s;
 }
 
 button {
   width: 15em;
   padding: 1em;
-  border-radius: 40px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: white;
+  border: solid rgba(217, 217, 217, 0.01);
   transition: 1s;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
 }
 
-button:hover {
+.botao_positivo:hover {
   cursor: pointer;
-  color: #3299cc;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -219,17 +248,6 @@ section {
   height: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.container-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  height: 50%;
-  aspect-ratio: 1;
-  color: white;
 }
 
 .text {

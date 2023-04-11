@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça seu login</title>
     <link rel="stylesheet" href="../css/styleLogin.css">
-    <link rel="icon" href="../imagens/logo.png.png">
+    <title>Faça seu login</title>
+    <link rel="icon" href="icone.ico" widht="100%">
+    <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="../js/sBar.js"></script>
 </head>
 
 <body>
@@ -15,19 +18,19 @@
         <div class="content">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
-            <a href="../html/cadastroCliente.html">Cadastrar</a>
+            <a href="#">Saiba Mais</a>
         </div>
         <div class="login">
             <h2>Faça Login</h2>
             <form action="/cabuailo/public/login.php" method="post">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required name="email">
+                    <input type="email" name="email" required>
                     <label>Seu E-mail</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="senha">
+                    <input type="password" name="senha" required>
                     <label>Sua senha</label>
                 </div>
                 <div class="lembrarDeMim">
@@ -35,15 +38,13 @@
                 </div>
                 <button type="submit" class="btn-login">Login</button>
                 <div class="registrar">
-                    <p>Não possui uma conta?<a href="../html/cadastroCliente.html">Registre-se </a></p>
+                    <p>Não possui uma conta?<a href="../html/cadastro.html">Registre-se </a></p>
                 </div>
             </form>
         </div>
     </div>
-</body>
 
-<script src="../js/sBar.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
 
 </html>
