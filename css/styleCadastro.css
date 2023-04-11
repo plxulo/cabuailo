@@ -170,41 +170,47 @@ navbar {
     z-index: 10;
 }
 
+/*DIV cuja a qual abriga as 2 CHECKBOXs*/
+.checks {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /* Lembre de MIM input*/
-
 .login .lembrarDeMim {
     font-size: 1em;
     color: white;
     font-weight: 500;
     margin: -25px 0 15px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .lembrarDeMim label input {         
     accent-color: red;  /*Mudar a COR da CHECKBOX */
     margin-right: 10px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 
 /* Aceito os termos INPUT*/
-
-/*.login .aceito {
+.login .aceito {
     font-size: 1em;
     color: white;
     font-weight: 500;
     margin: -25px 0 15px;
+    /*margin-top: 20px;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .aceito label input {         
-    accent-color: red;  /*Mudar a COR da CHECKBOX 
+    accent-color: red;  /*Mudar a COR da CHECKBOX */
     margin-right: 10px;
 }
-*/
 
-/* BOTÃO LO*/
+/* BOTÃO REGISTRAR*/
 .login .btn-login {
     width: 100%;
     height: 50px;
@@ -215,13 +221,14 @@ navbar {
     cursor: pointer;
     font-size: 1.1em;
     color: rgb(19, 19, 19);
+    background-color: #9A7647;
     font-weight: 500;
     font-family: font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.5s;
 }
 
 .login .btn-login:hover {
-    background-color: rgb(177, 177, 177);
+    background-color: #6d593e;
 }
 
 .login .registrar {
