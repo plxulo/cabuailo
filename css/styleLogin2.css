@@ -193,13 +193,14 @@ navbar {
     cursor: pointer;
     font-size: 1.1em;
     color: rgb(19, 19, 19);
+    background-color: #9A7647;
     font-weight: 500;
     font-family: font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.5s;
 }
 
 .login .btn-login:hover {
-    background-color: rgb(177, 177, 177);
+    background-color: #6d593e;
 }
 
 .login .registrar {

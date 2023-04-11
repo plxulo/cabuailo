@@ -195,7 +195,7 @@ navbar {
     /*margin-bottom: 10px;*/
 }
 
-/* Aceito os termos INPUT*/
+/* Aceito os TERMOS DE USO INPUT*/
 .login .aceito {
     font-size: 1em;
     color: white;
@@ -208,6 +208,11 @@ navbar {
 .aceito label input {         
     accent-color: red;  /*Mudar a COR da CHECKBOX */
     margin-right: 10px;
+}
+
+.aceito a {
+    color: red;
+    font-weight: 700;
 }
 
 /* BOTÃO REGISTRAR*/
@@ -231,20 +236,20 @@ navbar {
     background-color: #6d593e;
 }
 
-.login .registrar {
+.login .fazer_login {
     font-size: 0.9em;
     color: white;
     text-align: center;
     margin: 20px 0;
 }
 
-.login .registrar p a {
+.login .fazer_login p a {
     color: white;
     text-decoration: none;
     font-weight: 700;
     padding-left: 10px;
 }
 
-.login .registrar p a:hover {
+.login .fazer_login p a:hover {
     text-decoration: underline;
 }
