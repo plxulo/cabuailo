@@ -2,7 +2,7 @@
 
 /* responsividade */
 
-@media (max-width: 1320px) {
+@media (max-width: 1370px) {
   .navlinks {
     display: none;
   }
@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1370px) {
   .hamburger {
     display: none;
   }
@@ -52,17 +52,19 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   header.-titulo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
+    margin: 0;
+    padding: 0;
+}
 
   .-titulo h1 {
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
   }
 
@@ -112,11 +114,11 @@ body {
   flex-direction: column;
 }
 
-.-titulo p {
+p {
   font-size: 2em;
 }
 
-.-titulo h1 {
+h1 {
   font-size: 11em;
   font-weight: 900;
   font-style: normal;
@@ -127,10 +129,7 @@ navbar {
   position: fixed;
   width: 100%;
   padding: 0px 80px;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(217, 217, 217, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   z-index: 1;
 }
@@ -189,20 +188,21 @@ navbar {
 }
 
 button {
-  width: 10em;
+  width: 15em;
   padding: 1em;
   border-radius: 40px;
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
   transition: 1s;
-  background: rgba(217, 217, 217, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
 }
 
 button:hover {
   cursor: pointer;
   color: #3299cc;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .sec1 {
