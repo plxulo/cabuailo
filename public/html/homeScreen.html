@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleHome.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styleHome.css" />
     <title>Document</title>
-    <link rel="icon" href="icone.ico" widht="100%">
-</head>
+    <link rel="icon" href="icone.ico" widht="100%" />
+  </head>
 
-<body>
+  <body>
     <div class="d1">
-        <navbar>
-            <img src="../imagens/logo.png" width="120px">
-            <nav class="navbar">
-                <div class="navlinks">
-                    <a href="#">Home</a>
-                    <a href="#">Serviços</a>
-                    <a href="#">Sobre Nós</a>
-                    <a href="#">Seja Parceiro</a>
-                    <a href="#">Contato</a>
-                    <a href="../html/LoginScreen.html">Minha conta</a>
-                </div>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
-        </navbar>
+      <navbar>
+        <img src="../imagens/logo.png" width="120px" />
+        <nav class="navbar">
+          <div class="navlinks">
+            <a href="#">Home</a>
+            <a href="#">Serviços</a>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Seja Parceiro</a>
+            <a href="#">Contato</a>
+            <a href="../html/LoginScreen.html">Minha conta</a>
+          </div>
+          <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </nav>
+      </navbar>
     </div>
     <div class="d2">
-        <header class="-titulo">
-            <h1>CABUAILO</h1>
-            <p>O sistema ideal para o seu negócio decolar.</p>
-            <button onclick="scrollSuave()">
-                Saiba mais...
-            </button>
-        </header>
+      <header class="-titulo">
+        <h1>CABUAILO</h1>
+        <p>O sistema ideal para o seu negócio decolar.</p>
+        <button onclick="scrollSuave()">Saiba mais...</button>
+      </header>
     </div>
 
     <!-- seção dois animada com hidden -->
@@ -67,29 +64,27 @@
         </section>
     </div>
     !-->
-
-</body>
-<script>
+  </body>
+  <script>
     const textElement = document.querySelector(".hidden"); // pegar os elementos de classe hidden
     const textElement2 = document.querySelector(".sec2 .hidden");
 
-
     function mostrarTexto() {
-        if (window.pageYOffset >= 1000) { // quando a posição Y da pagina for >= 1000
-            textElement.classList.add("visible"); // o estilo css visible será adicionado
-        } else {
-            textElement.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
-        }
-        if (window.pageYOffset >= 2000) {
-            textElement2.classList.add("visible"); // o estilo css visible será adicionado
-        } else {
-            textElement2.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
-        }
+      if (window.pageYOffset >= 1000) {
+        // quando a posição Y da pagina for >= 1000
+        textElement.classList.add("visible"); // o estilo css visible será adicionado
+      } else {
+        textElement.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+      }
+      if (window.pageYOffset >= 2000) {
+        textElement2.classList.add("visible"); // o estilo css visible será adicionado
+      } else {
+        textElement2.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+      }
     }
 
     window.addEventListener("scroll", mostrarTexto); //chamar a função mostrarTexto durante o scroll
-</script>
-<script src="../js/sBar.js"></script>
-<script src="../js/scrollAnimation.js"></script>
-
+  </script>
+  <script src="../js/sBar.js"></script>
+  <script src="../js/scrollAnimation.js"></script>
 </html>
