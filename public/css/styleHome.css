@@ -107,10 +107,6 @@
 
 body {
   min-height: 100vh;
-  background: url("../imagens/fundo_menu_cabuailo.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
 }
@@ -164,6 +160,10 @@ navbar {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  background: url("../imagens/fundo_menu_cabuailo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .-titulo {
@@ -195,7 +195,7 @@ h1 {
   align-items: center;
   text-align: center;
   color: white;
-  gap: 10px;
+  gap: 40px;
 }
 
 .botao_positivo {
