@@ -111,7 +111,7 @@ navbar {
 }
 
 p {
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 h1 {
@@ -139,9 +139,9 @@ h1 {
 }
 
 .botao_saiba {
-  width: 15em;
+  width: clamp(5em, 15em, 20em);
   padding: 1em;
-  font-size: 1.5em;
+  font-size: clamp(1em, 2.5vw, 2em);
   text-align: left;
   color: white;
   border-left: solid 5px #FFF;
@@ -154,8 +154,8 @@ h1 {
 
 button {
   width: clamp(5em, 15em, 20em);
-  padding: 1em;
-  font-size: clamp(1.5em, 2.5vw, 2em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 2em);
   color: white;
   border: solid rgba(217, 217, 217, 0.01);
   transition: 1s;
