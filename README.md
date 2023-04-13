@@ -21,6 +21,7 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
 - *(17/03/2023)*
     - Caso tenha tempo, finalizar página de login (uma das três necessárias para prox. etapa da entrega)
     - Criar classes globais para cores
+    
 - *(22/03/2023)*
     - Classe global de cor criada
     - Identar melhor o código
@@ -28,12 +29,3 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Criação de um arquivo JavaScript, para funcionamento de botões específicos "limpar" formulário (procurar forma melhor de realizar a função)
     - Nomes de arquivos organizados
     * Talvez a página de login esteja feita
-    
-- *(11/04/2023)*
-    - Início da implementação de um design responsivo
-    - Design do layout sendo trabalhado no FIGMA
-    - Tela de Login e Cadastro quase concluídas
-    - Desenvolvimento do banco de dados (já salva dados como email e senha em um banco de dados)
-
-- *(12/04/2023)*
-    - Substituir o design responsivo com media query e utilizar CSS moderno (clamp, min, max)
