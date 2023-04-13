@@ -29,10 +29,3 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Criação de um arquivo JavaScript, para funcionamento de botões específicos "limpar" formulário (procurar forma melhor de realizar a função)
     - Nomes de arquivos organizados
     * Talvez a página de login esteja feita
-    
-- *(29/03/2023)*
-    - Menu novo
-    - Otimização das telas de login / cadastro
-    - Fazer validação utilizando JavaScript
-    - Adicionar informações na tela de início
-    - Criação da branch secondary

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+:root {
+    --transparencia: linear-gradient(-45deg, black, hsla(0, 0%, 100%, 0));
+    --gradient: linear-gradient(-90deg, purple, orange, blue);
+}
+
+.cor--branca {
+    color: white;
+}
+
+.--escondido {
+    display: none;
+}
+
+/*
+ centralizar elementos em tela
+*/
+
+.centralizar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('../imagens/cara-barbeando.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+ ajustar conteudo filho para exibir conteúdo
+ um em cima do outro ( flex direction column)
+*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 100vh;
+    filter: drop-shadow(0 -25px 20px #1c1c1c);
+    background: #1c1c1c;
+}
+
+/* Estilos titulo */
+.main--text {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+} 
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 5em;
+} 
+
+p {
+    font-size: 1rem;
+} 
+
+a {
+    color: white;
+    font-weight: bold   ;
+    transition: .5s;
+    text-decoration: none;
+} 
+
+a:hover {
+    color: red;
+}
+
+/* 
+ Estilos formulário
+*/
+.form-login {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    background: none;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: none;
+    border: solid 1px;
+} input:focus {
+    outline: none;
+} ::placeholder {
+    font-size: 1rem;
+    color: white;
+}
+
+/*
+ Posicionamento checkbox:
+*/
+.checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    background: none;
+}
+
+/*
+ Botões enviar/limpar
+*/
+button {
+    background: none;
+    padding: 10px;
+    margin-top: 20px;
+    border: solid 1px white;
+    font-size: 1.5rem;
+    transition: 1s;
+}
+
+button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+}

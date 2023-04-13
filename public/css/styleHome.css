@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
+/* responsividade */
+
+@media (max-width: 1370px) {
+  .navlinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #202020;
+  overflow-x: hidden;
+}
+
+navbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  padding: 0px 80px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+navbar {
+  transition: all 700ms ease-in-out;
+}
+
+.scroll-down navbar {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up navbar {
+  filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 125px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #3299cc;
+}
+
+.d2 {
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("../imagens/fundo_menu_cabuailo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.-titulo {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 80px;
+  gap: 20px;
+  width: clamp(20rem, 100%, 70rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 900;
+  font-style: normal;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+  gap: 40px;
+}
+
+.botao_positivo {
+  background: rgba(217, 217, 217, 0.01);
+  border: 3px solid #21EB00;
+  border-radius: 40px;
+  color: #21EB00;
+  backdrop-filter: blur(15px);
+}
+
+.botao_saiba {
+  width: clamp(5em, 15em, 20em);
+  padding: 1em;
+  font-size: clamp(1em, 2.5vw, 2em);
+  text-align: left;
+  color: white;
+  border-left: solid 5px #FFF;
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  background: none;
+  transition: 1s;
+}
+
+@media (min-width: 50px) and (max-width: 450px) {
+    .container-button {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+}
+
+button {
+  width: clamp(5em, 15em, 20em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 2em);
+  color: white;
+  border: solid rgba(217, 217, 217, 0.01);
+  transition: 1s;
+}
+
+.botao_positivo:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+section {
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  background: #675d50;
+  filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+
+.text {
+  color: white;
+  padding: 0px 80px;
+}
+
+/* estes estilos são aplicados apenas a classe animated-text */
+.hidden .animated-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible .animated-text {
+  opacity: 1;
+  transform: translateY(0);
+}
