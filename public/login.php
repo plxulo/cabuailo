@@ -35,7 +35,7 @@
     $mail = new gerenciamentoSenha();
 
     echo("<br>");
-    echo("Sua senha é: " . $mail->getUser()); //exibir usuário
+    echo("Seu usuário é: " . $mail->getUser()); //exibir usuário
     echo("<br>");
 
     echo("<br>");
