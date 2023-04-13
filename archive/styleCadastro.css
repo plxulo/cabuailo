@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+:root {
+    --transparencia: linear-gradient(-45deg, black, hsla(0, 0%, 100%, 0));
+    --gradient: linear-gradient(-90deg, purple, orange, blue);
+}
+
+.cor--branca {
+    color: white;
+}
+
+.centralizar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--gradient);
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background-size: 400% 400%; /* ESSENCIAL PARA ANIMAR O GRADIENTE */
+  animation: gradientAnimation2 10s ease infinite alternate;
+}
+
+@keyframes gradientAnimation2 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*
+ ajustar o formulário para exibir conteúdo
+ um em cima do outro ( flex direction column)
+*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*alinha na direita (eixo X)*/
+    align-items: center; /*alinha na vertical*/
+    width: 800px;
+    height: 100vh;
+    border-right: 2px solid white;
+    background: #1c1c1c;
+    background-size: 400% 400%;
+    backdrop-filter: blur(10vmax);
+    animation: gradientAnimation 10s ease infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main--text {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+}
+
+h1 {
+    padding: 0;
+    margin: 0; /*ajustar espaçamento, fica agradável*/
+    font-size: 5em;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    color: white;
+    font-weight: bold   ;
+    transition: .5s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+/* 
+ FORMULARIO --
+ EXIBIR CONTEUDO EM PILHA
+*/
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    background: none;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: none;
+    border: solid 1px;
+} input:focus {
+    outline: none;
+} ::placeholder {
+    font-size: 1rem;
+    color: white;
+}
+
+/*
+ POSICIONAR DIV CHECKBOX:
+*/
+.checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    background: none;
+}
+
+/*
+ Btn enviar/limpar
+*/
+button {
+    background: none;
+    padding: 10px;
+    margin-top: 20px;
+    border: solid 1px white;
+    font-size: 1.5rem;
+    transition: 1s;
+}
+
+button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+}

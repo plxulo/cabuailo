@@ -49,7 +49,7 @@ navbar {
   display: flex;
   position: fixed;
   width: 100%;
-  padding: 0px 80px;
+  padding: 0px 0px 0px 80px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   z-index: 1;
@@ -73,6 +73,8 @@ navbar {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  --contentWidth: 100%;
+  padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
 }
 
 .navbar a {
@@ -92,9 +94,9 @@ navbar {
   height: 100svh;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   background: url("../imagens/fundo_menu_cabuailo.png");
   background-position: center;
   background-size: cover;
@@ -111,7 +113,7 @@ navbar {
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
 h1 {
@@ -154,15 +156,15 @@ h1 {
 
 @media (min-width: 50px) and (max-width: 450px) {
     .container-button {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-        align-content: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      align-content: flex-start;
     }
 }
 
 button {
-  width: clamp(5em, 15em, 20em);
+  width: clamp(5em, 100%, 20em);
   padding: 1rem;
   font-size: clamp(1em, 2.5vw, 2em);
   color: white;

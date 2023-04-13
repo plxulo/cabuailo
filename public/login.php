@@ -40,8 +40,8 @@
     //realizar conexão com o banco de dados, segue comandos admin
 
     $servername = 'localhost';
-    $username = 'cabuailo';
-    $password = '9o5oYO3WJrASZin-';
+    $username = 'root';
+    $password = '';
     $dbname = 'cabuailo';
 
     //criar a conexão:
