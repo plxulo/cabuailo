@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/styleHome.css" />
+  <title>Document</title>
+  <link rel="icon" href="icone.ico" widht="100%" />
+</head>
+
+<body>
+  <div class="d1">
+    <navbar>
+      <img src="../imagens/logo.png" width="120px" />
+      <nav class="navbar">
+        <div class="navlinks">
+          <a href="#">Home</a>
+          <a href="#">Serviços</a>
+          <a href="#">Contato</a>
+          <a href="../html/LoginScreen.html">Minha conta</a>
+        </div>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </navbar>
+  </div>
+  <div class="d2">
+    <header class="-titulo">
+      <h1>Cresça seu negócio com a Cabuailo Enterprises™</h1>
+      <p>O sistema Cabuailo é o <b>ideal</b> para quem deseja <b>expandir</b> e <b>administrar</b> o seu empreendimento
+        com <b>segurança.</b></p>
+      <div class="container-button">
+        <button class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
+        <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
+      </div>
+    </header>
+  </div>
+
+  <!-- seção dois animada com hidden -->
+  <!-- section class="hidden" seleciona todos os elementos filho -->  
+<section>
+  <div class="">
+    <h1>Cabuailo</h1>
+  </div> 
+  <div class="section_container2">
+    <div class="texto"></div>
+    <div class="ilustração"></div>
+  </div>
+</section>
+
+  <!--
+    <section class="hidden">
+      <div class="text animated-text">
+        <h1 class="main-title">LOREM IPSUM</h1>
+        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime soluta vero voluptate earum natus fuga
+          est, deleniti consequatur unde minima ratione voluptatum, pariatur aliquam quos sequi veniam accusamus illo
+          reprehenderit!</p>
+      </div>
+    </section>
+  -->
+  
+</body>
+<script>
+  const textElement = document.querySelector(".hidden"); // pegar os elementos de classe hidden
+  const textElement2 = document.querySelector(".sec2 .hidden");
+
+  function mostrarTexto() {
+    if (window.pageYOffset >= 1000) {
+      // quando a posição Y da pagina for >= 1000
+      textElement.classList.add("visible"); // o estilo css visible será adicionado
+    } else {
+      textElement.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+    }
+    if (window.pageYOffset >= 2000) {
+      textElement2.classList.add("visible"); // o estilo css visible será adicionado
+    } else {
+      textElement2.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+    }
+  }
+
+  window.addEventListener("scroll", mostrarTexto); //chamar a função mostrarTexto durante o scroll
+</script>
+<script src="../js/sBar.js"></script>
+<script src="../js/scrollAnimation.js"></script>
+
+</html>

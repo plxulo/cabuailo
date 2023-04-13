@@ -21,6 +21,7 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
 - *(17/03/2023)*
     - Caso tenha tempo, finalizar página de login (uma das três necessárias para prox. etapa da entrega)
     - Criar classes globais para cores
+    
 - *(22/03/2023)*
     - Classe global de cor criada
     - Identar melhor o código
