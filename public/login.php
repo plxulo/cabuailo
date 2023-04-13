@@ -6,12 +6,19 @@
     class gerenciamentoSenha
     {
         public $user;
+        public $mail;
         private $password;
 
         public function __construct()
         {
-            $this-> user = $_POST['email'];
+            $this-> user = $_POST['user'];
+            $this-> mail = $_POST['email'];
             $this-> password = $_POST['senha'];
+        }
+
+        public function getUser()
+        {
+            return $this-> user; //retornar usuário
         }
 
         public function getPassword()
@@ -21,17 +28,22 @@
 
         public function getMail()
         {
-            return $this-> user;
+            return $this-> mail; //retornar email
         }
     }
 
-    $user = new gerenciamentoSenha();
+    $mail = new gerenciamentoSenha();
 
     echo("<br>");
-    echo("Sua senha é: " . $user->getPassword()); //exibir senha
+    echo("Sua senha é: " . $mail->getUser()); //exibir usuário
+    echo("<br>");
 
     echo("<br>");
-    echo("Seu email é: " . $user->getMail()); //exibir email
+    echo("Sua senha é: " . $mail->getPassword()); //exibir senha
+    echo("<br>");
+
+    echo("<br>");
+    echo("Seu email é: " . $mail->getMail()); //exibir email
     echo("<br>");
 
     //acima apenas checagens de funcionamento / recebimento de entradas
@@ -54,8 +66,8 @@
         die("Erro na conexão: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO usuarios (email, senha)
-            VALUES ('{$user->getMail()}', '{$user->getPassword()}')";
+    $sql = "INSERT INTO usuarios (usuario, email, senha)
+            VALUES ('{$mail->getUser()}', '{$mail->getMail()}', '{$mail->getPassword()}')";
 
     if ($conn->query($sql) === TRUE)
     {

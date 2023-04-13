@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
 /* DIVs para AJUSTE*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Overpass', sans-serif;
 }
 
 body {
@@ -228,7 +230,7 @@ navbar {
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     font-size: 1.1em;
-    color: rgb(19, 19, 19);
+    color: #FFF;
     background-color: #9A7647;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
