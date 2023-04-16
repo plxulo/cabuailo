@@ -1,3 +1,8 @@
+<!-- Página de cadastro para empreendimentos -->
+<!-- Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções -->
+<!-- Isso se deve ao fator de inclusão para pessoas com dificuldades -->
+<!-- https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,12 +16,14 @@
 </head>
 
 <body>
+
     <main class="container">
         <header class="content">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
             <a href="#">Saiba Mais</a>
         </header>
+        <!-- Formulário para cadastro de usuários com banco de dados -->
         <form aria-labelledby="cadastre-se" class="login" action="/cabuailo/public/login.php" method="post">
             <h2 id="cadastre-se">Cadastre-se</h2>
             <div class="input-box">
@@ -52,9 +59,21 @@
         </form>
     </main>
 
+    <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
+    <footer>
+        <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ul>
+    </footer>
+
 </body>
 <script src="../js/sBar.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
+
+<!-- Feito por SENAS TECH em 2023 -->
