@@ -1,6 +1,6 @@
 <!-- Página de cadastro para empreendimentos -->
 <!-- Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções -->
-<!-- Isso se deve ao fator de inclusão para pessoas com dificuldades -->
+<!-- Isso se deve ao fator de acessibilidade para pessoas com dificuldades -->
 <!-- https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html -->
 
 <!DOCTYPE html>
@@ -18,11 +18,13 @@
 <body>
 
     <main class="conteudo_login">
-        <header aria-label="Saiba mais">
-            <h2>Cabuailo</h2>
-            <p>O cabuailo é o chuairmi do hosmen</p>
-            <button href="#">Saiba Mais</button>
-        </header>
+        <aside>
+            <header aria-label="Saiba mais">
+                <h2>Cabuailo</h2>
+                <p>O cabuailo é o chuairmi do hosmen</p>
+                <button href="#">Saiba Mais</button>
+            </header>
+        </aside>
         <!-- Formulário para cadastro de usuários com banco de dados -->
         <form aria-labelledby="cadastre-se" class="login" action="/cabuailo/public/login.php" method="post">
             <h2 id="cadastre-se">Cadastre-se</h2>
@@ -59,7 +61,7 @@
         </form>
     </main>
 
-    <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
+    <!-- Informações da empresa, formas de contato (Não é uma barra de navegação)
     <footer>
         <ul>
         <li></li>
@@ -68,6 +70,7 @@
         <li></li>
         </ul>
     </footer>
+     -->
 
 </body>
 <script src="../js/sBar.js"></script>

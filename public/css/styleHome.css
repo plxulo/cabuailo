@@ -96,11 +96,11 @@ li {
   height: 100vh;
   height: 100svh;
   width: 100%;
+  background: url("../imagens/fundo_menu_cabuailo.png");
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: url("../imagens/fundo_menu_cabuailo.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
