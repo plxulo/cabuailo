@@ -1,4 +1,4 @@
-/* DIVs para AJUSTE*/
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -63,12 +63,11 @@ header button:hover {
 
 /* Estilização inputs do formulário */
 .user_login {
-    position: relative;
     width: 720px;
 }
 
 .user_login h2 {
-    font-size: 2em;
+    font-size: 3em;
     color: white;
     text-align: center;
 }
@@ -103,6 +102,7 @@ header button:hover {
     transition: 0.5s;
 }
 
+/* Animação no input assim que o mesmo for focado (por clique ou selecionado por teclado) */
 .input_box input:focus~label,
 .input_box input:valid~label {
     font-size: 0.8em;
@@ -119,16 +119,16 @@ header button:hover {
     z-index: 10;
 }
 
-.user_login .lembrarDeMim {
+/* Configurações da checkbox */
+.user_login .lembrar_de_mim {
     font-size: 1em;
     color: white;
     font-weight: 500;
     margin: -25px 0 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.lembrarDeMim label input {         
-    accent-color: red;  /*Mudar a COR da CHECKBOX */
+.lembrar_de_mim label input {         
+    accent-color: red;  /* Mudar a cor da checkbox */
     margin-right: 10px;
 }
 
@@ -140,10 +140,9 @@ header button:hover {
     border-radius: 40px;   
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: rgb(19, 19, 19);
     font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.5s;
 }
 
@@ -152,19 +151,18 @@ header button:hover {
 }
 
 .user_login .registrar {
-    font-size: 0.9em;
+    font-size: 1em;
     color: white;
     text-align: center;
     margin: 20px 0;
 }
 
-.user_login .registrar p a {
+.registrar a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    padding-left: 10px;
 }
 
-.user_login .registrar p a:hover {
+.user_login .registrar a:hover {
     text-decoration: underline;
 }
