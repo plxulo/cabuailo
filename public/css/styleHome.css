@@ -189,10 +189,43 @@ section {
   justify-content: center;
 }
 
+section2 {
+  
+}
+
 .section_container1 {
   width: 100%;
+  height: 100px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+}
+
+.section_container1 h1 {
+  color: rgb(241, 241, 241);
+}
+
+.section_container2 {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.section_container2 .texto {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  font-size: 20px;
+
+  background-color: blue;
+}
+
+.section_container2 .ilustracao {
+  width: 40%;
+  height: 100%;
+
+  background-color: blue;
 }
 
 /*
