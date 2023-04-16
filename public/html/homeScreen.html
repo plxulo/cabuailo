@@ -28,35 +28,50 @@
         <li><a href="../html/LoginScreen.html">Minha conta</a></li>
       </ul>
       <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div class="linha_hamburguer"></div>
+        <div class="linha_hamburguer"></div>
+        <div class="linha_hamburguer"></div>
       </div>
     </nav>
   </navbar>
   
   <!-- Título (apresentação da marca e o que ela faz) e botão call-to-action -->
-  <main class="main">
+  <main aria-labelledby="titulo_principal" class="main">
     <header class="-titulo">
-      <h1>Cresça seu negócio com a Cabuailo Enterprises™</h1>
+      <h1 id="titulo_principal">Cresça seu negócio com a Cabuailo Enterprises™</h1>
       <p>O sistema Cabuailo é o <b>ideal</b> para quem deseja <b>expandir</b> e <b>administrar</b> o seu empreendimento
         com <b>segurança.</b></p>
-      <div class="container-button">
+      <section class="botao_container">
         <button class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
         <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
-      </div>
+      </section>
     </header>
   </main>
 
-  <section class="hidden">
-    <div class="text animated-text">
-      <h1 class="main-title">NOSSOS VALORES</h1>
+  <!-- Sections sempre precisam ter um header (W3C Standard) -->
+  <!-- A seção deve ter nossos 3 principais produtos e serviços -->
+  <section aria-labelledby="nossos_serviços" title="valores" id="section_1" class="hidden">
+    <header class="text animated-text">
+      <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime soluta vero voluptate earum natus fuga est,
         deleniti consequatur unde minima ratione voluptatum, pariatur aliquam quos sequi veniam accusamus illo
         reprehenderit!</p>
-    </div>
+    </header>
   </section>
   
+  <!-- Seção CTA -->
+  <section aria-labelledby="call_to_action" title="formulário de contato" id="section_2" class="hidden">
+    <header class="text animated-text">
+      <h1 id="call_to_action">Vamos trabalhar juntos?</h1>
+      <form aria-labelledby="titulo_cta" action="" method="post" class="login">
+        <!-- ID para aria-labelledby -->
+        <h2 id="titulo_cta">Faça contato!</h2>
+        <textarea></textarea>
+        <button class="botao_positivo" type="submit">Enviar</button>
+      </form>
+    </header>
+  </section>
+
   <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
   <footer>
     <ul>
@@ -68,20 +83,22 @@
   </footer>
   
 </body>
+
+<!-- Scripts carregados após o body -->
 <script>
   const textElement = document.querySelector(".hidden"); // Selecionar os elementos de classe hidden
   const textElement2 = document.querySelector(".sec2 .hidden");
 
   function mostrarTexto() {
-    if (window.pageYOffset >= 1000) { // Se a posição Y da pagina for >= 1000
+    if (window.pageYOffset >= 1000) { // Se a posição Y da página for >= 1000
       textElement.classList.add("visible"); // O estilo css visible será adicionado
     } else {
       textElement.classList.remove("visible"); // Caso contrário será removido (por padrão temos a seção como hidden)
     }
-    if (window.pageYOffset >= 2000) {
-      textElement2.classList.add("visible");
+    if (window.pageYOffset >= 2000) { // Se a posição Y da página for >= 2000
+      textElement2.classList.add("visible"); // O estilo css visible será adicionado
     } else {
-      textElement2.classList.remove("visible");
+      textElement2.classList.remove("visible"); // Caso contrário será removido (por padrão temos a seção como hidden)
     }
   }
 

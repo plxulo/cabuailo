@@ -1,6 +1,22 @@
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
-/* responsividade */
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+body {
+  background: #202020;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+}
+
+/* Media query para um menu responsivo em dispositivos menores */
 
 @media (max-width: 1370px) {
   .navlinks {
@@ -11,7 +27,7 @@
     display: block;
   }
 
-  .line {
+  .linha_hamburguer {
     width: 25px;
     height: 3px;
     background-color: #fff;
@@ -25,25 +41,11 @@
   }
 }
 
-.line {
+.linha_hamburguer {
   width: 25px;
   height: 3px;
   background-color: #fff;
   margin: 5px;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  background: #202020;
-  overflow-x: hidden;
-  font-family: 'Overpass', sans-serif;
-  margin: 0;
 }
 
 navbar {
@@ -51,11 +53,12 @@ navbar {
   position: fixed;
   width: 100%;
   padding: 0px 0px 0px 80px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   z-index: 1;
 }
 
+/* Animação da navbar com base no estado do scroll */
 navbar {
   transition: all 700ms ease-in-out;
 }
@@ -64,17 +67,13 @@ navbar {
   transform: translate3d(0, -100%, 0);
 }
 
-.scroll-up navbar {
-  filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
-}
-
 nav {
+  --contentWidth: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  --contentWidth: 100%;
   padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
 }
 
@@ -128,7 +127,7 @@ h1 {
   margin: 0;
 }
 
-.container-button {
+.botao_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -161,7 +160,7 @@ h1 {
 }
 
 @media (min-width: 50px) and (max-width: 450px) {
-  .container-button {
+  .botao_container {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
@@ -186,7 +185,7 @@ button {
   background: rgba(0, 0, 0, 0.3);
 }
 
-section {
+#section_1 {
   height: 100vh;
   height: 100svh;
   width: 100%;
