@@ -1,137 +1,86 @@
 /* DIVs para AJUSTE*/
 * {
-    margin: 0;
-    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
-    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
     background: url('../imagens/cara-barbeando.jpg');
+    font-family: 'Overpass', sans-serif;
     background-size: cover;
     background-position: left top;
-    display: flex;
-    flex-direction: column
 }
-.container {
-    position: relative;
-    width: 100%;
+
+.conteudo_login {
     height: 100vh;
+    padding: 100px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 80px 250px 0;
-    justify-content: space-between;
+    align-content: center;
 }
 
-/* DIVs para ESTILIZAÇÃO*/
-/* Estilização NAVBAR*/
-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Posicionamento e estilização do texto */
+.conteudo_login header {
+    width: clamp(5em, 100%, 20em);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
-    padding: 0px 80px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(5px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    z-index: 9999;
-}
-
-navbar {
-    transition: all 700ms ease-in-out;
-}
-
-.scroll-down navbar {
-    transform: translate3d(0, -100%, 0);
-}
-
-.scroll-up navbar {
-    filter: drop-shadow(0 -10px 20px rgb(170,170,170));
-}
-
-.navbar a {
     color: white;
-    font-size: 25px;
-    text-decoration: none;
-    margin-left: 70px;
-    transition: 0.3s;
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: 0.5s;
-}
-
-.navbar a:hover {
-    transform: scaleX(1);
-}
-
-/*Estilização container*/
-/* Content*/
-.container .content {
-    max-width: 600px;
-    color: white;    
-}
-
-.content h2 {
+header h2 {
     font-size: 5em;
-    letter-spacing: .03em;
+    margin: 0;
 }
 
-.content p {
-    margin: 10px 0 40px;
+header p {
     font-size: 1.5em;
-
 }
 
-.content a {
+header button {
     color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    font-weight: 500;
-    padding: 10px 40px;
+    padding: 1rem;
+    font-size: clamp(1em, 2.5vw, 2em);
     border-radius: 40px;
-    transition: 0.5s;
+    background: rgba(217, 217, 217, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    transition: 1s;
 }
 
-.content a:hover {
+header button:hover {
     background-color: black;
-    
 }
 
-/* Parte dos INPUTS de LOGIN*/
-
-.container .login {
+/* Estilização inputs do formulário */
+.user_login {
     position: relative;
-    width: 440px;   
+    width: 720px;
 }
 
-.login h2 {
+.user_login h2 {
     font-size: 2em;
     color: white;
     text-align: center;
 }
 
-.login .input-box {
+.user_login .input_box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 40px 0;
 }
 
-.input-box input {
+.input_box input {
     width: 100%;
     height: 100%;
     background: rgba(217, 217, 217, 0.1);
@@ -144,7 +93,7 @@ navbar {
     padding: 0 25px 0 45px;
 }
 
-.input-box label {
+.input_box label {
     position: absolute;
     top: 50%;
     left: 45px;
@@ -154,14 +103,14 @@ navbar {
     transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input_box input:focus~label,
+.input_box input:valid~label {
     font-size: 0.8em;
     top: -14px;
     left: 17px;
 }
 
-.input-box .icon {
+.input_box .icon {
     position: absolute;
     top: 14px;
     left: 15px;
@@ -170,7 +119,7 @@ navbar {
     z-index: 10;
 }
 
-.login .lembrarDeMim {
+.user_login .lembrarDeMim {
     font-size: 1em;
     color: white;
     font-weight: 500;
@@ -183,7 +132,7 @@ navbar {
     margin-right: 10px;
 }
 
-.login .btn-login {
+.user_login .btn-login {
     width: 100%;
     height: 50px;
     border: none;
@@ -198,24 +147,24 @@ navbar {
     transition: 0.5s;
 }
 
-.login .btn-login:hover {
+.user_login .btn-login:hover {
     background-color: rgb(177, 177, 177);
 }
 
-.login .registrar {
+.user_login .registrar {
     font-size: 0.9em;
     color: white;
     text-align: center;
     margin: 20px 0;
 }
 
-.login .registrar p a {
+.user_login .registrar p a {
     color: white;
     text-decoration: none;
     font-weight: 700;
     padding-left: 10px;
 }
 
-.login .registrar p a:hover {
+.user_login .registrar p a:hover {
     text-decoration: underline;
 }

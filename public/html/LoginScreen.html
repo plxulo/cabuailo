@@ -20,21 +20,26 @@
 
 <body>
 
-    <main class="container">
-        <header class="content">
-            <h2>Cabuailo</h2>
-            <p>O cabuailo é o chuairmi do hosmen</p>
-            <a href="#">Saiba Mais</a>
-        </header>
-        <form aria-labelledby="login" action="" method="post" class="login">
+    <main class="conteudo_login">
+        <!-- Texto aside -->
+        <aside>
+            <header aria-label="Saiba mais">
+                <h2>Cabuailo</h2>
+                <p>O cabuailo é o chuairmi do hosmen</p>
+                <button href="#">Saiba Mais</button>
+            </header>
+        </aside>
+
+        <!-- Formulário para login de usuários com banco de dados -->
+        <form aria-labelledby="login" action="" method="post" class="user_login">
             <!-- ID para aria-labelledby -->
             <h2 id="login">Faça Login</h2>
-            <div class="input-box">
+            <div class="input_box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" name="email" required>
                 <label>Seu E-mail</label>
             </div>
-            <div class="input-box">
+            <div class="input_box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input type="password" name="senha" required>
                 <label>Sua senha</label>
@@ -48,16 +53,6 @@
             </div>
         </form>
     </main>
-
-    <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
-    <footer>
-        <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        </ul>
-    </footer>
 
 </body>
 
