@@ -30,6 +30,7 @@ body {
 
 /* Posicionamento e estilização do texto */
 .conteudo_cadastro header {
+    width: clamp(5em, 100%, 20em);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -48,23 +49,21 @@ header p {
 
 header button {
     color: white;
-    width: clamp(5em, 100%, 20em);
     padding: 1rem;
     font-size: clamp(1em, 2.5vw, 2em);
     border-radius: 40px;
     background: rgba(217, 217, 217, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(15px);
-    transition: 0.5s;
+    transition: 1s;
 }
 
 header button:hover {
     background-color: black;
 }
 
-/* Parte dos INPUTS de LOGIN*/
-
-.conteudo_cadastro .user_cadastro {
+/* Estilização inputs do formulário */
+.user_cadastro {
     position: relative;
     width: 720px;
 }
@@ -121,7 +120,7 @@ header button:hover {
     z-index: 10;
 }
 
-/* ter.termos_uso os TERMOS DE USO INPUT*/
+/* Termos de uso */
 .user_cadastro .termos_uso {
     font-size: 1em;
     color: white;
@@ -140,41 +139,38 @@ header button:hover {
     font-weight: 700;
 }
 
-/* BOTÃO REGISTRAR */
+/* Botão de cadastro */
 .user_cadastro .btn_cadastro {
     width: 100%;
-    height: 50px;
+    padding: 1rem;
     border: none;
-    outline: none;
     border-radius: 40px;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-weight: 500;   
     color: #FFF;
     background-color: #9A7647;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: 0.5s;
+    transition: 1s;
 }
 
+/* Texto com link para página de login caso conta exista */
 .user_cadastro .btn_cadastro:hover {
     background-color: #6d593e;
+    cursor: pointer;
 }
 
 .user_cadastro .fazer_login {
-    font-size: 0.9em;
+    font-size: 1em;
     color: white;
     text-align: center;
     margin: 20px 0;
 }
 
-.user_cadastro .fazer_login p a {
+.user_cadastro .fazer_login a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    padding-left: 10px;
 }
 
-.user_cadastro .fazer_login p a:hover {
+.user_cadastro .fazer_login a:hover {
     text-decoration: underline;
 }
