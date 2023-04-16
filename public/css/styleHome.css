@@ -7,6 +7,66 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
+/* Configuração do pre loader */
+#pre_loader {
+  background: #202020;
+  height: 100dvh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+#blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(200px);
+  z-index: 1;
+}
+
+#blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  height: 500px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+      to right,
+      aquamarine,
+      mediumpurple
+  );
+  animation: girar 15s infinite alternate;
+}
+
+#titulo_loading {
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  margin: 0rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 3;
+}
+
+@keyframes girar {
+  from {
+      rotate: 0deg;
+  }
+
+  50% {
+      scale: 1 1.5;
+  }
+
+  to {
+      rotate: 360deg;
+  }
+}
+
+
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
   background: #202020;

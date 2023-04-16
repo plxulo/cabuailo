@@ -13,10 +13,20 @@
   <link rel="stylesheet" href="../css/styleHome.css" />
   <title>Cabuailo</title>
   <link rel="icon" href="icone.ico" width="100%" />
+  <script defer src="../js/sBar.js"></script>
+  <script defer src="../js/scrollAnimation.js"></script>
+  <script defer src="/public/js/preLoader.js"></script>
+
 </head>
 
 <body>
-  
+  <!-- Animação pre-loader -->
+  <div id="pre_loader">
+    <div id="blob"></div>
+    <div id="blur"></div>
+    <h1 id="titulo_loading">CARREGANDO</h1>
+  </div>
+
   <!-- Barra de navegação com botão CTA (Header) -->
   <navbar aria-label="Navegação primária">
     <img aria-label="Logo da Cabuailo" src="../imagens/logo.png" width="100px" />
@@ -104,8 +114,17 @@
 
   window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
 </script>
-<script src="../js/sBar.js"></script>
-<script src="../js/scrollAnimation.js"></script>
+
+<script>
+document.addEventListener('mousemove', function(event) {
+  var blob = document.getElementById('blob');
+
+  blob.animate ({
+      left: event.clientX + 'px',
+      top: event.clientY + 'px'  
+  }, { duration: 3000, fill: "forwards" });
+});
+</script>
 
 </html>
 
