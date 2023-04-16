@@ -17,11 +17,11 @@
 
 <body>
 
-    <main class="container">
-        <header class="content">
+    <main class="conteudo_login">
+        <header aria-label="Saiba mais">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
-            <a href="#">Saiba Mais</a>
+            <button href="#">Saiba Mais</button>
         </header>
         <!-- Formulário para cadastro de usuários com banco de dados -->
         <form aria-labelledby="cadastre-se" class="login" action="/cabuailo/public/login.php" method="post">
@@ -34,7 +34,7 @@
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" name="email" required>
-                <label>Seu E-mail</label>
+                <label>Seu e-mail ou número de telefone</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
@@ -48,11 +48,11 @@
                     <a href="https://www.chabad.org/library/bible_cdo/aid/9920#lt=he">termos de uso</a>
                 </label>
             </div>
-
+            <!-- Entrar com google -->
             <div class="entrarGoogle">
 
             </div>
-            <button type="submit" class="btn-login">Registre-se</button>
+            <button type="submit" class="btn-login">Cadastre-se</button>
             <div class="fazer_login">
                 <p>Já possui uma conta?<a href="/public/html/LoginScreen.html">Fazer login</a></p>
             </div>

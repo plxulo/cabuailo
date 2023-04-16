@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     background: url('../imagens/cara-barbeando.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: left top;
     display: flex;
     flex-direction: column
 }

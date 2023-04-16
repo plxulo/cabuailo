@@ -1,128 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
-
-/* DIVs para AJUSTE*/
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
 * {
-    margin: 0;
-    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Overpass', sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
-    min-height: 100vh;
     background: url('../imagens/cara-barbeando.jpg');
+    font-family: 'Overpass', sans-serif;
     background-size: cover;
-    background-position: center;
+    background-position: left top;
     display: flex;
     flex-direction: column
 }
 
-.container {
-    position: relative;
+.conteudo_login {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     padding: 80px 250px 0;
     justify-content: space-between;
 }
 
-/* DIVs para ESTILIZAÇÃO*/
-/* Estilização NAVBAR*/
-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0px 80px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(5px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    z-index: 9999;
-}
-
-navbar {
-    transition: all 700ms ease-in-out;
-}
-
-.scroll-down navbar {
-    transform: translate3d(0, -100%, 0);
-}
-
-.scroll-up navbar {
-    filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
-}
-
-.navbar a {
-    color: white;
-    font-size: 25px;
-    text-decoration: none;
-    margin-left: 70px;
-    transition: 0.3s;
-}
-
-.navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: 0.5s;
-}
-
-.navbar a:hover {
-    transform: scaleX(1);
-}
-
-/*Estilização container*/
+/*Estilização conteudo_login*/
 /* Content*/
-.container .content {
+.conteudo_login header {
     max-width: 600px;
     color: white;
 }
 
-.content h2 {
+header h2 {
     font-size: 5em;
     letter-spacing: .03em;
 }
 
-.content p {
+header p {
     margin: 10px 0 40px;
     font-size: 1.5em;
 
 }
 
-.content a {
+header button {
     color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    font-weight: 500;
-    padding: 10px 40px;
+    width: clamp(5em, 100%, 20em);
+    padding: 1rem;
+    font-size: clamp(1em, 2.5vw, 2em);
     border-radius: 40px;
+    background: rgba(217, 217, 217, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
     transition: 0.5s;
 }
 
-.content a:hover {
+header button:hover {
     background-color: black;
-
 }
 
 /* Parte dos INPUTS de LOGIN*/
 
-.container .login {
+.conteudo_login .login {
     position: relative;
-    width: 440px;
+    width: 720px;
 }
 
 .login h2 {
-    font-size: 2em;
+    font-size: 4em;
     color: white;
     text-align: center;
 }
