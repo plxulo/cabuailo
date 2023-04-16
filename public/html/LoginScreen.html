@@ -14,36 +14,35 @@
 </head>
 
 <body>
-    <div class="container2">
-        <div class="content">
+
+    <main class="container">
+        <header class="content">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
             <a href="#">Saiba Mais</a>
-        </div>
-        <div class="login">
-            <h2>Faça Login</h2>
-            <form action="" method="post">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" name="email" required>
-                    <label>Seu E-mail</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="senha" required>
-                    <label>Sua senha</label>
-                </div>
-                <div class="lembrarDeMim">
-                    <label><input type="checkbox">Lembre de mim</label>
-                </div>
-                <button type="submit" class="btn-login">Login</button>
-                <div class="registrar">
-                    <p>Não possui uma conta?<a href="../html/cadastro.html">Registre-se </a></p>
-                </div>
-            </form>
-        </div>
-    </div>
-
+        </header>
+        <form aria-labelledby="login" action="" method="post" class="login">
+            <!-- ID para aria-labelledby -->
+            <h2 id="login">Faça Login</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label>Seu E-mail</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="senha" required>
+                <label>Sua senha</label>
+            </div>
+            <div class="lembrarDeMim">
+                <label><input type="checkbox">Lembre de mim</label>
+            </div>
+            <button type="submit" class="btn-login">Login</button>
+            <div class="registrar">
+                <p>Não possui uma conta?<a href="../html/cadastro.html">Registre-se </a></p>
+            </div>
+        </form>
+    </main>
 
 </body>
 

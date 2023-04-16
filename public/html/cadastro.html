@@ -11,47 +11,46 @@
 </head>
 
 <body>
-    <div class="container2">
-        <div class="content">
+    <main class="container">
+        <header class="content">
             <h2>Cabuailo</h2>
             <p>O cabuailo é o chuairmi do hosmen</p>
             <a href="#">Saiba Mais</a>
-        </div>
-        <div class="login">
-            <h2>Cadastre-se</h2>
-            <form action="/cabuailo/public/login.php" method="post">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" name="user" required>
-                    <label>Seu nome</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" name="email" required>
-                    <label>Seu E-mail</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="senha" required>
-                    <label>Sua senha</label>
-                </div>
+        </header>
+        <form aria-labelledby="cadastre-se" class="login" action="/cabuailo/public/login.php" method="post">
+            <h2 id="cadastre-se">Cadastre-se</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" name="user" required>
+                <label>Seu nome</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label>Seu E-mail</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="senha" required>
+                <label>Sua senha</label>
+            </div>
 
-                <div class="aceito">
-                    <label><input type="checkbox">Aceito os <a
-                            href="https://www.chabad.org/library/bible_cdo/aid/9920#lt=he">termos de uso</a></label>
-                </div>
+            <div class="aceito">
+                <label>
+                    <input name="termos-de-uso" type="checkbox">Aceito os 
+                    <a href="https://www.chabad.org/library/bible_cdo/aid/9920#lt=he">termos de uso</a>
+                </label>
+            </div>
 
-                <div class="entrarGoogle">
+            <div class="entrarGoogle">
 
-                </div>
-                <button type="submit" class="btn-login">Registre-se</button>
-                <div class="fazer_login">
-                    <p>Já possui uma conta?<a href="/public/html/LoginScreen.html">Fazer login</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
-
+            </div>
+            <button type="submit" class="btn-login">Registre-se</button>
+            <div class="fazer_login">
+                <p>Já possui uma conta?<a href="/public/html/LoginScreen.html">Fazer login</a></p>
+            </div>
+        </form>
+    </main>
 
 </body>
 <script src="../js/sBar.js"></script>
