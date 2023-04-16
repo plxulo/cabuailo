@@ -1,3 +1,6 @@
+<!-- Seguir padrão W3 para dividir os elementos em seções -->
+<!-- https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,25 +15,25 @@
 
 <body>
   
-  <div class="d1">
-    <navbar>
-      <img src="../imagens/logo.png" width="100px" />
-      <nav class="navbar">
-        <div class="navlinks">
-          <a href="#">Home</a>
-          <a href="#">Serviços</a>
-          <a href="#">Contato</a>
-          <a href="../html/LoginScreen.html">Minha conta</a>
-        </div>
-        <div class="hamburger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-      </nav>
-    </navbar>
-  </div>
+  <!-- Barra de navegação com botão CTA -->
+  <navbar>
+    <img src="../imagens/logo.png" width="100px" />
+    <nav>
+      <ul class="navlinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="../html/LoginScreen.html">Minha conta</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </navbar>
   
+  <!-- Título (explica o serviço e o que ele faz) -->
   <div class="d2">
     <header class="-titulo">
       <h1>Cresça seu negócio com a Cabuailo Enterprises™</h1>
@@ -43,8 +46,6 @@
     </header>
   </div>
 
-  <!-- seção dois animada com hidden -->
-  <!-- section class="hidden" seleciona todos os elementos filho -->  
   <section class="hidden">
     <div class="text animated-text">
       <h1 class="main-title">NOSSOS VALORES</h1>
@@ -56,24 +57,23 @@
   
 </body>
 <script>
-  const textElement = document.querySelector(".hidden"); // pegar os elementos de classe hidden
+  const textElement = document.querySelector(".hidden"); // Selecionar os elementos de classe hidden
   const textElement2 = document.querySelector(".sec2 .hidden");
 
   function mostrarTexto() {
-    if (window.pageYOffset >= 1000) {
-      // quando a posição Y da pagina for >= 1000
-      textElement.classList.add("visible"); // o estilo css visible será adicionado
+    if (window.pageYOffset >= 1000) { // Se a posição Y da pagina for >= 1000
+      textElement.classList.add("visible"); // O estilo css visible será adicionado
     } else {
-      textElement.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+      textElement.classList.remove("visible"); // Caso contrário será removido (por padrão temos a seção como hidden)
     }
     if (window.pageYOffset >= 2000) {
-      textElement2.classList.add("visible"); // o estilo css visible será adicionado
+      textElement2.classList.add("visible");
     } else {
-      textElement2.classList.remove("visible"); // se nao sera removido (por padrao temos toda a seção hidden)
+      textElement2.classList.remove("visible");
     }
   }
 
-  window.addEventListener("scroll", mostrarTexto); //chamar a função mostrarTexto durante o scroll
+  window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
 </script>
 <script src="../js/sBar.js"></script>
 <script src="../js/scrollAnimation.js"></script>

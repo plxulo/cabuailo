@@ -33,12 +33,13 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background: #202020;
   overflow-x: hidden;
   font-family: 'Overpass', sans-serif;
@@ -67,7 +68,7 @@ navbar {
   filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
 }
 
-.navbar {
+nav {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -77,7 +78,7 @@ navbar {
   padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
 }
 
-.navbar a {
+nav a {
   color: white;
   font-size: 25px;
   text-decoration: none;
@@ -85,8 +86,12 @@ navbar {
   transition: 0.3s;
 }
 
-.navbar a:hover {
+nav a:hover {
   color: #3299cc;
+}
+
+li {  
+  display: inline-block;
 }
 
 .d2 {

@@ -79,4 +79,7 @@
     }
 
     $conn->close();
+
+    //validate
+    if ($mail->getUser() == "")
 ?>
