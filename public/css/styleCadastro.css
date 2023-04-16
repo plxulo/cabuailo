@@ -18,7 +18,7 @@ body {
 }
 
 /* Posicionamento do formulário e do texto */
-.conteudo_login {
+.conteudo_cadastro {
     height: 100vh;
     padding: 100px;
     display: flex;
@@ -29,7 +29,7 @@ body {
 }
 
 /* Posicionamento e estilização do texto */
-.conteudo_login header {
+.conteudo_cadastro header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -64,25 +64,25 @@ header button:hover {
 
 /* Parte dos INPUTS de LOGIN*/
 
-.conteudo_login .login {
+.conteudo_cadastro .user_cadastro {
     position: relative;
     width: 720px;
 }
 
-.login h2 {
+.user_cadastro h2 {
     font-size: 4em;
     color: white;
     text-align: center;
 }
 
-.login .input-box {
+.user_cadastro .input_box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 40px 0;
 }
 
-.input-box input {
+.input_box input {
     width: 100%;
     height: 100%;
     background: rgba(217, 217, 217, 0.1);
@@ -95,7 +95,7 @@ header button:hover {
     padding: 0 25px 0 45px;
 }
 
-.input-box label {
+.input_box label {
     position: absolute;
     top: 50%;
     left: 45px;
@@ -105,14 +105,14 @@ header button:hover {
     transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input_box input:focus~label,
+.input_box input:valid~label {
     font-size: 0.8em;
     top: -14px;
     left: 17px;
 }
 
-.input-box .icon {
+.input_box .icon {
     position: absolute;
     top: 14px;
     left: 15px;
@@ -121,55 +121,27 @@ header button:hover {
     z-index: 10;
 }
 
-/*DIV cuja a qual abriga as 2 CHECKBOXs*/
-.checks {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Lembre de MIM input*/
-.login .lembrarDeMim {
+/* ter.termos_uso os TERMOS DE USO INPUT*/
+.user_cadastro .termos_uso {
     font-size: 1em;
     color: white;
     font-weight: 500;
     margin: -25px 0 15px;
-    /*margin-bottom: 10px;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.lembrarDeMim label input {
+.termos_uso label input {
     accent-color: red;
-    /*Mudar a COR da CHECKBOX */
-    margin-right: 10px;
-    /*margin-bottom: 10px;*/
-}
-
-/* Aceito os TERMOS DE USO INPUT*/
-.login .aceito {
-    font-size: 1em;
-    color: white;
-    font-weight: 500;
-    margin: -25px 0 15px;
-    /*margin-top: 20px;*/
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.aceito label input {
-    accent-color: red;
-    /*Mudar a COR da CHECKBOX */
     margin-right: 10px;
 }
 
-.aceito a {
+.termos_uso a {
     color: red;
     font-weight: 700;
 }
 
-/* BOTÃO REGISTRAR*/
-.login .btn-login {
+/* BOTÃO REGISTRAR */
+.user_cadastro .btn_cadastro {
     width: 100%;
     height: 50px;
     border: none;
@@ -185,24 +157,24 @@ header button:hover {
     transition: 0.5s;
 }
 
-.login .btn-login:hover {
+.user_cadastro .btn_cadastro:hover {
     background-color: #6d593e;
 }
 
-.login .fazer_login {
+.user_cadastro .fazer_login {
     font-size: 0.9em;
     color: white;
     text-align: center;
     margin: 20px 0;
 }
 
-.login .fazer_login p a {
+.user_cadastro .fazer_login p a {
     color: white;
     text-decoration: none;
     font-weight: 700;
     padding-left: 10px;
 }
 
-.login .fazer_login p a:hover {
+.user_cadastro .fazer_login p a:hover {
     text-decoration: underline;
 }
