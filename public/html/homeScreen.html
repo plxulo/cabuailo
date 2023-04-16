@@ -116,14 +116,15 @@
 </script>
 
 <script>
-document.addEventListener('mousemove', function(event) {
-  var blob = document.getElementById('blob');
+  // Acessa o documento que executa uma função no mover do mouse
+  document.addEventListener('mousemove', function(event) {
+    var blob = document.getElementById('blob');
 
-  blob.animate ({
-      left: event.clientX + 'px',
-      top: event.clientY + 'px'  
-  }, { duration: 3000, fill: "forwards" });
-});
+    blob.animate ({
+        left: event.clientX + 'px', // Posição X do ID "blob"
+        top: event.clientY + 'px'  // Posição Y do ID "blob"
+    }, { duration: 3000, fill: "forwards" }); // Parâmetros da animação
+  });
 </script>
 
 </html>
