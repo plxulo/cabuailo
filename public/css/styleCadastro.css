@@ -9,7 +9,7 @@
 
 /* Configuração do pre loader */
 #pre_loader {
-    background: #F2F2F2;
+    background: #131316;
     height: 100dvh;
     width: 100%;
     position: fixed;
@@ -118,6 +118,11 @@ header button {
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(15px);
     transition: 1s;
+}
+
+header button a {
+    text-decoration: none;
+    color: white;
 }
 
 header button:hover {

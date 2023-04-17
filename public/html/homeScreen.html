@@ -1,7 +1,9 @@
-<!-- Landing page cabuailo, seguir princípios de UI/UX para conquistar clientes -->
-<!-- Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções -->
-<!-- Isso se deve ao fator de acessibilidade para pessoas com dificuldades -->
-<!-- https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html -->
+<!-- 
+  Landing page cabuailo, seguir princípios de UI/UX para conquistar clientes
+  Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
+  Isso se deve ao fator de acessibilidade para pessoas com dificuldades
+  https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
+-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,7 +32,9 @@
 
   <!-- Barra de navegação com botão CTA (Header) -->
   <navbar aria-label="Navegação primária">
+    <!-- Logo -->
     <img aria-label="Logo da Cabuailo" src="../imagens/logo.png" style="width:128px;height:128px;" />
+    
     <nav>
       <ul class="navlinks">
         <li><a href="#">Home</a></li>
@@ -56,26 +60,45 @@
         com <b>segurança.</b></p>
 
       <section class="botao_container">
-
         <button class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
         <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
-
       </section>
     </header>
   </main>
-
-  <!-- Sections sempre precisam ter um header (W3C Standard) -->
-  <!-- A seção deve ter nossos 3 principais produtos e serviços -->
+  <!-- 
+    Sections sempre precisam ter um header (W3C Standard)
+    A seção deve ter nossos 3 principais produtos e serviços 
+  -->
   <section aria-labelledby="nossos_serviços" title="Principais serviços" id="section_1" class="hidden">
     <header class="text animated_text">
       <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
     </header>
+
+    <!-- Seção com imagens horizontais -->
+    <section class="imagens_row">
+      <figure>
+        <img src="" alt="">
+        <figcaption>Descrição da imagem</figcaption>
+      </figure>
+
+      <figure>
+        <img src="/public/imagens/mulher-make.jpg" alt="">
+        <figcaption>Descrição da imagem</figcaption>
+      </figure>
+
+      <figure>
+        <img src="" alt="">
+        <figcaption>Descrição da imagem</figcaption>
+      </figure>
+    </section>
+
   </section>
 
   <!-- Seção CTA -->
   <section aria-labelledby="call_to_action" title="Entre em contato" id="section_2">
     <header class="text animated_text">
       <h1 id="call_to_action">Vamos trabalhar juntos?</h1>
+    </header>
 
       <form aria-labelledby="titulo_cta" action="" method="post" class="login">
         <h2 id="titulo_cta">Faça contato!</h2>
@@ -83,7 +106,6 @@
         <button class="botao_positivo" type="submit">Enviar</button>
       </form>
 
-    </header>
   </section>
 
   <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
