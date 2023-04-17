@@ -9,11 +9,12 @@
 
 /* Configuração do pre loader */
 #pre_loader {
-  background: #202020;
+  background: #F2F2F2;
   height: 100dvh;
   width: 100%;
   position: fixed;
   z-index: 100;
+  cursor: none;
 }
 
 #blur {
@@ -30,14 +31,16 @@
   top: 50%;
   translate: -50% -50%;
   border-radius: 50%;
-  height: 500px;
+  height: 750px;
   aspect-ratio: 1;
   background: linear-gradient(
       to right,
-      aquamarine,
-      mediumpurple
+      #6A2C70,
+      #B83B5E,
+      #F08A5D,
+      #F9ED69
   );
-  animation: girar 15s infinite alternate;
+  animation: girar_blob 15s infinite alternate;
 }
 
 #titulo_loading {
@@ -52,7 +55,7 @@
   z-index: 3;
 }
 
-@keyframes girar {
+@keyframes girar_blob {
   from {
       rotate: 0deg;
   }
