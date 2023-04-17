@@ -21,7 +21,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(200px);
   z-index: 1;
 }
 
@@ -43,18 +42,6 @@
   animation: girar_blob 15s infinite alternate;
 }
 
-#titulo_loading {
-  font-size: clamp(3rem, 10vw, 10rem);
-  color: white;
-  padding: 0rem clamp(1rem, 2vw, 3rem);
-  margin: 0rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  z-index: 3;
-}
-
 @keyframes girar_blob {
   from {
       rotate: 0deg;
@@ -67,6 +54,18 @@
   to {
       rotate: 360deg;
   }
+}
+
+#titulo_loading {
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: #131316;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  margin: 0rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 3;
 }
 
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
@@ -245,8 +244,8 @@ button {
 }
 
 #section_1 {
-  height: 100vh;
-  height: 100svh;
+  height: 60vh;
+  height: 60svh;
   width: 100%;
   background: #675d50;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
@@ -262,7 +261,7 @@ button {
 }
 
 .imagens_row figure img {
-  height: 200px;
+  height: 20rem;
   aspect-ratio: 1;
   background: #202020;
   margin: 0 10px;
@@ -275,6 +274,44 @@ button {
 .text {
   color: white;
   padding: 0px 80px;
+}
+
+#section_2 {
+  height: 60vh;
+  height: 60svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo_cta {
+  color: #fff;
+}
+
+#section_2 .form_contato {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+}
+
+#section_2 .form_contato .input_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+}
+
+.form_contato .botao_enviar {
+  width: 100%;
+  color: #202020;
+}
+
+footer ul {
+  text-align: center;
+  color: white;
 }
 
 /* Estes estilos são aplicados apenas a classe animated-text */

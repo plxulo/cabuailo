@@ -59,8 +59,8 @@
         empreendimento
         com <b>segurança.</b></p>
 
-      <section class="botao_container">
-        <button class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
+      <section aria-labelledby="botao_comece" class="botao_container">
+        <button id="botao_comece" class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
         <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
       </section>
     </header>
@@ -69,12 +69,13 @@
     Sections sempre precisam ter um header (W3C Standard)
     A seção deve ter nossos 3 principais produtos e serviços 
   -->
-  <section aria-labelledby="nossos_serviços" title="Principais serviços" id="section_1" class="hidden">
+  <section aria-labelledby="nossos_serviços" title="Principais serviços" id="section_1" class="">
     <header class="text animated_text">
       <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
     </header>
 
     <!-- Seção com imagens horizontais -->
+
     <section class="imagens_row">
       <figure>
         <img src="" alt="">
@@ -82,7 +83,7 @@
       </figure>
 
       <figure>
-        <img src="/public/imagens/mulher-make.jpg" alt="">
+        <img src="" alt="">
         <figcaption>Descrição da imagem</figcaption>
       </figure>
 
@@ -94,27 +95,42 @@
 
   </section>
 
+  <!-- Depoimentos de clientes -->
+  <section aria-labelledby="depoimentos">
+    <h1 id="depoimentos">Veja o que nossos clientes tem à dizer:</h1>
+
+    <section class="container_cards">
+      <section class="card_cliente"></section>
+      <section class="card_cliente"></section>
+      <section class="card_cliente"></section>
+    </section>
+  </section>
+
   <!-- Seção CTA -->
   <section aria-labelledby="call_to_action" title="Entre em contato" id="section_2">
     <header class="text animated_text">
       <h1 id="call_to_action">Vamos trabalhar juntos?</h1>
     </header>
 
-      <form aria-labelledby="titulo_cta" action="" method="post" class="login">
+      <form aria-labelledby="titulo_cta" action="" method="post" class="form_contato">
         <h2 id="titulo_cta">Faça contato!</h2>
-        <textarea></textarea>
-        <button class="botao_positivo" type="submit">Enviar</button>
-      </form>
 
+        <section class="input_section">
+          <input type="email" name="email" required="">
+          <textarea></textarea>
+          <button class="botao_enviar" type="submit">Enviar</button>
+        </section>
+
+      </form>
   </section>
 
   <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
   <footer>
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Termos de uso</li>
+      <li>Placeholder 1</li>
+      <li>Rua X, Bairro X, CEP tal</li>
+      <li>Cabuailo Enterprises™ todos os direitos reservados</li>
     </ul>
   </footer>
 

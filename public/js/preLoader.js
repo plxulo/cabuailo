@@ -10,11 +10,11 @@ window.addEventListener("load", function(){
 // ================== LOADING ================== //
 
 // Acessa o documento que executa uma função no mover do mouse
-document.addEventListener('mousemove', function(event) {
-var blob = document.getElementById('blob');
+document.addEventListener("mousemove", function(event) {
+    var blob = document.getElementById('blob');
 
-blob.animate ({
-    left: event.clientX + 'px', // Posição X do ID "blob"
-    top: event.clientY + 'px'  // Posição Y do ID "blob"
-}, { duration: 3000, fill: "forwards" }); // Parâmetros da animação
+    blob.animate ({
+        left: event.clientX + 'px', // Posição X do ID "blob"
+        top: event.clientY + 'px'  // Posição Y do ID "blob"
+    }, { duration: 3000, fill: "forwards" }); // Parâmetros da animação
 });
