@@ -13,9 +13,11 @@
   <link rel="stylesheet" href="../css/styleHome.css" />
   <title>Cabuailo</title>
   <link rel="icon" href="icone.ico" width="100%" />
+
   <script defer src="../js/sBar.js"></script>
   <script defer src="../js/scrollAnimation.js"></script>
   <script defer src="/public/js/preLoader.js"></script>
+
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 
   <!-- Barra de navegação com botão CTA (Header) -->
   <navbar aria-label="Navegação primária">
-    <img aria-label="Logo da Cabuailo" src="../imagens/logo.png" width="100px" />
+    <img aria-label="Logo da Cabuailo" src="../imagens/logo.png" style="width:128px;height:128px;" />
     <nav>
       <ul class="navlinks">
         <li><a href="#">Home</a></li>
@@ -36,6 +38,7 @@
         <li><a href="#">Contato</a></li>
         <li><a href="../html/LoginScreen.html">Minha conta</a></li>
       </ul>
+
       <div class="hamburger">
         <div class="linha_hamburguer"></div>
         <div class="linha_hamburguer"></div>
@@ -43,16 +46,20 @@
       </div>
     </nav>
   </navbar>
-  
+
   <!-- Título (apresentação da marca e o que ela faz) e botão call-to-action -->
   <main aria-labelledby="titulo_principal" class="conteudo_principal">
     <header class="sobre_cabuailo">
       <h1 id="titulo_principal">Cresça seu negócio com a Cabuailo Enterprises™</h1>
-      <p>O sistema Cabuailo é o <b>ideal</b> para quem deseja <b>expandir</b> e <b>administrar</b> o seu empreendimento
+      <p>O sistema Cabuailo é o <b>ideal</b> para quem deseja <b>expandir</b> e <b>administrar</b> o seu
+        empreendimento
         com <b>segurança.</b></p>
+
       <section class="botao_container">
+
         <button class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
         <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
+
       </section>
     </header>
   </main>
@@ -62,21 +69,20 @@
   <section aria-labelledby="nossos_serviços" title="Principais serviços" id="section_1" class="hidden">
     <header class="text animated_text">
       <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime soluta vero voluptate earum natus fuga est,
-        deleniti consequatur unde minima ratione voluptatum, pariatur aliquam quos sequi veniam accusamus illo
-        reprehenderit!</p>
     </header>
   </section>
-  
+
   <!-- Seção CTA -->
   <section aria-labelledby="call_to_action" title="Entre em contato" id="section_2">
     <header class="text animated_text">
       <h1 id="call_to_action">Vamos trabalhar juntos?</h1>
+
       <form aria-labelledby="titulo_cta" action="" method="post" class="login">
         <h2 id="titulo_cta">Faça contato!</h2>
         <textarea></textarea>
         <button class="botao_positivo" type="submit">Enviar</button>
       </form>
+
     </header>
   </section>
 
@@ -89,7 +95,7 @@
       <li></li>
     </ul>
   </footer>
-  
+
 </body>
 
 <script>
@@ -110,18 +116,6 @@
   }
 
   window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
-</script>
-
-<script>
-  // Acessa o documento que executa uma função no mover do mouse
-  document.addEventListener('mousemove', function(event) {
-    var blob = document.getElementById('blob');
-
-    blob.animate ({
-        left: event.clientX + 'px', // Posição X do ID "blob"
-        top: event.clientY + 'px'  // Posição Y do ID "blob"
-    }, { duration: 3000, fill: "forwards" }); // Parâmetros da animação
-  });
 </script>
 
 </html>

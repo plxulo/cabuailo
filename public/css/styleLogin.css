@@ -7,6 +7,68 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
+/* Configuração do pre loader */
+#pre_loader {
+    background: #F2F2F2;
+    height: 100dvh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    cursor: none;
+}
+
+#blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(200px);
+    z-index: 1;
+}
+
+#blob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    height: 750px;
+    aspect-ratio: 1;
+    background: linear-gradient(
+        to right,
+        #6A2C70,
+        #B83B5E,
+        #F08A5D,
+        #F9ED69
+    );
+    animation: girar_blob 15s infinite alternate;
+}
+
+#titulo_loading {
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    margin: 0rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 3;
+}
+
+@keyframes girar_blob {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
     overflow-x: hidden;
@@ -59,6 +121,7 @@ header button {
 
 header button:hover {
     background-color: black;
+    cursor: pointer;
 }
 
 /* Estilização inputs do formulário */
