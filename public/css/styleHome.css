@@ -246,7 +246,7 @@ li {
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .imagens_row {
     display: flex;
     flex-direction: column;
@@ -290,13 +290,17 @@ button {
 }
 
 #secao_servicos {
-  width: 100%;
   background: #675d50;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+#secao_servicos h1 {
+  color: white;
+  font-size: clamp(1em, 5vw, 2em);
 }
 
 #secao_servicos .imagens_row {
@@ -312,11 +316,15 @@ button {
 }
 
 .imagens_row figure img {
-  height: clamp(5rem, 10rem, 20rem);
+  height: clamp(5rem, 50vh, 40rem);
   border-radius: 15px;
   aspect-ratio: 1;
   background: #202020;
   margin: 0 10px;
+}
+
+.imagens_row figure figcaption {
+  color: #fff;
 }
 
 .text {
@@ -366,7 +374,7 @@ button {
 
 #titulo_cta {
   color: #fff;
-  font-size: clamp(1em, 5vw, 2em);
+  font-size: clamp(1em, 4vw, 2em);
 }
 
 #secao_cta .form_contato {
@@ -383,9 +391,19 @@ button {
   gap: 25px;
 }
 
+.input_section input, textarea {
+  border: 1px solid white;
+  padding: 20px;
+  background: none;
+  border-radius: 40px;
+  height: 57px;
+  font-family: 'Overpass', sans-serif;
+}
+
 .form_contato .botao_enviar {
   width: 100%;
   color: #202020;
+  border-radius: 40px;
 }
 
 footer ul {
