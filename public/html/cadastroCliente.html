@@ -4,34 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/styleCadastro.css" type="text/css" rel="stylesheet">
-    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/styleCadastreCliente.css">
+    <title>Cadastre-se</title>
+    <link rel="icon" href="icone.ico" widht="100%">
 </head>
 <body>
-    <div class="form-container cor--branca">
-        <!-- TITULO E SUBTITULO -->
-        <div class="main--text">
-            <p><a href="../html/homeScreen.html">voltar ao início</a></p>
-            <h1>CRIAR CONTA</h1>
-            <p>já possuo uma conta. <a href="../html/LoginScreen.html">fazer login</a></p>
+    <div class="containerPrincipal">
+        <div class="container1">
+            <div class="content">
+                <h2>Cadastre seu negócio</h2>
+                <p>Cadastre sua barbearia, de forma rapida e facil.</p>
+                <!--<a href="#">Saiba Mais</a>-->
+            </div>
         </div>
+        <div class="formulario">
+            <div class="login">
+                <h2>Cadastre-se</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Seu nome</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Seu E-mail</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Sua senha</label>
+                    </div>
+                    
+                    <div class="aceito">
+                        <label><input type="checkbox">Aceito os <a href="https://www.chabad.org/library/bible_cdo/aid/9920#lt=he">termos de uso</a></label>
+                    </div>
 
-        <div class="form cor--branca">
-            <p>Nome de usuário: </p>
-            <input type="email" placeholder="Seu nome" required="" class="limpavel--botao cor--branca">
-            <p>Email: </p>
-            <input type="email" placeholder="Seu email" required="" class="limpavel--botao cor--branca">
-            <p>Senha: </p>
-            <input type="password" placeholder="Sua senha" required="" class="limpavel--botao cor--branca">
-            <p>Confirmar senha: </p>
-            <input type="password" placeholder="Sua senha" required="" class="limpavel--botao cor--branca">
-            <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
-
-            <button onclick="validarSenha()"" class="cor--branca">Criar conta</button>
-            <button onclick="limparCampos()" id="limpar" class="cor--branca">Limpar</button>
+                    <button type="submit" class="btn-login">Registre-se</button>
+                    <div class="fazer_login">
+                        <p>Já possui uma conta?<a href="/public/html/LoginScreen.html">Fazer login</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <script src="../js/private/scriptLimpar.js"></script>
-    <script src="../js/private/scriptValidar.js"></script>
+    
+
 </body>
+<script src="../js/sBar.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
