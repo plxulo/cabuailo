@@ -140,6 +140,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
+  gap: 125px;
 }
 
 nav a {
@@ -316,7 +317,7 @@ button {
 }
 
 .imagens_row figure img {
-  height: clamp(5rem, 50vh, 40rem);
+  height: clamp(5rem, 40vh, 40rem);
   border-radius: 15px;
   aspect-ratio: 1;
   background: #202020;
