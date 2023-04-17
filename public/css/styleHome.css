@@ -78,8 +78,12 @@ body {
 }
 
 /* Media query para um menu responsivo em dispositivos menores */
-@media (max-width: 1370px) {
+@media (max-width: 1810px) {
   .navlinks {
+    display: none;
+  }
+
+  .botao_nav button {
     display: none;
   }
 
@@ -95,7 +99,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1370px) {
+@media screen and (min-width: 1810px) {
   .hamburger {
     display: none;
   }
@@ -109,9 +113,9 @@ body {
 }
 
 navbar {
+  width: 100%;
   display: flex;
   position: fixed;
-  width: 100%;
   padding: 0px 0px 0px 80px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -133,13 +137,19 @@ navbar {
 }
 
 nav {
-  --contentWidth: 100%;
   width: 100%;
+  --contentWidth: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
+  gap: 125px;
+}
+
+nav .botao_nav {
+  display: flex;
+  flex-direction: row;
   gap: 125px;
 }
 
@@ -163,7 +173,6 @@ li {
 .conteudo_principal {
   height: 100vh;
   height: 100svh;
-  width: 100%;
   background: url("../imagens/fundo_menu_cabuailo.png");
   display: flex;
   flex-direction: column;
@@ -242,7 +251,7 @@ li {
   }
 }
 
-@media (min-width: 450px) and (max-width: 850px) {
+@media (min-width: 450px) and (max-width: 1430px) {
   #secao_depoimentos .container_cards {
     flex-direction: column;
     gap: 40px;
@@ -361,7 +370,6 @@ button {
 #secao_cta {
   height: 60vh;
   height: 60svh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
