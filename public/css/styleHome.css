@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+body {
+  background: #202020;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
 /* Configuração do pre loader */
@@ -66,14 +75,6 @@
   top: 50%;
   translate: -50% -50%;
   z-index: 3;
-}
-
-/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
-body {
-  background: #202020;
-  overflow-x: hidden;
-  margin: 0;
-  font-family: 'Overpass', sans-serif;
 }
 
 /* Media query para um menu responsivo em dispositivos menores */
@@ -240,6 +241,18 @@ li {
   }
 }
 
+@media (min-width: 450px) and (max-width: 850px) {
+  #secao_depoimentos .container_cards {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .imagens_row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .botao_positivo {
   background: rgba(217, 217, 217, 0.01);
   border: 3px solid #21EB00;
@@ -300,6 +313,7 @@ button {
 
 .imagens_row figure img {
   height: clamp(5rem, 10rem, 20rem);
+  border-radius: 15px;
   aspect-ratio: 1;
   background: #202020;
   margin: 0 10px;
@@ -320,6 +334,7 @@ button {
 
 #secao_depoimentos h1 {
   color: white;
+  font-size: clamp(1em, 5vw, 2em);
 }
 
 #secao_depoimentos .container_cards {
@@ -334,7 +349,7 @@ button {
 }
 
 
-#section_2 {
+#secao_cta {
   height: 60vh;
   height: 60svh;
   width: 100%;
@@ -344,18 +359,24 @@ button {
   align-items: center;
 }
 
-#titulo_cta {
-  color: #fff;
+#secao_cta header h1 {
+  text-align: center;
+  font-size: clamp(1em, 8vw, 2em);
 }
 
-#section_2 .form_contato {
+#titulo_cta {
+  color: #fff;
+  font-size: clamp(1em, 5vw, 2em);
+}
+
+#secao_cta .form_contato {
   display: flex;
   flex-direction: column;
   width: 50%;
   text-align: center;
 }
 
-#section_2 .form_contato .input_section {
+#secao_cta .form_contato .input_section {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -368,8 +389,18 @@ button {
 }
 
 footer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: white;
+  gap: 20px;
+  padding: 0;
+}
+
+footer ul a {
+  font-size: 0.8rem;
 }
 
 /* Estes estilos são aplicados apenas a classe animated-text */
