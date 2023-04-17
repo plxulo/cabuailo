@@ -126,6 +126,11 @@ navbar {
   transform: translate3d(0, -100%, 0);
 }
 
+#logo_cabuailo {
+  height: 128px;
+  width: 128px;
+}
+
 nav {
   --contentWidth: 100%;
   width: 100%;
@@ -199,11 +204,39 @@ li {
 
 /* Mudar direção do botao_container para column em dispositivos mobile */
 @media (min-width: 50px) and (max-width: 450px) {
+  navbar {
+    padding: 0px 0px 0px 32px;
+  }
+
+  #logo_cabuailo {
+    height: 72px;
+    width: 72px;
+    align-self: center;
+  }
+
+  .sobre_cabuailo {
+    margin-top: 25px;
+  }
+
   .botao_container {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
     align-content: flex-start;
+  }
+
+  #secao_servicos {
+    flex-direction: column;
+  }
+
+  .imagens_row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #secao_depoimentos .container_cards {
+    flex-direction: column;
+    gap: 40px;
   }
 }
 
@@ -243,38 +276,63 @@ button {
   transition: 1s;
 }
 
-#section_1 {
-  height: 60vh;
-  height: 60svh;
+#secao_servicos {
   width: 100%;
   background: #675d50;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-#section_1 .imagens_row {
+#secao_servicos .imagens_row {
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.imagens_row figure {
+  align-self: center;
+  text-align: center;
 }
 
 .imagens_row figure img {
-  height: 20rem;
+  height: clamp(5rem, 10rem, 20rem);
   aspect-ratio: 1;
   background: #202020;
   margin: 0 10px;
-}
-
-.imagens_row figure figcaption {
-  text-align: center;
 }
 
 .text {
   color: white;
   padding: 0px 80px;
 }
+
+#secao_depoimentos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+#secao_depoimentos h1 {
+  color: white;
+}
+
+#secao_depoimentos .container_cards {
+  display: flex;
+  gap: 40px;
+}
+
+#secao_depoimentos .container_cards .card_cliente {
+  height: 15rem;
+  aspect-ratio: 1;
+  background: #fff;
+}
+
 
 #section_2 {
   height: 60vh;
