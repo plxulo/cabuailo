@@ -113,6 +113,7 @@ body {
   margin: 5px;
 }
 
+/* Configurações Navbar */
 navbar {
   width: 100%;
   display: flex;
@@ -151,7 +152,6 @@ nav {
 
 nav .botao_nav {
   display: flex;
-  flex-direction: row;
   gap: 125px;
 }
 
@@ -171,18 +171,18 @@ li {
   display: inline-block;
 }
 
-/* Título (apresentação da marca e o que ela faz) e botão call-to-action */
+/* Estilos do elemento main onde temos título, subtítulo e botões */
 .conteudo_principal {
   height: 100vh;
   height: 100svh;
   background: url("../imagens/fundo_menu_cabuailo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .sobre_cabuailo {
@@ -215,7 +215,7 @@ li {
   gap: 40px;
 }
 
-/* Mudar direção do botao_container para column em dispositivos mobile */
+/* Mudar direção dos containers para column em dispositivos mobile */
 @media (min-width: 50px) and (max-width: 450px) {
   navbar {
     padding: 0px 0px 0px 32px;
@@ -289,7 +289,6 @@ li {
   border-right: none;
   border-top: none;
   background: none;
-  transition: 1s;
 }
 
 button {
@@ -301,6 +300,7 @@ button {
   transition: 1s;
 }
 
+/* Saindo da página principal */
 #secao_servicos {
   background: #675d50;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
