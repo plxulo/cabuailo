@@ -16,7 +16,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
-/* Configuração do pre loader 
+/* Configuração do pre loader */
 #pre_loader {
   background: #131316;
   height: 100dvh;
@@ -76,8 +76,6 @@ body {
   translate: -50% -50%;
   z-index: 3;
 }
-
-*/
 
 /* Este faz o menu hamburguer aparecer em dispositivos menores */
 @media (max-width: 1809px) {
@@ -151,7 +149,29 @@ nav {
 
 nav .botao_nav {
   display: flex;
-  gap: 125px;
+  gap: 75px;
+}
+
+nav .botao_nav button {
+  background: none;
+  border-radius: 40px;
+  border: solid rgba(217, 217, 217, 0.700);
+}
+
+nav .botao_nav button:hover {
+  border: solid rgb(217, 217, 217);
+}
+
+.botao_nav .botao_entrar {
+  border: 3px solid #21EB00;
+}
+
+.botao_nav .botao_entrar a:hover {
+  color: #21EB00;
+}
+
+.botao_nav button a {
+  margin: 25px;
 }
 
 nav a {
@@ -168,6 +188,11 @@ nav a:hover {
 
 li {  
   display: inline-block;
+}
+
+/* Configuração de texto */
+h1 {
+  font-weight: 700;
 }
 
 /* Estilos do elemento main onde temos título, subtítulo e botões */
@@ -216,6 +241,10 @@ li {
 
 /* Mudar direção dos containers para column em dispositivos mobile */
 @media (min-width: 50px) and (max-width: 450px) {
+  .navlinks {
+    display: none;
+  }
+
   navbar {
     padding: 0px 0px 0px 32px;
   }
