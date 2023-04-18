@@ -78,7 +78,7 @@ body {
 }
 
 /* Media query para um menu responsivo em dispositivos menores */
-@media (max-width: 1810px) {
+@media (max-width: 1809px) {
   .navlinks {
     display: none;
   }
