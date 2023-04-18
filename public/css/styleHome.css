@@ -77,7 +77,7 @@ body {
   z-index: 3;
 }
 
-/* Media query para um menu responsivo em dispositivos menores */
+/* Este faz o menu hamburguer aparecer em dispositivos menores */
 @media (max-width: 1809px) {
   .navlinks {
     display: none;
@@ -99,6 +99,7 @@ body {
   }
 }
 
+/* Este faz o menu hamburguer sumir */
 @media screen and (min-width: 1810px) {
   .hamburger {
     display: none;
@@ -127,8 +128,9 @@ navbar {
   transition: all 700ms ease-in-out;
 }
 
+/* Move a navbar pra cima em relação posição original em 2 dimensões (x (horizontal), y (vertical)) */
 .scroll-down navbar {
-  transform: translate3d(0, -100%, 0);
+  transform: translate(0, -100%);
 }
 
 #logo_cabuailo {
