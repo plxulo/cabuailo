@@ -153,13 +153,19 @@ nav .botao_nav {
 }
 
 nav .botao_nav button {
+  text-align: center;
   background: none;
   border-radius: 40px;
   border: solid rgba(217, 217, 217, 0.700);
 }
 
 nav .botao_nav button:hover {
-  border: solid rgb(217, 217, 217);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav .botao_nav .botao_cadastrar:hover {
+  border: solid white;
 }
 
 .botao_nav .botao_entrar {
@@ -182,7 +188,7 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
+nav .navlinks a:hover {
   color: #3299cc;
 }
 
@@ -239,64 +245,6 @@ h1 {
   gap: 40px;
 }
 
-/* Mudar direção dos containers para column em dispositivos mobile */
-@media (min-width: 50px) and (max-width: 450px) {
-  .navlinks {
-    display: none;
-  }
-
-  navbar {
-    padding: 0px 0px 0px 32px;
-  }
-
-  #logo_cabuailo {
-    height: 72px;
-    width: 72px;
-    align-self: center;
-  }
-
-  .sobre_cabuailo {
-    margin-top: 25px;
-  }
-
-  .botao_container {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    align-content: flex-start;
-  }
-
-  #secao_servicos {
-    flex-direction: column;
-  }
-
-  .imagens_row {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #secao_depoimentos .container_cards {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
-
-@media (min-width: 450px) and (max-width: 1450px) {
-  .navlinks {
-    display: none;
-  }
-
-  #secao_depoimentos .container_cards {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .imagens_row {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .botao_positivo {
   background: rgba(217, 217, 217, 0.01);
   border: 3px solid #21EB00;
@@ -334,7 +282,7 @@ button {
 
 /* Saindo da página principal */
 #secao_servicos {
-  background: #675d50;
+  background: #2C3639;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
   display: flex;
   flex-direction: column;
@@ -344,7 +292,8 @@ button {
 
 #secao_servicos h1 {
   color: white;
-  font-size: clamp(1em, 5vw, 2em);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
 }
 
 #secao_servicos .imagens_row {
@@ -360,7 +309,7 @@ button {
 }
 
 .imagens_row figure img {
-  height: clamp(5rem, 40vh, 40rem);
+  height: clamp(250px, 50vw, 650px);
   border-radius: 15px;
   aspect-ratio: 1;
   background: #202020;
@@ -369,6 +318,7 @@ button {
 
 .imagens_row figure figcaption {
   color: #fff;
+  font-size: clamp(1.2rem, 2rem, 2.5rem);
 }
 
 .text {
@@ -377,16 +327,18 @@ button {
 }
 
 #secao_depoimentos {
+  background: #3F4E4F;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  padding: 0px 0px 50px 0px;
 }
 
 #secao_depoimentos h1 {
   color: white;
-  font-size: clamp(1em, 5vw, 2em);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
 }
 
 #secao_depoimentos .container_cards {
@@ -395,19 +347,19 @@ button {
 }
 
 #secao_depoimentos .container_cards .card_cliente {
-  height: 15rem;
+  height: clamp(250px, 50vw, 650px);
+  border-radius: 15px;
   aspect-ratio: 1;
   background: #fff;
 }
 
-
 #secao_cta {
-  height: 60vh;
-  height: 60svh;
+  background: #A27B5C;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 0px 50px 0px;
 }
 
 #secao_cta header h1 {
@@ -474,4 +426,62 @@ footer ul a {
 .visible .animated_text {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Mudar direção dos containers para column em dispositivos mobile */
+@media (min-width: 50px) and (max-width: 450px) {
+  .navlinks {
+    display: none;
+  }
+
+  navbar {
+    padding: 0px 0px 0px 32px;
+  }
+
+  #logo_cabuailo {
+    height: 72px;
+    width: 72px;
+    align-self: center;
+  }
+
+  .sobre_cabuailo {
+    margin-top: 25px;
+  }
+
+  .botao_container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  #secao_servicos {
+    flex-direction: column;
+  }
+
+  .imagens_row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #secao_depoimentos .container_cards {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1510px) {
+  .navlinks {
+    display: none;
+  }
+
+  #secao_depoimentos .container_cards {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .imagens_row {
+    display: flex;
+    flex-direction: column;
+  }
 }
