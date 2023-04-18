@@ -79,9 +79,6 @@ body {
 
 /* Este faz o menu hamburguer aparecer em dispositivos menores */
 @media (max-width: 1809px) {
-  .navlinks {
-    display: none;
-  }
 
   .botao_nav button {
     display: none;
@@ -253,7 +250,11 @@ li {
   }
 }
 
-@media (min-width: 450px) and (max-width: 1430px) {
+@media (min-width: 450px) and (max-width: 1450px) {
+  .navlinks {
+    display: none;
+  }
+
   #secao_depoimentos .container_cards {
     flex-direction: column;
     gap: 40px;
