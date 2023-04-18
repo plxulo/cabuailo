@@ -1,7 +1,7 @@
 <?php
     namespace Cabuailo;
 
-    use mysqli;
+    use mysqli; // Extensão msqli para realizar conexão com DB
 
     class gerenciamentoSenha
     {
