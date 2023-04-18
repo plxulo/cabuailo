@@ -16,7 +16,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
-/* Configuração do pre loader */
+/* Configuração do pre loader 
 #pre_loader {
   background: #131316;
   height: 100dvh;
@@ -76,6 +76,8 @@ body {
   translate: -50% -50%;
   z-index: 3;
 }
+
+*/
 
 /* Este faz o menu hamburguer aparecer em dispositivos menores */
 @media (max-width: 1809px) {

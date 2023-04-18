@@ -7,7 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
 
-/* Configuração do pre loader */
+/* Configuração do pre loader
 #pre_loader {
     background: #131316;
     height: 100dvh;
@@ -15,17 +15,16 @@
     position: fixed;
     z-index: 100;
     cursor: none;
-}
-
-#blur {
+  }
+  
+  #blur {
     position: absolute;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(200px);
     z-index: 1;
-}
-
-#blob {
+  }
+  
+  #blob {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -41,11 +40,25 @@
         #F9ED69
     );
     animation: girar_blob 15s infinite alternate;
-}
-
-#titulo_loading {
+  }
+  
+  @keyframes girar_blob {
+    from {
+        rotate: 0deg;
+    }
+  
+    50% {
+        scale: 1 1.5;
+    }
+  
+    to {
+        rotate: 360deg;
+    }
+  }
+  
+  #titulo_loading {
     font-size: clamp(3rem, 10vw, 10rem);
-    color: white;
+    color: #131316;
     padding: 0rem clamp(1rem, 2vw, 3rem);
     margin: 0rem;
     position: absolute;
@@ -53,21 +66,9 @@
     top: 50%;
     translate: -50% -50%;
     z-index: 3;
-}
+  }
 
-@keyframes girar_blob {
-    from {
-        rotate: 0deg;
-    }
-
-    50% {
-        scale: 1 1.5;
-    }
-
-    to {
-        rotate: 360deg;
-    }
-}
+*/
 
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {

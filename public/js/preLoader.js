@@ -2,7 +2,7 @@
 var Loader = document.getElementById("pre_loader");
 
 // Ouvinte de eventos na janela que executa uma função alterando o estilo display do ID "pre_loader"
-window.addEventListener("load", function(){
+document.addEventListener("load", function(){
     Loader.style.display = "none";
 })
 

@@ -5,10 +5,11 @@
 
     class gerenciamentoSenha
     {
-        public $user;
-        public $mail;
-        private $password;
+        public $user; // Variável pública usuário
+        public $mail; // Variável pública email
+        private $password; // Variável privada senha
 
+        // Constructor que dá valor às três variáveis acima pelo método POST
         public function __construct()
         {
             $this-> user = $_POST['user'];
@@ -16,6 +17,7 @@
             $this-> password = $_POST['senha'];
         }
 
+        // Três métodos públicos de retorno
         public function getUser()
         {
             return $this-> user; //retornar usuário
@@ -32,18 +34,18 @@
         }
     }
 
-    $mail = new gerenciamentoSenha();
+    $retornoUser = new gerenciamentoSenha();
 
     echo("<br>");
-    echo("Seu usuário é: " . $mail->getUser()); //exibir usuário
-    echo("<br>");
-
-    echo("<br>");
-    echo("Sua senha é: " . $mail->getPassword()); //exibir senha
+    echo("Seu usuário é: " . $retornoUser->getUser()); //exibir usuário
     echo("<br>");
 
     echo("<br>");
-    echo("Seu email é: " . $mail->getMail()); //exibir email
+    echo("Sua senha é: " . $retornoUser->getPassword()); //exibir senha
+    echo("<br>");
+
+    echo("<br>");
+    echo("Seu email é: " . $retornoUser->getMail()); //exibir email
     echo("<br>");
 
     //acima apenas checagens de funcionamento / recebimento de entradas
@@ -67,7 +69,7 @@
     }
 
     $sql = "INSERT INTO usuarios (usuario, email, senha)
-            VALUES ('{$mail->getUser()}', '{$mail->getMail()}', '{$mail->getPassword()}')";
+            VALUES ('{$retornoUser->getUser()}', '{$retornoUser->getMail()}', '{$retornoUser->getPassword()}')";
 
     if ($conn->query($sql) === TRUE)
     {
@@ -81,5 +83,5 @@
     $conn->close();
 
     //validate
-    if ($mail->getUser() == "")
+    if ($retornoUser->getUser() == "")
 ?>
