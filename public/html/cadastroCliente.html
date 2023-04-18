@@ -23,7 +23,7 @@
                 <form action="#">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="call"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" id="telefone" onkeyup="ValidarTelefone();" required>
                         <label>Telefone</label>
                     </div>
                     <div class="input-box">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="business"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" id="cnpj" required>
                         <label>CNPJ</label>
                     </div>
                     <div class="input-box">
@@ -55,11 +55,11 @@
 
             </div>
             
-            <label class="picture" for="picture__input" tabindex="0">
-                <span class="picture__image">Adcione sua Logomarca</span>
-                <input type="file" accept="image/*" id="picture__input" class="picture__input" />
-        
+            <label class="picture" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
             </label>
+              
+            <input type="file" name="picture__input" id="picture__input">
 
         </div>
     </div>
@@ -69,4 +69,62 @@
 <script src="../js/sBar.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const inputFile = document.querySelector("#picture__input");
+const pictureImage = document.querySelector(".picture__image");
+const pictureImageTxt = "Choose an image";
+pictureImage.innerHTML = pictureImageTxt;
+
+inputFile.addEventListener("change", function (e) {
+  const inputTarget = e.target;
+  const file = inputTarget.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function (e) {
+      const readerTarget = e.target;
+
+      const img = document.createElement("img");
+      img.src = readerTarget.result;
+      img.classList.add("picture__img");
+
+      pictureImage.innerHTML = "";
+      pictureImage.appendChild(img);
+    });
+
+    reader.readAsDataURL(file);
+  } else {
+    pictureImage.innerHTML = pictureImageTxt;
+  }
+});
+
+</script>
+<script> /* Verificação do telefone*/
+    function ValidarTelefone()
+    {
+        //ACESSE O SITE regex101.com
+        expressao = /\([0-9]{2}\) 9 [0-9]{4}-[0-9]{4}$/g
+        texto = telefone.value;
+        if (texto.length==2)
+        {
+            telefone.value = "(" + texto + ")"
+        }
+        if (texto.length==4)
+        {
+            telefone.value = text + " " 
+        }
+        resposta = expressao.test(telefone);
+        if (resposta==true)
+        {
+            telefone.classList.remove('errado');
+            telefone.classList.add('certo');
+        }
+        if (resposta==false)
+        {
+            telefone.classList.remove('certo');
+            telefone.classList.add('errado');
+        }
+    }
+</script>
 </html>

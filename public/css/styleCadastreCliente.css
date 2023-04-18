@@ -179,28 +179,45 @@ body {
     text-decoration: underline;
 }
 
-.picture__input  {
+#picture__input {
     display: none;
-}
-
-.picture {
-    width: 600px;
+  }
+  
+  .picture {
+    width: 400px;
     height: 400px;
-    margin-left: 10px;
-    margin-top: 80px;
-    background-color: #ddd;
+    background: #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #7c7c7c;
-    border: 2px dashed #808080;
+    margin-top: 80px;
+    color: #aaa;
+    border: 2px dashed currentcolor;
     cursor: pointer;
     font-family: sans-serif;
     transition: color 300ms ease-in-out, background 300ms ease-in-out;
-}
-
-.picture:hover {
+    outline: none;
+    overflow: hidden;
+  }
+  
+  .picture:hover {
     color: #777;
-    border-color: #777;
-    background-color: #ccc;
-}
+    background: #ccc;
+  }
+  
+  .picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+  }
+  
+  .picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .picture__img {
+    max-width: 100%;
+  }
+  
