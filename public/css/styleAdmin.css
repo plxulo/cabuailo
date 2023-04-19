@@ -8,6 +8,7 @@
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
   background: #E8EEFF;
+  color: #2C3639;
   overflow-x: hidden;
   margin: 0;
   font-family: 'Overpass', sans-serif;
@@ -15,10 +16,44 @@ body {
 }
 
 main {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+aside {
+  width: 250px;
+  height: 100%;
+  background: #2C3639;
+}
+
+aside .navbar_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#logo_cabuailo {
+  height: 120px;
+  width: 120px;
+}
+
+aside h1 {
+  color: #E8EEFF;
+}
+
+.principal {
+  height: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 30%;
+  padding: 50px;
+  gap: 20px;
 }
 
 #principal .titulo {
@@ -27,16 +62,8 @@ main {
   align-items: center;
 }
 
-.principal {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-h1 {
+.titulo h1 {
+  font-size: 4rem;
   margin: 0;
 }
 
@@ -59,23 +86,47 @@ h1 {
   width: 100%;
 }
 
-button, input {
-  width: 135px;
-  height: 50px;
+.container_botoes button {
+  width: clamp(5em, 100%, 6em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  background: #2C3639;
+  color: #E8EEFF;
+  border: 1px solid #E8EEFF;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+button:hover {
+  border: solid 1px #2C3639;
+  background: #E8EEFF;
+  color: #2C3639;
+  cursor: pointer;
+}
+
+input {
+  width: clamp(5em, 100%, 20em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1.5em);
   background: #2C3639;
   color: #E8EEFF;
   border: none;
   border-radius: 40px;
-}
-
-.botao_acao {
-  background: #2C3639;
-  color: #E8EEFF;
-  width: 620px;
-  height: 80px;
-  font-size: 2rem;
+  transition: .5s;
 }
 
 input::placeholder {
+  color: #E8EEFF;
+  margin-left: 50px;
+}
+
+.botao_acao {
+  width: clamp(5em, 100%, 100%);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  border: 1px solid #E8EEFF;
+  border-radius: 40px;
+  transition: .5s;
+  background: #2C3639;
   color: #E8EEFF;
 }
