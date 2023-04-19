@@ -15,18 +15,25 @@ body {
 }
 
 main {
-  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 }
 
 #principal .titulo {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.principal {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 h1 {
