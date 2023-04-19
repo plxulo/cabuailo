@@ -16,9 +16,13 @@
   <title>Cabuailo</title>
   <link rel="icon" href="icone.ico" width="100%" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
+
   <script defer src="../js/sBar.js"></script>
   <script defer src="../js/scrollAnimation.js"></script>
-  <script src="/public/js/preLoader.js"></script>
+  <script defer src="/public/js/preLoader.js"></script>
 
 </head>
 
@@ -29,7 +33,7 @@
   <!-- Barra de navegação com botão CTA (Header) -->
   <navbar aria-label="Navegação primária">
     <!-- Logo -->
-    <img id="logo_cabuailo" aria-label="Logo da Cabuailo" src="../imagens/logo.png"/>
+    <img id="logo_cabuailo" aria-label="Logo da Cabuailo" src="../imagens/logo.png" />
 
     <nav>
       <ul class="navlinks">
@@ -54,7 +58,7 @@
   <!-- Título (apresentação da marca e o que ela faz) e botão call-to-action -->
   <main aria-labelledby="titulo_principal" class="conteudo_principal">
     <header class="sobre_cabuailo">
-      <h1 id="titulo_principal">Cresça seu negócio com a Cabuailo Enterprises™</h1>
+      <h1 id="titulo_principal"><div id="texto_verde">Cresça seu negócio</div> com a Cabuailo Enterprises™</h1>
       <p>O sistema Cabuailo é o <b>ideal</b> para quem deseja <b>expandir</b> e <b>administrar</b> o seu
         empreendimento
         com <b>segurança.</b></p>
@@ -63,6 +67,8 @@
         <button id="botao_comece" class="botao_positivo" onclick="scrollSuave()">Comece Já!</button>
         <button class="botao_saiba" onclick="scrollSuave()">Saiba Mais</button>
       </section>
+
+      <p class="texto_secundario">Teste gratuito para empreendimentos pequenos - - junte-se a milhares de inovadores e administre com segurança.</p>
     </header>
   </main>
   <!-- 
@@ -70,28 +76,57 @@
     A seção deve ter nossos 3 principais produtos e serviços 
   -->
   <section aria-labelledby="nossos_serviços" title="Principais serviços" id="secao_servicos" class="">
-    <header class="text animated_text">
+    <header>
       <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
     </header>
 
     <!-- Seção com imagens horizontais -->
     <section class="imagens_row">
       <figure>
-        <img src="https://images.unsplash.com/photo-1681671408340-118a341a6297?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80" alt="">
+        <img
+          src="https://images.unsplash.com/photo-1681671408340-118a341a6297?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80"
+          alt="">
         <figcaption>Uma praia bonita</figcaption>
       </figure>
 
       <figure>
-        <img src="https://plus.unsplash.com/premium_photo-1680706777319-176e18e03a4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=702&q=80" alt="">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1680706777319-176e18e03a4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=702&q=80"
+          alt="">
         <figcaption>Uma mesa com um café da manhã</figcaption>
       </figure>
 
       <figure>
-        <img src="https://images.unsplash.com/photo-1681728934686-3401b91e82eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80" alt="">
+        <img
+          src="https://images.unsplash.com/photo-1681728934686-3401b91e82eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
+          alt="">
         <figcaption>Uma coruja fofinha</figcaption>
       </figure>
     </section>
 
+  </section>
+
+  <!-- Seção sobre a Cabuailo -->
+  <section aria-labelledby="titulo_saibaMais" id="secao_saibaMais">
+    <section class="container_img">
+      <figure>
+        <img src="" alt="Imagem 1" srcset="">
+      </figure>
+      <figcaption></figcaption>
+    </section>
+
+    <aside class="aside_saibaMais">
+      <header>
+        <h1 id="titulo_saibaMais">Por que Cabuailo?</h1>
+      </header>
+      <header>
+        <h1>Conheça mais sobre nosso sistema:</h1>
+      </header>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequuntur, harum repellendus porro itaque non delectus id eligendi quia, quod molestias nostrum ipsa neque illo iste repellat, maxime ab laboriosam?</p>
+      <button>
+        <a href="#" title="Teste grátis">Teste Grátis!</a>
+      </button>
+    </aside>
   </section>
 
   <!-- Depoimentos de clientes -->
@@ -112,7 +147,7 @@
       </section>
       <section class="card_cliente">
         <div class="icon">
-         <img src="" alt="Depoimento Osmar" srcset="">
+          <img src="" alt="Depoimento Osmar" srcset="">
         </div>
       </section>
 
@@ -126,16 +161,16 @@
       <h1 id="call_to_action">Vamos trabalhar juntos?</h1>
     </header>
 
-      <form aria-labelledby="titulo_cta" action="" method="post" class="form_contato">
-        <h2 id="titulo_cta">Faça contato!</h2>
+    <form aria-labelledby="titulo_cta" action="" method="post" class="form_contato">
+      <h2 id="titulo_cta">Faça contato!</h2>
 
-        <section class="input_section">
-          <input type="email" name="email" required="" placeholder="Seu Email Aqui">
-          <textarea placeholder="Sua Mensagem"></textarea>
-          <button class="botao_enviar" type="submit">Enviar</button>
-        </section>
+      <section class="input_section">
+        <input type="email" name="email" required="" placeholder="Seu Email Aqui">
+        <textarea placeholder="Sua Mensagem"></textarea>
+        <button class="botao_enviar" type="submit">Enviar</button>
+      </section>
 
-      </form>
+    </form>
   </section>
 
   <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->

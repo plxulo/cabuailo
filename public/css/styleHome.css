@@ -14,8 +14,6 @@ body {
   font-size: 1rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
-
 /* Configuração do pre loader */
 #pre_loader {
   background: #131316;
@@ -150,13 +148,25 @@ nav {
 nav .botao_nav {
   display: flex;
   gap: 75px;
+  width: clamp(30em, 100%, 20em);
 }
 
 nav .botao_nav button {
   text-align: center;
+  align-items: center;
   background: none;
   border-radius: 40px;
   border: solid rgba(217, 217, 217, 0.700);
+  width: clamp(5em, 100%, 20em);
+}
+
+.botao_nav button a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: 1s;
 }
 
 nav .botao_nav button:hover {
@@ -164,10 +174,12 @@ nav .botao_nav button:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
+/* Botão cadastro */
 nav .botao_nav .botao_cadastrar:hover {
   border: solid white;
 }
 
+/* Botão entrar */
 .botao_nav .botao_entrar {
   border: 3px solid #21EB00;
 }
@@ -176,11 +188,7 @@ nav .botao_nav .botao_cadastrar:hover {
   color: #21EB00;
 }
 
-.botao_nav button a {
-  margin: 25px;
-}
-
-nav a {
+nav .navlinks a {
   color: white;
   font-size: 25px;
   text-decoration: none;
@@ -229,6 +237,11 @@ h1 {
   margin: 0;
 }
 
+.sobre_cabuailo #texto_verde {
+  color: #21EB00;
+  font-weight: 900;
+}
+
 .sobre_cabuailo h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
@@ -256,6 +269,11 @@ h1 {
 .botao_positivo:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3);
+}
+
+main .sobre_cabuailo .texto_secundario {
+  color: rgb(205, 205, 205);
+  font-size: clamp(1rem, 2vw, 1rem);
 }
 
 .botao_saiba {
@@ -286,17 +304,21 @@ button {
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
   display: flex;
   flex-direction: column;
+}
+
+#secao_servicos header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 #secao_servicos h1 {
   color: white;
   font-size: clamp(2rem, 5vw, 4rem);
-  text-align: center;
 }
 
 #secao_servicos .imagens_row {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,7 +331,7 @@ button {
 }
 
 .imagens_row figure img {
-  height: clamp(250px, 50vw, 650px);
+  height: clamp(250px, 50vw, 500px);
   border-radius: 15px;
   aspect-ratio: 1;
   background: #202020;
@@ -321,11 +343,22 @@ button {
   font-size: clamp(1.2rem, 2rem, 2.5rem);
 }
 
-.text {
-  color: white;
-  padding: 0px 80px;
+/* Seção saiba mais */
+#secao_saibaMais {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
+#secao_saibaMais .container_img {
+  height: clamp(250px, 50vw, 500px);
+  border-radius: 15px;
+  aspect-ratio: 1;
+  background: #202020;
+  margin: 0 10px;
+}
+
+/* Saindo da seção saiba mais e indo para os depoimentos */
 #secao_depoimentos {
   background: #3F4E4F;
   display: flex;
@@ -347,7 +380,7 @@ button {
 }
 
 #secao_depoimentos .container_cards .card_cliente {
-  height: clamp(250px, 50vw, 650px);
+  height: clamp(250px, 50vw, 500px);
   border-radius: 15px;
   aspect-ratio: 1;
   background: #fff;
@@ -470,7 +503,7 @@ footer ul a {
   }
 }
 
-@media (min-width: 450px) and (max-width: 1510px) {
+@media (min-width: 450px) and (max-width: 1790px) {
   .navlinks {
     display: none;
   }
