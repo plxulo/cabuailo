@@ -7,7 +7,7 @@
 
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
-  background: #202020;
+  background: #2C3639;
   overflow-x: hidden;
   margin: 0;
   font-family: 'Overpass', sans-serif;
@@ -300,7 +300,6 @@ button {
 
 /* Saindo da página principal */
 #secao_servicos {
-  background: #2C3639;
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
   display: flex;
   flex-direction: column;
@@ -360,7 +359,6 @@ button {
 
 /* Saindo da seção saiba mais e indo para os depoimentos */
 #secao_depoimentos {
-  background: #3F4E4F;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,7 +385,6 @@ button {
 }
 
 #secao_cta {
-  background: #A27B5C;
   display: flex;
   flex-direction: column;
   justify-content: center;
