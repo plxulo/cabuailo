@@ -1,0 +1,72 @@
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+body {
+  background: #E8EEFF;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+}
+
+main {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#principal .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container_botoes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.formulario_admin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formulario_admin input {
+  width: 100%;
+}
+
+button, input {
+  width: 135px;
+  height: 50px;
+  background: #2C3639;
+  color: #E8EEFF;
+}
+
+.botao_acao {
+  background: #2C3639;
+  color: #E8EEFF;
+  width: 620px;
+  height: 80px;
+  font-size: 2rem;
+}
+
+input::placeholder {
+  color: #E8EEFF;
+}
