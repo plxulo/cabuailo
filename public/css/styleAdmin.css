@@ -64,6 +64,8 @@ button, input {
   height: 50px;
   background: #2C3639;
   color: #E8EEFF;
+  border: none;
+  border-radius: 40px;
 }
 
 .botao_acao {
