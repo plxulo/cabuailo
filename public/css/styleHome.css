@@ -145,6 +145,22 @@ nav {
   gap: 125px;
 }
 
+nav .navlinks a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 125px;
+  transition: 0.3s;
+}
+
+nav .navlinks a:hover {
+  color: #3299cc;
+}
+
+li {  
+  display: inline-block;
+}
+
 nav .botao_nav {
   display: flex;
   gap: 75px;
@@ -186,22 +202,6 @@ nav .botao_nav .botao_cadastrar:hover {
 
 .botao_nav .botao_entrar a:hover {
   color: #21EB00;
-}
-
-nav .navlinks a {
-  color: white;
-  font-size: 25px;
-  text-decoration: none;
-  margin-left: 125px;
-  transition: 0.3s;
-}
-
-nav .navlinks a:hover {
-  color: #3299cc;
-}
-
-li {  
-  display: inline-block;
 }
 
 /* Configuração de texto */

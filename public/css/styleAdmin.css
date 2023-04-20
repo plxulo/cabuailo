@@ -15,6 +15,11 @@ body {
   font-size: 1rem;
 }
 
+/* Apagar bolinha li */
+li {  
+  display: inline-block;
+}
+
 main {
   height: 100vh;
   display: flex;
@@ -24,47 +29,99 @@ main {
 }
 
 aside {
-  width: 250px;
+  width: 300px;
   height: 100%;
   background: #2C3639;
 }
 
-aside .navbar_header {
+.titulo_navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  border-bottom: 1px solid #E8EEFF;
 }
 
-#logo_cabuailo {
-  height: 120px;
-  width: 120px;
+.logo_cabuailo {
+  height: 5rem;
+  width: 5rem;
 }
 
 aside h1 {
   color: #E8EEFF;
 }
 
-.principal {
-  height: 100%;
-  width: fit-content;
+.navlinks {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 30%;
-  padding: 50px;
+  font-size: clamp(1rem, 1vw, 2rem);
+  padding: 40px 20px 0px 20px;
+  gap: 35px;
+}
+
+nav .navlinks a {
+  color: #E8EEFF;
+  text-decoration: none;
+}
+
+nav .navlinks a:hover {
+  text-decoration: underline;
+}
+
+.principal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 20px;
 }
 
-#principal .titulo {
+.navbar_topo {
+  width: 100%;
+  height: 5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 25px;
+  padding-left: 50px;
+  border-bottom: 1px solid #2C3639;
 }
 
-.titulo h1 {
-  font-size: 4rem;
+.navbar_topo input {
+  height: 50%;
+  background: #2C3639;
+  color: #E8EEFF;
+  border: none;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+main .secao_container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 50px;
+}
+
+main .descricao_geral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.descricao_geral h1 {
+  font-size: 4.2rem;
+  font-weight: 800;
   margin: 0;
+}
+
+.descricao_geral p {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .container_botoes {
@@ -107,7 +164,7 @@ button:hover {
 input {
   width: clamp(5em, 100%, 20em);
   padding: 1rem;
-  font-size: clamp(1em, 2.5vw, 1.5em);
+  font-size: clamp(1em, 2.5vw, 1em);
   background: #2C3639;
   color: #E8EEFF;
   border: none;
