@@ -1,3 +1,5 @@
+<?php include '../public/adminDb.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/styleAdmin.css">
+  <link rel="stylesheet" href="../public/css/styleAdmin.css">
 
-  <script defer src="../js/private/sAdmCadastro.js"></script>
+  <script defer src="../public/js/private/sAdmCadastro.js"></script>
 
   <title>Painel Admin</title>
 </head>
@@ -31,7 +33,7 @@
       <navbar>
         <!-- Nome do sistema e logo -->
         <header class="titulo_navbar">
-          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../imagens/logo.png" />
+          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../public/imagens/logo.png" />
           <h1>Cabuailo</h1>
         </header>
 
@@ -79,7 +81,7 @@
           </section>
 
           <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="" method="">
+          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../public/adminDb.php" method="POST">
             <input type="text" placeholder="Email, código ou nome do usuário">
             <input type="text" placeholder="Senha">
             <!-- Nível de acesso do usuário -->
@@ -118,29 +120,27 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Senha</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              
-              <tr>
-                <td>1</td>
-                <td>João</td>
-                <td>joao@example.com</td>
-                <td>
-                  <a href="#">Editar</a>
-                  <a href="#">Excluir</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Maria</td>
-                <td>maria@example.com</td>
-                <td>
-                  <a href="#">Editar</a>
-                  <a href="#">Excluir</a>
-                </td>
-              </tr>
+              <?php
+              while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<tr>";
+                  echo "<td>" . $row["id"] . "</td>";
+                  echo "<td>" . $row["usuario"] . "</td>";
+                  echo "<td>" . $row["email"] . "</td>";
+                  echo "<td>" . $row["senha"] . "</td>";
+                  echo "</tr>";
+              }
+              ?>
+              <td>
+                <!--
+                <a href="#">Editar</a>
+                <a href="#">Excluir</a>
+                -->
+              </td>
             </tbody>
           </table>
         </section>
