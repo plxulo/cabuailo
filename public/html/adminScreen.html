@@ -15,8 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/styleAdmin.css">
 
   <script defer src="../js/private/sAdmCadastro.js"></script>
@@ -27,26 +26,28 @@
 <body>
 
   <main>
-
     <!-- Barra de navegação na esquerda -->
     <aside class="navbar_esquerda" title="Barra de navegação" aria-label="Navegação esquerda">
       <navbar>
+        <!-- Nome do sistema e logo -->
         <header class="titulo_navbar">
           <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../imagens/logo.png" />
           <h1>Cabuailo</h1>
         </header>
 
+        <!-- Navegação principal -->
         <nav>
           <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
-            <li><a href="">Painel principal</a></li>
-            <li><a href="">Cadastros</a></li>
-            <li><a href="">Funcionários</a></li>
-            <li><a href="">Empreendimentos cadastrados</a></li>
-            <li><a href="">Segurança</a></li>
+            <input type="text" placeholder="Pesquisar...">
+            <a href="#">Painel principal</a>
+            <a href="#">Cadastros</a>
+            <a href="#">Funcionários</a>
+            <a href="#">Empreendimentos cadastrados</a>
+            <a href="#">Segurança</a>
             <hr width="100%">
-            <li><a href="">Ajuda</a></li>
-            <li><a href="">Perfil</a></li>
-            <li><a href="">Configurações</a></li>
+            <a href="#">Ajuda</a>
+            <a href="#">Perfil</a>
+            <a href="#">Configurações</a>
           </ul>
         </nav>
       </navbar>
@@ -57,14 +58,13 @@
 
       <!-- Barra de navegação topo com input para pesquisa de outras configurações -->
       <navbar class="navbar_topo" aria-label="Navegação topo">
-        <input type="text" placeholder="Pesquisar...">
       </navbar>
 
       <!-- Seção com as funcionalidades (botões) e formulário submit para cada uma das func. -->
       <section aria-labelledby="titulo_cadastros" class="secao_container">
         <!-- Título e descrição -->
         <header class="descricao_geral">
-          <h1 id="titulo_cadastros">Painel administrador</h1>
+          <h1 id="titulo_cadastros">Gerenciar cadastros</h1>
           <p>Gerenciamento de usuários cadastrados no sistema.</p>
           <p>Selecione abaixo o que gostaria de realizar no banco de dados.</p>
         </header>
@@ -87,7 +87,6 @@
       </section>
 
     </section>
-
   </main>
 
 </body>
