@@ -15,6 +15,10 @@ body {
   font-size: 1rem;
 }
 
+.desaparecer {
+  opacity: 0;
+}
+
 /* Apagar bolinha li */
 li {  
   display: inline-block;
