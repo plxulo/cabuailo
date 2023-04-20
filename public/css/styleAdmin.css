@@ -7,16 +7,18 @@
 
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
-  background: #E8EEFF;
-  color: #2C3639;
+  background: var(--cor-clara);
+  color: var(--cor-escura);
   overflow-x: hidden;
   margin: 0;
   font-family: 'Overpass', sans-serif;
   font-size: 1rem;
 }
 
-.desaparecer {
-  opacity: 0;
+/* Variáveis */
+:root {
+  --cor-clara: #E8EEFF;
+  --cor-escura: #2C3639;
 }
 
 /* Apagar bolinha li */
@@ -35,7 +37,7 @@ main {
 aside {
   width: 300px;
   height: 100%;
-  background: #2C3639;
+  background: var(--cor-escura);
 }
 
 .titulo_navbar {
@@ -44,7 +46,7 @@ aside {
   align-items: center;
   justify-content: flex-start;
   padding-left: 10px;
-  border-bottom: 1px solid #E8EEFF;
+  border-bottom: 1px solid var(--cor-clara);
 }
 
 .logo_cabuailo {
@@ -53,20 +55,20 @@ aside {
 }
 
 aside h1 {
-  color: #E8EEFF;
+  color: var(--cor-clara);
 }
 
 .navlinks {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-size: clamp(1rem, 1vw, 1rem);
   padding: 40px 20px 0px 20px;
   gap: 35px;
 }
 
 nav .navlinks a {
-  color: #E8EEFF;
+  color: var(--cor-clara);
   text-decoration: none;
 }
 
@@ -92,13 +94,15 @@ nav .navlinks a:hover {
   align-items: center;
   gap: 25px;
   padding-left: 50px;
-  border-bottom: 1px solid #2C3639;
+  background: #f0f3fa;
+  border-bottom: 1px solid var(--cor-escura);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar_topo input {
   height: 50%;
-  background: #2C3639;
-  color: #E8EEFF;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
   border: none;
   border-radius: 40px;
   transition: .5s;
@@ -151,17 +155,17 @@ main .descricao_geral {
   width: clamp(5em, 100%, 6em);
   padding: 1rem;
   font-size: clamp(1em, 2.5vw, 1.5em);
-  background: #2C3639;
-  color: #E8EEFF;
-  border: 1px solid #E8EEFF;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+  border: 1px solid var(--cor-clara);
   border-radius: 40px;
   transition: .5s;
 }
 
 button:hover {
-  border: solid 1px #2C3639;
-  background: #E8EEFF;
-  color: #2C3639;
+  border: solid 1px var(--cor-escura);
+  background: var(--cor-clara);
+  color: var(--cor-escura);
   cursor: pointer;
 }
 
@@ -169,15 +173,15 @@ input {
   width: clamp(5em, 100%, 20em);
   padding: 1rem;
   font-size: clamp(1em, 2.5vw, 1em);
-  background: #2C3639;
-  color: #E8EEFF;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
   border: none;
   border-radius: 40px;
   transition: .5s;
 }
 
 input::placeholder {
-  color: #E8EEFF;
+  color: var(--cor-clara);
   margin-left: 50px;
 }
 
@@ -185,9 +189,9 @@ input::placeholder {
   width: clamp(5em, 100%, 100%);
   padding: 1rem;
   font-size: clamp(1em, 2.5vw, 1.5em);
-  border: 1px solid #E8EEFF;
+  border: 1px solid var(--cor-clara);
   border-radius: 40px;
   transition: .5s;
-  background: #2C3639;
-  color: #E8EEFF;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
 }
