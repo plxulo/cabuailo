@@ -69,20 +69,39 @@
           <p>Selecione abaixo o que gostaria de realizar no banco de dados.</p>
         </header>
 
-        <!-- Botões com funcionalidades dos cadastros -->
+        <!-- Botões com funcionalidades do sistema -->
         <section aria-label="Botões funcionalidades" class="container_botoes">
-          <button class="alterar_form">Cadastrar</button>
-          <button class="alterar_form">Alterar</button>
-          <button class="alterar_form">Deletar</button>
-          <button class="alterar_form">Pesquisar</button>
+          <button id="btn_formulario_inserir" class="alterar_form">Inserir</button>
+          <button id="btn_formulario_alterar" class="alterar_form">Alterar</button>
+          <button id="btn_formulario_deletar" class="alterar_form">Deletar</button>
+          <button id="btn_formulario_pesquisa" class="alterar_form">Pesquisar</button>
         </section>
 
         <!-- Formulário para inserção de usuários no sistema -->
-        <form aria-label="Formulário de cadastro de usuários" action="" method="" class="formulario_admin">
+        <form id="formulario_inserir" class="formulario_admin" style="display:none;" aria-label="Formulário de inserção de usuários" action="" method="">
+          <input type="text" placeholder="Email, código ou nome de usuário">
+          <input type="text" placeholder="Senha">
+          <!-- Nível de acesso do usuário -->
+          <select id="user-access-level" name="user-access-level" required>
+            <option value="admin">Administrador</option>
+            <option value="operator">Operador</option>
+          </select>
+          <button class="botao_acao">Inserir Usuário</button>
+        </form>
+
+        <!-- Formulário para inserção de usuários no sistema -->
+        <form id="formulario_alterar" class="formulario_admin" style="display:none;" aria-label="Formulário de alteração de usuários" action="" method="">
+          <input type="text" placeholder="Email, código ou nome de usuário">
+          <input type="text" placeholder="Senha">
+          <button class="botao_acao">Salvar Alterações</button>
+        </form>
+
+        <!-- Formulário para inserção de usuários no sistema -->
+        <form id="formulario_deletar" class="formulario_admin" style="display:none;" aria-label="Formulário de remoção de usuários" action="" method="">
           <input type="text" placeholder="Email, código ou nome de usuário">
           <input type="text" placeholder="Senha">
           <input type="text" placeholder="Nível de acesso">
-          <button class="botao_acao">Cadastrar Usuário</button>
+          <button class="botao_acao">Deletar o usuário</button>
         </form>
       </section>
 

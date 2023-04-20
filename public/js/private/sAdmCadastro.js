@@ -1,13 +1,25 @@
 // Não podemos utilizar um seletor que seleciona vários quando queremos selecionar apenas um
 // getElementsByClassName retorna uma coleção, ao contrário de querySelector
 
-const botoes = [...document.querySelectorAll('.alterar_form')]; // Armazena todos os elementos da classe "alterar_form"
-const form = document.querySelector('.formulario_admin'); // Retorna apenas o primeiro elemento
+document.getElementById('btn_formulario_inserir').addEventListener('click', function() {
+    exibirFormulario('formulario_inserir');
+})
 
-function desaparecer() {
-    form.style.display = 'none';
+document.getElementById('btn_formulario_alterar').addEventListener('click', function() {
+    exibirFormulario('formulario_alterar');
+})
+
+document.getElementById('btn_formulario_deletar').addEventListener('click', function() {
+    exibirFormulario('formulario_deletar');
+})
+
+function exibirFormulario(formId) {
+  // Ocultar todos os formulários
+  const formularios = document.querySelectorAll("form");
+  formularios.forEach(function(form) {
+    form.style.display = "none";
+  });
+
+  // Exibir o formulário especificado
+  document.getElementById(formId).style.display = "flex";
 }
-
-botoes.forEach(button => {
-    button.addEventListener('click', desaparecer);
-});
