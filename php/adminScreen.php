@@ -62,7 +62,7 @@
       <navbar class="navbar_topo" aria-label="Navegação topo">
       </navbar>
 
-      <section class="container_row">
+      <section class="container_column">
         <!-- Seção com as funcionalidades (botões) e formulário submit para cada uma das func. -->
         <section aria-labelledby="titulo_cadastros" class="secao_container">
           <!-- Título e descrição -->
