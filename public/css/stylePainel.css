@@ -1,0 +1,113 @@
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+body {
+  background: var(--cor-clara);
+  color: var(--cor-escura);
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+}
+
+/* Variáveis */
+:root {
+  --cor-clara: #E8EEFF;
+  --cor-escura: #2C3639;
+}
+
+/* Apagar bolinha li */
+li {
+  display: inline-block;
+}
+
+/* Navbar e funcionalidades um ao lado do outro */
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+aside {
+  width: 350px;
+  height: 100%;
+  background: var(--cor-escura);
+}
+
+.titulo_navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  height: 6rem;
+  border-bottom: 1px solid var(--cor-clara);
+}
+
+.logo_cabuailo {
+  height: 5rem;
+  width: 5rem;
+}
+
+aside h1 {
+  color: var(--cor-clara);
+}
+
+.navlinks {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: clamp(1rem, 1vw, 1rem);
+  padding: 40px 0px 0px 0px;
+}
+
+.navlinks input {
+  width: 85%;
+  align-self: center;
+  background: var(--cor-clara);
+  color: var(--cor-escura);
+  border: none;
+  margin-bottom: 25px;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+.navlinks input::placeholder {
+  color: var(--cor-escura);
+}
+
+nav .navlinks a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  padding: 25px 25px 25px 25px;
+  transition: .2s;
+}
+
+nav .navlinks a:hover {
+  color: var(--cor-escura);
+  background: var(--cor-clara);
+}
+
+input {
+  width: clamp(5em, 100%, 20em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1em);
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+  border: none;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+input::placeholder {
+  color: var(--cor-clara);
+  margin-left: 50px;
+}
