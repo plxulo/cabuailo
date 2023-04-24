@@ -132,6 +132,7 @@
                   echo "<td>" . $row["usuario"] . "</td>";
                   echo "<td>" . $row["email"] . "</td>";
                   echo "<td>" . $row["senha"] . "</td>";
+                  echo "<td>" . "</td>";
                   echo "</tr>";
               }
               ?>
