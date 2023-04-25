@@ -43,6 +43,21 @@ aside {
   overflow-y: auto;
 }
 
+/* Estilo scrollbar */
+aside::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: slateblue;
+  border-radius: 40px;
+}
+
+aside::-webkit-scrollbar-button {
+  height: 75px;
+}
+
 .titulo_navbar {
   display: flex;
   flex-direction: row;
@@ -141,6 +156,7 @@ input::placeholder {
 
 .container_column {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 40px;
   width: 100%;
@@ -151,4 +167,82 @@ input::placeholder {
   font-size: 4.2rem;
   font-weight: 800;
   margin: 0;
+}
+
+section .container_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section .clientes_rendimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grafico {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+  border-radius: 25px;
+  width: 320px;
+  height: 215px;
+  background: #ffff;
+}
+
+.grafico_grande {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+  border-radius: 25px;
+  width: 550px;
+  height: 450px;
+  background: #ffff;
+}
+
+/* Tabela com cadastros */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead th {
+  background-color: var(--cor-escura);
+  color: var(--cor-clara);
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  color: var(--cor-escura);
+}
+
+tbody td:last-child {
+  text-align: left;
+}
+
+tbody td:last-child a {
+  color: #f00;
+  margin-left: 10px;
+}
+
+/* Arredondar tabela */
+.tabela_redonda {
+  border-radius: 10px;
+}
+
+.tabela_redonda th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.tabela_redonda th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.tabela_redonda tr:first-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.tabela_redonda tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
