@@ -17,7 +17,7 @@ body {
 
 /* Variáveis */
 :root {
-  --cor-clara: #E8EEFF;
+  --cor-clara: #f7f7f7;
   --cor-escura: #2C3639;
 }
 
@@ -40,6 +40,7 @@ aside {
   height: 100%;
   position: fixed;
   background: var(--cor-escura);
+  overflow-y: auto;
 }
 
 .titulo_navbar {
@@ -123,4 +124,31 @@ input::placeholder {
   align-items: flex-start;
   margin-left: 300px;
   gap: calc(1013px/28);
+}
+
+.navbar_topo {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  padding-left: 50px;
+  background: var(--cor-clara);
+  border-bottom: 1px solid var(--cor-escura);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container_column {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 0px 100px 0px 100px;
+}
+
+.descricao_geral h1 {
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin: 0;
 }

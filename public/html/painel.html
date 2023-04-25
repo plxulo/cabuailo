@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <!-- 
   Painel geral do administrador exibindo informações relevantes sobre o negócio
   Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
@@ -9,14 +8,14 @@
 -->
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/stylePainel.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/stylePainel.css"/>
 
   <script defer src="../js/private/sAdmCadastro.js"></script>
 
@@ -24,7 +23,6 @@
 </head>
 
 <body>
-
   <main>
     <aside class="navbar_esquerda" title="Barra de navegação" aria-label="Navegação esquerda">
       <navbar>
@@ -37,13 +35,13 @@
         <!-- Navegação principal -->
         <nav>
           <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
-            <input type="text" placeholder="Pesquisar...">
+            <input type="text" placeholder="Pesquisar..." />
             <a href="painel.html">Painel principal</a>
             <a href="adminScreen.html">Cadastros</a>
             <a href="#">Funcionários</a>
             <a href="#">Empreendimentos cadastrados</a>
             <a href="#">Segurança</a>
-            <hr width="100%">
+            <hr width="100%" />
             <a href="#">Ajuda</a>
             <a href="#">Perfil</a>
             <a href="#">Configurações</a>
@@ -51,8 +49,26 @@
         </nav>
       </navbar>
     </aside>
-  </main>
 
+    <section class="principal">
+      <!-- Barra de navegação topo com input para pesquisa de outras configurações -->
+      <navbar class="navbar_topo" aria-label="Navegação topo"> </navbar>
+
+      <section class="container_column">
+        <section aria-labelledby="titulo_painel" class="secao_container">
+          <!-- Título e descrição -->
+          <header class="descricao_geral">
+            <h1 id="titulo_painel">Bem-vindo, usuário!</h1>
+            <p>Painel principal</p>
+          </header>
+        </section>
+
+        <section>
+          
+        </section>
+
+    </section>
+  </main>
 </body>
 
 </html>

@@ -32,6 +32,21 @@ aside {
   height: 100%;
   background: var(--cor-escura);
   position: fixed;
+  overflow-y: auto;
+}
+
+aside::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: slateblue;
+  border-radius: 40px;
+}
+
+aside::-webkit-scrollbar-button {
+  height: 75px;
 }
 
 navbar {
