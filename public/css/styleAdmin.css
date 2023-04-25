@@ -17,28 +17,24 @@ body {
 
 /* Variáveis */
 :root {
-  --cor-clara: #E8EEFF;
+  --cor-clara: #f7f7f7;
   --cor-escura: #2C3639;
-}
-
-/* Apagar bolinha li */
-li {  
-  display: inline-block;
 }
 
 /* Navbar e funcionalidades um ao lado do outro */
 main {
-  height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 aside {
-  width: 350px;
-  height: 100%;
+  width: 300px;
   background: var(--cor-escura);
+  position: fixed;
+}
+
+navbar {
+  width: 100%;
 }
 
 .titulo_navbar {
@@ -104,6 +100,7 @@ nav .navlinks a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-left: 300px;
   gap: calc(1013px/28);
 }
 
@@ -156,7 +153,7 @@ main .descricao_geral {
 .container_botoes {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
 }
 
 .container_botoes button {
@@ -179,7 +176,7 @@ button:hover {
 
 /* Formulário c/ javascript */
 .formulario {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
