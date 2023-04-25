@@ -140,12 +140,6 @@
                   echo "</tr>";
               }
               ?>
-              <td>
-                <!--
-                <a href="#">Editar</a>
-                <a href="#">Excluir</a>
-                -->
-              </td>
             </tbody>
           </table>
         </section>
