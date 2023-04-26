@@ -34,6 +34,7 @@ body {
   width: 25%;
   padding: 50px;
   border-radius: 10px;
+  gap: 10px;
   color: var(--cor-clara);
   background: var(--cor-escura);
 }
@@ -44,4 +45,8 @@ body {
 
 .login a {
   color: var(--cor-clara);
+}
+
+.login button {
+  padding: 10px;
 }
