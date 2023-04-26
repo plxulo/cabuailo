@@ -131,7 +131,6 @@ input::placeholder {
 
 /* Tela com as funcionalidades */
 .principal {
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -160,7 +159,7 @@ input::placeholder {
   justify-content: space-between;
   gap: 40px;
   width: 100%;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 100px 100px 100px;
 }
 
 .descricao_geral h1 {

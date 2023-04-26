@@ -1,0 +1,47 @@
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+body {
+  background: var(--cor-clara);
+  color: var(--cor-escura);
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+}
+
+/* Variáveis */
+:root {
+  --cor-clara: #f7f7f7;
+  --cor-escura: #2C3639;
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal .login {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 50px;
+  border-radius: 10px;
+  color: var(--cor-clara);
+  background: var(--cor-escura);
+}
+
+.login input {
+  padding: 10px;
+}
+
+.login a {
+  color: var(--cor-clara);
+}

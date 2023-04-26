@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- 
+  Tela de login para acesso ao painel administrador
+  Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
+  Isso se deve ao fator de acessibilidade para pessoas com dificuldades
+  https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
+-->
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/admLogin.css"/>
+
+  <title>Painel Principal</title>
+</head>
+
+<body>
+  <section class="principal">
+
+    <form class="login" action="" method="post">
+      <label for="usuario">
+        Nome de usuário:
+      </label>
+      <input type="text" name="usuario">
+      <label for="senha">
+        Senha:
+      </label>
+      <input type="text" name="senha">
+      <a href="#">Esqueci minha senha</a>
+      <button type="submit">Entrar</button>
+    </form>
+    
+  </section>
+</body>
+
+</html>
