@@ -21,18 +21,36 @@ body {
   --cor-escura: #2C3639;
 }
 
-.principal {
+main {
+  height: 100vh;
+  background-image: url(../imagens/wave.svg);
+  background-size: cover;
+}
+
+@media (min-width: 375px) and (max-width: 1450px) {
+  main {
+    height: 100vh;
+  }
+}
+
+main .principal {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
 }
 
 .principal h1 {
-  font-size: clamp(2rem, 3vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.logo_cabuailo {
+  width: 95px;
+  height: 95px;
 }
 
 .principal .login {
@@ -47,6 +65,8 @@ body {
 }
 
 .login input {
+  border-radius: 40px;
+  border: none;
   padding: 10px;
 }
 
@@ -56,4 +76,50 @@ body {
 
 .login button {
   padding: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cor-clara);
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0e63d3, #0096c7);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+}
+
+footer .nome_empresa {
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  gap: 25px;
+}
+
+footer .nome_empresa img {
+  align-self: center;
+}
+
+footer .links_navegacao_footer {
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .links_navegacao_footer a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer .links_navegacao_footer a:hover {
+  color: #3299cc;
+}
+
+li {  
+  display: inline-block;
 }

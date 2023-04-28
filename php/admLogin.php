@@ -1,3 +1,4 @@
+<?php include ("../public/valida.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- 
@@ -15,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../css/admLogin.css"/>
+  <link rel="stylesheet" href="../public/css/admLogin.css"/>
 
   <title>Painel Principal</title>
 </head>
@@ -26,7 +27,7 @@
     <section class="principal">
 
       <!-- Heading com título e subtítulo -->
-      <img class="logo_cabuailo" src="../../imagens/logo.png" alt="Logo da Cabuailo">
+      <img src="../public/imagens/logo.png">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
         <p>Faça Login para acessar o sistema</p>
@@ -45,39 +46,17 @@
 
     </section>
 
+    <footer>
+      <section class="nome_empresa">
+
+      </section>
+      <section class="navegacao_footer">
+        <ul class="links_navegacao_footer">
+          <a><li>Sobre</li></a>
+        </ul>
+      </section>
+    </footer>
   </main>
-
-  <footer>
-    <section class="nome_empresa">
-      <img class="logo_cabuailo" src="../../imagens/logo.png" alt="Logo da Cabuailo">
-      <header>
-        <h1>Cabuailo</h1>
-        <p>A Cabuailo faz uso de tecnologias avançadas para garantir a segurança e eficiência de sua barbearia!</p>
-      </header>
-    </section>
-
-    <!-- Links da Cabuailo -->
-    <section class="navegacao_footer">
-      <ul class="links_navegacao_footer">
-        <h1>Outras páginas!</h1>
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Cadastro empresa</li></a>
-        <a href="#"><li>Cadastro cliente</li></a>
-        <a href="#"><li>Termos de uso</li></a>
-      </ul>
-    </section>
-
-    <!-- Links para contato -->
-    <section class="navegacao_footer">
-      <ul class="links_navegacao_footer">
-        <h1>Contato</h1>
-        <a href="#"><li>Av. Procópio Gomes - SENAI JLLE SUL</li></a>
-        <a href="#"><li>cabuailo_contato@gmail.com</li></a>
-        <a href="#"><li>4002-8922</li></a>
-        <a href="#"><li>@cabuailo</li></a>
-      </ul>
-    </section>
-  </footer>
 
 </body>
 
