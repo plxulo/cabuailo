@@ -32,6 +32,7 @@ body {
   background-position: right;
   background-repeat: no-repeat;
   animation: wave 20s ease;
+  transition: all 1s ease;
 } 
 
 @keyframes wave {
@@ -87,10 +88,25 @@ main .principal {
   background: var(--cor-escura);
 }
 
-.login input {
+.input_box {
+  display: flex;
+  align-items: center;
+}
+
+.input_box input {
   border-radius: 40px;
   border: none;
   padding: 10px;
+  width: 100%;
+}
+
+.input_box .icon {
+  position: relative;
+  top: 10%;
+  left: 5%;
+  font-size: 1.2em;
+  color: var(--cor-escura);
+  z-index: 1;
 }
 
 .login a {
@@ -117,7 +133,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 0px 75px 0px 75px;
+  padding: 50px 75px 50px 75px;
   gap: 25px;
   background: var(--cor-escura);
   color: var(--cor-clara);
@@ -151,6 +167,9 @@ footer .links_navegacao_footer a {
   color: var(--cor-clara);
   text-decoration: none;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 footer .links_navegacao_footer a:hover {
@@ -161,7 +180,16 @@ li {
   display: inline-block;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
+  .input_box .icon {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    font-size: 1.2em;
+    color: var(--cor-escura);
+    z-index: 1;
+  }
+
   footer {
     flex-direction: column;
     align-items: center;
@@ -173,11 +201,15 @@ li {
   }
 
   .navegacao_footer {
-    width: fit-content;
+    width: 75%;
+  }
+
+  .navegacao_footer a {
+    align-self: center;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .principal .login {
     background: none;
     color: var(--cor-escura);
@@ -185,5 +217,11 @@ li {
 
   .login a {
     color: var(--cor-escura);
+  }
+
+  
+  .navegacao_footer a {
+    flex-direction: column;
+    margin-bottom: 10px;
   }
 }
