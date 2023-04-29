@@ -1,0 +1,20 @@
+<svg width="356" height="327" viewBox="0 0 356 327" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="waves" clip-path="url(#clip0_7_2)">
+<path id="wave_clara" d="M283.757 65.5C313.868 27 293.252 11.8333 283.757 0H357L356.423 327H251.441C317.36 296.5 246.5 248.5 283.757 213C314.16 184.031 308.299 150 289.5 133.5C280.006 125.167 254.944 102.34 283.757 65.5Z" fill="url(#paint0_linear_7_2)"/>
+<path id="wave_escura" d="M309.124 65.5C328.806 27 315.33 11.8333 309.124 0H357L356.623 327H288C331.089 296.5 284.77 248.5 309.124 213C328.997 184.031 325.166 150 312.878 133.5C306.671 125.167 290.29 102.34 309.124 65.5Z" fill="url(#paint1_linear_7_2)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_7_2" x1="251" y1="163" x2="317" y2="163" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.53125" stop-color="#00C0FF"/>
+<stop offset="1" stop-color="#0096C7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_7_2" x1="321.702" y1="-6.33803e-09" x2="321.702" y2="330.188" gradientUnits="userSpaceOnUse">
+<stop stop-color="#064598"/>
+<stop offset="1" stop-color="#0096C7"/>
+</linearGradient>
+<clipPath id="clip0_7_2">
+<rect width="356" height="327" fill="white"/>
+</clipPath>
+</defs>
+</svg>
