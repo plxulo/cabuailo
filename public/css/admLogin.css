@@ -80,7 +80,7 @@ main .principal {
 .principal .login {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   padding: 50px;
   border-radius: 10px;
   gap: 10px;
@@ -181,6 +181,10 @@ li {
 }
 
 @media (max-width: 1000px) {
+  .principal .login {
+    width: 100%;
+  }
+
   .input_box .icon {
     position: relative;
     top: 10%;

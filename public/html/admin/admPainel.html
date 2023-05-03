@@ -34,8 +34,8 @@
         <nav>
           <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
             <input type="text" placeholder="Pesquisar..."/>
-            <a href="painel.html">Painel principal</a>
-            <a href="adminScreen.html">Cadastros</a>
+            <a href="admPainel.html">Painel principal</a>
+            <a href="admCrud.html">Cadastros</a>
             <a href="#">Funcionários</a>
             <a href="#">Empreendimentos cadastrados</a>
             <a href="#">Segurança</a>
@@ -51,6 +51,12 @@
     <section class="principal">
       <!-- Barra de navegação topo com input para pesquisa de outras configurações -->
       <navbar aria-label="Navegação topo" class="navbar_topo">
+        <section class="usuario_logado">
+          <header>
+            <h1>Usuário</h1>
+          </header>
+          <div class="foto_perfil"></div>
+        </section>
       </navbar>
 
       <section aria-label="Painel principal" class="container_column">
@@ -60,19 +66,42 @@
           <!-- Título e descrição -->
           <header class="descricao_geral">
             <h1 id="titulo_painel">Bem-vindo, usuário!</h1>
-            <p>Painel principal</p>
+            <p>Aqui você encontra a visão geral do seu empreendimento:</p>
           </header>
         </section>
 
         <!-- Estatísticas e gráficos ( 1 container row geral com dois elementos e elemento column + 2 elementos em column)-->
         <section aria-label="Estatísticas e gráficos" class="container_row">
           <section class="clientes_rendimentos">
-            <div class="grafico"></div>
-            <div class="grafico"></div>
+            <div class="grafico">
+              <div class="grafico_texto">
+                <h1>Clientes</h1>
+                <h2>5,241</h2>
+              </div>
+            </div>
+            <div class="grafico">
+              <div class="grafico_texto">
+                <h1>Rendimentos</h1>
+                <h2>R$ 35,231</h2>
+              </div>
+            </div>
           </section>
 
           <section  aria-label="Gráfico entradas e saídas" class="fluxo_caixa">
-            <div class="grafico_grande"></div>
+            <div class="grafico_grande">
+                <div class="grafico_texto">
+                  <h1>Fluxo de Caixa</h1>
+                  <div class="valor_entrada">
+                    <h2>R$ 35,231</h2>
+                    <h4>Entradas</h4>
+                  </div>
+
+                  <div class="valor_saida">
+                    <h2>R$ 24,832</h2>
+                    <h4>Saídas</h4>
+                  </div>
+                </div>
+            </div>
           </section>
         </section>
         
@@ -115,7 +144,41 @@
 
       </section>
 
+      <!-- Footer Cabuailo como navegação alternativa para login -->
+      <footer aria-label="Navegação secundária footer">
+        <section class="info_cabuailo">
+          <img class="logo_cabuailo" src="../../imagens/logo.png" alt="Logo da Cabuailo">
+          <header>
+            <h1>Cabuailo</h1>
+            <p>A Cabuailo faz uso de tecnologias avançadas para garantir a segurança e eficiência de sua barbearia!</p>
+          </header>
+        </section>
+
+        <!-- Links da Cabuailo -->
+        <section class="navegacao_footer">
+          <ul class="links_navegacao_footer">
+            <h1>Outras páginas!</h1>
+            <a href="../homeScreen.html"><li>Home</li></a>
+            <a href="../cadastro.html"><li>Cadastro empresa</li></a>
+            <a href="#"><li>Cadastro cliente</li></a>
+            <a href="#"><li>Termos de uso</li></a>
+          </ul>
+        </section>
+
+        <!-- Links para contato -->
+        <section class="navegacao_footer">
+          <ul class="links_navegacao_footer">
+            <h1>Contato</h1>
+            <a href="#"><ion-icon name="location"></ion-icon><li>Av. Procópio Gomes - SENAI JLLE SUL</li></a>
+            <a href="#"><ion-icon name="mail"></ion-icon><li>cabuailo_contato@gmail.com</li></a>
+            <a href="#"><ion-icon name="call"></ion-icon><li>4002-8922</li></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon><li>@cabuailo</li></a>
+          </ul>
+        </section>
+      </footer>
+      
     </section>
+
   </main>
 </body>
 
