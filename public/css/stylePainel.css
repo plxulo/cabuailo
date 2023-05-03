@@ -160,7 +160,9 @@ input::placeholder {
 }
 
 .usuario_logado .foto_perfil {
-  background: #757575;
+  background: url(../imagens/pfp.jpg);
+  background-position: center;
+  background-size: 100%;
   border-radius: 100%;
   width: 75px;
   aspect-ratio: 1;
@@ -252,7 +254,11 @@ section .fluxo_caixa {
   background: #ffff;
 }
 
-/* Tabela com cadastros */
+/* Tabela com cadastros de produtos */
+.tabela_vendas header h1 {
+  font-size: 2rem;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -307,7 +313,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 15px 75px 50px 75px;
+  padding: 15px 0px 50px 0px;
   gap: 25px;
   background: var(--cor-escura);
   color: var(--cor-clara);
