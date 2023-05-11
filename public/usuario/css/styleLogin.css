@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
+
 * {
     -webkit-box-sizing: border-box;
 }
@@ -6,9 +8,48 @@ body {
     background-image: url(/public/usuario/image/Vector\ 1\ \(4\).svg);
     background-repeat: no-repeat;
     background-size: 130%;
+    background-color: #FFFAFF;
 }
 
-nav {
+header {
     display: flex;
     justify-content: center;
+}
+
+main {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+container {
+    width: 90%;
+    height: 90%;
+    border-radius: 14px;
+    background-color: #1E1B18;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+container h1 {
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.inputs {
+    width: 80%;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
