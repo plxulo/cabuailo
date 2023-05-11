@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cor-clara: #f7f7f7;
+  --cor-escura: #2C3639;
+}
+
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
   background: #2C3639;
@@ -295,7 +300,12 @@ button {
   font-size: clamp(1em, 2.5vw, 2em);
   color: white;
   border: solid rgba(217, 217, 217, 0.01);
+  border-radius: 40px;
   transition: 1s;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* Saindo da página principal */
@@ -317,11 +327,9 @@ button {
 }
 
 #secao_servicos .imagens_row {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
 }
 
 .imagens_row figure {
@@ -347,6 +355,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 5rem;
 }
 
 #secao_saibaMais .container_img {
@@ -355,6 +364,21 @@ button {
   aspect-ratio: 1;
   background: #202020;
   margin: 0 10px;
+}
+
+#secao_saibaMais .aside_saibaMais {
+  margin: 2rem;
+  width: 25%;
+  color: #FFF;
+}
+
+#secao_saibaMais .aside_saibaMais h1 {
+  font-size: clamp(2rem, 3vw, 2rem);
+  margin: 0;
+}
+
+#secao_saibaMais .aside_saibaMais p {
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
 }
 
 /* Saindo da seção saiba mais e indo para os depoimentos */
@@ -431,19 +455,99 @@ button {
   border-radius: 40px;
 }
 
-footer ul {
+/* Footer */
+footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  gap: 20px;
-  padding: 0;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px 75px 50px 75px;
+  gap: 25px;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
 }
 
-footer ul a {
-  font-size: 0.8rem;
+footer .logo_cabuailo {
+  width: 95px;
+  height: 95px;
+}
+
+footer .nome_empresa {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 25px;
+}
+
+.info_cabuailo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  width: 35%;
+  height: fit-content;
+  gap: 10px;
+}
+
+footer .links_navegacao_footer {
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .links_navegacao_footer a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .links_navegacao_footer a:hover {
+  color: #3299cc;
+}
+
+li {  
+  display: inline-block;
+}
+
+@media (max-width: 1000px) {
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .info_cabuailo {
+    flex-direction: column;
+  }
+
+  .navegacao_footer {
+    width: 75%;
+  }
+
+  .navegacao_footer a {
+    align-self: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .principal .login {
+    background: none;
+    color: var(--cor-escura);
+  }
+
+  .login a {
+    color: var(--cor-escura);
+  }
+
+  
+  .navegacao_footer a {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
 }
 
 /* Estes estilos são aplicados apenas a classe animated-text */

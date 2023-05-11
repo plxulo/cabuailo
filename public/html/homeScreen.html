@@ -76,9 +76,20 @@
     Sections sempre precisam ter um header (W3C Standard)
     A seção deve ter nossos 3 principais produtos e serviços 
   -->
-  <section aria-labelledby="nossos_serviços" title="Principais serviços" id="secao_servicos" class="">
+  <section aria-labelledby="testimonials" id="secao_testimonial" class="">
     <header>
-      <h1 id="nossos_serviços" class="main-title">Serviços Cabuailo</h1>
+      <h1 id="testimonials" class="main-title">Veja quem confia na Cabuailo:</h1>
+    </header>
+
+    <section aria-label="Testemunhos:" class="container_testimonial">
+
+    </section>
+
+  </section>
+
+  <section aria-labelledby="nossos_serviços" id="secao_servicos" class="">
+    <header>
+      <h1 id="nossos_serviços" class="main-title">Quer crescer seu negócio? venha com a Cabuailo!</h1>
     </header>
 
     <!-- Seção com imagens horizontais -->
@@ -174,14 +185,38 @@
     </form>
   </section>
 
-  <!-- Informações da empresa, formas de contato (Não é uma barra de navegação) -->
-  <footer>
-    <ul>
-      <li><a>Termos de uso</a></li>
-      <li><a>Placeholder 1</a></li>
-      <li><a>Rua X, Bairro X, CEP tal</a></li>
-      <li><a>Cabuailo Enterprises™ todos os direitos reservados</a></li>
-    </ul>
+  <!-- Informações da empresa, formas de contato -->
+  <!-- Footer Cabuailo como navegação alternativa -->
+  <footer aria-label="Navegação secundária footer">
+    <section class="info_cabuailo">
+      <img class="logo_cabuailo" src="../imagens/logo.png" alt="Logo da Cabuailo">
+      <header>
+        <h1>Cabuailo</h1>
+        <p>A Cabuailo faz uso de tecnologias avançadas para garantir a segurança e eficiência de sua barbearia!</p>
+      </header>
+    </section>
+
+    <!-- Links da Cabuailo -->
+    <section class="navegacao_footer">
+      <ul class="links_navegacao_footer">
+        <h1>Outras páginas!</h1>
+        <a href="../homeScreen.html"><li>Home</li></a>
+        <a href="../cadastro.html"><li>Cadastro empresa</li></a>
+        <a href="#"><li>Cadastro cliente</li></a>
+        <a href="#"><li>Termos de uso</li></a>
+      </ul>
+    </section>
+
+    <!-- Links para contato -->
+    <section class="navegacao_footer">
+      <ul class="links_navegacao_footer">
+        <h1>Contato</h1>
+        <a href="#"><ion-icon name="location"></ion-icon><li>Av. Procópio Gomes - SENAI JLLE SUL</li></a>
+        <a href="#"><ion-icon name="mail"></ion-icon><li>cabuailo_contato@gmail.com</li></a>
+        <a href="#"><ion-icon name="call"></ion-icon><li>4002-8922</li></a>
+        <a href="#"><ion-icon name="logo-twitter"></ion-icon><li>@cabuailo</li></a>
+      </ul>
+    </section>
   </footer>
 
 </body>
@@ -205,6 +240,8 @@
 
   window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
 </script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </html>
 
