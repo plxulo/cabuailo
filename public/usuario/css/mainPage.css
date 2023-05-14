@@ -70,7 +70,7 @@ nav ul li a .icon {
     transition: 0.5s;
 }
 
-nav ul li:hover a .icon {
+nav ul li.active a .icon {
     transform: translateY(-35px);
 }
 
@@ -85,9 +85,30 @@ nav ul li a .text {
     transform: translateY(20px);
 }
 
-nav ul li:hover a .text {
+nav ul li.active a .text {
     opacity: 1;
     transform: translateY(10px);
 }
+
+.indicador {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: var(--vermelho);
+    border-radius: 50%;
+    border: 6px solid var(--branco-fundo);
+    transition: 0.5;
+}
+
+.indicador::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+}
+
 
 https://www.youtube.com/watch?v=ArTVfdHOB-M&t=440s&ab_channel=OnlineTutorials
