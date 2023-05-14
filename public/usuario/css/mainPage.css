@@ -66,12 +66,12 @@ nav ul li a .icon {
     line-height: 75px;
     font-size: 1.5em;
     text-align: center;
-    color: var(--azul-escuro);
+    color: var(--marrom);
     transition: 0.5s;
 }
 
 nav ul li.active a .icon {
-    transform: translateY(-35px);
+    transform: translateY(-32px);
 }
 
 nav ul li a .text {
@@ -108,7 +108,21 @@ nav ul li.active a .text {
     left: -22px;
     width: 20px;
     height: 20px;
+    background-color: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--branco-fundo);
 }
 
+.indicador::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--branco-fundo);
+}
 
 https://www.youtube.com/watch?v=ArTVfdHOB-M&t=440s&ab_channel=OnlineTutorials
