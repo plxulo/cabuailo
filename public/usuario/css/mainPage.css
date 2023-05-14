@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hubballi', cursive;
+}
+
+:root {
+    --azul-escuro: #0A2463;
+    --azul-claro: #3E92CC;
+    --branco-diferente: #FFFAFF;
+    --branco-fundo: #e3ebee;
+    --vermelho: #D8315B;
+    --marrom: #1E1B18;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--branco-fundo);
+}
+
+nav {
+    width: 400px;
+    height: 70px;
+    font-size: 20px;
+    background-color: var(--branco-diferente);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+nav ul {
+    display: flex;
+    width: 350px;
+}
+
+nav ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+nav ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+nav ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--azul-escuro);
+    transition: 0.5s;
+}
+
+nav ul li:hover a .icon {
+    transform: translateY(-35px);
+}
+
+nav ul li a .text {
+    position: absolute;
+    color: var(--azul-escuro);
+    font-weight: 400;
+    font-size: 0.80em;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+nav ul li:hover a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+https://www.youtube.com/watch?v=ArTVfdHOB-M&t=440s&ab_channel=OnlineTutorials

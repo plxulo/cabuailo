@@ -27,6 +27,11 @@ main {
 
 }
 
+.logo {
+    left: -5;
+}
+
+
 container {
     width: 90%;
     height: 90%;
