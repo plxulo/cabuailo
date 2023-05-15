@@ -51,12 +51,13 @@
     </nav>
 </body>
 <script>
-    const list = document.querySelectorAll('.list');
-    function activeLink(){
-        list.forEach((item) => item.classList.remove('active'));
-        this.classList.add('active');
-    }
-    list forEach((item) => item.addEventListener('click',activeLink));
+   const list = document.querySelectorAll('.list');
+   function activeLink(){
+    list.forEach((item) =>
+    item.classList.remove('active'));
+    this.classList.add('active');
+   }
+   list.forEach((item) => item.addEventListener('click', activeLink));
 </script>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

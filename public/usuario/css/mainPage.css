@@ -110,7 +110,7 @@ nav ul li.active a .text {
     height: 20px;
     background-color: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 0px -10px 0 0 var(--branco-fundo);
+    box-shadow: 1px -10px 0 0 var(--branco-fundo);
 }
 
 .indicador::after {
@@ -122,7 +122,28 @@ nav ul li.active a .text {
     height: 20px;
     background-color: transparent;
     border-top-left-radius: 20px;
-    box-shadow: 0px -10px 0 0 var(--branco-fundo);
+    box-shadow: -1px -10px 0 0 var(--branco-fundo);
+}
+
+nav ul li:nth-child(1).active ~ .indicador {
+    transform: translateX(calc(70px * 0));
+}
+
+nav ul li:nth-child(2).active ~ .indicador {
+    transform: translateX(calc(70px * 1));
+}
+
+nav ul li:nth-child(3).active ~ .indicador {
+    transform: translateX(calc(70px * 2));
+}
+
+nav ul li:nth-child(4).active ~ .indicador {
+    transform: translateX(calc(70px * 3));   
+}
+
+nav ul li:nth-child(5).active ~ .indicador {
+    transform: translateX(calc(70px * 4));
+    
 }
 
 https://www.youtube.com/watch?v=ArTVfdHOB-M&t=440s&ab_channel=OnlineTutorials
