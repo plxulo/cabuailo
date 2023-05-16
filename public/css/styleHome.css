@@ -642,9 +642,11 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 50px 75px 50px 75px;
   gap: 25px;
-  background: var(--cor-escura);
+  padding: 100px 75px 50px 75px;
+  background: url(../imagens/footer-bg.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: var(--cor-clara);
 }
 
