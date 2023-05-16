@@ -444,7 +444,7 @@ button:hover {
 }
 
 #secao_saibaMais .aside_saibaMais p {
-  font-size: clamp(1.2rem, 1vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 /* Saindo da seção saiba mais e indo para os depoimentos */
@@ -488,12 +488,11 @@ button:hover {
 #secao_dados svg {
   margin-top: 3rem;
   width: 100%;
-  transform: scaleX(2);
+  transform: scaleX(5);
   top: 0;
   left: 0;
   z-index: -1;
 }
-
 /* Seção com os planos disponíveis */
 #secao_planos {
   display: flex;
@@ -545,6 +544,23 @@ button:hover {
 
 .card_planos ul li p {
   margin: 0;
+}
+
+.card_planos button {
+  border: solid 1px var(--cor-escura);
+  color: var(--cor-escura);
+  font-size: 1rem;
+  width: 50%;
+  padding: 1rem;
+}
+
+.preferido {
+  border: solid 3px #21EB00;
+}
+
+.preferido button {
+  background: var(--cor-escura);
+  color: var(--cor-clara);
 }
 
 /* Saindo da seção dados e indo para os depoimentos */
