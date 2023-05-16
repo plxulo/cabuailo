@@ -7,12 +7,11 @@
 
 :root {
   --cor-clara: #f7f7f7;
-  --cor-escura: #2C3639;
+  --cor-escura: #1E1E1E;
 }
 
 /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
 body {
-  background: #2C3639;
   overflow-x: hidden;
   margin: 0;
   font-family: 'Overpass', sans-serif;
@@ -288,6 +287,7 @@ main .sobre_cabuailo .texto_secundario {
   text-align: left;
   color: white;
   border-left: solid 5px #FFF;
+  border-radius: 0px;
   border-bottom: none;
   border-right: none;
   border-top: none;
@@ -309,8 +309,39 @@ button:hover {
 }
 
 /* Saindo da página principal */
-#secao_servicos {
+#secao_testimonial {
   filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: 50svh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#secao_testimonial header {
+  color: var(--cor-clara);
+}
+
+#secao_testimonial svg {
+  position: absolute;
+  width: 100%;
+  transform: scaleX(2);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container_testimonial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Serviços Cabuailo */
+#secao_servicos {
   display: flex;
   flex-direction: column;
 }
@@ -322,16 +353,44 @@ button:hover {
 }
 
 #secao_servicos h1 {
-  color: white;
+  color: var(--cor-escura);
   font-size: clamp(2rem, 5vw, 4rem);
 }
 
-#secao_servicos .imagens_row {
+#secao_servicos .container_cards {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
 }
 
+.container_cards .card {
+  background: #f5f5f5;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 2rem 0;
+  height: 28rem;
+  width: 22.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.card p {
+  color: #626262;
+}
+
+.card .img {
+  height: 10.375rem;
+  width: 10.375rem;
+  border-radius: 100%;
+  background: #d3d3d3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+/*
 .imagens_row figure {
   align-self: center;
   text-align: center;
@@ -346,9 +405,10 @@ button:hover {
 }
 
 .imagens_row figure figcaption {
-  color: #fff;
+  color: var(--cor-escura);
   font-size: clamp(1.2rem, 2rem, 2.5rem);
 }
+*/
 
 /* Seção saiba mais */
 #secao_saibaMais {
@@ -358,22 +418,28 @@ button:hover {
   margin: 5rem;
 }
 
-#secao_saibaMais .container_img {
-  height: clamp(250px, 50vw, 500px);
-  border-radius: 15px;
-  aspect-ratio: 1;
-  background: #202020;
-  margin: 0 10px;
+.content_saibaMais {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  background: #9A7647;
+  border-radius: 95px;
+}
+
+.content_saibaMais figure {
+  margin: 0;
+  padding: 0;
 }
 
 #secao_saibaMais .aside_saibaMais {
-  margin: 2rem;
-  width: 25%;
-  color: #FFF;
+  width: 35%;
+  align-self: center;
+  color: var(--cor-escura);
 }
 
 #secao_saibaMais .aside_saibaMais h1 {
-  font-size: clamp(2rem, 3vw, 2rem);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
   margin: 0;
 }
 
@@ -382,6 +448,53 @@ button:hover {
 }
 
 /* Saindo da seção saiba mais e indo para os depoimentos */
+#secao_dados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.content_dados {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#secao_dados .dados_empresas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+#secao_dados header {
+  text-align: center;
+}
+
+#secao_dados header h2 {
+  color: var(--cor-escura);
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0;
+}
+
+#secao_dados .dados_empresas h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 10px 0 0 0;
+}
+
+#secao_dados svg {
+  margin-top: 3rem;
+  width: 100%;
+  transform: scaleX(2);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Saindo da seção dados e indo para os depoimentos */
 #secao_depoimentos {
   display: flex;
   flex-direction: column;
@@ -391,8 +504,8 @@ button:hover {
 }
 
 #secao_depoimentos h1 {
-  color: white;
-  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--cor-escura);
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
 }
 
@@ -401,11 +514,11 @@ button:hover {
   gap: 40px;
 }
 
-#secao_depoimentos .container_cards .card_cliente {
+#secao_depoimentos .container_cards .card {
   height: clamp(250px, 50vw, 500px);
   border-radius: 15px;
   aspect-ratio: 1;
-  background: #fff;
+  background: var(--cor-escura);
 }
 
 #secao_cta {
@@ -607,6 +720,10 @@ li {
 @media (min-width: 450px) and (max-width: 1790px) {
   .navlinks {
     display: none;
+  }
+
+  .content_saibaMais {
+    width: 100%;
   }
 
   #secao_depoimentos .container_cards {
