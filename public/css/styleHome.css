@@ -385,8 +385,10 @@ button:hover {
 .card .img {
   height: 10.375rem;
   width: 10.375rem;
+  margin-bottom: 2rem;
   border-radius: 100%;
-  background: #d3d3d3;
+  background: linear-gradient(45deg, purple, pink, blue);
+  background-size: 150%;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -500,6 +502,10 @@ button:hover {
   align-items: center;
 }
 
+#secao_planos header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
 #secao_planos .container_cards {
   display: flex;
   gap: 40px;
@@ -523,7 +529,8 @@ button:hover {
   height: 10.375rem;
   width: 10.375rem;
   border-radius: 100%;
-  background: #d3d3d3;
+  background: linear-gradient(45deg, purple, pink, blue);
+  background-size: 150%;
   margin-bottom: 1rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
@@ -601,10 +608,10 @@ button:hover {
 #secao_cta header h1 {
   text-align: center;
   font-size: clamp(1em, 8vw, 2em);
+  margin: 0;
 }
 
 #titulo_cta {
-  color: #fff;
   font-size: clamp(1em, 4vw, 2em);
 }
 
@@ -623,8 +630,8 @@ button:hover {
 }
 
 .input_section input, textarea {
-  border: 1px solid white;
-  padding: 20px;
+  border: 1px solid var(--cor-escura);
+  padding: 10px;
   background: none;
   border-radius: 40px;
   height: 57px;
@@ -632,8 +639,11 @@ button:hover {
 }
 
 .form_contato .botao_enviar {
-  width: 100%;
-  color: #202020;
+  width: 30%;
+  color: var(--cor-escura);
+  background: none;
+  border: solid 1px var(--cor-escura);
+  font-size: 1.2rem;
   border-radius: 40px;
 }
 
