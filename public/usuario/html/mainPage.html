@@ -9,12 +9,43 @@
 </head>
 <body>
     <header>
+        <button class="mapa"><ion-icon name="map-outline"></ion-icon></button>
+        <section class="textoLocal">
+            <h1><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Localização atual</h1>
+            <p>Joinville</p>
+        </section>
+    
+        <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
         
     </header>
     <main>
         <section1>
-
+                <p>Oferta especial para você</p>
+                <h>Descontos de 25%</h>
+                <button class="desconto">Resgatar cupom</button>
         </section1>
+        <section2>
+            <h1>Procurar Barbearia</h1>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                <input type="text" name="email" Procurar >
+            </div>
+        </section2>
+        <section3>
+            <div class="servicos">
+                <h1>Serviços</h1>
+                <div class="servicosTags">
+                    <div class="tipoServico">
+                        <ion-icon name="today-sharp"></ion-icon>
+                        <h>Agendar</h>                        
+                    </div>
+                    <div class="tipoServico">
+                        <ion-icon name="storefront-sharp"></ion-icon>
+                        <h>Barbearias</h>
+                    </div>
+                </div>
+            </div>
+        </section3>
     </main>
     <nav>
         <ul>
@@ -62,6 +93,8 @@
    list.forEach((item) => item.addEventListener('click', activeLink));
 </script>
 
+</script>
+</>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
