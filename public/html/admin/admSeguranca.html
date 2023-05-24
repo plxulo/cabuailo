@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- 
-  Painel geral do administrador exibindo informações relevantes sobre o negócio
+  Painel geral de configurações do administrador exibindo configurações como tema escuro, etc.
   Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
   Isso se deve ao fator de acessibilidade para pessoas com dificuldades
   https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
@@ -15,12 +15,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/admSeguranca.css"/>
   <link rel="stylesheet" href="../../css/stylePainel.css"/>
 
   <title>Painel Principal</title>
 </head>
 
 <body>
+
   <main>
     <aside class="navbar_esquerda" title="Barra de navegação" aria-label="Navegação esquerda">
       <navbar>
@@ -65,102 +67,67 @@
         <section aria-labelledby="titulo_painel" class="secao_container">
           <!-- Título e descrição -->
           <header class="descricao_geral">
-            <h1 id="titulo_painel">Bem-vindo, usuário!</h1>
+            <h1 id="titulo_painel">Segurança</h1>
             <p>Aqui você encontra a visão geral do seu empreendimento:</p>
           </header>
         </section>
 
-        <!-- Estatísticas e gráficos ( 1 container row geral com dois elementos e elemento column + 2 elementos em column)-->
-        <section aria-label="Estatísticas e gráficos" class="container_row">
-          <section class="clientes_rendimentos">
-            <div class="grafico">
-              <div class="grafico_texto">
-                <h1>Clientes</h1>
-                <h2>5,241</h2>
-              </div>
-            </div>
-            <div class="grafico">
-              <div class="grafico_texto">
-                <h1>Rendimentos</h1>
-                <h2>R$ 35,231</h2>
-              </div>
-            </div>
+        <section class="configs">
+          <section class="titulo_configs">
+            <h2>Senha Principal</h2>
+            <button>Nova Senha</button>
           </section>
-
-          <section  aria-label="Gráfico entradas e saídas" class="fluxo_caixa">
-            <div class="grafico_grande">
-                <div class="grafico_texto">
-                  <h1>Fluxo de Caixa</h1>
-                  <div class="valor_entrada">
-                    <h2>R$ 35,231</h2>
-                    <h4>Entradas</h4>
-                  </div>
-
-                  <div class="valor_saida">
-                    <h2>R$ 24,832</h2>
-                    <h4>Saídas</h4>
-                  </div>
-                </div>
-            </div>
-          </section>
+          <hr width="100%">
+          <p>Esta é a sua senha de administrador. Você não tem nenhuma senha gerada ainda.</p>
+          <input type="text" placeholder="Senha anterior">
+          <input type="text" placeholder="Nova senha">
+          <input type="text" placeholder="Confirmar nova senha">
+          <p>A senha deve ter no mínimo 8 caracteres, incluindo letras e números. <a><b>Saiba mais.</b></a></p>
+          <button>Alterar senha</button>
         </section>
-        
-        <!-- Tabela com estatísticas de vendas de produtos -->
-        <section class="tabela_vendas" aria-labelledby="titulo_vendas">
-          <!-- Título vendas -->
-          <header>
-            <h1 id="titulo_vendas">Serviços e produtos mais vendidos:</h1>
-          </header>
 
-          <table class="tabela_redonda">
-            <!-- Dados da tabela -->
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Produto</th>
-                <th>Valor</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-              </tr>
-            </thead>
+        <section class="configs">
+          <section class="titulo_configs">
+            <h2>Gerenciar senhas</h2>
+            <button>Nova Senha</button>
+          </section>
+          <hr width="100%">
+          <p>Esta é a sua senha de administrador. Você não tem nenhuma senha gerada ainda.</p>
+          <input type="text" placeholder="Código da filial">
+          <input type="text" placeholder="Código de usuário">
+          <p>A senha deve ter no mínimo 8 caracteres, incluindo letras e números. <a><b>Saiba mais.</b></a></p>
+          <button>Alterar senha</button>
+        </section>
+
+        <section class="configs">
+          <section class="titulo_configs">
+            <h2>Acessos e sessões</h2>
+          </section>
+          <hr width="100%">
+          <p>Esta é uma lista de dispositivos conectados à sua conta. Revogue acesso aos que você não reconhece.</p>
+          
+          <table>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Dia de noivo</td>
-                <td>450</td>
-                <td>1</td>
-                <td>450</td>
+                <th>Endereço e IP</th>
+                <th>Quando conectou</th>
+                <th>Opções</th>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Barba e corte</td>
-                <td>25</td>
-                <td>353</td>
-                <td>8,825</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Barba e corte</td>
-                <td>25</td>
-                <td>353</td>
-                <td>8,825</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Barba e corte</td>
-                <td>25</td>
-                <td>353</td>
-                <td>8,825</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Barba e corte</td>
-                <td>25</td>
-                <td>353</td>
-                <td>8,825</td>
+                <td>
+                  <p>Joinville 177.221.52.92</p>
+                  <p class="sub_table">Está é sua sessão atual</p>
+                </td>
+                <td></td>
+                <td>
+                  <button>
+                    Saiba Mais
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
+          
         </section>
 
       </section>
@@ -171,7 +138,7 @@
           <img class="logo_cabuailo" src="../../imagens/logo.png" alt="Logo da Cabuailo">
           <header>
             <h1>Cabuailo</h1>
-            <p>A Cabuailo faz uso de tecnologias avançadas para garantir a segurança e eficiência de sua barbearia!</p>
+            <p>Gerencie suas senhas, crie novas, política de privacidade, encerramento remoto, para ter todo o controle em suas mãos.</p>
           </header>
         </section>
 
@@ -199,8 +166,38 @@
       </footer>
 
     </section>
-
   </main>
+  
+  <!--
+  <section class="principal">
+    <!-- Barra de navegação topo com input para pesquisa de outras configurações 
+      <navbar aria-label="Navegação topo" class="navbar_topo">
+        <section class="usuario_logado">
+          <header>
+            <h1>Usuário</h1>
+          </header>
+          <div class="foto_perfil"></div>
+        </section>
+      </navbar>
+
+      <section aria-label="Painel principal" class="container_column">
+
+        <!-- Texto principal -
+        <section aria-labelledby="titulo_painel" class="secao_container">
+          <!-- Título e descrição -
+          <header class="descricao_geral">
+            <h1 id="titulo_painel">Segurança.</h1>
+            <p>Gerencie suas senhas, crie novas, política de privacidade, encerramento remoto, para ter todo o controle em suas mãos.</p>
+          </header>
+
+          <section class="configs">
+            <h2>Senha Principal</h2>
+            <button>Nova Senha</button>
+          </section>
+          <hr width="100%">
+        </section>
+      </section>
+    -->
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
