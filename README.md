@@ -5,6 +5,7 @@ tanto para clientes quanto para empreendendores (cabeleireiros, serviços de bel
 agendamentos de serviços, com data, seleção de pacote, hora e local, sistema de avaliações, etc.
 Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, agendas, preços, planos e pacotes.
 
+![Imagem do painel principal página inicial de administrador](/github/image/painel-principal.png)
 # Documentação
 
 - *(16/03/2023)*
