@@ -1,176 +1,16 @@
-/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+/*
+  Algumas configurações gerais do CSS como:
+  - Navbar aside
+  - Barra topo
+  - Container main
+  - Container em coluna
 
-/* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
-body {
-  background: var(--cor-clara);
-  color: var(--cor-escura);
-  overflow-x: hidden;
-  margin: 0;
-  font-family: 'Overpass', sans-serif;
-  font-size: 1rem;
-}
+  Estão no arquivo admCSS.css, dentro da pasta "global"
+  cabuailo > public > global > admCSS.css
 
-/* Variáveis */
-:root {
-  --cor-clara: #f7f7f7;
-  --cor-escura: #2C3639;
-}
-
-/* Apagar bolinha li */
-li {
-  display: inline-block;
-}
-
-/* Navbar e funcionalidades um ao lado do outro */
-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-aside {
-  width: 300px;
-  height: 100%;
-  position: fixed;
-  background: var(--cor-escura);
-  overflow-y: auto;
-}
-
-/* Estilo scrollbar */
-aside::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-aside::-webkit-scrollbar-thumb {
-  background-color: slateblue;
-  border-radius: 40px;
-}
-
-aside::-webkit-scrollbar-button {
-  height: 75px;
-}
-
-.titulo_navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 10px;
-  height: 6rem;
-  border-bottom: 1px solid var(--cor-clara);
-}
-
-.logo_cabuailo {
-  height: 5rem;
-  width: 5rem;
-}
-
-aside h1 {
-  color: var(--cor-clara);
-}
-
-.navlinks {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: clamp(1rem, 1vw, 1rem);
-  padding: 40px 0px 0px 0px;
-}
-
-.navlinks input {
-  width: 85%;
-  align-self: center;
-  background: var(--cor-clara);
-  color: var(--cor-escura);
-  border: none;
-  margin-bottom: 25px;
-  border-radius: 40px;
-  transition: .5s;
-}
-
-.navlinks input::placeholder {
-  color: var(--cor-escura);
-}
-
-nav .navlinks a {
-  color: var(--cor-clara);
-  text-decoration: none;
-  padding: 25px 25px 25px 25px;
-  transition: .2s;
-}
-
-nav .navlinks a:hover {
-  color: var(--cor-escura);
-  background: var(--cor-clara);
-}
-
-input {
-  width: clamp(5em, 100%, 20em);
-  padding: 1rem;
-  font-size: clamp(1em, 2.5vw, 1em);
-  background: var(--cor-escura);
-  color: var(--cor-clara);
-  border: none;
-  border-radius: 40px;
-  transition: .5s;
-}
-
-input::placeholder {
-  color: var(--cor-clara);
-  margin-left: 50px;
-}
-
-/* Tela com as funcionalidades */
-.principal {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 300px;
-  gap: calc(1013px/28);
-}
-
-.navbar_topo {
-  width: 100%;
-  height: 6rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 25px;
-  padding: 0px 100px 0px 100px;
-  background: var(--cor-clara);
-  border-bottom: 1px solid var(--cor-escura);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.usuario_logado {
-  gap: 25px;
-  align-items: center;
-}
-
-.usuario_logado .foto_perfil {
-  background: url(../imagens/pfp.jpg);
-  background-position: center;
-  background-size: 100%;
-  border-radius: 100%;
-  width: 75px;
-  aspect-ratio: 1;
-}
-
-.usuario_logado {
-  display: flex;
-}
+  Caso queira editar encontre lá! ^
+  *não edita, por favor, faça alterações neste arquivo, não no global.
+*/
 
 .container_column {
   display: flex;
@@ -197,11 +37,13 @@ section .clientes_rendimentos {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 40%;
 }
 
 section .fluxo_caixa {
   display: flex;
   flex-direction: column;
+  width: 55%;
   gap: 20px;
 }
 
@@ -209,7 +51,7 @@ section .fluxo_caixa {
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
   padding: 0px 30px 0px 30px;
   border-radius: 25px;
-  width: 320px;
+  width: 100%;
   height: 215px;
   background: #ffff;
 }
@@ -222,6 +64,15 @@ section .fluxo_caixa {
 
 .grafico_texto h1 {
   font-size: 1.2rem;
+}
+
+.grafico_grande {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+  padding: 0px 30px 0px 30px;
+  border-radius: 25px;
+  width: 100%;
+  height: 450px;
+  background: #ffff;
 }
 
 .grafico_grande .grafico_texto h1 {
@@ -243,15 +94,6 @@ section .fluxo_caixa {
   text-align: center;
   color: #757575;
   margin-top: 0;
-}
-
-.grafico_grande {
-  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
-  padding: 0px 30px 0px 30px;
-  border-radius: 25px;
-  width: 550px;
-  height: 450px;
-  background: #ffff;
 }
 
 /* Tabela com cadastros de produtos */
@@ -314,6 +156,7 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 15px 0px 50px 0px;
+  width: 100%;
   gap: 25px;
   background: var(--cor-escura);
   color: var(--cor-clara);

@@ -37,3 +37,21 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
 
 - *(12/04/2023)*
     - Substituir o design responsivo com media query e utilizar CSS moderno (clamp, min, max)
+
+- *(24/05/2023)*
+    - Trello equipe criado
+    - Layout homepage atualizado
+    - Tela login para o sistema concluída
+    - Autenticação
+    - Conexão e exibição de tabelas com PHP
+    - Comentários nos códigos
+    - FIGMA layouts de páginas do sistema
+    - Página de CRUD feita com JavaScript e integração com banco de dados
+    - Painel principal front-end concluido, necessário implementação do Google Charts para dados
+    - Aba de segurança criada, gerenciamento de senhas (apenas front-end, realziar backend e alguns scripts regex)
+    - Tela configurações tera apenas tema escuro, considerar opção de aumentar fonte
+    - Criar script para tema escuro, decidir se criar apenas CSS ou com JavaScript
+    - Painel sobre filiais incompleto
+    - Painel ajuda incompleto
+    - Painel perfil incompleto
+    - Global CSS

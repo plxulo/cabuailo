@@ -487,10 +487,14 @@ button:hover {
   margin: 10px 0 0 0;
 }
 
+#secao_dados p {
+  font-size: clamp(1rem, 1.5rem, 3rem);
+}
+
 #secao_dados svg {
   margin-top: 3rem;
   width: 100%;
-  transform: scaleX(5);
+  transform: scaleX(10);
   top: 0;
   left: 0;
   z-index: -1;
@@ -654,6 +658,7 @@ footer {
   justify-content: space-evenly;
   gap: 25px;
   padding: 100px 75px 50px 75px;
+  width: 100%;
   background: url(../imagens/footer-bg.svg);
   background-repeat: no-repeat;
   background-size: 100%;

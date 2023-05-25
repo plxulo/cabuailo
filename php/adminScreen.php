@@ -1,4 +1,4 @@
-<?php include '../public/admin.php'; ?>
+<?php include 'admin.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

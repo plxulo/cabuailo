@@ -1,4 +1,4 @@
-<?php include ("../public/valida.php"); ?>
+<?php include ("valida.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- 

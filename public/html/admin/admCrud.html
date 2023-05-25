@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/styleAdmin.css">
+  <link rel="stylesheet" type="text/css" href="../../global/admCSS.css" />
 
   <script defer src="../../js/private/sAdmCadastro.js"></script>
 
@@ -72,10 +73,18 @@
 
           <!-- Botões com funcionalidades do sistema -->
           <section aria-label="Botões funcionalidades" class="container_botoes">
+            
             <button id="btn_formulario_inserir" class="alterar_form">Inserir</button>
+            <!-- Botões comentados pois desejo deixar tudo embutido na própria tabela
+              (exceto inserção e pesquisa)
+              ** USAR PDO -> PREPARE
             <button id="btn_formulario_alterar" class="alterar_form">Alterar</button>
             <button id="btn_formulario_deletar" class="alterar_form">Deletar</button>
-            <button id="btn_formulario_pesquisa" class="alterar_form">Pesquisar</button>
+            -->
+            <!--
+            <button id="btn_formulario_pesquisa" class="alterar_form pesquisar">Pesquisar</button>
+            -->
+            <input type="text" placeholder="Pesquisar">
           </section>
 
           <!-- Formulário para inserção de usuários no sistema -->
@@ -118,6 +127,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Nível Acesso</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -127,6 +137,7 @@
                 <td>1</td>
                 <td>João</td>
                 <td>joao@example.com</td>
+                <td></td>
                 <td>
                   <a href="#">Editar</a>
                   <a href="#">Excluir</a>
@@ -136,6 +147,7 @@
                 <td>2</td>
                 <td>Maria</td>
                 <td>maria@example.com</td>
+                <td></td>
                 <td>
                   <a href="#">Editar</a>
                   <a href="#">Excluir</a>
@@ -152,3 +164,5 @@
 </body>
 
 </html>
+
+<!-- Feito por SENAS TECH em 2023 -->
