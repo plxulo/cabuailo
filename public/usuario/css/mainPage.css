@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Hubballi', cursive;
+    font-family: 'Prompt', sans-serif;
 }
 
 :root {
@@ -221,14 +221,14 @@ main section1 {
 
 main section1 p {
     font-size: 20px;
-    font-family: 'Hubballi', cursive;
+    font-family: 'Prompt', sans-serif;
     color: white;
     font-weight: 500;
 }
 
 main section1 h {
-    font-size: 30px;
-    font-family: 'Hubballi', cursive;
+    font-size: 25px;
+    font-family: 'Prompt', sans-serif;
     color: white;
     font-weight: 700;
 }
@@ -257,6 +257,7 @@ section2 h1 {
     position: relative;
     width: 100%;
     height: 50px;
+    color: black;
     margin: 20px 0;
 }
 
@@ -268,7 +269,8 @@ section2 h1 {
     backdrop-filter: blur(15px);
     outline: none;
     border-radius: 20px;
-    font-size: 1em;
+    font-size: 20px;
+    font-weight: 500;
     color: black;
     padding: 0 25px 0 45px;
 }
@@ -292,6 +294,10 @@ section3 {
     flex-direction: column;
 }
 
+.servicos {
+    padding-top: 5px;
+}
+
 .servicosTags {
     width: 350px;
     height: 90px;
@@ -302,16 +308,28 @@ section3 {
     align-items: center;
 }
 
+.servicosTags h {
+    font-size: 15px;
+}
+
 .tipoServico {
     width: 90px;
     height: 90px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     border-radius: 10px;
     align-items: center;
     background-color: white;
     transition: 0.5s;
+    font-size: 20px;
 }
 
+.icone-servicos {
+    margin-top: 5px;
+    font-size: 25px;
+}
 
+.servicos h1 {
+    font-size: 24px
+}
