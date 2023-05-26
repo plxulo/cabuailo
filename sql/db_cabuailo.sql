@@ -21,6 +21,7 @@ CREATE TABLE usuarios_admin (
 CREATE TABLE imagem_emp (
     id_img INT(6) PRIMARY KEY AUTO_INCREMENT,
     imagem MEDIUMBLOB,
+    emp_adm INT(6),
     FOREIGN KEY (emp_adm) REFERENCES usuarios_admin(id_adm)
 );
 
@@ -28,6 +29,7 @@ CREATE TABLE imagem_emp (
 CREATE TABLE imagem_pfp_adm (
     id_img_pfp INT(6) PRIMARY KEY AUTO_INCREMENT,
     imagem MEDIUMBLOB,
+    pfp_adm INT(6),
     FOREIGN KEY (pfp_adm) REFERENCES usuarios_admin(id_adm)
 );
 
@@ -35,6 +37,7 @@ CREATE TABLE imagem_pfp_adm (
 CREATE TABLE imagem_pfp_user (
     id_img_user INT(6) PRIMARY KEY AUTO_INCREMENT,
     imagem MEDIUMBLOB,
+    pfp_user INT(6),
     FOREIGN KEY (pfp_user) REFERENCES usuarios(id)
 );
 
@@ -44,5 +47,6 @@ CREATE TABLE filiais (
     nome VARCHAR(255) NOT NULL,
     endereco VARCHAR(255) NOT NULL,
     cep INT(6) NOT NULL,
+    filial_adm INT(6),
     FOREIGN KEY (filial_adm) REFERENCES usuarios_admin(id_adm)
 );
