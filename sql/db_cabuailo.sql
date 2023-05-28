@@ -3,7 +3,7 @@ USE cabuailo;
 
 /* Membro comum */
 CREATE TABLE usuarios (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id INT(6) AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL
@@ -15,6 +15,14 @@ CREATE TABLE usuarios_admin (
     adm_nome VARCHAR(255) NOT NULL,
     adm_email VARCHAR(255) NOT NULL,
     adm_senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE funcionarios (
+    id_func INT(6) PRIMARY KEY AUTO_INCREMENT,
+    nome_func VARCHAR(255) NOT NULL,
+    senha_func VARCHAR(255) NOT NULL,
+    filial INT(6),
+    FOREIGN KEY (filial) REFERENCES filiais(id_filial)
 );
 
 /* Armazenar imagens do sistema */
