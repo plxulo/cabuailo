@@ -1,7 +1,7 @@
 <?php
   include ("conecta.php");
 
-  $query = "SELECT * FROM usuarios;";
+  $query = "SELECT * FROM funcionarios;";
   $result = mysqli_query($conn, $query);
 
   if (!$result) {
