@@ -24,31 +24,26 @@
                 <h>Descontos de 25%</h>
                 <button class="desconto">Resgatar cupom</button>
         </section1>
-        <section2>
-            <h1>O que você procura?</h1>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-                <input type="text" name="email" Procurar >
-            </div>
-        </section2>
+       
         <section3>
-            <div class="servicos">
-                <h1>serviços</h1>
-                <div class="servicosTags">
-                    <div class="tipoServico">
-                        <h>Agendar</h>                    
-                        <ion-icon name="today-sharp" class="icone-servicos"></ion-icon>
-                    </div>
-                    <div class="tipoServico">
-                        <h>Barbearias</h>
-                        <ion-icon name="storefront-sharp" class="icone-servicos"></ion-icon>
-                    </div>
-                    <div class="tipoServico">
-                        <h>Compras</h>
-                        <ion-icon name="bag-handle" class="icone-servicos"></ion-icon>
-                    </div>
-                </div>
+            <h>Serviços</h>
+            <div class="botoes3">
+                <button class="meuBotao" onclick="mostrarDiv(1)">
+                    
+                </button>
+                <button class="meuBotao" onclick="mostrarDiv(2)">Botão 2</button>
+                <button class="meuBotao" onclick="mostrarDiv(3)">Botão 3</button>
             </div>
+                <div id="div1" class="minhaDiv">
+                    Conteúdo da Div 1
+                </div>
+                <div id="div2" class="minhaDiv">
+                    Conteúdo da Div 2
+                </div>
+                <div id="div3" class="minhaDiv">
+                    Conteúdo da Div 3
+                </div>
+
         </section3>
         <section4>
             <img src="">
@@ -91,15 +86,31 @@
     </nav>
 </body>
 <script>
-   const list = document.querySelectorAll('.list');
-   function activeLink(){
-    list.forEach((item) =>
-    item.classList.remove('active'));
-    this.classList.add('active');
-   }
-   list.forEach((item) => item.addEventListener('click', activeLink));
-</script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+     list.forEach((item) =>
+     item.classList.remove('active'));
+     this.classList.add('active');
+    }
+    list.forEach((item) => item.addEventListener('click', activeLink));
+ </script>
+<script>
+    function mostrarDiv(divIndex) {
+    var divs = document.querySelectorAll(".minhaDiv");
+    var botoes = document.querySelectorAll(".meuBotao");
 
+    // Oculta todas as divs e restaura a cor dos botões
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].style.display = "none";
+        botoes[i].style.backgroundColor = "#FFFAFF";
+    }
+
+    // Exibe a div selecionada e altera a cor do botão correspondente
+    var divSelecionada = document.getElementById("div" + divIndex);
+    var botaoSelecionado = document.querySelector(".meuBotao:nth-child(" + divIndex + ")");
+    divSelecionada.style.display = "block";
+    botaoSelecionado.style.backgroundColor = "#D8315B";
+}
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

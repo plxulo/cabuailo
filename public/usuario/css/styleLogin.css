@@ -27,7 +27,7 @@
     flex-direction: row;
     justify-content: center;
     height: 100vh;
-    background-image: url(/public/usuario/image/waves.svg);
+    background-image: url(../image/waves.svg);
     background-size: 150%;
     background-position: right;
     background-repeat: no-repeat;

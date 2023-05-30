@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/public/usuario/css/styleLogin.css">
+  <link rel="stylesheet" href="../css/styleLogin.css">
 
   <title>Painel Principal</title>
 </head>
@@ -27,14 +27,14 @@
     <section class="principal">
 
       <!-- Heading com título e subtítulo -->
-      <img class="logo_cabuailo" src="/public/landing/imagens/logo.png" alt="Logo da Cabuailo">
+      <img class="logo_cabuailo" src="../../landing/imagens/logo.png" alt="Logo da Cabuailo">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
         <p>Faça Login para acessar o sistema</p>
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="/public/usuario/php/valida.php" method="post">
+      <form aria-label="Formulário de login" class="login" action="../php/crude.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
             <input type="text" name="user">
@@ -43,7 +43,7 @@
           <section class="input_box">
             <input type="password" name="password">
           </section>
-          <a href="/public/usuario/html/cadastroCliente.html">Cadastrar-se</a>
+          <a href="../html/cadastroCliente.html">Cadastrar-se</a>
           <button aria-label="Entrar na sua conta" name="entrar" type="submit">Entrar na sua Conta</button>
           <section id="error_message"></section>
       </form>

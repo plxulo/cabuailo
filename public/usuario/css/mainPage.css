@@ -258,7 +258,7 @@ main section1 .desconto {
 section2 {
     margin-top: 15px;
     width: 90%;
-    height: 40px;
+    height: 55px;
 }
 
 section2 h1 {
@@ -298,8 +298,9 @@ section2 h1 {
 section3 {
     width: 90%;
     height: 50px;
-    margin-top: 60px;
+    margin-top: 100px;
     display: flex;
+    justify-content: space-around;
     justify-items: center;
     align-items: center;
     flex-direction: column;
@@ -314,7 +315,7 @@ section3 {
     height: 90px;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 30px;
     justify-content: space-around;
     align-items: center;
 }
@@ -331,8 +332,9 @@ section3 {
     justify-content: center;
     border-radius: 10px;
     align-items: center;
-    background-color: white;
+    background-color: blue;
     transition: 0.5s;
+    border: none;
     font-size: 20px;
 }
 
@@ -343,4 +345,13 @@ section3 {
 
 .servicos h1 {
     font-size: 24px
+}
+
+.divServicos {
+    display: none;
+}
+
+.meuBotao {
+    width: 90px;
+    height: 90px;
 }
