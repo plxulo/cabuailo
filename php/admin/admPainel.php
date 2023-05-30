@@ -1,3 +1,22 @@
+<?php
+  /* 
+  esse bloco de código em php verifica se existe a sessão, pois o usuário pode
+  simplesmente não fazer o login e digitar na barra de endereço do seu navegador
+  o caminho para a página principal do site (sistema), burlando assim a obrigação de
+  fazer um login, com isso se ele não estiver feito o login não será criado a session,
+  então ao verificar que a session não existe a página redireciona o mesmo
+  para a index.php.
+  */
+
+  session_start();
+  if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    header('location: admLogin.php');
+  }
+
+  $logado = $_SESSION['user'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- 
@@ -15,8 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../css/stylePainel.css"/>
-  <link rel="stylesheet" type="text/css" href="../../global/admCSS.css" />
+  <link rel="stylesheet" href="../../public/css/stylePainel.css"/>
+  <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
 
   <title>Painel Principal</title>
 </head>
@@ -27,7 +46,7 @@
       <navbar>
         <!-- Nome do sistema e logo -->
         <header class="titulo_navbar">
-          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../imagens/logo.png"/>
+          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../public/imagens/logo.png"/>
           <h1>Cabuailo</h1>
         </header>
 
@@ -54,7 +73,9 @@
       <navbar aria-label="Navegação topo" class="navbar_topo">
         <section class="usuario_logado">
           <header>
-            <h1>Usuário</h1>
+          <?php
+            echo("<h1>" . $logado . "</h1>");
+          ?>
           </header>
           <div class="foto_perfil"></div>
         </section>
@@ -66,7 +87,16 @@
         <section aria-labelledby="titulo_painel" class="secao_container">
           <!-- Título e descrição -->
           <header class="descricao_geral">
-            <h1 id="titulo_painel">Bem-vindo, usuário!</h1>
+            <?php
+              // Dar boas vindas ao usuário logado
+              echo (
+                "<h1> Bem vindo(a), "
+                  .
+                  $logado
+                  .
+                "</h1>"
+              )
+            ?>
             <p>Aqui você encontra a visão geral do seu empreendimento:</p>
           </header>
         </section>
@@ -169,7 +199,7 @@
       <!-- Footer Cabuailo como navegação alternativa para login -->
       <footer aria-label="Navegação secundária footer">
         <section class="info_cabuailo">
-          <img class="logo_cabuailo" src="../../imagens/logo.png" alt="Logo da Cabuailo">
+          <img class="logo_cabuailo" src="../../public/imagens/logo.png" alt="Logo da Cabuailo">
           <header>
             <h1>Cabuailo</h1>
             <p>A Cabuailo faz uso de tecnologias avançadas para garantir a segurança e eficiência de sua barbearia!</p>

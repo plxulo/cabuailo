@@ -1,4 +1,5 @@
 <?php
+  session_start();
 
   include ("conecta.php");
 
@@ -40,14 +41,18 @@
 
   if ($conn->query($sql) === TRUE)
   {
+    $_SESSION['user'] = $user;
+    $_SESSION['senha'] = $password;
     echo("Usuário cadastrado com sucesso!");
   }
   else
   {
     echo("Erro ao cadastrar usuário: ". $conn->error);
+    unset ($_SESSION['user']);
+    unset ($_SESSION['senha']);
   }
 
-  header("Location: ../public/html/admin/admPainel.html");
+  header("Location: admin/admPainel.php");
 
   $conn->close();
 ?>

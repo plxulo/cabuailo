@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -83,26 +86,17 @@
           Seção das entradas para exibir no aplicativo 
           Registrar com banco de dados depois
         -->
-        <section aria-label="Adicionar nome e descrição da filial" class="inputs">
+        <section aria-label="Adicionar nome e descrição" class="inputs">
 
-          <form aria-label="Cadastrar uma filial" action="../../../php/inserirFilial.php" method="POST">
+          <form action="">
             <!-- Nome do aplicativo que será exibido -->
+            <input id="nome" type="text" placeholder="Nome do empreendimento.">
             <label for="nome">Este será o nome em exibição no aplicativo</label>
-            <input id="nome" type="text" placeholder="Nome do empreendimento." name="nome">
-
-            <!-- Endereço -->
-            <label for="enderco">Este será o endereço em exibição no aplicativo</label>
-            <input id="endereco" type="text" placeholder="Endereço do empreendimento." name="endereco">
-
-            <!-- CEP -->
-            <label for="cep">Este será o CEP em exibição no aplicativo</label>
-            <input id="cep" type="number" placeholder="CEP do empreendimento." name="cep">
-
+            
             <!-- Descrição do aplicativo -->
-            <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
             <textarea name="" id="descricao" cols="30" rows="10"></textarea>
-            <button type="submit">Enviar</button>
-          </form>
+            <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
+          <form action="">
 
         </section>
 
@@ -119,9 +113,13 @@
             <button>Remover</button>
           </section>
 
+        <!-- Seção de inputs imagem -->
         </section>
+      <!-- Seção column -->
       </section>
+    <!-- Seção do conteúdo principal -->
     </section>
+
   </main>
 </body>
 

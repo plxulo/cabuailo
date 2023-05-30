@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- 
@@ -34,7 +37,7 @@
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="../../valida.php" method="post">
+      <form aria-label="Formulário de login" class="login" action="../valida.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
             <input type="text" name="user">
@@ -46,7 +49,7 @@
           <a href="#">Esqueci minha senha</a>
           <button aria-label="Entrar na sua conta" name="entrar" type="submit">Entrar na sua Conta</button>
           <section id="error_message"></section>
-          <a href="admCadastro.html">Não possuo conta</a>
+          <a href="admCadastro.php">Não possuo conta</a>
       </form>
 
     </section>

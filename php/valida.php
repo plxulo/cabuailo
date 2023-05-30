@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include ("conecta.php");
 
   $user = $_POST['user'];
@@ -10,12 +11,14 @@
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {
-    session_start();
     $_SESSION['user'] = $user;
-    header("Location: ../php/adminScreen.php");
+    $_SESSION['senha'] = $password;
+    header("Location: admin/admPainel.php");
   } else {
     $output = "Usuário ou senha incorretos";
-    header("Location: html/admin/admLogin.html");
+    unset ($_SESSION['user']);
+    unset ($_SESSION['senha']);
+    header("Location: admin/admLogin.php");
   };
 
 ?>
