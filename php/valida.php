@@ -6,7 +6,7 @@
   $output;
 
   // Realizar a consulta SQL para verificar se usuário e senha existem
-  $sql =  "SELECT usuario, senha FROM usuarios WHERE usuario = '$user' AND senha = '$password'";
+  $sql =  "SELECT adm_nome, adm_senha FROM usuarios_admin WHERE adm_nome = '$user' AND adm_senha = '$password'";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {

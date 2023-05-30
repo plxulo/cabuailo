@@ -40,11 +40,11 @@
 
   if ($conn->query($sql) === TRUE)
   {
-      echo("Usuário cadastrado com sucesso!");
+    echo("Usuário cadastrado com sucesso!");
   }
   else
   {
-      echo("Erro ao cadastrar usuário: ". $conn->error);
+    echo("Erro ao cadastrar usuário: ". $conn->error);
   }
 
   header("Location: ../public/html/admin/admPainel.html");
