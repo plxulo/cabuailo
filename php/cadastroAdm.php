@@ -39,20 +39,30 @@
   $sql = "INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha)
           VALUES ('{$retorno->getUser()}', '{$retorno->getEmail()}', '{$retorno->getPassword()}')";
 
+  //Verificar se o usuário foi inserido com sucesso
+  //Atribuir usuário e senha para superglobal sessão
   if ($conn->query($sql) === TRUE)
   {
-    $_SESSION['user'] = $user;
-    $_SESSION['senha'] = $password;
     echo("Usuário cadastrado com sucesso!");
-  }
+
+    $_SESSION['user'] = $retorno->getUser();
+    $_SESSION['senha'] = $retorno->getPassword();
+
+    //No sucesso, redirecionar para painel
+    header("Location: admin/admPainel.php");
+  } 
   else
   {
+    //Caso contrário, mostrar erro
+    //Desatribuir sessão
     echo("Erro ao cadastrar usuário: ". $conn->error);
+
     unset ($_SESSION['user']);
     unset ($_SESSION['senha']);
-  }
 
-  header("Location: admin/admPainel.php");
+    //Voltar para cadastro
+    header("Location: admin/admCadastro.php");
+  }
 
   $conn->close();
 ?>

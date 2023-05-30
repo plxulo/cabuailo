@@ -1,5 +1,13 @@
 <?php
+
   session_start();
+
+  if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    header('location: admLogin.php');
+  }
+
+  $logado = $_SESSION['user'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,8 +28,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../../css/admPerfil.css" />
-  <link rel="stylesheet" type="text/css" href="../../global/admCSS.css" />
+  <link rel="stylesheet" type="text/css" href="../../public/css/admPerfil.css" />
+  <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
 
   <script defer src="../../js/private/sAdmCadastro.js"></script>
 
@@ -36,7 +44,7 @@
       <navbar>
         <!-- Nome do sistema e logo -->
         <header class="titulo_navbar">
-          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../imagens/logo.png" />
+          <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../public/imagens/logo.png" />
           <h1>Cabuailo</h1>
         </header>
 
@@ -44,15 +52,16 @@
         <nav>
           <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
             <input type="text" placeholder="Pesquisar...">
-            <a href="admPainel.html">Painel principal</a>
-            <a href="admCrud.html">Cadastros</a>
+            <a href="admPainel.php">Painel principal</a>
+            <a href="admCrud.php">Cadastros</a>
             <a href="#">Funcionários</a>
-            <a href="admFiliais.html">Empreendimentos cadastrados</a>
-            <a href="admSeguranca.html">Segurança</a>
+            <a href="admFiliais.php">Empreendimentos cadastrados</a>
+            <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
             <a href="#">Ajuda</a>
-            <a href="admPerfil.html">Perfil</a>
-            <a href="admConfig.html">Configurações</a>
+            <a href="admPerfil.php">Perfil</a>
+            <a href="admConfig.php">Configurações</a>
+            <a href="../admLogout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
@@ -65,7 +74,9 @@
       <navbar class="navbar_topo" aria-label="Navegação topo">
         <section class="usuario_logado">
           <header>
-            <h1>Usuário</h1>
+            <?php
+              echo ("<h1>" . $logado . "</h1>");
+            ?>
           </header>
           <div class="foto_perfil"></div>
         </section>
@@ -74,7 +85,7 @@
       <section class="container_column">
         <!-- Título e descrição -->
         <header class="descricao_geral">
-          <h1 id="titulo_cadastros">Adicionar filiais</h1>
+          <h1 id="titulo_cadastros">Configurações do perfil</h1>
           <p>
             Cadastre sua filial diretamente no aplicativo para que seja visível para todos.
             Você pode insirir imagens, textos e produtos para cadastro e venda no aplicativo.
@@ -87,26 +98,26 @@
           Registrar com banco de dados depois
         -->
         <section aria-label="Adicionar nome e descrição" class="inputs">
-
+          <h1>Nome de usuário:</h1>
+          <!-- Alter table -->
           <form action="">
-            <!-- Nome do aplicativo que será exibido -->
-            <input id="nome" type="text" placeholder="Nome do empreendimento.">
-            <label for="nome">Este será o nome em exibição no aplicativo</label>
-            
-            <!-- Descrição do aplicativo -->
-            <textarea name="" id="descricao" cols="30" rows="10"></textarea>
-            <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
-          <form action="">
+            <p>Esté é seu nome atual: <?php echo $logado ?></p>
+            <input id="nome" type="text" placeholder="Novo nome">
+            <label for="nome">Este será o nome da sua conta de administrador</label>
+            <button>Alterar Nome</button>
+          </form>
 
         </section>
 
-        <p>Insira agora as imagens que ficarão em exibição:</p>
+        <h1>Foto de perfil:</h1>
+        <p>Insira sua foto de perfil</p>
         <section aria-label="Adicionar imagens do empreendimento" class="inputs">
-
-          <figure>
-            <img src="" alt="">
-            <figcaption>Imagem</figcaption>
-          </figure>
+        
+          <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
+            Selecione uma imagem:
+            <input type="file" id="imagem" name="imagem">
+            <input type="submit" value="Enviar">
+          </form>
 
           <section aria-label="Botões inserir/remover imagens" class="container_botoes">
             <button>Inserir</button>

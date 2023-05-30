@@ -54,15 +54,16 @@
         <nav>
           <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
             <input type="text" placeholder="Pesquisar..."/>
-            <a href="admPainel.html">Painel principal</a>
-            <a href="admCrud.html">Cadastros</a>
+            <a href="admPainel.php">Painel principal</a>
+            <a href="admCrud.php">Cadastros</a>
             <a href="#">Funcionários</a>
-            <a href="admFiliais.html">Empreendimentos cadastrados</a>
-            <a href="admSeguranca.html">Segurança</a>
+            <a href="admFiliais.php">Empreendimentos cadastrados</a>
+            <a href="admSeguranca.php">Segurança</a>
             <hr width="100%"/>
             <a href="#">Ajuda</a>
-            <a href="admPerfil.html">Perfil</a>
-            <a href="admConfig.html">Configurações</a>
+            <a href="admPerfil.php">Perfil</a>
+            <a href="admConfig.php">Configurações</a>
+            <a href="../admLogout.php">Sair</a>
           </ul>
         </nav>
       </navbar>

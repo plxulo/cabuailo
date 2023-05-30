@@ -1,5 +1,11 @@
 <?php
   session_start();
+  if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    header('location: admLogin.php');
+  }
+
+  $logado = $_SESSION['user'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="../../global/admCSS.css" />
-  <link rel="stylesheet" href="../../css/admConfig.css">
+  <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
+  <link rel="stylesheet" href="../../public/css/admConfig.css">
 
   <title>Painel Principal</title>
 </head>
@@ -31,7 +37,7 @@
         <navbar>
           <!-- Nome do sistema e logo -->
           <header class="titulo_navbar">
-            <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../imagens/logo.png"/>
+            <img class="logo_cabuailo" aria-label="Logo da Cabuailo" src="../../public/imagens/logo.png"/>
             <h1>Cabuailo</h1>
           </header>
 
@@ -39,15 +45,16 @@
           <nav>
             <ul aria-label="Anchor da barra de navegação esquerda" class="navlinks">
               <input type="text" placeholder="Pesquisar..."/>
-              <a href="admPainel.html">Painel principal</a>
-              <a href="admCrud.html">Cadastros</a>
+              <a href="admPainel.php">Painel principal</a>
+              <a href="admCrud.php">Cadastros</a>
               <a href="#">Funcionários</a>
-              <a href="admFiliais.html">Empreendimentos cadastrados</a>
-              <a href="admSeguranca.html">Segurança</a>
+              <a href="admFiliais.php">Empreendimentos cadastrados</a>
+              <a href="admSeguranca.php">Segurança</a>
               <hr width="100%"/>
               <a href="#">Ajuda</a>
-              <a href="#">Perfil</a>
-              <a href="admConfig.html">Configurações</a>
+              <a href="admPerfil.php">Perfil</a>
+              <a href="admConfig.php">Configurações</a>
+              <a href="../admLogout.php">Sair</a>
             </ul>
           </nav>
         </navbar>
@@ -58,7 +65,9 @@
       <navbar aria-label="Navegação topo" class="navbar_topo">
         <section class="usuario_logado">
           <header>
-            <h1>Usuário</h1>
+            <?php
+              echo ("<h1>" . $logado . "</h1>");
+            ?>
           </header>
           <div class="foto_perfil"></div>
         </section>
