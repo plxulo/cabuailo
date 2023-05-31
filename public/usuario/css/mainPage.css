@@ -221,7 +221,7 @@ main section1 {
     height: 15vh;
     margin-top: 15px;
     border-radius: 15px;
-    background-image: url(/public/landing/imagens/fundo_menu_cabuailo.png);
+    background-image: url(../../landing/imagens/fundo_menu_cabuailo.png);
     background-size: cover;
     background-position: center;
     display: flex;
