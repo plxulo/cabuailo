@@ -99,7 +99,7 @@ nav ul li.active a .text {
     top: -50%;
     width: 70px;
     height: 70px;
-    background: var(--vermelho);
+    background: var(--azul-claro);
     border-radius: 50%;
     border: 6px solid var(--branco-fundo);
     transition: 0.5;
@@ -236,13 +236,14 @@ main section1 h {
 main section1 .desconto {
     width: 40%;
     height: 30px;
-    background-color: var(--azul-claro);
+    background-color: var(--vermelho);
     border: none;
     border-radius: 20px;
     color: white;
     font-size: 15px;
     font-weight: 500;
     transition: 0.5s;
+    margin-top: 10px;
 }
 section2 {
     margin-top: 15px;
