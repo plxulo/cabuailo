@@ -142,6 +142,7 @@
               <tr>
                 <td>
                   <p>Joinville 177.221.52.92</p>
+                  <p class="sub_table">Está é sua sessão atual</p>
                 </td>
                 <td></td>
                 <td>
@@ -153,6 +154,7 @@
               <tr>
                 <td>
                   <p>Joinville 177.221.52.92</p>
+                  <p class="sub_table">Está é sua sessão atual</p>
                 </td>
                 <td></td>
                 <td>

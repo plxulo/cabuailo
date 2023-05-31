@@ -100,11 +100,11 @@
         <section aria-label="Adicionar nome e descrição" class="inputs">
           <h1>Nome de usuário:</h1>
           <!-- Alter table -->
-          <form action="">
+          <form action="../alterarNome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
-            <input id="nome" type="text" placeholder="Novo nome">
+            <input id="nome" type="text" placeholder="Novo nome" name="nome">
             <label for="nome">Este será o nome da sua conta de administrador</label>
-            <button>Alterar Nome</button>
+            <button type="submit">Alterar Nome</button>
           </form>
 
         </section>

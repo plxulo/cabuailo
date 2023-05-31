@@ -37,7 +37,15 @@
   $retorno = new cadastroAdm();
 
   $sql = "INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha)
-          VALUES ('{$retorno->getUser()}', '{$retorno->getEmail()}', '{$retorno->getPassword()}')";
+          VALUES ('{$retorno->getUser()}', '{$retorno->getEmail()}', '{$retorno->getPassword()}');";
+
+  $query = "SELECT id_adm, adm_nome, adm_senha FROM usuarios_admin";
+  $result = mysqli_query($conn, $query);
+
+  // Pegar a coluna ID: (seleciona as colunas)
+  while ($row = mysqli_fetch_assoc($result)) {
+    $id = $row["id_adm"];
+  }
 
   //Verificar se o usuário foi inserido com sucesso
   //Atribuir usuário e senha para superglobal sessão
@@ -47,7 +55,7 @@
 
     $_SESSION['user'] = $retorno->getUser();
     $_SESSION['senha'] = $retorno->getPassword();
-
+    $_SESSION['id'] = $id;
     //No sucesso, redirecionar para painel
     header("Location: admin/admPainel.php");
   } 

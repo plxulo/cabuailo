@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../../public/css/styleAdmin.css">
   <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
 
-  <script defer src="../../js/private/sAdmCadastro.js"></script>
+  <script defer src="../../public/js/private/sAdmCadastro.js"></script>
 
   <title>Painel Admin</title>
 </head>
