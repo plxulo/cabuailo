@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/usuario/css/mainPage.css">
+    <link rel="stylesheet" href="../css/mainPage.css">
     <title>Cabuailo</title>
 </head>
 <body>
     <header>
         <button class="mapa"><ion-icon name="map-outline"></ion-icon></button>
         <section class="textoLocal">
-            <h1><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Localização atual</h1>
-            <p>Joinville</p>
+            <h1>Localização atual</h1>
+            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
     
         <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
@@ -24,27 +24,27 @@
                 <h>Descontos de 25%</h>
                 <button class="desconto">Resgatar cupom</button>
         </section1>
-        <section2>
-            <h1>Procurar Barbearia</h1>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
-                <input type="text" name="email" Procurar >
-            </div>
-        </section2>
+       
         <section3>
-            <div class="servicos">
-                <h1>O que você procura?</h1>
-                <div class="servicosTags">
-                    <div class="tipoServico">
-                        <ion-icon name="today-sharp"></ion-icon>
-                        <h>Agendar</h>                    
-                    </div>
-                    <div class="tipoServico">
-                        <ion-icon name="storefront-sharp"></ion-icon>
-                        <h>Barbearias</h>
-                    </div>
-                </div>
+            <h>Serviços</h>
+            <div class="botoes3">
+                <button class="meuBotao" onclick="mostrarDiv(1)">
+                    <ion-icon name="storefront-outline"></ion-icon>
+                    <p>Barbearias</p>
+                </button>
+                <button class="meuBotao" onclick="mostrarDiv(2)">Botão 2</button>
+                <button class="meuBotao" onclick="mostrarDiv(3)">Botão 3</button>
             </div>
+                <div id="div1" class="minhaDiv">
+                    Conteúdo da Div 1
+                </div>
+                <div id="div2" class="minhaDiv">
+                    Conteúdo da Div 2
+                </div>
+                <div id="div3" class="minhaDiv">
+                    Conteúdo da Div 3
+                </div>
+
         </section3>
         <section4>
             <img src="">
@@ -87,15 +87,31 @@
     </nav>
 </body>
 <script>
-   const list = document.querySelectorAll('.list');
-   function activeLink(){
-    list.forEach((item) =>
-    item.classList.remove('active'));
-    this.classList.add('active');
-   }
-   list.forEach((item) => item.addEventListener('click', activeLink));
-</script>
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+     list.forEach((item) =>
+     item.classList.remove('active'));
+     this.classList.add('active');
+    }
+    list.forEach((item) => item.addEventListener('click', activeLink));
+ </script>
+<script>
+    function mostrarDiv(divIndex) {
+    var divs = document.querySelectorAll(".minhaDiv");
+    var botoes = document.querySelectorAll(".meuBotao");
 
+    // Oculta todas as divs e restaura a cor dos botões
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].style.display = "none";
+        botoes[i].style.backgroundColor = "#FFFAFF";
+    }
+
+    // Exibe a div selecionada e altera a cor do botão correspondente
+    var divSelecionada = document.getElementById("div" + divIndex);
+    var botaoSelecionado = document.querySelector(".meuBotao:nth-child(" + divIndex + ")");
+    divSelecionada.style.display = "block";
+    botaoSelecionado.style.backgroundColor = "#D8315B";
+}
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
