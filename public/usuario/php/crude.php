@@ -5,7 +5,7 @@
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    $comando = $pdo->prepare("INSERT INTO usuario (usuario, email, senha) VALUES('$nome', '$email', '$senha')");
+    $comando = $pdo->prepare("INSERT INTO usuarios (usuario, email, senha) VALUES('$nome', '$email', '$senha')");
     $resultado = $comando->execute();
     header("Location: ../html/mainPage.html");
 

@@ -116,6 +116,7 @@ nav ul li.active a .text {
     background-color: transparent;
     border-top-right-radius: 20px;
     box-shadow: 1px -10px 0 0 var(--branco-fundo);
+    z-index: 10;
 }
 
 .indicador::after {
@@ -128,6 +129,7 @@ nav ul li.active a .text {
     background-color: transparent;
     border-top-left-radius: 20px;
     box-shadow: -1px -10px 0 0 var(--branco-fundo);
+    z-index: 10;
 }
 
 nav ul li:nth-child(1).active ~ .indicador {
@@ -298,65 +300,58 @@ section2 h1 {
 
 section3 {
     width: 90%;
-    height: 50px;
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.servicos {
-    padding-top: 5px;
-}
-
-.servicosTags {
-    width: 350px;
-    height: 90px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.servicosTags h {
-    font-size: 15px;
-}
-
-.tipoServico {
-    width: 90px;
-    height: 90px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+section3 h {
+    width: 100%;
+    height: 30px;
+    display: flex;
     justify-content: center;
-    border-radius: 10px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 24px;
+}
+
+.botoes3 {
+    width: 90%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: blue;
-    transition: 0.5s;
-    border: none;
-    font-size: 20px;
-}
-
-.icone-servicos {
-    margin-top: 5px;
+    font-family: 'Prompt', sans-serif;
     font-size: 25px;
-}
-
-.servicos h1 {
-    font-size: 24px
-}
-
-.divServicos {
-    display: none;
 }
 
 .meuBotao {
     width: 90px;
     height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
 }
 
-.jayjay {
-    display: block;
+.icones_servicos {
+    font-size: 24px;
 }
+
+.minhaDiv {
+    width: 90%;
+    height: 400px;
+    display: flex;
+
+    background-color: #0A2463;
+}
+
+.minhaSubDiv {
+    width: 90%;
+    height: 400px;
+} 
