@@ -1,6 +1,14 @@
 CREATE DATABASE cabuailo;
 USE cabuailo;
 
+/* TODO: Armazenar senhas com hash */
+CREATE TABLE usuarios_admin (
+    id_adm INT(6) PRIMARY KEY AUTO_INCREMENT,
+    adm_nome VARCHAR(255) NOT NULL,
+    adm_email VARCHAR(255) NOT NULL,
+    adm_senha VARCHAR(255) NOT NULL
+);
+
 /* Membro comum */
 CREATE TABLE usuarios (
     id INT(6) AUTO_INCREMENT PRIMARY KEY,
@@ -9,12 +17,14 @@ CREATE TABLE usuarios (
     senha VARCHAR(255) NOT NULL
 );
 
-/* TODO: Armazenar senhas com hash */
-CREATE TABLE usuarios_admin (
-    id_adm INT(6) PRIMARY KEY AUTO_INCREMENT,
-    adm_nome VARCHAR(255) NOT NULL,
-    adm_email VARCHAR(255) NOT NULL,
-    adm_senha VARCHAR(255) NOT NULL
+/* Armazenar filial relacionada à adm */
+CREATE TABLE filiais (
+    id_filial INT(6) PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    cep INT(6) NOT NULL,
+    filial_adm INT(6),
+    FOREIGN KEY (filial_adm) REFERENCES usuarios_admin(id_adm)
 );
 
 CREATE TABLE funcionarios (
@@ -47,14 +57,4 @@ CREATE TABLE imagem_pfp_user (
     imagem MEDIUMBLOB,
     pfp_user INT(6),
     FOREIGN KEY (pfp_user) REFERENCES usuarios(id)
-);
-
-/* Armazenar filial relacionada à adm */
-CREATE TABLE filiais (
-    id_filial INT(6) PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    endereco VARCHAR(255) NOT NULL,
-    cep INT(6) NOT NULL,
-    filial_adm INT(6),
-    FOREIGN KEY (filial_adm) REFERENCES usuarios_admin(id_adm)
 );

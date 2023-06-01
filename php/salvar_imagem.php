@@ -2,7 +2,7 @@
         session_start();
 
         // ATENÇÃO: o tipo da coluna na tabela deve ser MEDIUMBLOB
-        include("conecta2.php");
+        include("conecta_pdo.php");
 
         // Lê o conteúdo do arquivo de imagem e armazena na variável $imagem
 		$imagem = file_get_contents($_FILES["imagem"]["tmp_name"]);

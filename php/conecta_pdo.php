@@ -3,7 +3,8 @@
     date_default_timezone_set('America/Sao_Paulo');
     
     // CONEXÃO COM A BASE DE DADOS: verifique sempre o dbname
-    try{
+    try
+    {
         $pdo = new PDO("mysql:dbname=cabuailo;host=localhost;charset=utf8","root","");
     }
     catch(PDOException $erro)
