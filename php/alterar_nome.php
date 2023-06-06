@@ -16,7 +16,7 @@
   if($executar_alterar === TRUE)
   {
     // Update deu certo:
-    $_SESSION['usuario'] = $novo_nome;
+    $_SESSION['user'] = $novo_nome;
 
     echo("<script type = text/javascript>");
         echo ("alert('Nome alterado!');");

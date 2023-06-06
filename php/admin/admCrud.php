@@ -1,6 +1,5 @@
 <?php
   include ("../admin.php");
-  session_start();
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
@@ -59,7 +58,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
-            <a href="../admLogout.php">Sair</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
@@ -107,19 +106,32 @@
           </section>
 
           <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="" method="">
-            <input type="text" placeholder="Email, código ou nome do usuário">
-            <input type="text" placeholder="Senha">
+          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
+            <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
+            <input type="text" placeholder="Filial do usuário" name="filial">
+            <input type="text" placeholder="Senha" name="senha">
             <!-- Nível de acesso do usuário -->
             <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
             <div class="select_container">
-              <select id="user_access_level" name="user_access_level" required>
+              <select id="user_access_level" name="nivel_acesso" required>
                   <option value="admin">Administrador</option>
                   <option value="operator">Operador</option>
                   <option value="funcionario">Funcionário</option>
               </select>
+              <select id="filial_funcionario" name="filial_funcionario" required>
+                  <?php
+                  // Exibir dentro de um select as filiais disponíveis para designar cada funcionário.
+                  // Estas filiais são exibidas de acordo com o ID de cada sessão de cada usuário adm.
+                    while($linhas_filial = $selecionar_filiais->fetch())
+                    {
+                      $nome_filial = $linhas_filial["nome"]; // Nome da coluna XAMPP
+                      // Dentro de um select, while é usado para percorrer e projectar o máximo possível de filiais.
+                      echo ("<option>" . $nome_filial . "</option>");
+                    }
+                  ?>
+              </select>
             </div>
-            <button class="botao_acao">Inserir Usuário</button>
+            <button type="submit" class="botao_acao">Inserir Funcionário</button>
           </form>
 
           <!-- Formulário para inserção de usuários no sistema -->
@@ -172,18 +184,32 @@
                 </td>
               </tr>
               <?php
-                while ($row = mysqli_fetch_assoc($result)) {
+
+                if($query->rowCount() > 0)
+                {
+                  
+                  while( $linhas = $query->fetch() ) 
+                  {
+                    $id = $linhas["id_func"];     // Nome da coluna XAMPP
+                    $nome = $linhas["nome_func"]; // Nome da coluna XAMPP
+                    $filial = $linhas["filial"];  // Nome da coluna XAMPP
+                    
+                    echo("ID: $id Nome: $nome Filial: $filial <br>");
                     echo "<tr>";
-                    echo "<td>" . $row["id"] . "</td>";
-                    echo "<td>" . $row["nome_func"] . "</td>";
-                    echo "<td>" . $row["filial"] . "</td>";
-                    echo "<td>" . $row["senha_func"] . "</td>";
-                    echo 
-                    "<td> 
-                      <a href=''>Editar</a>
-                      <a href=''>Excluir</a>
-                    </td>";
-                    echo "</tr>";
+                      echo "<td>" . $linhas["id_func"] . "</td>" ;
+                      echo "<td>" . $linhas["nome_func"] . "</td>" ;
+                      echo "<td>" . $linhas["filial"] . "</td>" ;
+                      echo 
+                      "<td> 
+                        <a href=''> Editar </a>
+                        <a href=''> Excluir </a>
+                      </td>";
+                    echo "<tr>";
+                  }
+                }
+                else
+                {
+                  echo("NÃO HÁ FUNCIONÁRIOS CADASTRADOS");
                 }
               ?>
             </tbody>

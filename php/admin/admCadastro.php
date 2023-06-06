@@ -37,20 +37,20 @@
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="../cadastroAdm.php" method="post">
+      <form aria-label="Formulário de login" class="login" action="../cadastrar_adm.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
-            <input id="usuario" type="text" name="user">
+            <input id="usuario" type="text" name="user" required="">
           </section>
 
           <label for="email">Email:</label>
           <section class="input_box">
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" required="">
           </section>
 
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input id="senha" type="password" name="password">
+            <input id="senha" type="password" name="password" required="">
           </section>
           <a href="#">Termos de uso</a>
           <button aria-label="Entrar na sua conta" name="entrar" type="submit">Criar conta</button>

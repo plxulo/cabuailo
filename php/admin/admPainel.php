@@ -9,6 +9,7 @@
   */
 
   session_start();
+
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
@@ -63,7 +64,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
-            <a href="../admLogout.php">Sair</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>

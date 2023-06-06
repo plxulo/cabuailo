@@ -61,7 +61,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
-            <a href="../admLogout.php">Sair</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
@@ -100,7 +100,7 @@
         <section aria-label="Adicionar nome e descrição" class="inputs">
           <h1>Nome de usuário:</h1>
           <!-- Alter table -->
-          <form action="../alterarNome.php" method="POST">
+          <form action="../alterar_nome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
             <input id="nome" type="text" placeholder="Novo nome" name="novo_nome">
             <label for="nome">Este será o nome da sua conta de administrador</label>

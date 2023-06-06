@@ -36,10 +36,11 @@
       unset($_SESSION['user']);
       unset($_SESSION['id']);
 
+      // Por algum motivo, se eu utilizar o header("Location: x.php") o alerta não é exibido?
       echo ("<script type = text/javascript>");
-      echo ("alert('Nome de usuário ou senha incorretos, tente novamente.');");
+        echo ("alert('Nome de usuário ou senha incorretos, tente novamente.');");
+        echo ("window.location = 'admin/admLogin.php'");
       echo ("</script>"); 
-      header("Location: admin/admLogin.php");
     }
   }
   // Validação deu errado:

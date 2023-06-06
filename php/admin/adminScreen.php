@@ -54,6 +54,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.html">Perfil</a>
             <a href="admConfig.html">Configurações</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
