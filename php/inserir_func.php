@@ -6,7 +6,6 @@
     public $nome;
     public $senha;
     public $nivel_acesso;
-    public $filial;
 
     function __construct()
     {
@@ -33,14 +32,18 @@
 
   $nome = $retorno->getNome();
   $senha = $retorno->getSenha();
+  $acesso = $retorno->getAcesso();
+  $filial_funcionario = $_POST["filial_funcionario"];
+
   // $acesso = $retorno->getAcesso();
 
-  $sql = $pdo->prepare("INSERT INTO funcionarios (nome_func, senha_func)
-                        VALUES (?, ?)");
+  $sql = $pdo->prepare("INSERT INTO funcionarios (nome_func, senha_func, filial, nivel_acesso)
+                        VALUES (?, ?, ?, ?)");
 
   $sql->bindParam(1, $nome);
   $sql->bindParam(2, $senha);
-  // $sql->bindParam(3, $acesso);
+  $sql->bindParam(3, $filial_funcionario);
+  $sql->bindParam(4, $acesso);
 
   $executar_insert = $sql->execute();
 

@@ -21,6 +21,7 @@ CREATE TABLE funcionarios (
     id_func INT(6) PRIMARY KEY AUTO_INCREMENT,
     nome_func VARCHAR(255) NOT NULL,
     senha_func VARCHAR(255) NOT NULL,
+    nivel_acesso VARCHAR(255) NOT NULL,
     filial INT(6),
     FOREIGN KEY (filial) REFERENCES filiais(id_filial)
 );
