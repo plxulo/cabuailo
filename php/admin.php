@@ -1,10 +1,8 @@
 <?php
   include ("conecta.php");
 
-  $query = "SELECT * FROM funcionarios;";
-  $result = mysqli_query($conn, $query);
+  $query = $pdo->prepare("SELECT * FROM funcionarios");
+  $query->execute();
 
-  if (!$result) {
-    die("Erro ao executar a consulta: " . mysqli_error($conn));
-  }
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>

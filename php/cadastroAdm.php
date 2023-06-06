@@ -1,9 +1,6 @@
 <?php
   session_start();
-
   include ("conecta.php");
-
-  use mysqli;
 
   class cadastroAdm {
 
@@ -36,41 +33,44 @@
 
   $retorno = new cadastroAdm();
 
-  $sql = "INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha)
-          VALUES ('{$retorno->getUser()}', '{$retorno->getEmail()}', '{$retorno->getPassword()}');";
+  $nome = $retorno->getUser();
+  $senha = $retorno->getPassword();
+  $email = $retorno->getEmail();
 
-  $query = "SELECT id_adm, adm_nome, adm_senha FROM usuarios_admin";
-  $result = mysqli_query($conn, $query);
+  // Variável $sql prepara uma inserção dentro do banco de dados:
+  $sql = $pdo->prepare("INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha) VALUES (?,?,?)");
 
-  // Pegar a coluna ID: (seleciona as colunas)
-  while ($row = mysqli_fetch_assoc($result)) {
-    $id = $row["id_adm"];
-  }
+  // bindParam(ordem na consulta, variável) para proteger o banco de dados de SQL injection:
+  $sql->bindParam(1, $nome);
+  $sql->bindParam(2, $email);
+  $sql->bindParam(3, $senha);
 
-  //Verificar se o usuário foi inserido com sucesso
-  //Atribuir usuário e senha para superglobal sessão
-  if ($conn->query($sql) === TRUE)
+  // Selecionar o id_usuario da última inserção:
+  $query = $pdo->prepare("SELECT id_adm FROM usuarios_admin ORDER BY id_adm DESC LIMIT 1");
+  $executar_insert = $sql->execute();
+  $executar_query = $query->execute();
+
+  // Após a consulta, armazenar o valor do id_adm na sessão:
+  $query_id = $query->fetch(PDO::FETCH_ASSOC);
+  $id_usuario = $query_id['id_adm'];
+
+  if($executar_insert === TRUE)
   {
-    echo("Usuário cadastrado com sucesso!");
-
-    $_SESSION['user'] = $retorno->getUser();
-    $_SESSION['senha'] = $retorno->getPassword();
-    $_SESSION['id'] = $id;
-    //No sucesso, redirecionar para painel
-    header("Location: admin/admPainel.php");
-  } 
+    // Inserção bem sucedida:
+    $_SESSION['id'] = $id_usuario;
+    $_SESSION['user'] = $nome;
+    $_SESSION['senha'] = $senha;
+    header('Location: admin/admPainel.php');
+  }
   else
   {
-    //Caso contrário, mostrar erro
-    //Desatribuir sessão
-    echo("Erro ao cadastrar usuário: ". $conn->error);
+    // Inserção falhou:
+    unset($_SESSION['user']);
+    unset($_SESSION['id']);
 
-    unset ($_SESSION['user']);
-    unset ($_SESSION['senha']);
-
-    //Voltar para cadastro
-    header("Location: admin/admCadastro.php");
+    echo ("<script type = text/javascript>");
+      echo ("alert('Erro ao cadastrar o usuário, por favor, tente novamente.');");
+      echo ("window.location = 'admin/admCadastro.php'");
+    echo ("</script>");    
   }
-
-  $conn->close();
 ?>

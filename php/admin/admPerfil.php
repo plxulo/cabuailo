@@ -102,7 +102,7 @@
           <!-- Alter table -->
           <form action="../alterarNome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
-            <input id="nome" type="text" placeholder="Novo nome" name="nome">
+            <input id="nome" type="text" placeholder="Novo nome" name="novo_nome">
             <label for="nome">Este será o nome da sua conta de administrador</label>
             <button type="submit">Alterar Nome</button>
           </form>

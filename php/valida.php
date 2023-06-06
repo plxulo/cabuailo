@@ -1,37 +1,56 @@
 <?php
+  include ("conecta.php");
   // Inicia sessão
   session_start();
-  include ("conecta.php");
 
   $user = $_POST['user'];
   $password = $_POST['password'];
 
-  // Realizar a consulta SQL para verificar se usuário e senha existem
-  $sql =  "SELECT id_adm, adm_nome, adm_senha FROM usuarios_admin WHERE adm_nome = '$user' AND adm_senha = '$password'";
-  $result = mysqli_query($conn, $sql);
+  // Validar se as entradas do usuário retornam algo do banco de dados:
+  $sql = $pdo->prepare("SELECT id_adm, adm_nome, adm_senha FROM usuarios_admin WHERE adm_nome = :nome AND adm_senha = :senha");
+  $sql->bindParam(':nome', $user); 
+  $sql->bindParam(':senha', $password); 
 
-  // Pegar a coluna ID: (seleciona as colunas)
-  while ($row = mysqli_fetch_assoc($result)) {
-    $id = $row["id_adm"];
+  $executar_validacao = $sql->execute();
+
+  // Após a consulta, armazenar o valor do id_adm na sessão:
+  $sql_id = $sql->fetch(PDO::FETCH_ASSOC);
+  $id_usuario = $sql_id['id_adm'];
+
+  // Verficiar se a validação deu certo ou não:
+  if($executar_validacao === TRUE)
+  {
+    // Validação deu certo:
+    if ($sql->rowCount() > 0) 
+    {
+      // Houve um retorno similar à entrada do usuário:
+      $_SESSION['id'] = $id_usuario;
+      $_SESSION['user'] = $user;
+      $_SESSION['senha'] = $password;
+ 
+      header("Location: admin/admPainel.php");
+    }
+    else
+    {
+      // Não houve retorno no rowCount:
+      unset($_SESSION['user']);
+      unset($_SESSION['id']);
+
+      echo ("<script type = text/javascript>");
+      echo ("alert('Nome de usuário ou senha incorretos, tente novamente.');");
+      echo ("</script>"); 
+      header("Location: admin/admLogin.php");
+    }
   }
+  // Validação deu errado:
+  else
+  {
+    unset($_SESSION['user']);
+    unset($_SESSION['id']);
 
-  // Se existir, inicia sessão e redireciona para página de painel
-  if (mysqli_num_rows($result) > 0) {
-    $_SESSION['user'] = $user;
-    $_SESSION['senha'] = $password;
-    $_SESSION['id'] = $id;
-    header("Location: admin/admPainel.php");
-  } else {
-    unset ($_SESSION['user']);
-    unset ($_SESSION['senha']);
-    unset ($_SESSION['id']);
-
-    // Mensagem de erro, retorna usuário para tela de login
     echo ("<script type = text/javascript>");
-      echo ("alert('Usuário ou senha incorretos');");
-      echo ("window.location = 'admin/admlogin.php'");
-    echo ("</script>");  
-
-  };
-
+    echo ("alert('A validação falhou, tente novamente.');");
+    echo ("</script>");    
+    header("Location: admin/admLogin.php");
+  }
 ?>

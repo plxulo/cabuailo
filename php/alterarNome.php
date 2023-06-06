@@ -1,43 +1,34 @@
 <?php
+  include("conecta.php");
   session_start();
-  include ("conecta.php");
 
-  $novoNome = $_POST["nome"];
-  $nome = $_SESSION['user'];
-  $id = $_SESSION['id'];
+  $id_usuario = $_SESSION['id'];
+  $nome_atual = $_SESSION['user'];
 
-  //$query = "SELECT id_adm, adm_nome, adm_senha FROM usuarios_admin";
-  //$result = mysqli_query($conn, $query);
+  // Entradas do usuário:
+  $novo_nome = $_POST['novo_nome'];
 
-  // Pegar a coluna ID: (seleciona as colunas)
-  //while ($row = mysqli_fetch_assoc($result)) {
-  //  $id = $row["id_adm"];
-  //}
+  $sql = $pdo->prepare("UPDATE usuario SET adm_nome = :nome WHERE id_adm = $id_usuario");
+  $sql->bindParam(':nome', $novo_nome);
 
-  $sql = "UPDATE usuarios_admin SET adm_nome = '$novoNome' WHERE id_adm = $id";
-  $_SESSION['user'] = $novoNome;
-  $result = mysqli_query($conn, $sql);
+  $executar_alterar = $sql->execute();
 
-  if ($conn->query($sql) === TRUE)
+  if($executar_alterar === TRUE)
   {
-    echo("Nome alterado com sucesso!");
+    // Update deu certo:
+    $_SESSION['usuario'] = $novo_nome;
 
-    //$_SESSION['senha'] = $novaSenha;
-
-    //No sucesso, redirecionar para painel
-    header("Location: admin/admPerfil.php");
-  } 
+    echo("<script type = text/javascript>");
+        echo ("alert('Nome alterado!');");
+    echo("</script>");
+    header('Location: /admin/admPerfil.php');
+  }
   else
   {
-    //Caso contrário, mostrar erro
-    //Desatribuir sessão
-    echo("Erro ao alterar o nome: ". $conn->error);
-    session_destroy();
-
-    //Voltar para cadastro
-    header("Location: admin/admCadastro.php");
+    // Update deu errado:
+    echo("<script type = text/javascript>");
+        echo ("alert('Falha ao alterar o nome!');");
+    echo("</script>");
+    header('Location: /admin/admPerfil.php');   
   }
-
-  $conn->close();
-
 ?>
