@@ -8,7 +8,7 @@
   // Entradas do usuário:
   $novo_nome = $_POST['novo_nome'];
 
-  $sql = $pdo->prepare("UPDATE usuario SET adm_nome = :nome WHERE id_adm = $id_usuario");
+  $sql = $pdo->prepare("UPDATE usuarios_admin SET adm_nome = :nome WHERE id_adm = $id_usuario");
   $sql->bindParam(':nome', $novo_nome);
 
   $executar_alterar = $sql->execute();
@@ -21,7 +21,7 @@
     echo("<script type = text/javascript>");
         echo ("alert('Nome alterado!');");
     echo("</script>");
-    header('Location: /admin/admPerfil.php');
+    header('Location: admin/admPerfil.php');
   }
   else
   {
@@ -29,6 +29,6 @@
     echo("<script type = text/javascript>");
         echo ("alert('Falha ao alterar o nome!');");
     echo("</script>");
-    header('Location: /admin/admPerfil.php');   
+    header('Location: admin/admPerfil.php');   
   }
 ?>
