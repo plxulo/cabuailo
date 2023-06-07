@@ -11,7 +11,7 @@
 <html lang="pt-br">
 
 <!-- 
-  Painel administrador para inserir alterar e remover dados do usuário no banco de dados
+  Painel administrador para inserir alterar e remover filiais no banco de dados, para depois serem exibidas no app
   Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
   Isso se deve ao fator de acessibilidade para pessoas com dificuldades
   https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
@@ -52,7 +52,7 @@
             <input type="text" placeholder="Pesquisar...">
             <a href="admPainel.php">Painel principal</a>
             <a href="admCrud.php">Cadastros</a>
-            <a href="#">Funcionários</a>
+            <a href="admFiliais.php">Filiais</a>
             <a href="admFiliais.php">Empreendimentos cadastrados</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
@@ -113,6 +113,10 @@
             <!-- Descrição do aplicativo -->
             <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
             <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+
+            <!-- Serviços prestados na filial -->
+            <label for="servicos_disponiveis">Estes são os serviços disponíveis nessa filial:</label>
+            <textarea name="servicos_disponiveis" id="servicos_disponiveis" cols="30" rows="10"></textarea>
             <button type="submit">Enviar</button>
           </form>
 
@@ -125,6 +129,13 @@
             <img src="" alt="">
             <figcaption>Imagem</figcaption>
           </figure>
+
+          <!-- Formulário para enviar imagens da filial: -->
+          <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
+            Selecione uma imagem:
+            <input type="file" id="imagem" name="imagem">
+            <input type="submit" value="Enviar">
+          </form>
 
           <section aria-label="Botões inserir/remover imagens" class="container_botoes">
             <button>Inserir</button>

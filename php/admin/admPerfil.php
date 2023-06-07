@@ -54,7 +54,7 @@
             <a href="admPainel.php">Painel principal</a>
             <a href="admCrud.php">Cadastros</a>
             <a href="#">Funcionários</a>
-            <a href="admFiliais.php">Empreendimentos cadastrados</a>
+            <a href="admFiliais.php">Filiais</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
             <a href="#">Ajuda</a>

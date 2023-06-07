@@ -51,7 +51,7 @@
             <input type="text" placeholder="Pesquisar...">
             <a href="admPainel.php">Painel principal</a>
             <a href="admCrud.php">Cadastros</a>
-            <a href="#">Funcionários</a>
+            <a href="#">Filiais</a>
             <a href="admFiliais.php">Empreendimentos cadastrados</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
@@ -171,32 +171,40 @@
             </thead>
             <tbody>
               <?php
-
+                // Exibir os funcionários cadastrados.
+                // Se existir algum funcionário (rowCount() > 0 ), mostrar os dados (fetch).
+                // Se não existir nenhum funcionário, mostrar uma mensagem.
                 if($query->rowCount() > 0)
                 {
-                  
+                  // Funcionários existem (rowCount() > 0)
+
+                  // While percorre os funcionários existentes na consulta SQL com o fetch:
                   while( $linhas = $query->fetch() ) 
                   {
+                    // Após percorrer atribuir respectivas colunas com seus respectivos valores à variáveis:
                     $id = $linhas["id_func"];     // Nome da coluna XAMPP
                     $nome = $linhas["nome_func"]; // Nome da coluna XAMPP
                     $filial = $linhas["filial"];  // Nome da coluna XAMPP
                     $acesso = $linhas["nivel_acesso"];  // Nome da coluna XAMPP
                     
+                    // Exibir os dados na tabela:
                     echo "<tr>";
                       echo "<td>" . $linhas["id_func"] . "</td>" ;
                       echo "<td>" . $linhas["nome_func"] . "</td>" ;
                       echo "<td>" . $linhas["filial"] . "</td>" ;
                       echo "<td>" . $linhas["nivel_acesso"] . "</td>" ;
                       echo 
+                      // Editar / excluir do banco de dados:
                       "<td> 
-                        <p href=''> Editar </p>
-                        <p onclick='enviar_id(' . $id . ');'> Excluir </p>
+                        <a href=''> Editar </a>
+                        <a href='' onclick='enviar_id($id);'> Excluir </a>
                       </td>";
                     echo "<tr>";
                   }
                 }
                 else
                 {
+                  // Nenhum funcionário existe:
                   echo("<tr>");
                   echo("<td>");
                   echo("NÃO HÁ FUNCIONÁRIOS CADASTRADOS");
@@ -214,9 +222,10 @@
 
 </body>
 <script>
+  // Função para abrir o arquivo PHP referente à exclusão de funcionários com base no ID:
   function enviar_id(x)
   {
-    window.open("../excluir_func.php?id_func="+x,"_self");
+    window.open("../excluir_func.php?id_func=" + x,"_self");
   }
 </script>
 
