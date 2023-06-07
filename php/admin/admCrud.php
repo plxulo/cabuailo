@@ -189,8 +189,8 @@
                       echo "<td>" . $linhas["nivel_acesso"] . "</td>" ;
                       echo 
                       "<td> 
-                        <a href=''> Editar </a>
-                        <a onclick='enviar_id(' . $id . ');'> Excluir </a>
+                        <p href=''> Editar </p>
+                        <p onclick='enviar_id(' . $id . ');'> Excluir </p>
                       </td>";
                     echo "<tr>";
                   }
