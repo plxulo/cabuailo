@@ -1,10 +1,16 @@
 <?php
   include ("conecta.php");
+  session_start();
+  $id_adm = $_SESSION['id'];
 
-  $query = "SELECT * FROM funcionarios;";
-  $result = mysqli_query($conn, $query);
+  $query = $pdo->prepare("SELECT * FROM funcionarios WHERE adm_superior = :id_adm");
+  $query->bindParam(':id_adm', $id_adm);
+  $query->execute();
 
-  if (!$result) {
-    die("Erro ao executar a consulta: " . mysqli_error($conn));
-  }
+  // Este bloco é para consultar a tabela filiais selecionando o nome da filial cadastrada
+  // Onde o ID da filial for igual ao ID da sessão:
+  $selecionar_filiais = $pdo->prepare("SELECT id_filial, nome FROM filiais WHERE filial_adm = :id_adm");
+  $selecionar_filiais->bindParam(':id_adm', $id_adm);
+  $executar_consulta = $selecionar_filiais->execute();
+
 ?>

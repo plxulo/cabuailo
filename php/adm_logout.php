@@ -3,6 +3,9 @@
 
   session_start();
 
+  // Desatribuir sessão:
+  session_unset();
+
   //Destruir sessão
   session_destroy();
   

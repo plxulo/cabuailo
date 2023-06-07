@@ -37,7 +37,7 @@
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="../valida.php" method="post">
+      <form aria-label="Formulário de login" class="login" action="../valida_login.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
             <input type="text" name="user">

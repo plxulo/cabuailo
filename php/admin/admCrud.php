@@ -1,6 +1,5 @@
 <?php
   include ("../admin.php");
-  session_start();
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
@@ -26,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../public/css/styleAdmin.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/styleAdmin.css" />
   <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
 
   <script defer src="../../public/js/private/sAdmCadastro.js"></script>
@@ -59,7 +58,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
-            <a href="../admLogout.php">Sair</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
@@ -107,19 +106,39 @@
           </section>
 
           <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="" method="">
-            <input type="text" placeholder="Email, código ou nome do usuário">
-            <input type="text" placeholder="Senha">
+          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
+            <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
+            <input type="text" placeholder="Senha" name="senha">
             <!-- Nível de acesso do usuário -->
             <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
             <div class="select_container">
-              <select id="user_access_level" name="user_access_level" required>
-                  <option value="admin">Administrador</option>
-                  <option value="operator">Operador</option>
-                  <option value="funcionario">Funcionário</option>
+              <select id="user_access_level" name="nivel_acesso" required>
+                  <option value="admin">1 - Administrador</option>
+                  <option value="operator">2 - Operador</option>
+                  <option value="funcionario">3 - Funcionário</option>
+              </select>
+              <label for="filial_funcionario">Filial aonde o funcionário trabalha:</label>
+              <select id="filial_funcionario" name="filial_funcionario" required>
+                  <?php
+                  // Caso não haja nenhuma filial cadastrada, exibir uma mensagem.
+                  if($selecionar_filiais->rowCount() == 0) 
+                  {
+                    echo ("<option>Nenhuma filial cadastrada</option>");
+                  }
+
+                  // Exibir dentro de um select as filiais disponíveis para designar cada funcionário.
+                  // Estas filiais são exibidas de acordo com o ID de cada sessão de cada usuário adm.
+                    while($linhas_filial = $selecionar_filiais->fetch())
+                    {
+                      $nome_filial = $linhas_filial["nome"]; // Nome da coluna XAMPP
+                      $id_filial = $linhas_filial["id_filial"]; // ID da coluna XAMPP
+                      // Dentro de um select, while é usado para percorrer e projectar o máximo possível de filiais.
+                      echo ("<option>" . $id_filial . " - " . $nome_filial . "</option>");
+                    }
+                  ?>
               </select>
             </div>
-            <button class="botao_acao">Inserir Usuário</button>
+            <button type="submit" class="botao_acao">Inserir Funcionário</button>
           </form>
 
           <!-- Formulário para inserção de usuários no sistema -->
@@ -145,45 +164,44 @@
               <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Email</th>
+                <th>Filial</th>
                 <th>Nível Acesso</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>João</td>
-                <td>joao@example.com</td>
-                <td></td>
-                <td>
-                  <a href="#">Editar</a>
-                  <a href="#">Excluir</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Maria</td>
-                <td>maria@example.com</td>
-                <td></td>
-                <td>
-                  <a href="#">Editar</a>
-                  <a href="#">Excluir</a>
-                </td>
-              </tr>
               <?php
-                while ($row = mysqli_fetch_assoc($result)) {
+
+                if($query->rowCount() > 0)
+                {
+                  
+                  while( $linhas = $query->fetch() ) 
+                  {
+                    $id = $linhas["id_func"];     // Nome da coluna XAMPP
+                    $nome = $linhas["nome_func"]; // Nome da coluna XAMPP
+                    $filial = $linhas["filial"];  // Nome da coluna XAMPP
+                    $acesso = $linhas["nivel_acesso"];  // Nome da coluna XAMPP
+                    
                     echo "<tr>";
-                    echo "<td>" . $row["id"] . "</td>";
-                    echo "<td>" . $row["nome_func"] . "</td>";
-                    echo "<td>" . $row["filial"] . "</td>";
-                    echo "<td>" . $row["senha_func"] . "</td>";
-                    echo 
-                    "<td> 
-                      <a href=''>Editar</a>
-                      <a href=''>Excluir</a>
-                    </td>";
-                    echo "</tr>";
+                      echo "<td>" . $linhas["id_func"] . "</td>" ;
+                      echo "<td>" . $linhas["nome_func"] . "</td>" ;
+                      echo "<td>" . $linhas["filial"] . "</td>" ;
+                      echo "<td>" . $linhas["nivel_acesso"] . "</td>" ;
+                      echo 
+                      "<td> 
+                        <a href=''> Editar </a>
+                        <a onclick='enviar_id(' . $id . ');'> Excluir </a>
+                      </td>";
+                    echo "<tr>";
+                  }
+                }
+                else
+                {
+                  echo("<tr>");
+                  echo("<td>");
+                  echo("NÃO HÁ FUNCIONÁRIOS CADASTRADOS");
+                  echo("</td>");
+                  echo("</tr>");
                 }
               ?>
             </tbody>
@@ -195,6 +213,12 @@
   </main>
 
 </body>
+<script>
+  function enviar_id(x)
+  {
+    window.open("../excluir_func.php?id_func="+x,"_self");
+  }
+</script>
 
 </html>
 

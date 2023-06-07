@@ -31,8 +31,11 @@ CREATE TABLE funcionarios (
     id_func INT(6) PRIMARY KEY AUTO_INCREMENT,
     nome_func VARCHAR(255) NOT NULL,
     senha_func VARCHAR(255) NOT NULL,
+    nivel_acesso VARCHAR(255) NOT NULL,
+    adm_superior INT(6),
     filial INT(6),
-    FOREIGN KEY (filial) REFERENCES filiais(id_filial)
+    FOREIGN KEY (filial) REFERENCES filiais(id_filial),
+    FOREIGN KEY (adm_superior) REFERENCES usuarios_admin(id_adm)
 );
 
 /* Armazenar imagens do sistema */

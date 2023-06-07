@@ -1,5 +1,4 @@
 <?php
-
   session_start();
 
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
@@ -61,7 +60,7 @@
             <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
-            <a href="../admLogout.php">Sair</a>
+            <a href="../adm_logout.php">Sair</a>
           </ul>
         </nav>
       </navbar>
@@ -78,7 +77,9 @@
               echo ("<h1>" . $logado . "</h1>");
             ?>
           </header>
-          <div class="foto_perfil"></div>
+          <div class="foto_perfil">
+            
+          </div>
         </section>
       </navbar>
 
@@ -100,9 +101,9 @@
         <section aria-label="Adicionar nome e descrição" class="inputs">
           <h1>Nome de usuário:</h1>
           <!-- Alter table -->
-          <form action="../alterarNome.php" method="POST">
+          <form action="../alterar_nome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
-            <input id="nome" type="text" placeholder="Novo nome" name="nome">
+            <input id="nome" type="text" placeholder="Novo nome" name="novo_nome">
             <label for="nome">Este será o nome da sua conta de administrador</label>
             <button type="submit">Alterar Nome</button>
           </form>
