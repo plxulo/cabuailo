@@ -63,5 +63,19 @@
       echo ("window.location = 'admin/admCrud.php'");
     echo ("</script>");    
   }
+  // Se o nível de acesso for admin, inserir o usuário no banco de dados:
+  if($executar_insert === TRUE AND $acesso == 'admin')
+  {
+    $inserir_admin = $pdo->prepare("INSERT INTO usuarios_admin (adm_nome, adm_senha) VALUES (?, ?)");
+    $inserir_admin->bindParam(1, $nome);
+    $inserir_admin->bindParam(2, $senha);
+    $inserir_admin->execute();
+
+    // Inserção bem sucedida:
+    echo ("<script type = text/javascript>");
+      echo ("alert('Funcionário cadastrado com sucesso!');");
+      echo ("window.location = 'admin/admCrud.php'");
+    echo ("</script>");    
+  }
 
 ?>

@@ -182,7 +182,6 @@
                     $filial = $linhas["filial"];  // Nome da coluna XAMPP
                     $acesso = $linhas["nivel_acesso"];  // Nome da coluna XAMPP
                     
-                    echo("ID: $id Nome: $nome Filial: $filial <br>");
                     echo "<tr>";
                       echo "<td>" . $linhas["id_func"] . "</td>" ;
                       echo "<td>" . $linhas["nome_func"] . "</td>" ;
