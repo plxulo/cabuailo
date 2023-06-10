@@ -2,6 +2,11 @@
   include ("../admin.php"); 
 
   session_start();
+  $foto_perfil = $_SESSION['foto_perfil'];
+  if((!isset ($_SESSION['foto_perfil']) == true))
+  {
+    $foto_perfil = "default.png";
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -65,6 +70,12 @@
 
       <!-- Barra de navegação topo com input para pesquisa de outras configurações -->
       <navbar class="navbar_topo" aria-label="Navegação topo">
+        <div class="foto_perfil">
+              <?php
+                // Exibir a imagem do usuário logado:
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px" />';
+              ?>
+        </div>
       </navbar>
 
       <section class="container_column">

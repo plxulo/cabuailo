@@ -172,7 +172,6 @@
   }
   
   .usuario_logado .foto_perfil {
-    background: url(../imagens/pfp.jpg);
     background-position: center;
     background-size: 100%;
     border-radius: 100%;

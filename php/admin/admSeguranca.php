@@ -1,11 +1,21 @@
 <?php
+  include("../conecta.php");
   session_start();
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
   }
 
+  $id = $_SESSION['id'];
+  
+  // As linhas abaixo você usará sempre que quiser mostrar a imagem
+  $comando = $pdo->prepare("SELECT * FROM imagem_pfp_adm WHERE pfp_adm = $id");
+  //$comando->bindParam(':id', $id);
+  $resultado = $comando->execute();
+
+  // Operador de coalescência nula para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
+  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,13 +73,18 @@
     <section class="principal">
       <!-- Barra de navegação topo com input para pesquisa de outras configurações -->
       <navbar aria-label="Navegação topo" class="navbar_topo">
-      <section class="usuario_logado">
+        <section class="usuario_logado">
           <header>
             <?php
               echo ("<h1>" . $logado . "</h1>");
             ?>
           </header>
-          <div class="foto_perfil"></div>
+          <div class="foto_perfil">
+            <?php
+              // Exibir a imagem do usuário logado:
+              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px" />';
+            ?>
+          </div>
         </section>
       </navbar>
 

@@ -7,6 +7,7 @@
   então ao verificar que a session não existe a página redireciona o mesmo
   para a index.php.
   */
+  include("../conecta.php");
 
   session_start();
 
@@ -15,7 +16,16 @@
     header('location: admLogin.php');
   }
 
+  $id = $_SESSION['id'];
+  
+  // As linhas abaixo você usará sempre que quiser mostrar a imagem
+  $comando = $pdo->prepare("SELECT * FROM imagem_pfp_adm WHERE pfp_adm = $id");
+  //$comando->bindParam(':id', $id);
+  $resultado = $comando->execute();
+
+  // Operador de coalescência nula para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
+  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +89,24 @@
             echo("<h1>" . $logado . "</h1>");
           ?>
           </header>
-          <div class="foto_perfil"></div>
+          <div class="foto_perfil">
+            <?php
+              // Exibir a imagem do usuário logado:
+              // Verificar se a consulta retornou resultados
+              if ($comando->rowCount() > 0) 
+              {
+                // Recuperar os dados da imagem
+                $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
+                // Exibir a imagem no elemento <img> no HTML
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+              } 
+              else 
+              {
+                // Caso não haja imagem associada ao usuário, exibir uma imagem padrão
+                echo '<img src="../default.png" alt="Foto de Perfil" width="80" height="80">';
+              }            
+            ?>
+          </div>
         </section>
       </navbar>
 
