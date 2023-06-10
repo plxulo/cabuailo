@@ -34,17 +34,17 @@
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="../php/valida.php" method="post">
-          <label for="usuario">Nome de usuário:</label>
+      <form class="login" action="../php/validacao.php" method="post">
+          <label for="usuario">Email:</label>
           <section class="input_box">
-            <input type="text" name="user">
+            <input type="email" name="email">
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
             <input type="password" name="password">
           </section>
           <a href="../html/cadastroCliente.html">Cadastrar-se</a>
-          <button aria-label="Entrar na sua conta" name="entrar" type="submit">Entrar na sua Conta</button>
+          <input type="submit" class="logar" name="logar" value="Entrar"> 
           <section id="error_message"></section>
       </form>
 
