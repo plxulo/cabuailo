@@ -1,3 +1,15 @@
+<?php
+    //inicia a seção
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('Location: loginUsuario.php');
+    }
+    $logado = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,8 +27,10 @@
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
     
-        <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        
+        <div class="fotoPerfil">
+            <a href="sair.php"></a>
+            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
+        </div>
     </header>
     <main>
         <section1>

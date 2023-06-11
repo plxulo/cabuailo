@@ -41,10 +41,10 @@
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input type="password" name="password">
+            <input type="password" name="senha">
           </section>
-          <a href="../html/cadastroCliente.html">Cadastrar-se</a>
-          <input type="submit" class="logar" name="logar" value="Entrar"> 
+          <a href="../html/cadastroCliente.php">Cadastrar-se</a>
+          <input type="submit" class="logar" name="submit" value="Entrar"> 
           <section id="error_message"></section>
       </form>
 
@@ -55,7 +55,7 @@
 
 </body>
 
-<script>
+<!-- <script>
   const form = document.querySelector("form");
 
   // Adiciona um ouvinte de eventos para o envio do formulário
@@ -82,7 +82,7 @@
       form.submit();
     }
   });
-</script>
+</script>-->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
