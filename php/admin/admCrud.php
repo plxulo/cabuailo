@@ -92,7 +92,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px;">';
               } 
               else 
               {
@@ -132,8 +132,10 @@
 
           <!-- Formulário para inserção de usuários no sistema -->
           <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
-            <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
-            <input type="text" placeholder="Senha" name="senha">
+            <section class="input">
+              <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
+              <input type="text" placeholder="Senha" name="senha">
+            </section>
             <!-- Nível de acesso do usuário -->
             <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
             <div class="select_container">
@@ -222,7 +224,7 @@
                       // Editar / excluir do banco de dados:
                       "<td> 
                         <a href=''>Editar</a>
-                        <a href='' onclick='enviar_id($id);'> Excluir </a>
+                        <a href='#' onclick='enviar_id($id);'> Excluir </a>
                       </td>";
                     echo "<tr>";
                   }

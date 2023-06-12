@@ -15,8 +15,29 @@
 main .secao_container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
   gap: 25px;
+}
+
+.secao_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.secao_container form .input {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.secao_container form input {
+  width: 50%;
+}
+
+.secao_container form select {
+  width: 50%;
 }
 
 main .descricao_geral {

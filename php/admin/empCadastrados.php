@@ -94,7 +94,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px;">';
               } 
               else 
               {
@@ -111,9 +111,9 @@
         <section aria-labelledby="titulo_cadastros" class="secao_container">
           <!-- Título e descrição -->
           <header class="descricao_geral">
-            <h1 id="titulo_cadastros">Gerenciar cadastros</h1>
-            <p>Gerenciamento de usuários cadastrados no sistema.</p>
-            <p>Selecione abaixo o que gostaria de realizar no banco de dados.</p>
+            <h1 id="titulo_cadastros">Empreendimentos cadastrados</h1>
+            <p>Visualize as suas filiais cadastradas no nosso sistema:</p>
+            <a href="admCrud.php">Clique aqui para visualizar funcionários</a>
           </header>
         </section>
 
@@ -159,7 +159,7 @@
                       // Editar / excluir do banco de dados:
                       "<td> 
                         <a href=''>Editar</a>
-                        <a href='' onclick='enviar_id($id);'> Excluir </a>
+                        <a href='#' onclick='enviar_id($id);'> Excluir </a>
                       </td>";
                     echo "<tr>";
                   }

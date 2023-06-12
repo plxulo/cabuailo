@@ -89,7 +89,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px;">';
               } 
               else 
               {

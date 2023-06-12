@@ -20,7 +20,6 @@
   
   // As linhas abaixo você usará sempre que quiser mostrar a imagem
   $comando = $pdo->prepare("SELECT * FROM imagem_pfp_adm WHERE pfp_adm = $id");
-  //$comando->bindParam(':id', $id);
   $resultado = $comando->execute();
 
   // Operador de coalescência nula para evitar o erro de null no PHP:
@@ -98,7 +97,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px;">';
               } 
               else 
               {

@@ -12,6 +12,10 @@ main .container_column {
   flex-direction: column;
 }
 
+.inputs h1 {
+  
+}
+
 .inputs input {
   border-radius: 5px;
   background: var(--cor-clara);

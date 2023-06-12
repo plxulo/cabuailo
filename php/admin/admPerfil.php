@@ -96,7 +96,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px;">';
               } 
               else 
               {
@@ -134,11 +134,18 @@
           </form>
 
         </section>
-
-        <h1>Foto de perfil:</h1>
-        <p>Insira sua foto de perfil</p>
-        <section aria-label="Adicionar imagens do empreendimento" class="inputs">
         
+        <header aria-labelledby="foto_atual" title="Foto de perfil atual">
+          <h1>Foto de perfil:</h1>
+          <p id="foto_atual">Esta é a sua foto atual:</p>
+          <?php
+            echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
+          ?>
+        </header>
+        <section aria-labelledby="nova_foto" class="inputs" title="Nova foto de perfil">
+          <header>
+            <h1 id="nova_foto">Nova foto de perfil:</h1>
+          </header>
           <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
             Selecione uma imagem:
             <input type="file" id="imagem" name="imagem">

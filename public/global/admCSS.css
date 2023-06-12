@@ -197,3 +197,14 @@
     font-weight: 800;
     margin: 0;
   }
+
+  textarea {
+    background: none;
+  }
+
+  button:hover {
+    border: solid 1px var(--cor-escura);
+    background: var(--cor-clara);
+    color: var(--cor-escura);
+    cursor: pointer;
+  }
