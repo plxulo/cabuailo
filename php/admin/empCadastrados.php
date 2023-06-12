@@ -1,5 +1,6 @@
 <?php
-  include ("../admin.php");
+  include ("../emp_cadastrados.php");
+  include("../conecta.php");
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
@@ -9,6 +10,7 @@
   
   // As linhas abaixo você usará sempre que quiser mostrar a imagem
   $comando = $pdo->prepare("SELECT * FROM imagem_pfp_adm WHERE pfp_adm = $id");
+  //$comando->bindParam(':id', $id);
   $resultado = $comando->execute();
 
   // Operador de coalescência nula para evitar o erro de null no PHP:
@@ -113,73 +115,6 @@
             <p>Gerenciamento de usuários cadastrados no sistema.</p>
             <p>Selecione abaixo o que gostaria de realizar no banco de dados.</p>
           </header>
-
-          <!-- Botões com funcionalidades do sistema -->
-          <section aria-label="Botões funcionalidades" class="container_botoes">
-            
-            <button id="btn_formulario_inserir" class="alterar_form">Inserir</button>
-            <!-- Botões comentados pois desejo deixar tudo embutido na própria tabela
-              (exceto inserção e pesquisa)
-              ** USAR PDO -> PREPARE
-            <button id="btn_formulario_alterar" class="alterar_form">Alterar</button>
-            <button id="btn_formulario_deletar" class="alterar_form">Deletar</button>
-            -->
-            <!--
-            <button id="btn_formulario_pesquisa" class="alterar_form pesquisar">Pesquisar</button>
-            -->
-            <input type="text" placeholder="Pesquisar">
-          </section>
-
-          <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
-            <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
-            <input type="text" placeholder="Senha" name="senha">
-            <!-- Nível de acesso do usuário -->
-            <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
-            <div class="select_container">
-              <select id="user_access_level" name="nivel_acesso" required>
-                  <option value="admin">1 - Administrador</option>
-                  <option value="operator">2 - Operador</option>
-                  <option value="funcionario">3 - Funcionário</option>
-              </select>
-              <label for="filial_funcionario">Filial aonde o funcionário trabalha:</label>
-              <select id="filial_funcionario" name="filial_funcionario" required>
-                  <?php
-                  // Caso não haja nenhuma filial cadastrada, exibir uma mensagem.
-                  if($selecionar_filiais->rowCount() == 0) 
-                  {
-                    echo ("<option>Nenhuma filial cadastrada</option>");
-                  }
-
-                  // Exibir dentro de um select as filiais disponíveis para designar cada funcionário.
-                  // Estas filiais são exibidas de acordo com o ID de cada sessão de cada usuário adm.
-                    while($linhas_filial = $selecionar_filiais->fetch())
-                    {
-                      $nome_filial = $linhas_filial["nome"]; // Nome da coluna XAMPP
-                      $id_filial = $linhas_filial["id_filial"]; // ID da coluna XAMPP
-                      // Dentro de um select, while é usado para percorrer e projectar o máximo possível de filiais.
-                      echo ("<option>" . $id_filial . " - " . $nome_filial . "</option>");
-                    }
-                  ?>
-              </select>
-            </div>
-            <button type="submit" class="botao_acao">Inserir Funcionário</button>
-          </form>
-
-          <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_alterar" class="formulario" style="display:none;" aria-label="Formulário de alteração de usuários" action="" method="">
-            <input type="text" placeholder="Email, código ou nome de usuário">
-            <input type="text" placeholder="Senha">
-            <button class="botao_acao">Salvar Alterações</button>
-          </form>
-
-          <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_deletar" class="formulario" style="display:none;" aria-label="Formulário de remoção de usuários" action="" method="">
-            <input type="text" placeholder="Email, código ou nome de usuário">
-            <input type="text" placeholder="Senha">
-            <input type="text" placeholder="Nível de acesso">
-            <button class="botao_acao">Deletar o usuário</button>
-          </form>
         </section>
 
         <!-- Tabela com usuários -->
@@ -189,8 +124,9 @@
               <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Filial</th>
-                <th>Nível Acesso</th>
+                <th>Endereço</th>
+                <th>CEP</th>
+                <th>Administrador da Filial</th>
                 <th>Ações</th>
               </tr>
             </thead>
@@ -207,17 +143,18 @@
                   while( $linhas = $query->fetch() ) 
                   {
                     // Após percorrer atribuir respectivas colunas com seus respectivos valores à variáveis:
-                    $id = $linhas["id_func"];     // Nome da coluna XAMPP
-                    $nome = $linhas["nome_func"]; // Nome da coluna XAMPP
-                    $filial = $linhas["nome"];    // Nome da coluna XAMPP
-                    $acesso = $linhas["nivel_acesso"];  // Nome da coluna XAMPP
+                    $id = $linhas["id_filial"];           // Nome da coluna XAMPP
+                    $nome = $linhas["nome"];              // Nome da coluna XAMPP
+                    $endereco = $linhas["endereco"];      // Nome da coluna XAMPP
+                    $filial_adm = $linhas["filial_adm"];  // Nome da coluna XAMPP"
                     
                     // Exibir os dados na tabela:
                     echo "<tr>";
-                      echo "<td>" . $linhas["id_func"] . "</td>" ;
-                      echo "<td>" . $linhas["nome_func"] . "</td>" ;
+                      echo "<td>" . $linhas["id_filial"] . "</td>" ;
                       echo "<td>" . $linhas["nome"] . "</td>" ;
-                      echo "<td>" . $linhas["nivel_acesso"] . "</td>" ;
+                      echo "<td>" . $linhas["endereco"] . "</td>" ;
+                      echo "<td>" . $linhas["cep"] . "</td>" ;
+                      echo "<td>" . $linhas["filial_adm"] . "</td>" ;
                       echo 
                       // Editar / excluir do banco de dados:
                       "<td> 
@@ -232,7 +169,7 @@
                   // Nenhum funcionário existe:
                   echo("<tr>");
                   echo("<td>");
-                  echo("NÃO HÁ FUNCIONÁRIOS CADASTRADOS");
+                  echo("NÃO HÁ EMPREENDIMENTOS CADASTRADOS");
                   echo("</td>");
                   echo("</tr>");
                 }
@@ -250,7 +187,7 @@
   // Função para abrir o arquivo PHP referente à exclusão de funcionários com base no ID:
   function enviar_id(x)
   {
-    window.open("../excluir_func.php?id_func=" + x,"_self");
+    window.open("../excluir_filial.php?id_filial=" + x,"_self");
   }
 </script>
 <script src="../../public/js/perfil.js"></script>

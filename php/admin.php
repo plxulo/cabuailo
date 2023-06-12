@@ -3,7 +3,13 @@
   session_start();
   $id_adm = $_SESSION['id'];
 
-  $query = $pdo->prepare("SELECT * FROM funcionarios WHERE adm_superior = :id_adm");
+  //$query = $pdo->prepare("SELECT * FROM funcionarios WHERE adm_superior = :id_adm");
+  //$query->bindParam(':id_adm', $id_adm);
+  //$query->execute();
+
+  // Este bloco é para consultar a tabela funcionarios selecionando o nome do funcionário cadastrado
+  // E a filial com base na chave estrangeira 'funcionarios.filial' utilizando INNER JOIN que busca dados em comum:
+  $query = $pdo->prepare("SELECT funcionarios.*, filiais.nome FROM funcionarios INNER JOIN filiais ON funcionarios.filial = filiais.id_filial WHERE adm_superior = :id_adm");
   $query->bindParam(':id_adm', $id_adm);
   $query->execute();
 

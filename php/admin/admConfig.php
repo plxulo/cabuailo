@@ -83,7 +83,19 @@
           <div class="foto_perfil">
             <?php
               // Exibir a imagem do usuário logado:
-              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px" />';
+              // Verificar se a consulta retornou resultados
+              if ($comando->rowCount() > 0) 
+              {
+                // Recuperar os dados da imagem
+                $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
+                // Exibir a imagem no elemento <img> no HTML
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px">';
+              } 
+              else 
+              {
+                // Caso não haja imagem associada ao usuário, exibir uma imagem padrão
+                echo '<img onclick="voltarPerfil();" src="../default.png" alt="Foto de Perfil" width="80" height="80">';
+              }
             ?>
           </div>
         </section>
@@ -109,6 +121,7 @@
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="../../public/js/perfil.js"></script>
 
 </html>
 

@@ -5,6 +5,7 @@ window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset
     
     if (currentScroll > 700) {
+        navbar.style.background = 'var(--cor-escura)';
 
         if (currentScroll <= 0) {
             body.classList.remove("scroll-up")
@@ -18,6 +19,10 @@ window.addEventListener("scroll", () => {
             body.classList.add("scroll-up")
         }
 
+    }
+
+    else {
+        navbar.style.background = 'none';
     }
 
     lastScroll = currentScroll;

@@ -8,6 +8,8 @@
   https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
 -->
 
+<!-- Podia ser responsivo se eu tivesse definido isso anteriormente... -->
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -112,23 +114,31 @@
           <img src="" alt="Img 1">
         </div>
         <h2>Painel Principal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis.</p>
+        <p>Tenha acesso a um painel principal com informações relevantes sobre o seu negócio.</p>
       </section>
 
       <section class="card">
         <div class="img">
           <img src="" alt="Img 2">
         </div>
-        <h2>Painel Principal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis.</p>
+        <h2>Cadastro de Filiais</h2>
+        <p>Cadastre e gerencie suas filiais e funcionários.</p>
       </section>
 
       <section class="card">
         <div class="img">
-          <img src="" alt="Img 3">
+          <img src="" alt="Img 2">
         </div>
-        <h2>Painel Principal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis.</p>
+        <h2>Segurança</h2>
+        <p>Seus dados são valiosos, nós garantimos a segurança e integridade de suas informações com uma estrutura segura e eficiente.</p>
+      </section>
+
+      <section class="card">
+        <div class="img">
+          <img src="../imagens/eficiencia.png" alt="Img 3">
+        </div>
+        <h2>Eficiência</h2>
+        <p>Com apenas alguns cliques seu negócio estará disponível em nosso app.</p>
       </section>
 
     </section>
@@ -389,20 +399,20 @@
 
   //window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
 
-  const secao = document.getElementById("secao_servicos");
-  const sections = document.querySelectorAll('.section');
+  //const secao = document.getElementById("secao_servicos");
+  //const sections = document.querySelectorAll('.section');
 
-  function callback(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log('A seção está sendo exibida na janela.');
-        navbar.style.background = 'var(--cor-escura)';
-      } else {
-        console.log('A seção não está sendo exibida na janela.');
-        navbar.style.background = 'none';
-      }
-    });
-  }
+  //function callback(entries, observer) {
+  //  entries.forEach(entry => {
+  //    if (entry.isIntersecting) {
+  //      console.log('A seção está sendo exibida na janela.');
+  //      navbar.style.background = 'var(--cor-escura)';
+  //    } else {
+  //      console.log('A seção não está sendo exibida na janela.');
+  //      navbar.style.background = 'none';
+  //    }
+  //  });
+  //}
   const observer = new IntersectionObserver(callback);
   sections.forEach(section => {
     observer.observe(section);
