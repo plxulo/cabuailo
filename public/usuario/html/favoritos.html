@@ -1,22 +1,10 @@
-<?php
-    //inicia a seção
-    session_start();
-    //print_r($_SESSION);
-    if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
-    {
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: loginUsuario.php');
-    }
-    $logado = $_SESSION['email'];
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mainPage.css">
+    <link rel="stylesheet" href="../css/global.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -33,48 +21,11 @@
         </div>
     </header>
     <main>
-        <section1>
-                <p>Oferta especial para você</p>
-                <h>Descontos de 25%</h>
-                <button class="desconto">Resgatar cupom</button>
-        </section1>
-       
-        <section3>
-            <h>Serviços</h>
-            <div class="botoes3">
-                <button class="meuBotao" onclick="mostrarDiv(1)">
-                    <ion-icon name="storefront-outline" class="icones_servicos"></ion-icon>
-                    <p>Barbearias</p>
-                </button>
-                <button class="meuBotao" onclick="mostrarDiv(2)">
-                    <ion-icon name="bag-outline" class="icones_servicos"></ion-icon>
-                    <p>Comprar</p>
-                </button>
-                <button class="meuBotao" onclick="mostrarDiv(3)">
-                    <ion-icon name="home-outline" class="icones_servicos"></ion-icon>
-                    <p>Delivery</p>
-                </button>
-            </div>
-                <div id="div1" class="minhaDiv">
-                    <div class="minhaSubDiv">
-                        
-                    </div>
-                </div>
-                <div id="div2" class="minhaDiv">
-                    Conteúdo da Div 2
-                </div>
-                <div id="div3" class="minhaDiv">
-                    Conteúdo da Div 3
-                </div>
 
-        </section3>
-        <section4>
-            <img src="">
-        </section4>
     </main>
     <nav>
         <ul>
-            <li class="list active">
+            <li class="list">
                 <a href="../html/mainPage.php">
                     <span class="icon"><ion-icon name="home"></ion-icon></span>
                     <span class="text">Home</span>
@@ -89,10 +40,10 @@
             <li class="list">
                 <a href="../html/agendar.html">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
-                    <span class="text">Agenda</span>
+                    <span class="text">Agendar</span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="../html/favoritos.html">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>

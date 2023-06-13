@@ -100,7 +100,7 @@ nav ul li.active a .text {
     top: -50%;
     width: 70px;
     height: 70px;
-    background: var(--vermelho);
+    background: var(--azul-claro);
     border-radius: 50%;
     border: 6px solid var(--branco-fundo);
     transition: 0.5;
