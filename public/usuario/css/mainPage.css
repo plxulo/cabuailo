@@ -33,12 +33,15 @@ nav {
     height: 70px;
     font-size: 20px;
     background-color: var(--branco-diferente);
-    position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 nav ul {
@@ -160,6 +163,11 @@ header {
     margin-top: 0;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     justify-content: space-between;
     align-items: center;
     background-color: var(--branco-diferente);
@@ -214,6 +222,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 90px; /* Ajuste a altura do header */
+    padding-bottom: 60px; /* Ajuste a altura do nav */
+    overflow-y: auto;
+    height: calc(100vh - 120px);
 
     background-color: var(--branco-fundo);
 }
@@ -345,13 +357,70 @@ section3 h {
 
 .minhaDiv {
     width: 90%;
-    height: 400px;
     display: flex;
-
-    background-color: #0A2463;
+    flex-direction: column;
 }
 
-.minhaSubDiv {
-    width: 90%;
-    height: 400px;
-} 
+.divBarbearias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.divBarbearias h1 {
+    font-size: 1.5rem;
+    font-family: 'Prompt', sans-serif;
+
+}
+
+.divBarbearias section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+.cardBarbearia {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--branco-diferente);
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cardBarbearia article {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.cardBarbearia article h {
+    font-size: 1.2rem;
+}
+
+.cardBarbearia article p {
+    font-size: 0.9rem;
+}
+
+.cardBarbearia article .stars {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    font-size: 13px;
+    color: yellow;
+    
+}
+
+.imgCard {
+    width: 30%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
