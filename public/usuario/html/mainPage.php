@@ -81,7 +81,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="notificacao.html">
+                <a href="../html/notificacao.html">
                     <span class="icon"><ion-icon name="notifications"></ion-icon></span>
                     <span class="text">Notificações</span>
                 </a>
