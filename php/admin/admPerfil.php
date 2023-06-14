@@ -14,9 +14,9 @@
   //$comando->bindParam(':id', $id);
   $resultado = $comando->execute();
 
-  // Operador de coalescência nula para evitar o erro de null no PHP:
+  // Operador de coalescência nula (?? 'default.png') para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
-  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
+  $foto_perfil = $_SESSION['foto_perfil'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -103,7 +103,7 @@
               {
                 // Caso não haja imagem associada ao usuário, exibir uma imagem padrão
                 echo '<img src="../default.png" alt="Foto de Perfil" width="80" height="80">';
-              }            
+              }
             ?>
           </div>
         </section>
@@ -124,8 +124,8 @@
           Seção das entradas para exibir no aplicativo 
           Registrar com banco de dados depois
         -->
+        <h1>Nome de usuário:</h1>
         <section aria-label="Adicionar nome e descrição" class="inputs">
-          <h1>Nome de usuário:</h1>
           <!-- Alter table -->
           <form action="../alterar_nome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
@@ -133,30 +133,22 @@
             <label for="nome">Este será o nome da sua conta de administrador</label>
             <button type="submit">Alterar Nome</button>
           </form>
-
         </section>
         
-        <header aria-labelledby="foto_atual" title="Foto de perfil atual">
-          <h1>Foto de perfil:</h1>
-          <p id="foto_atual">Esta é a sua foto atual:</p>
-          <?php
-            echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
-          ?>
-        </header>
-        <section aria-labelledby="nova_foto" class="inputs" title="Nova foto de perfil">
-          <header>
-            <h1 id="nova_foto">Nova foto de perfil:</h1>
+        <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Nova foto de perfil">
+          <header aria-labelledby="foto_atual" title="Foto de perfil atual">
+            <h1>Foto de perfil:</h1>
+            <p id="foto_atual">Esta é a sua foto atual:</p>
+            <?php
+              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
+            ?>
           </header>
           <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
-            Selecione uma imagem:
-            <input type="file" id="imagem" name="imagem">
-            <input type="submit" value="Enviar">
+            <h1 id="nova_foto">Nova foto de perfil:</h1>
+            <p>Selecione uma imagem:</p>
+              <input type="file" id="imagem" name="imagem">
+              <input type="submit" value="Enviar">
           </form>
-
-          <section aria-label="Botões inserir/remover imagens" class="container_botoes">
-            <button>Inserir</button>
-            <button>Remover</button>
-          </section>
 
         <!-- Seção de inputs imagem -->
         </section>

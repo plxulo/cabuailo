@@ -139,33 +139,37 @@
               <input type="text" placeholder="Senha" name="senha">
             </section>
             <!-- Nível de acesso do usuário -->
-            <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
             <div class="select_container">
-              <select id="user_access_level" name="nivel_acesso" required>
-                  <option value="admin">1 - Administrador</option>
-                  <option value="operator">2 - Operador</option>
-                  <option value="funcionario">3 - Funcionário</option>
-              </select>
-              <label for="filial_funcionario">Filial aonde o funcionário trabalha:</label>
-              <select id="filial_funcionario" name="filial_funcionario" required>
-                  <?php
-                  // Caso não haja nenhuma filial cadastrada, exibir uma mensagem.
-                  if($selecionar_filiais->rowCount() == 0) 
-                  {
-                    echo ("<option>Nenhuma filial cadastrada</option>");
-                  }
-
-                  // Exibir dentro de um select as filiais disponíveis para designar cada funcionário.
-                  // Estas filiais são exibidas de acordo com o ID de cada sessão de cada usuário adm.
-                    while($linhas_filial = $selecionar_filiais->fetch())
+              <div>
+                <label for="user_access_level">Nível de acesso do usuário à ser inserido:</label>
+                <select id="user_access_level" name="nivel_acesso" required>
+                    <option value="admin">1 - Administrador</option>
+                    <option value="operator">2 - Operador</option>
+                    <option value="funcionario">3 - Funcionário</option>
+                </select>
+              </div>
+              <div>
+                <label for="filial_funcionario">Filial aonde o funcionário trabalha:</label>
+                <select id="filial_funcionario" name="filial_funcionario" required>
+                    <?php
+                    // Caso não haja nenhuma filial cadastrada, exibir uma mensagem.
+                    if($selecionar_filiais->rowCount() == 0) 
                     {
-                      $nome_filial = $linhas_filial["nome"]; // Nome da coluna XAMPP
-                      $id_filial = $linhas_filial["id_filial"]; // ID da coluna XAMPP
-                      // Dentro de um select, while é usado para percorrer e projectar o máximo possível de filiais.
-                      echo ("<option>" . $id_filial . " - " . $nome_filial . "</option>");
+                      echo ("<option>Nenhuma filial cadastrada</option>");
                     }
-                  ?>
-              </select>
+
+                    // Exibir dentro de um select as filiais disponíveis para designar cada funcionário.
+                    // Estas filiais são exibidas de acordo com o ID de cada sessão de cada usuário adm.
+                      while($linhas_filial = $selecionar_filiais->fetch())
+                      {
+                        $nome_filial = $linhas_filial["nome"]; // Nome da coluna XAMPP
+                        $id_filial = $linhas_filial["id_filial"]; // ID da coluna XAMPP
+                        // Dentro de um select, while é usado para percorrer e projectar o máximo possível de filiais.
+                        echo ("<option>" . $id_filial . " - " . $nome_filial . "</option>");
+                      }
+                    ?>
+                </select>
+              </div>
             </div>
             <button type="submit" class="botao_acao">Inserir Funcionário</button>
           </form>

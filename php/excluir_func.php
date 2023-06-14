@@ -17,8 +17,9 @@
     $executar = $excluir_func->execute();
 
     // Verifica se o funcionário foi excluído
-    if ($executar) 
+    if ($executar === TRUE) 
     {
+      header("Location: admin/admCrud.php");
       // Excluído com sucesso
       echo ("<script type = text/javascript>");
       echo ("alert('Funcionário excluído com sucesso!')");
@@ -27,6 +28,7 @@
     } 
     else 
     {
+      header("Location: admin/admCrud.php");
       // Não foi possível excluir
       echo ("<script type = text/javascript>");
       echo ("alert('Erro ao excluir o funcionário, tente novamente.')");

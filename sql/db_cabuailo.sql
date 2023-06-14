@@ -23,6 +23,8 @@ CREATE TABLE filiais (
     nome VARCHAR(255) NOT NULL,
     endereco VARCHAR(255) NOT NULL,
     cep INT(6) NOT NULL,
+    descricao VARCHAR(300),
+    servicos VARCHAR(255),
     filial_adm INT(6),
     FOREIGN KEY (filial_adm) REFERENCES usuarios_admin(id_adm)
 );
@@ -41,10 +43,10 @@ CREATE TABLE funcionarios (
 CREATE TABLE produtos (
     id_produto INT(6) PRIMARY KEY AUTO_INCREMENT,
     nome_produto VARCHAR(255) NOT NULL,
-    descricao_produto VARCHAR(255) NOT NULL,
     preco_produto FLOAT(10,2) NOT NULL,
-    imagem_produto MEDIUMBLOB,
+    descricao_produto VARCHAR(255) NOT NULL,
     quantidade_produto INT(6) NOT NULL,
+    imagem_produto MEDIUMBLOB,
     id_adm INT(6),
     FOREIGN KEY (id_adm) REFERENCES usuarios_admin(id_adm)
 );

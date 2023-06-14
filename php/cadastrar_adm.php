@@ -60,6 +60,7 @@
     $_SESSION['id'] = $id_usuario;
     $_SESSION['user'] = $nome;
     $_SESSION['senha'] = $senha;
+    $_SESSION['foto_perfil'] = 'default.png';
     header('Location: admin/admPainel.php');
   }
   else

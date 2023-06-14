@@ -9,11 +9,12 @@ main .container_column {
 
 .inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 50px;
 }
 
 .inputs h1 {
-  
+  margin: 0;
 }
 
 .inputs input {
@@ -42,4 +43,19 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.nova_foto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nova_foto form {
+  width: 30%;
+  margin-top: 1rem;
+}
+
+.nova_foto form input {
+  width: 100%;
 }

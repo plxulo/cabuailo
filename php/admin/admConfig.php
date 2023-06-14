@@ -13,9 +13,9 @@
   //$comando->bindParam(':id', $id);
   $resultado = $comando->execute();
 
-  // Operador de coalescência nula para evitar o erro de null no PHP:
+  // Operador de coalescência nula (??) para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
-  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
+  $foto_perfil = $_SESSION['foto_perfil'];
 
 ?>
 <!DOCTYPE html>

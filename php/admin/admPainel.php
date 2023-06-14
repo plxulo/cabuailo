@@ -22,9 +22,9 @@
   $comando = $pdo->prepare("SELECT * FROM imagem_pfp_adm WHERE pfp_adm = $id");
   $resultado = $comando->execute();
 
-  // Operador de coalescência nula para evitar o erro de null no PHP:
+  // Operador de coalescência nula (?? 'default.png') para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
-  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
+  $foto_perfil = $_SESSION['foto_perfil'];
 ?>
 
 <!DOCTYPE html>

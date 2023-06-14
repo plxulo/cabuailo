@@ -1,6 +1,7 @@
 <?php
   include('../conecta.php');
   session_start();
+  
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');
@@ -13,9 +14,9 @@
   //$comando->bindParam(':id', $id);
   $resultado = $comando->execute();
 
-  // Operador de coalescência nula para evitar o erro de null no PHP:
+  // Operador de coalescência nula (?? 'default.png') para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
-  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
+  $foto_perfil = $_SESSION['foto_perfil'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -96,7 +97,7 @@
                 // Recuperar os dados da imagem
                 $dados_imagem = $comando->fetch(PDO::FETCH_ASSOC);
                 // Exibir a imagem no elemento <img> no HTML
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="100px" height="100px" style="border-radius: 50px">';
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="85px" height="85px" style="border-radius: 50px">';
               } 
               else 
               {
@@ -137,39 +138,41 @@
             <!-- CEP -->
             <label for="cep">Este será o CEP em exibição no aplicativo</label>
             <input id="cep" type="number" placeholder="CEP do empreendimento." name="cep">
-
-            <!-- Descrição do aplicativo -->
-            <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
-            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-
-            <!-- Serviços prestados na filial -->
-            <label for="servicos_disponiveis">Estes são os serviços disponíveis nessa filial:</label>
-            <textarea name="servicos_disponiveis" id="servicos_disponiveis" cols="30" rows="10"></textarea>
-            <button type="submit">Enviar</button>
+            
+            <section class="areas_texto" style="display:flex; flex-direction: row; gap: 20px">
+              <!-- Descrição do aplicativo -->
+              <div style="display:flex; flex-direction: column">
+                <label for="descricao">Esta é a descrição de sua barbearia / salão</label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+              </div>
+              <!-- Serviços prestados na filial -->
+              <div style="display:flex; flex-direction: column">
+                <label for="servicos_disponiveis">Insira os serviços disponíveis nessa filial:</label>
+                <textarea name="servicos_disponiveis" id="servicos_disponiveis" cols="30" rows="10"></textarea>
+              </div>
+            </section>
+            <button type="submit" style="width: 100%">Enviar</button>
           </form>
 
         </section>
 
         <p>Insira agora as imagens que ficarão em exibição:</p>
-        <section aria-label="Adicionar imagens do empreendimento" class="inputs">
-
-          <figure>
-            <img src="" alt="">
-            <figcaption>Imagem</figcaption>
-          </figure>
-
-          <!-- Formulário para enviar imagens da filial: -->
+        <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
+          <header aria-labelledby="foto_atual" title="Foto da filial atual">
+            <h1>Fotos Atuais:</h1>
+            <p id="foto_atual">Estas são suas fotos atuais:</p>
+            <?php
+              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
+            ?>
+          </header>
           <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
-            Selecione uma imagem:
-            <input type="file" id="imagem" name="imagem">
-            <input type="submit" value="Enviar">
+            <h1 id="nova_foto">Inserir nova foto:</h1>
+            <p>Selecione uma imagem:</p>
+              <input type="file" id="imagem" name="imagem">
+              <input type="submit" value="Enviar">
           </form>
 
-          <section aria-label="Botões inserir/remover imagens" class="container_botoes">
-            <button>Inserir</button>
-            <button>Remover</button>
-          </section>
-
+        <!-- Seção de inputs imagem -->
         </section>
       </section>
     </section>

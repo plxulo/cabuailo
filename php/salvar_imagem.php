@@ -20,6 +20,7 @@
     $comando = $pdo->prepare("INSERT INTO imagem_pfp_adm(imagem, pfp_adm) VALUES(:imagem, $_SESSION[id])");
     $comando->bindParam(":imagem", $imagem, PDO::PARAM_LOB);
     $resultado = $comando->execute();
+    $_SESSION['foto_perfil'] = $imagem;
   }
   else
   {

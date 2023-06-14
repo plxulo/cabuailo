@@ -75,7 +75,7 @@
 
     // Inserção bem sucedida:
     echo ("<script type = text/javascript>");
-      echo ("alert('Funcionário cadastrado com sucesso!');");
+      echo ("alert('Admin cadastrado com sucesso!');");
       echo ("window.location = 'admin/admCrud.php'");
     echo ("</script>");    
   }
