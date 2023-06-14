@@ -61,6 +61,7 @@
             <a href="admCrud.php">Cadastros</a>
             <a href="empCadastrados.php">Empreendimentos cadastrados</a>
             <a href="admFiliais.php">Adicionar Filiais</a>
+            <a href="admProdutos.php">Adicionar Produtos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
             <a href="#">Ajuda</a>
@@ -112,6 +113,7 @@
             <h1 id="titulo_cadastros">Gerenciar cadastros</h1>
             <p>Gerenciamento de usuários cadastrados no sistema.</p>
             <p>Selecione abaixo o que gostaria de realizar no banco de dados.</p>
+            <a href="empCadastrados.php">Clique aqui para visualizar empreendimentos</a>
           </header>
 
           <!-- Botões com funcionalidades do sistema -->

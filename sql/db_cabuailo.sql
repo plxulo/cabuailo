@@ -38,6 +38,17 @@ CREATE TABLE funcionarios (
     FOREIGN KEY (adm_superior) REFERENCES usuarios_admin(id_adm)
 );
 
+CREATE TABLE produtos (
+    id_produto INT(6) PRIMARY KEY AUTO_INCREMENT,
+    nome_produto VARCHAR(255) NOT NULL,
+    descricao_produto VARCHAR(255) NOT NULL,
+    preco_produto FLOAT(10,2) NOT NULL,
+    imagem_produto MEDIUMBLOB,
+    quantidade_produto INT(6) NOT NULL,
+    id_adm INT(6),
+    FOREIGN KEY (id_adm) REFERENCES usuarios_admin(id_adm)
+);
+
 /* Armazenar imagens do sistema */
 CREATE TABLE imagem_emp (
     id_img INT(6) PRIMARY KEY AUTO_INCREMENT,

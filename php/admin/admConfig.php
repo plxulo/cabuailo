@@ -58,8 +58,9 @@
               <input type="text" placeholder="Pesquisar..."/>
               <a href="admPainel.php">Painel principal</a>
               <a href="admCrud.php">Cadastros</a>
-              <a href="#">Funcionários</a>
-              <a href="#">Filiais</a>
+              <a href="empCadastrados.php">Empreendimentos cadastrados</a>
+              <a href="admFiliais.php">Adicionar Filiais</a>
+              <a href="admProdutos.php">Adicionar Produtos</a>
               <a href="admSeguranca.php">Segurança</a>
               <hr width="100%"/>
               <a href="#">Ajuda</a>

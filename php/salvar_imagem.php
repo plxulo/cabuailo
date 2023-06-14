@@ -10,12 +10,24 @@
 
   // Lê o conteúdo do arquivo de imagem e armazena na variável $imagem
   $imagem = file_get_contents($_FILES["imagem"]["tmp_name"]);
+
+  $foto_perfil = $_SESSION['foto_perfil'];
 	
+  // Se não houver imagem e estiver usando a imagem padrão, inserir uma nova imagem:
   // Insere a imagem no banco de dados junto com o ID do usuário:
-  $comando = $pdo->prepare("INSERT INTO imagem_pfp_adm(imagem, pfp_adm) VALUES(:imagem, $_SESSION[id])");
-  $comando->bindParam(":imagem", $imagem, PDO::PARAM_LOB);
-  $resultado = $comando->execute();
-        
+  if ($foto_perfil == 'default.png')
+  {
+    $comando = $pdo->prepare("INSERT INTO imagem_pfp_adm(imagem, pfp_adm) VALUES(:imagem, $_SESSION[id])");
+    $comando->bindParam(":imagem", $imagem, PDO::PARAM_LOB);
+    $resultado = $comando->execute();
+  }
+  else
+  {
+    $comando = $pdo->prepare("UPDATE imagem_pfp_adm SET imagem = :imagem WHERE pfp_adm = $_SESSION[id]");
+    $comando->bindParam(":imagem", $imagem, PDO::PARAM_LOB);
+    $resultado = $comando->execute();
+  }
+
   $id = $_SESSION['id'];
   
   // As linhas abaixo você usará sempre que quiser mostrar a imagem
