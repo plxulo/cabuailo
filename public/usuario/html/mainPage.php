@@ -62,16 +62,20 @@
                             <div class="cardBarbearia">
                                 <img src="../image/barbearia1.jpeg" class="imgCard">
                                 <article>
-                                    <h>Barbearia do Paulo</h>
-                                    <div class="stars">    
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
+                                    <h3>Barbearia do Tonho</h3>
+                                    
                                     <p>Av. Rui Barbosa 95</p>
-
+                                    <div class="stars">    
+                                        <img src="../image/estrela.svg" width="15px">
+                                        <img src="../image/estrela.svg" width="15px">
+                                        <img src="../image/estrela.svg" width="15px">
+                                        <img src="../image/estrela.svg" width="15px">
+                                        <img src="../image/estrela.svg" width="15px">
+                                    </div>
+                                    <div class="vermais">
+                                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                                        <a href="#"><p1>Ver mais</p1></a>
+                                    </div>
                                 </article>
                             </div>
                             <div class="cardBarbearia">
@@ -85,7 +89,7 @@
                 </div>
                 <div id="div2" class="minhaDiv">
                     <div class="divCompras">
-
+                        <h1>Compras</h1>
                     </div>
                 </div>
                 <div id="div3" class="minhaDiv">
