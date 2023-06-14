@@ -62,7 +62,9 @@
                             <div class="cardBarbearia">
                                 <img src="../image/barbearia1.jpeg" class="imgCard">
                                 <article>
-                                    <h3>Barbearia do Tonho</h3>
+                                    <h3>
+                                        Barbearia do tonho
+                                    </h3>
                                     
                                     <p>Av. Rui Barbosa 95</p>
                                     <div class="stars">    
