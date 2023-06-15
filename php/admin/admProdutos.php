@@ -123,17 +123,17 @@
         <section aria-label="Adicionar as informações do produto">
           <form aria-label="Cadastrar uma filial" action="../inserir_produto.php" method="POST" enctype="multipart/form-data">
             <section class="inputs">
-              <div>
+              <div class="input_box">
                 <!-- Nome do produto que será exibido -->
                 <label for="nome">Este será o nome em exibição no aplicativo</label>
                 <input id="nome" type="text" placeholder="Nome do produto." name="nome">
               </div>
-              <div>
+              <div class="input_box">
                 <!-- Preço do produto -->
                 <label for="preco">Este será o preço em exibição no aplicativo</label>
                 <input id="preco" type="number" placeholder="Preço do produto." name="preco">
               </div>
-              <div>
+              <div class="input_box">
                 <!-- Quantidade do produto -->
                 <label for="quantidade">Esta é a quantidade disponível do produto</label>
                 <input id="quantidade" type="number" placeholder="Quantidade do produto." name="quantidade">
@@ -150,10 +150,14 @@
                 <p id="foto_atual">Estas são suas fotos atuais:</p>
                 <?php echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';?>
               </header>
-              <h1 id="nova_foto">Inserir nova foto:</h1>
-              <p>Selecione uma imagem:</p>
-              <input type="file" id="imagem" name="imagem">
-              <input type="submit" value="Enviar">
+              <div class="inserir_imagem">
+                <header>
+                  <h1 id="nova_foto">Inserir nova foto:</h1>
+                  <p>Selecione uma imagem:</p>
+                </header>
+                <input type="file" id="imagem" name="imagem">
+                <input type="submit" value="Enviar">
+              </div>
             </section>
           </form>
         </section>

@@ -108,8 +108,8 @@
       </navbar>
 
       <section class="container_column">
-        <!-- Seção com as funcionalidades (botões) e formulário submit para cada uma das func. -->
-        <section aria-labelledby="titulo_cadastros" class="secao_container">
+        <!-- Seção com as funcionalidades (botões) e formulário submit para cada uma das func. (Aumentar largura para caber título) -->
+        <section aria-labelledby="titulo_cadastros" class="secao_container" style="width: 100%">
           <!-- Título e descrição -->
           <header class="descricao_geral">
             <h1 id="titulo_cadastros">Empreendimentos cadastrados</h1>

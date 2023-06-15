@@ -47,6 +47,38 @@
   <link rel="stylesheet" href="../../public/css/stylePainel.css"/>
   <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
 
+  <!-- Tabelas com: https://developers.google.com/chart/interactive/docs?hl=pt-br -->
+  <!-- Carregar scripts AJAX para Google Charts -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['2004',  1000,      400],
+        ['2005',  1170,      460],
+        ['2006',  660,       1120],
+        ['2007',  1030,      540]
+      ]);
+
+      var options = {
+        title: 'Número de Clientes',
+        curveType: 'function',
+        width: 380,
+        height: 215,
+        legend: { position: 'bottom' }
+      };
+
+      // Iniciar e exibir o gráfico com opções: (Exibir a tabela com base no id)
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+  </script>
+
   <title>Painel Principal</title>
 </head>
 
@@ -133,7 +165,9 @@
         <!-- Estatísticas e gráficos ( 1 container row geral com dois elementos e elemento column + 2 elementos em column)-->
         <section aria-label="Estatísticas e gráficos" class="container_row">
           <section class="clientes_rendimentos">
-            <div class="grafico">
+            <!-- Este ID faz com que o gráfico de pizza criado com JavaScript seja exibido: -->
+            <!-- Ele está em cima do h1 / h2 e ocupa o espaço do gráfico, mudar altura e largura no JavaScript -->
+            <div class="grafico" id="chart_div">
               <div class="grafico_texto">
                 <h1>Clientes</h1>
                 <h2>5,241</h2>

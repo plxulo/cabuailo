@@ -114,9 +114,8 @@
         <header class="descricao_geral">
           <h1 id="titulo_cadastros">Configurações do perfil</h1>
           <p>
-            Cadastre sua filial diretamente no aplicativo para que seja visível para todos.
-            Você pode insirir imagens, textos e produtos para cadastro e venda no aplicativo.
-            Primeiro insira o nome e a descrição:
+            Mude as configurações do seu perfil de administrador, como nome e foto,
+            de acordo com os seus gostos. Você pode atualizar quando quiser.
           </p>
         </header>
 
@@ -149,15 +148,29 @@
               <input type="file" id="imagem" name="imagem">
               <input type="submit" value="Enviar">
           </form>
-
-        <!-- Seção de inputs imagem -->
         </section>
-      <!-- Seção column -->
-      </section>
-    <!-- Seção do conteúdo principal -->
-    </section>
 
+        <!-- Seção com formulário para deletar a conta e todas as informações relacionadas ao usuário: -->
+        <section aria-labelledby="excluir_conta" class="excluir_conta">
+          <header>
+            <h1 id="excluir_conta">Excluir sua conta:</h1>
+            <p>
+              Caso deseje excluir sua conta, você é livre para clicar no botão abaixo, 
+              porém, todos os seus dados serão perdidos.
+            </p>
+          </header>
+          <!-- Usando window action -->
+          <button>Deletar Conta</button>
+        </section>
+
+      </section>
+    </section>
   </main>
 </body>
-
+<script>
+  function processar_exclusao(x)
+  {
+    window.open("../excluir_usuario.php?id_adm=" + x,"_self");
+  }
+</script>
 </html>

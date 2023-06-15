@@ -140,6 +140,11 @@
     color: var(--cor-clara);
     margin-left: 50px;
   }
+
+  /* Arrendondar bordas dos inputs de cadastro: */
+  .inputs input {
+    border-radius: 40px;
+  }
   
   /* Tela com as funcionalidades */
   .principal {
