@@ -63,10 +63,38 @@
                                 <img src="../image/barbearia1.jpeg" class="imgCard">
                                 <article>
                                     <h3>
-                                        Barbearia do tonho
+                                        <?php
+                                            include("../php/conecta.php");
+                                            $comando = $pdo->prepare("SELECT nome FROM filiais WHERE id_filial = 2");
+                                            $resultado = $comando->execute();
+
+                                            while( $linhas = $comando->fetch()){
+                                                $nome = $linhas["nome"];
+
+                                                echo("
+                                                    $nome
+                                                ");
+                                                
+                                            }                        
+                                        ?>
                                     </h3>
                                     
-                                    <p>Av. Rui Barbosa 95</p>
+                                    <p>
+                                        <?php
+                                            include("../php/conecta.php");
+                                            $comando = $pdo->prepare("SELECT endereco FROM filiais WHERE id_filial = 2");
+                                            $resultado = $comando->execute();
+
+                                            while( $linhas = $comando->fetch()){
+                                                $endereco = $linhas["endereco"];
+
+                                                echo("
+                                                    $endereco
+                                                ");
+                                                
+                                            }
+                                        ?>
+                                    </p>
                                     <div class="stars">    
                                         <img src="../image/estrela.svg" width="15px">
                                         <img src="../image/estrela.svg" width="15px">
@@ -82,11 +110,26 @@
                             </div>
                             <div class="cardBarbearia">
                                 <!--<img src="../image/barbearia1.jpeg" class="imgBarbearia">-->
+                                
                             </div>
                             <div class="cardBarbearia">
                                 <!--<img src="../image/barbearia1.jpeg" class="imgBarbearia">-->
                             </div>
                         </section>
+                        <!--
+                            ?php
+                            include("../php/conecta.php"); //Conecta com o banco de dados
+                            $comando = $pdo->prepare("SELECT * FROM filiais");
+                            $resultado = $comando->execute();
+
+                            while( $linhas = $comando->fetch()){
+                                $nome = $linhas["nome"];
+                                $endereco = $linhas["endereco"];
+                                $filial_adm = $linhas["filial_adm"];
+                                echo("
+
+                        ?> -->
+
                     </div>
                 </div>
                 <div id="div2" class="minhaDiv">
