@@ -67,11 +67,11 @@
                                 while( $linhas = $comando->fetch()){
                                     $nome = $linhas["nome"];
                                     $endereco = $linhas["endereco"];
-                                    $filial_img = $linhas["filial_img"];
+                                    
 
                                     echo("
                                         <div class='cardBarbearia'>
-                                            <img src='$filial_img' class='imgCard'>
+                                            
                                             <article>
                                                 <h3>
                                                     $nome                                                                
@@ -117,11 +117,47 @@
                 <div id="div2" class="minhaDiv">
                     <div class="divCompras">
                         <h1>Compras</h1>
+                            <?php
+                                include("../php/conecta.php");
+                                $comando = $pdo->prepare("SELECT * FROM produtos");
+                                $resultado = $comando->execute();
+
+                                while( $linhas = $comando->fetch()){
+                                    $nome = $linhas["nome"];
+                                    $preco = $linhas["preco"];
+                                    $preco_caro = $linhas["preco_caro"];
+                                    
+                                    echo("
+                                            <div class='conteinerCompras'>
+                                                <div class='conteinerCardCompras'>
+                                                    <div class='cardCompras'>
+                                                        <img src='../image/pastaCabelo.jpg' class='imgProduto'>
+                                                        <h4> $nome </h4>
+                                                        <p> $preco_caro</p>
+                                                        <p2>R$ $preco</p2>      
+                                                    </div>
+                                                    <div class='cardCompras'>
+
+                                                    </div>
+                                                </div>
+                                                <div class='conteinerCardCompras'>
+                                                    <div class='cardCompras'>
+
+                                                    </div>
+                                                    <div class='cardCompras'>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ");
+                                }
+                            ?>
+
                     </div>
                 </div>
                 <div id="div3" class="minhaDiv">
                     <div class="divDelivery">
-
+                        
                     </div>
                 </div>
 
