@@ -56,65 +56,47 @@
                 </button>
             </div>
                 <div id="div1" class="minhaDiv">
-                    <div class="divBarbearias">
-                        <h1>Barbearias</h1>
-                        <section>
-                            <div class="cardBarbearia">
-                                <img src="../image/barbearia1.jpeg" class="imgCard">
-                                <article>
-                                    <h3>
-                                        <?php
-                                            include("../php/conecta.php");
-                                            $comando = $pdo->prepare("SELECT nome FROM filiais WHERE id_filial = 2");
-                                            $resultado = $comando->execute();
+                        <div class="divBarbearias">
+                            <h1>Barbearias</h1>
+                            <section>
+                            <?php
+                                include("../php/conecta.php");
+                                $comando = $pdo->prepare("SELECT * FROM filiais");
+                                $resultado = $comando->execute();
 
-                                            while( $linhas = $comando->fetch()){
-                                                $nome = $linhas["nome"];
+                                while( $linhas = $comando->fetch()){
+                                    $nome = $linhas["nome"];
+                                    $endereco = $linhas["endereco"];
+                                    $filial_img = $linhas["filial_img"];
 
-                                                echo("
-                                                    $nome
-                                                ");
+                                    echo("
+                                        <div class='cardBarbearia'>
+                                            <img src='$filial_img' class='imgCard'>
+                                            <article>
+                                                <h3>
+                                                    $nome                                                                
+                                                </h3>
                                                 
-                                            }                        
-                                        ?>
-                                    </h3>
-                                    
-                                    <p>
-                                        <?php
-                                            include("../php/conecta.php");
-                                            $comando = $pdo->prepare("SELECT endereco FROM filiais WHERE id_filial = 2");
-                                            $resultado = $comando->execute();
-
-                                            while( $linhas = $comando->fetch()){
-                                                $endereco = $linhas["endereco"];
-
-                                                echo("
+                                                <p>
                                                     $endereco
-                                                ");
+                                                </p>
+                                                <div class='stars'>    
+                                                    <img src='../image/estrela.svg' width='15px'>
+                                                    <img src='../image/estrela.svg' width='15px'>
+                                                    <img src='../image/estrela.svg' width='15px'>
+                                                    <img src='../image/estrela.svg' width='15px'>
+                                                    <img src='../image/estrela.svg' width='15px'>
+                                                </div>
+                                                <div class='vermais'>
+                                                    <ion-icon name='arrow-forward-outline'></ion-icon>
+                                                    <a href='#'><p1>Ver mais</p1></a>
+                                                </div>
+                                            </article>
+                                    </div>
+                                    ");
                                                 
-                                            }
-                                        ?>
-                                    </p>
-                                    <div class="stars">    
-                                        <img src="../image/estrela.svg" width="15px">
-                                        <img src="../image/estrela.svg" width="15px">
-                                        <img src="../image/estrela.svg" width="15px">
-                                        <img src="../image/estrela.svg" width="15px">
-                                        <img src="../image/estrela.svg" width="15px">
-                                    </div>
-                                    <div class="vermais">
-                                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                                        <a href="#"><p1>Ver mais</p1></a>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="cardBarbearia">
-                                <!--<img src="../image/barbearia1.jpeg" class="imgBarbearia">-->
-                                
-                            </div>
-                            <div class="cardBarbearia">
-                                <!--<img src="../image/barbearia1.jpeg" class="imgBarbearia">-->
-                            </div>
+                                }
+                            ?>  
                         </section>
                         <!--
                             ?php
