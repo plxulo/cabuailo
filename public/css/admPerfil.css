@@ -4,27 +4,39 @@ p {
 
 main .container_column {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+}
+
+.configs {
+  display: flex;
+  flex-direction: column;
 }
 
 .inputs {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 20px;
 }
 
 .inputs h1 {
   margin: 0;
 }
 
-.inputs input {
-  border-radius: 5px;
+.configs input {
+  border-radius: 40px;
   background: var(--cor-clara);
   border: 1px solid var(--cor-escura);
   color: var(--cor-escura);
 }
 
-.inputs input::placeholder {
+.inputs input {
+  border-radius: 40px;
+  background: var(--cor-clara);
+  border: 1px solid var(--cor-escura);
+  color: var(--cor-escura);
+}
+
+.inputs, .configs input::placeholder {
   color: var(--cor-escura);
 }
 
@@ -39,6 +51,10 @@ button {
   transition: .5s;
 }
 
+h2 {
+  margin: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -48,7 +64,7 @@ form {
 .nova_foto {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .nova_foto form {

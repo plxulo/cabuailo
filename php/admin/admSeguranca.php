@@ -120,9 +120,9 @@
           </section>
           <hr width="100%">
           <p>Esta é a sua senha de administrador. Você não tem nenhuma senha gerada ainda.</p>
-          <input type="text" placeholder="Senha anterior">
-          <input type="text" placeholder="Nova senha">
-          <input type="text" placeholder="Confirmar nova senha">
+          <input type="text" class="senha" placeholder="Senha anterior" onkeyup="validar_senha()">
+          <input type="text" class="senha" placeholder="Nova senha" onkeyup="validar_senha()">
+          <input type="text" class="senha" placeholder="Confirmar nova senha" onkeyup="validar_senha()">
           <p>A senha deve ter no mínimo 8 caracteres, incluindo letras e números. <a><b>Saiba mais.</b></a></p>
           <button>Alterar senha</button>
         </section>
@@ -238,5 +238,27 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="../../public/js/perfil.js"></script>
+<script>
+  function validar_senha()
+  {
+    var senhas = document.getElementsByClassName("senha");
+    for(var iteracao = 0; iteracao < senhas.length; iteracao++)
+    {
+      var senha = senhas[iteracao];
+      expressao = /[A-z]{8}|[1-9]{8}/g;
+      texto = senha.value;
+      resposta = expressao.test(texto); // Retorna valor true / false
 
+      // Verificar se texto está de acordo com a expressão
+      if (resposta === true) {
+        senha.classList.remove("--errado");
+        senha.classList.add("--certo");
+      }
+      if (resposta == false) {
+        senha.classList.remove("--certo")
+        senha.classList.add("--errado")
+      }
+    }
+  }
+</script>
 </html>

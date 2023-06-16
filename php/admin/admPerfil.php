@@ -123,8 +123,11 @@
           Seção das entradas para exibir no aplicativo 
           Registrar com banco de dados depois
         -->
-        <h1>Nome de usuário:</h1>
-        <section aria-label="Adicionar nome e descrição" class="inputs">
+        <section aria-label="Adicionar nome e descrição" class="configs">
+          <header class="titulo_configs">
+            <h2>Nome de usuário:</h2>
+          </header>
+          <hr width="100%">
           <!-- Alter table -->
           <form action="../alterar_nome.php" method="POST">
             <p>Esté é seu nome atual: <?php echo $logado ?></p>
@@ -133,25 +136,34 @@
             <button type="submit">Alterar Nome</button>
           </form>
         </section>
-        
-        <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Nova foto de perfil">
-          <header aria-labelledby="foto_atual" title="Foto de perfil atual">
-            <h1>Foto de perfil:</h1>
-            <p id="foto_atual">Esta é a sua foto atual:</p>
-            <?php
-              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
-            ?>
-          </header>
-          <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
-            <h1 id="nova_foto">Nova foto de perfil:</h1>
-            <p>Selecione uma imagem:</p>
-              <input type="file" id="imagem" name="imagem">
-              <input type="submit" value="Enviar">
-          </form>
-        </section>
 
+        <section aria-labelledby="nova_foto" class="nova_foto" title="Nova foto de perfil">
+          <section class="titulo_configs">
+            <h2>Foto de perfil</h2>
+          </section>
+          <hr width="100%">
+          <div class="inputs">
+            <header aria-labelledby="foto_atual" title="Foto de perfil atual">
+              <h1>Foto de perfil:</h1>
+              <p id="foto_atual">Esta é a sua foto atual:</p>
+              <?php
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
+              ?>
+            </header>
+            <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
+              <h1 id="nova_foto">Nova foto de perfil:</h1>
+              <p>Selecione uma imagem:</p>
+                <input type="file" id="imagem" name="imagem">
+                <input type="submit" value="Enviar">
+            </form>
+          </div>
+        </section>
         <!-- Seção com formulário para deletar a conta e todas as informações relacionadas ao usuário: -->
         <section aria-labelledby="excluir_conta" class="excluir_conta">
+          <section class="titulo_configs">
+            <h2>Deletar conta</h2>
+          </section>
+          <hr width="100%">
           <header>
             <h1 id="excluir_conta">Excluir sua conta:</h1>
             <p>
@@ -160,7 +172,7 @@
             </p>
           </header>
           <!-- Usando window action -->
-          <button>Deletar Conta</button>
+          <button onclick="processar_exclusao(<?php echo $id ?>)" title="Excluir conta" type="button" name="excluir_conta" value="excluir_conta">Deletar Conta</button>
         </section>
 
       </section>
@@ -168,9 +180,15 @@
   </main>
 </body>
 <script>
-  function processar_exclusao(x)
-  {
-    window.open("../excluir_usuario.php?id_adm=" + x,"_self");
+  function processar_exclusao(x) {
+    if (confirm("Deseja excluir a conta?")) 
+    {
+      window.open("../excluir_usuario.php?id_adm=" + x,"_self");
+    }
+    else 
+    {
+      return false;
+    }
   }
 </script>
 </html>

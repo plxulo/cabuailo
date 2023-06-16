@@ -151,7 +151,7 @@
                 <textarea name="servicos_disponiveis" id="servicos_disponiveis" cols="30" rows="10"></textarea>
               </div>
             </section>
-            <button type="submit" style="width: 100%">Enviar</button>
+            <button type="submit" style="width: 50%">Adicionar</button>
           </form>
 
         </section>

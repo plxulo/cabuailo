@@ -33,6 +33,15 @@
     --cor-escura: #2C3639;
   }
   
+  /* Validação */
+  .--certo {
+    background-color: lightgreen;
+  }
+
+  .--errado {
+    background-color: lightcoral;
+  }
+
   /* Apagar bolinha li */
   li {
     display: inline-block;
