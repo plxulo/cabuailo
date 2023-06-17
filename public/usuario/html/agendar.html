@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/calendario.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -21,7 +22,15 @@
         </div>
     </header>
     <main>
-
+        <h1>Calendário</h1>
+        <div id="calendar"></div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Agendar Horário</h3>
+                <div id="time-slots"></div>
+            </div>
+        </div>
     </main>
     <nav>
         <ul>
@@ -32,7 +41,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/notificacao.html">
+                <a href="../html/carrinho.php">
                     <span class="icon"><ion-icon name="notifications"></ion-icon></span>
                     <span class="text">Notificações</span>
                 </a>
@@ -88,4 +97,123 @@
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        var calendar = document.getElementById('calendar');
+        var modal = document.getElementById('modal');
+        var timeSlots = document.getElementById('time-slots');
+    
+        var months = [
+            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ];
+    
+        var daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    
+        var currentDate = new Date();
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+    
+        function generateCalendar(month, year) {
+            calendar.innerHTML = '';
+    
+            var monthDiv = document.createElement('div');
+            monthDiv.className = 'month';
+    
+            var monthHeader = document.createElement('h2');
+            monthHeader.textContent = months[month] + ' ' + year;
+    
+            var prevMonthBtn = document.createElement('span');
+            prevMonthBtn.textContent = '\u2039';
+            prevMonthBtn.style.cursor = 'pointer';
+            prevMonthBtn.addEventListener('click', function() {
+                if (month === 0) {
+                    month = 11;
+                    year--;
+                } else {
+                    month--;
+                }
+                generateCalendar(month, year);
+            });
+            monthHeader.appendChild(prevMonthBtn);
+    
+            var nextMonthBtn = document.createElement('span');
+            nextMonthBtn.textContent = '\u203A';
+            nextMonthBtn.style.cursor = 'pointer';
+            nextMonthBtn.addEventListener('click', function() {
+                if (month === 11) {
+                    month = 0;
+                    year++;
+                } else {
+                    month++;
+                }
+                generateCalendar(month, year);
+            });
+            monthHeader.appendChild(nextMonthBtn);
+    
+            monthDiv.appendChild(monthHeader);
+    
+            var daysDiv = document.createElement('div');
+            daysDiv.className = 'days';
+    
+            for (var j = 0; j < daysOfWeek.length; j++) {
+                var dayDiv = document.createElement('div');
+                dayDiv.className = 'day';
+                dayDiv.textContent = daysOfWeek[j];
+    
+                daysDiv.appendChild(dayDiv);
+            }
+    
+            var numDays = getNumDaysInMonth(month, year);
+            var firstDay = new Date(year, month, 1).getDay();
+    
+            for (var k = 1; k <= numDays; k++) {
+                var dayDiv = document.createElement('div');
+                dayDiv.className = 'day';
+                dayDiv.textContent = k;
+                dayDiv.addEventListener('click', function() {
+                    openModal(this.textContent);
+                });
+    
+                if (month === currentDate.getMonth() && year === currentDate.getFullYear() && k === currentDate.getDate()) {
+                    dayDiv.classList.add('current-day');
+                }
+    
+                daysDiv.appendChild(dayDiv);
+            }
+    
+            monthDiv.appendChild(daysDiv);
+            calendar.appendChild(monthDiv);
+        }
+    
+        generateCalendar(currentMonth, currentYear);
+    
+        function getNumDaysInMonth(month, year) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+    
+        function openModal(day) {
+            modal.style.display = 'block';
+    
+            timeSlots.innerHTML = '';
+    
+            var closeBtn = document.querySelector('.close');
+            closeBtn.addEventListener('click', function() {
+                closeModal();
+            });
+    
+            for (var i = 8; i <= 17; i++) {
+                var timeSlotDiv = document.createElement('div');
+                timeSlotDiv.className = 'time-slot';
+                timeSlotDiv.textContent = day + ' de ' + months[currentMonth] + ', ' + i + ':00';
+    
+                timeSlots.appendChild(timeSlotDiv);
+            }
+        }
+    
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+    });
+</script>
 </html>
