@@ -21,7 +21,7 @@
 </head>
 <body>
     <header>
-        <button class="mapa"><ion-icon name="map-outline"></ion-icon></button>
+        <button class="mapa"><ion-icon name="settings"></ion-icon></button>
         <section class="textoLocal">
             <h1>Localização atual</h1>
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
@@ -67,11 +67,12 @@
                                 while( $linhas = $comando->fetch()){
                                     $nome = $linhas["nome"];
                                     $endereco = $linhas["endereco"];
+                                    $imagem = $linhas["imagem_filial"];
                                     
 
                                     echo("
                                         <div class='cardBarbearia'>
-                                            
+
                                             <article>
                                                 <h3>
                                                     $nome                                                                
@@ -117,42 +118,30 @@
                 <div id="div2" class="minhaDiv">
                     <div class="divCompras">
                         <h1>Compras</h1>
+                        <div class='conteinerCompras'>
                             <?php
                                 include("../php/conecta.php");
                                 $comando = $pdo->prepare("SELECT * FROM produtos");
                                 $resultado = $comando->execute();
 
                                 while( $linhas = $comando->fetch()){
-                                    $nome = $linhas["nome"];
-                                    $preco = $linhas["preco"];
-                                    $preco_caro = $linhas["preco_caro"];
+                                    $nome_produto = $linhas["nome_produto"];
+                                    $preco_produto = $linhas["preco_produto"];
+                                    $preco_promocao = $linhas["preco_promocao"];
                                     
                                     echo("
-                                            <div class='conteinerCompras'>
                                                 <div class='conteinerCardCompras'>
                                                     <div class='cardCompras'>
                                                         <img src='../image/pastaCabelo.jpg' class='imgProduto'>
-                                                        <h4> $nome </h4>
-                                                        <p> $preco_caro</p>
-                                                        <p2>R$ $preco</p2>      
-                                                    </div>
-                                                    <div class='cardCompras'>
-
+                                                        <h4> $nome_produto </h4>
+                                                        <p> $preco_produto</p>
+                                                        <p2>R$ $preco_promocao</p2>      
                                                     </div>
                                                 </div>
-                                                <div class='conteinerCardCompras'>
-                                                    <div class='cardCompras'>
-
-                                                    </div>
-                                                    <div class='cardCompras'>
-
-                                                    </div>
-                                                </div>
-                                            </div>
                                         ");
                                 }
                             ?>
-
+                        </div>
                     </div>
                 </div>
                 <div id="div3" class="minhaDiv">
@@ -169,14 +158,14 @@
     <nav>
         <ul>
             <li class="list active">
-                <a href="../html/mainPage.html">
+                <a href="../html/mainPage.php">
                     <span class="icon"><ion-icon name="home"></ion-icon></span>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/notificacao.html">
-                    <span class="icon"><ion-icon name="notifications"></ion-icon></span>
+                <a href="../html/carrinho.php">
+                    <span class="icon"><ion-icon name="cart"></ion-icon></ion-icon></span>
                     <span class="text">Notificações</span>
                 </a>
             </li>
@@ -187,7 +176,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
