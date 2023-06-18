@@ -7,7 +7,7 @@
 
     $comando = $pdo->prepare("INSERT INTO usuarios (usuario, email, senha) VALUES('$nome', '$email', '$senha')");
     $resultado = $comando->execute();
-    header("Location: ../html/mainPage.html");
+    header("Location: ../html/loginUsuario.php");
 
 
 ?>

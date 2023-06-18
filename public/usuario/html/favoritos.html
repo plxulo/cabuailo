@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/favoritos.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -21,8 +21,51 @@
         </div>
     </header>
     <main>
-
+        <h>Suas barbearias favoritas:</h>
+        <div class="divFavoritos">
+            <div class="cardFavoritos">
+                <img src="../image/barbearia1.jpeg" class="imgCard">
+                <article>   
+                    <div class="subDivFavoritos">
+                        <h3>Barbearia 1</h3> <ion-icon name="bookmark-outline" class="logoFavorito" onclick="removerCard(this)"></ion-icon>
+                    </div>
+                    <p>Endereco</p>
+                    <div class='stars'>    
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                    </div>
+                    <div class='vermais'>
+                        <ion-icon name='arrow-forward-outline'></ion-icon>
+                        <a href='#'><p1>Ver mais</p1></a>
+                    </div>  
+                </article>                
+            </div>
+            <div class="cardFavoritos">
+                <img src="../image/barbearia1.jpeg" class="imgCard">
+                <article>   
+                    <div class="subDivFavoritos">
+                        <h3>Nome</h3> <ion-icon name="bookmark-outline" class="logoFavorito" onclick="removerCard(this)"></ion-icon>
+                    </div>
+                    <p>Endereco</p>
+                    <div class='stars'>    
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                        <img src='../image/estrela.svg' width='15px'>
+                    </div>
+                    <div class='vermais'>
+                        <ion-icon name='arrow-forward-outline'></ion-icon>
+                        <a href='#'><p1>Ver mais</p1></a>
+                    </div>  
+                </article>                
+            </div>
+        </div>
     </main>
+    
     <nav>
         <ul>
             <li class="list">
@@ -85,6 +128,12 @@
     divSelecionada.style.display = "block";
     botaoSelecionado.style.backgroundColor = "#D8315B";
 }
+</script>
+<script>
+    function removerCard(icon) {
+        var card = icon.closest('.cardFavoritos');
+        card.parentNode.removeChild(card);
+    }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
