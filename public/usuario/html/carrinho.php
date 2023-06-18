@@ -11,7 +11,7 @@
 <body>
     <body>
         <header>
-            <button class="mapa"><ion-icon name="map-outline"></ion-icon></button>
+            <button class="mapa"><ion-icon name="settings"></ion-icon></button>
             <section class="textoLocal">
                 <h1>Localização atual</h1>
                 <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
@@ -21,15 +21,7 @@
             
         </header>
         <main>
-            <h1>Calendário</h1>
-            <div id="calendar"></div>
-            <div id="modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Agendar Horário</h3>
-                    <div id="time-slots"></div>
-                </div>
-            </div>
+            
         </main>
         <nav>
             <ul>
@@ -41,8 +33,8 @@
                 </li>
                 <li class="list active">
                     <a href="../html/carrinho.php">
-                        <span class="icon"><ion-icon name="notifications"></ion-icon></span>
-                        <span class="text">Notificações</span>
+                        <span class="icon"><ion-icon name="cart"></ion-icon></ion-icon></span>
+                        <span class="text">Carrinho</span>
                     </a>
                 </li>
                 <li class="list">

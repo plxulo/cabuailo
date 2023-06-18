@@ -200,15 +200,21 @@ header {
     align-items: center;
 }
 
+.textoLocal h1 {
+    margin-top: 4px;
+}
+
 .mapa {
     width: 40px;
     height: 40px;
-    font-size: 25px;
+    font-size: 35px;
     margin-left: 15px;
-    background-color: var(--azul-claro);
     color: var(--marrom);
     border: none;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 

@@ -166,7 +166,7 @@
             <li class="list">
                 <a href="../html/carrinho.php">
                     <span class="icon"><ion-icon name="cart"></ion-icon></ion-icon></span>
-                    <span class="text">Notificações</span>
+                    <span class="text">Carrinho</span>
                 </a>
             </li>
             <li class="list">
@@ -176,7 +176,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.php">
+                <a href="../html/favoritos.html">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
