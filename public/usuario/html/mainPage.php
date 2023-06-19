@@ -69,6 +69,7 @@
                                     $endereco = $linhas["endereco"];
                                     $imagem = $linhas["imagem_filial"];
                                     $tipo = "image/jpg";
+                                    $id = $linhas["id_filial"];
 
                                     //Tentar arrumar a exibição de imagem
                                     ////<img src='data:$tipo;base64,$imagem' class='imgProduto'> A principio é esse codigo
@@ -93,7 +94,7 @@
                                                 </div>
                                                 <div class='vermais'>
                                                     <ion-icon name='arrow-forward-outline'></ion-icon>
-                                                    <a href='#'><p1>Ver mais</p1></a>
+                                                    <a href='vermais.php?id_filial=".$id."'><p1>Ver mais</p1></a>
                                                 </div>
                                             </article>
                                     </div>
