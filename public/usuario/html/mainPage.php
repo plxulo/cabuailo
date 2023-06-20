@@ -68,15 +68,16 @@
                                     $nome = $linhas["nome"];
                                     $endereco = $linhas["endereco"];
                                     $imagem = $linhas["imagem_filial"];
-                                    $tipo = "image/jpg";
+                                    $i = base64_encode($imagem);
                                     $id = $linhas["id_filial"];
 
-                                    //Tentar arrumar a exibição de imagem
+
+                                    //Tentar arrumar a exibição de imagem class='imgProduto'>
                                     ////<img src='data:$tipo;base64,$imagem' class='imgProduto'> A principio é esse codigo
                                 
                                     echo("
                                         <div class='cardBarbearia'>
-                                            
+                                        <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
                                             <article>
                                                 <h3>
                                                     $nome                                                                

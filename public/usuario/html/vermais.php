@@ -44,15 +44,22 @@
                 $nome = $linhas["nome"];
                 $endereco = $linhas["endereco"];
                 $imagem = $linhas["imagem_filial"];
-                $sobre_nos = $linhas["sobre_nos"];
-                $tipo = "image/jpg";
+                $descricao = $linhas["descricao"];
+                $imagem = $linhas["imagem_filial"];
+                $i = base64_encode($imagem);
 
                 echo("
+                    <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia'>
+
                     <h>$nome</h>
+
                     <div class='boxSobreNos'>
-                        <p>$sobre_nos</p>
+                        <p>$descricao</p>
                     </div>
-                    <p2>$endereco</p2>
+
+                    <a href='https://www.google.com/maps/search/?api=1&query=$endereco
+                    '><p2>$endereco</p2></a>
+
                     <button class='btnAgendar'>    
                         <a href='agendar.php?id_filial=".$id_filial."''>Agendar</a>
                         <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>

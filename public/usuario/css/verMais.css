@@ -233,7 +233,7 @@ main {
 }
 
 main h {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     display: flex;
     margin-top: 20px;
 
@@ -259,9 +259,14 @@ main p2 {
 }
 
 .imgBarbearia {
-    width: 100%;
-    height: 100px;
+    width: 90%;
+    height: 15vh;
+    border-radius: 15px;
     display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    background-color: #0A2463;
 }
 
 .btnAgendar {
@@ -289,3 +294,7 @@ main p2 {
     font-size: 1.3rem;
 }
 
+.boxSobreNos p {
+    width: 90%;
+    font-size: 1.2rem;
+}
