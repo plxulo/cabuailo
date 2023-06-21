@@ -1,11 +1,22 @@
+<?php
+    //inicia a seção
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('Location: loginUsuario.php');
+    }
+    $logado = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/calendario.css">
+    <link rel="stylesheet" href="../css/escolherBarbeiro.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -22,7 +33,53 @@
         </div>
     </header>
     <main>
-        
+        <?php  
+            $id_filial = $_GET['id_filial'];
+
+            include("../php/conecta.php");
+            $comando = $pdo->prepare("SELECT * FROM filiais WHERE id_filial = $id_filial");
+            $resultado = $comando->execute();
+
+            while( $linhas = $comando->fetch()){
+                $nome = $linhas["nome"];
+                $endereco = $linhas["endereco"];
+                $imagem = $linhas["imagem_filial"];
+                $descricao = $linhas["descricao"];
+                $imagem = $linhas["imagem_filial"];
+                $i = base64_encode($imagem);
+                echo("
+                    <h>$nome</h>
+                ");
+            }
+        ?>
+        <div class='cardEscolhaProficional'>  
+        <h2>Escolha Um Profissional: </h2>
+        <?php
+             $id_filial = $_GET['id_filial'];
+
+             include("../php/conecta.php");
+             $comando = $pdo->prepare("SELECT * FROM funcionarios WHERE filial = $id_filial");
+             $resultado = $comando->execute();
+
+             while( $linhas = $comando->fetch()){
+                $nome_barbeiro = $linhas["nome_func"];
+                $imagem = $linhas["foto_funcionario"];
+                $i = base64_encode($imagem);
+                
+                echo("
+                    <a href='agendar.php' class='cardProficional'>
+                        <div class='box-imgBarbeiro'>
+                            <img src='data:image/jpeg;base64," . $i . "' class='imgFuncionario'>
+                        </div>
+                        <h5>$nome_barbeiro</h5> 
+                    </a>
+                    <br>
+                "); 
+
+                             
+            }
+        ?>
+        </div>
     </main>
     <nav>
         <ul>
@@ -89,5 +146,4 @@
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</script>
 </html>

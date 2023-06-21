@@ -61,7 +61,7 @@
                     '><p2>$endereco</p2></a>
 
                     <button class='btnAgendar'>    
-                        <a href='agendar.php?id_filial=".$id_filial."''>Agendar</a>
+                        <a href='escolherBarbeiro.php?id_filial=".$id_filial."''>Agendar</a>
                         <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>
                     </button>
                 ");
