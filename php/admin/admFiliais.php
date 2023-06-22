@@ -165,7 +165,7 @@
               echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
             ?>
           </header>
-          <form action="../salvar_imagem.php" method="POST" enctype="multipart/form-data">
+          <form action="../salvar_img_filial.php" method="POST" enctype="multipart/form-data">
             <h1 id="nova_foto">Inserir nova foto:</h1>
             <p>Selecione uma imagem:</p>
               <input type="file" id="imagem" name="imagem">

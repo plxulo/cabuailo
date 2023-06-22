@@ -135,7 +135,7 @@
           <!-- Formulário para inserção de usuários no sistema -->
           <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
             <section class="input">
-              <input type="text" placeholder="Email, código ou nome do funcionário" name="nome">
+              <input type="text" placeholder="Nome do funcionário" name="nome">
               <input type="text" placeholder="Senha" name="senha">
             </section>
             <!-- Nível de acesso do usuário -->
