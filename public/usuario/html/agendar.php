@@ -22,6 +22,10 @@
         </div>
     </header>
     <main>
+        <?php
+            $id_filial = $_GET['id_filial'];
+            $id_func = $_GET['id'];     
+        ?>
         
     </main>
     <nav>
