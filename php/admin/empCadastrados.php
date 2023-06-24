@@ -32,6 +32,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="Website Icon" type="png" href="../../public/imagens/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -147,15 +148,15 @@
                     $id = $linhas["id_filial"];           // Nome da coluna XAMPP
                     $nome = $linhas["nome"];              // Nome da coluna XAMPP
                     $endereco = $linhas["endereco"];      // Nome da coluna XAMPP
-                    $filial_adm = $linhas["filial_adm"];  // Nome da coluna XAMPP"
-                    
+                    $filial_adm = $linhas["adm_nome"];  // Nome da coluna XAMPP"
+
                     // Exibir os dados na tabela:
                     echo "<tr>";
                       echo "<td>" . $linhas["id_filial"] . "</td>" ;
                       echo "<td>" . $linhas["nome"] . "</td>" ;
                       echo "<td>" . $linhas["endereco"] . "</td>" ;
                       echo "<td>" . $linhas["cep"] . "</td>" ;
-                      echo "<td>" . $linhas["filial_adm"] . "</td>" ;
+                      echo "<td>" . $linhas["adm_nome"] . "</td>" ;
                       echo 
                       // Editar / excluir do banco de dados:
                       "<td> 
@@ -177,6 +178,50 @@
               ?>
             </tbody>
           </table>
+          <p>*Ao excluir uma filial você excluí todos os funcionários ligados à ela.</p>
+        </section>
+        <!-- Comentários das filiais: -->
+        <section aria-label="Comentários" class="comentarios">
+          <hr width="100%">
+          <header aria-labelledby="titulo_comentarios">
+            <h2 id="titulo_comentarios">Veja o que falam de suas filiais:</h2>
+            <p>Você pode excluir comentários indesejados, caso queira.</p>
+          </header>
+          <?php
+            // Selecionar o nome do usuário que enviou comentário por chave estrangeira:
+            $selecionar_comentario = $pdo->prepare
+            ("SELECT app_comentarios.*, usuarios.usuario
+            FROM app_comentarios INNER JOIN usuarios 
+            ON app_comentarios.id_usuario = usuarios.id 
+            ");
+            $selecionar_comentario->execute();
+
+            if($selecionar_comentario->rowCount() == 0)
+            {
+                echo("<hr width='100%'>");
+                echo("<p>Nenhum comentário no momento.</p>");
+            }
+            else
+            {
+                while($row_comentario = $selecionar_comentario->fetch())
+                {
+                  // Caso deseje exibir o nome do usuário na sessão sem definir
+                  // Uma entrada de input "nome" para o mesmo, utilize a tabela e sessão.
+                  $nome = $row_comentario["usuario"];
+
+                  // Nesse caso, como eu possuo uma entrada para o nome e desejo exibir
+                  // O nome de cada entrada, eu utilizarei o seguinte código
+                  // Para atribuir o valor da entrada nome para a variável e exibi-lá:
+                  $comentario = $row_comentario["comentario"];
+                  echo("<div>");
+                    echo("<h2 style='margin-bottom:0'>" . $nome . "</h2>");
+                    echo("<br>");
+                    echo("<p style='margin-top:0'>" . $comentario . "</p> <a href='../excluir_comentario.php?id=" . $row_comentario["id"] . "'>Excluir</a>");
+                  echo("</div>");
+                  echo("<hr width='100%'>");
+                }
+            }
+          ?>
         </section>
       </section>
 

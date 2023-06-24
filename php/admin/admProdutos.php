@@ -33,6 +33,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="Website Icon" type="png" href="../../public/imagens/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap"
@@ -40,10 +41,16 @@
   <link rel="stylesheet" type="text/css" href="../../public/css/admPerfil.css" />
   <link rel="stylesheet" type="text/css" href="../../public/css/admProdutos.css" />
   <link rel="stylesheet" type="text/css" href="../../public/global/admCSS.css" />
+  <link rel="stylesheet" type="text/css" href="../../public/css/styleAdmin.css" />
 
   <script defer src="../../js/private/sAdmCadastro.js"></script>
 
   <title>Painel Admin</title>
+  <style>
+    input::placeholder {
+      color: var(--cor-escura);
+    }
+  </style>
 </head>
 
 <body>
@@ -143,15 +150,10 @@
             <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
 
             <!-- Formulário para enviar imagens do produto: -->
-            <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
-              <header aria-labelledby="foto_atual" title="Foto da filial atual">
-                <h1>Fotos Atuais:</h1>
-                <p id="foto_atual">Estas são suas fotos atuais:</p>
-                <?php echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';?>
-              </header>
+            <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar foto do produto">
               <div class="inserir_imagem">
                 <header>
-                  <h1 id="nova_foto">Inserir nova foto:</h1>
+                  <h1 id="nova_foto">Insira uma imagem do produto:</h1>
                   <p>Selecione uma imagem:</p>
                 </header>
                 <input type="file" id="imagem" name="imagem">
@@ -165,44 +167,57 @@
           <h1>Aqui é exibida a prévia do produto que vocë deseja adicionar:</h1>
         </header>
 
-        <section aria-label="Lista de produtos cadastrados" class="tabela_usuarios">
+        <section aria-label="Lista de produtos cadastrados">
           <h1>Lista de produtos cadastrados</h1>
           <table>
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Endereço</th>
-                <th>CEP</th>
-                <th>Administrador da Filial</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Imagem</th>
+                <th>Quantidade</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               <?php
-                // Exibir os funcionários cadastrados.
-                // Se existir algum funcionário (rowCount() > 0 ), mostrar os dados (fetch).
-                // Se não existir nenhum funcionário, mostrar uma mensagem.
-                if($query->rowCount() > 0)
+
+                // Consultar os produtos cadastrados:
+                $selecionar_produto = $pdo->prepare("SELECT * FROM produtos WHERE id_adm = :id");
+                $selecionar_produto->bindParam(':id', $id);
+                $selecionar_produto->execute();
+
+                // Exibir os produtos cadastrados.
+                // Se existir algum produto (rowCount() > 0 ), mostrar os dados (fetch).
+                // Se não existir nenhum produto, mostrar uma mensagem.
+                if($selecionar_produto->rowCount() > 0)
                 {
                   // Funcionários existem (rowCount() > 0)
 
-                  // While percorre os funcionários existentes na consulta SQL com o fetch:
-                  while( $linhas = $query->fetch() ) 
+                  // While percorre os produtos existentes na consulta SQL com o fetch:
+                  while( $linhas = $selecionar_produto->fetch() ) 
                   {
                     // Após percorrer atribuir respectivas colunas com seus respectivos valores à variáveis:
-                    $id = $linhas["id_filial"];           // Nome da coluna XAMPP
-                    $nome = $linhas["nome"];              // Nome da coluna XAMPP
-                    $endereco = $linhas["endereco"];      // Nome da coluna XAMPP
-                    $filial_adm = $linhas["filial_adm"];  // Nome da coluna XAMPP"
+                    $id = $linhas["id_produto"];
+                    $nome = $linhas["nome_produto"];
+                    $descricao = $linhas["descricao_produto"];
+                    $preco = $linhas["preco_produto"];
+                    $imagem = $linhas["imagem_produto"];
+                    $quantidade = $linhas["quantidade_produto"];
+
+                    // Codificar imagem:
+                    $i = base64_encode($imagem);
                     
                     // Exibir os dados na tabela:
                     echo "<tr>";
-                      echo "<td>" . $linhas["id_filial"] . "</td>" ;
-                      echo "<td>" . $linhas["nome"] . "</td>" ;
-                      echo "<td>" . $linhas["endereco"] . "</td>" ;
-                      echo "<td>" . $linhas["cep"] . "</td>" ;
-                      echo "<td>" . $linhas["filial_adm"] . "</td>" ;
+                      echo "<td>" . $id . "</td>" ;
+                      echo "<td>" . $nome . "</td>" ;
+                      echo "<td>" . $descricao . "</td>" ;
+                      echo "<td>" . $preco . "</td>" ;
+                      echo "<td><img src='data:image/jpeg;base64,$i' width='100' height='100'></td>";
+                      echo "<td>" . $quantidade . "</td>";
                       echo 
                       // Editar / excluir do banco de dados:
                       "<td> 
@@ -214,10 +229,10 @@
                 }
                 else
                 {
-                  // Nenhum funcionário existe:
+                  // Nenhum produto existe:
                   echo("<tr>");
                   echo("<td>");
-                  echo("NÃO HÁ EMPREENDIMENTOS CADASTRADOS");
+                  echo("Nenhum produto cadastrado");
                   echo("</td>");
                   echo("</tr>");
                 }

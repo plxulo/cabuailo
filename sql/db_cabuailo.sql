@@ -37,6 +37,7 @@ CREATE TABLE funcionarios (
     nivel_acesso VARCHAR(255) NOT NULL,
     adm_superior INT(6),
     filial INT(6),
+    foto_funcionario MEDIUMBLOB,
     FOREIGN KEY (filial) REFERENCES filiais(id_filial),
     FOREIGN KEY (adm_superior) REFERENCES usuarios_admin(id_adm)
 );

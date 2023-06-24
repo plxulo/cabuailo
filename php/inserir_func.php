@@ -35,17 +35,19 @@
   $acesso = $retorno->getAcesso();
   $filial_funcionario = $_POST["filial_funcionario"];
   $id_adm = $_SESSION['id'];
+  $imagem_func = file_get_contents($_FILES['imagem_funcionario']['tmp_name']);
 
   // $acesso = $retorno->getAcesso();
 
-  $sql = $pdo->prepare("INSERT INTO funcionarios (nome_func, senha_func, filial, nivel_acesso, adm_superior)
-                        VALUES (?, ?, ?, ?, ?)");
+  $sql = $pdo->prepare("INSERT INTO funcionarios (nome_func, senha_func, filial, nivel_acesso, adm_superior, foto_funcionario)
+                        VALUES (?, ?, ?, ?, ?, ?)");
 
   $sql->bindParam(1, $nome);
   $sql->bindParam(2, $senha);
   $sql->bindParam(3, $filial_funcionario);
   $sql->bindParam(4, $acesso);
   $sql->bindParam(5, $id_adm);
+  $sql->bindParam(6, $imagem_func, PDO::PARAM_LOB);
 
   $executar_insert = $sql->execute();
 
