@@ -62,8 +62,7 @@
             <a href="admProdutos.php">Adicionar Produtos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%"/>
-            <a href="#">Ajuda</a>
-            <a href="#">Perfil</a>
+            <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
             <a href="../adm_logout.php">Sair</a>
           </ul>

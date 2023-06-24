@@ -386,7 +386,7 @@ section3 h {
 
 .cardBarbearia {
     width: 100%;
-    height: 100px;
+    height: fit-content;
     border-radius: 10px;
     background-color: var(--branco-diferente);
     display: flex;

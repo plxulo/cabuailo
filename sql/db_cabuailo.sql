@@ -75,3 +75,11 @@ CREATE TABLE imagem_pfp_user (
     pfp_user INT(6),
     FOREIGN KEY (pfp_user) REFERENCES usuarios(id)
 );
+
+CREATE TABLE app_comentarios (
+    comentario VARCHAR(500),
+    id_usuario INT,
+    id_filial INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_filial) REFERENCES filiais(id_filial)
+);

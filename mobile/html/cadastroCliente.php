@@ -27,7 +27,7 @@
     <section class="principal">
 
       <!-- Heading com título e subtítulo -->
-      <img class="logo_cabuailo" src="../../landing/imagens/logo.png" alt="Logo da Cabuailo">
+      <img class="logo_cabuailo" src="../../public/imagens/logo.png" alt="Logo da Cabuailo">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
         <p>Faça Login para acessar o sistema</p>

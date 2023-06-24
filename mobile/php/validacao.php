@@ -11,8 +11,8 @@
     $validar->bindParam(':senha', $senha);
     $validar->execute();
 
-    $usuario_info = $validar->fetchAll();
-    $id_usuario = $usuario_info["id"];
+    $pegar_id = $validar->fetch(PDO::FETCH_ASSOC);
+    $id = $pegar_id['id'];
 
     if($validar->rowCount() == 0)
     {
@@ -28,7 +28,7 @@
     {
         $_SESSION["usuario"] = $usuario_info["usuario"];
         $_SESSION["email"] = $email;
-        $_SESSION["id"] = $id_usuario;
+        $_SESSION["id"] = $id;
         header('Location: ../html/mainPage.php');
     }
 ?>

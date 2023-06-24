@@ -43,6 +43,12 @@
   <script defer src="../../js/private/sAdmCadastro.js"></script>
 
   <title>Painel Admin</title>
+
+  <style>
+    input::placeholder {
+      color: var(--cor-escura);
+    }
+  </style>
 </head>
 
 <body>
@@ -68,7 +74,6 @@
             <a href="admProdutos.php">Adicionar Produtos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
-            <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
             <a href="../adm_logout.php">Sair</a>
@@ -126,7 +131,7 @@
         -->
         <section aria-label="Adicionar nome e descrição da filial" class="inputs">
 
-          <form aria-label="Cadastrar uma filial" action="../inserir_filial.php" method="POST">
+          <form aria-label="Cadastrar uma filial" action="../inserir_filial.php" method="POST" enctype="multipart/form-data">
             <!-- Nome do aplicativo que será exibido -->
             <label for="nome">Este será o nome em exibição no aplicativo</label>
             <input id="nome" type="text" placeholder="Nome do empreendimento." name="nome">
@@ -138,7 +143,19 @@
             <!-- CEP -->
             <label for="cep">Este será o CEP em exibição no aplicativo</label>
             <input id="cep" type="number" placeholder="CEP do empreendimento." name="cep">
-            
+            <hr width="100%">
+            <h2>Insira agora as imagens que ficarão em exibição:</h2>
+            <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
+              <header aria-labelledby="foto_atual" title="Foto da filial atual">
+                <p>Selecione uma imagem:</p>
+                  <input type="file" id="imagem" name="imagem">
+              </header>
+              <p id="foto_atual">Estas são suas fotos atuais:</p>
+              <?php
+                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
+              ?>
+            </section>
+
             <section class="areas_texto" style="display:flex; flex-direction: row; gap: 20px">
               <!-- Descrição do aplicativo -->
               <div style="display:flex; flex-direction: column">
@@ -156,24 +173,11 @@
 
         </section>
 
-        <p>Insira agora as imagens que ficarão em exibição:</p>
-        <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
-          <header aria-labelledby="foto_atual" title="Foto da filial atual">
-            <h1>Fotos Atuais:</h1>
-            <p id="foto_atual">Estas são suas fotos atuais:</p>
-            <?php
-              echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
-            ?>
-          </header>
+
           <form action="../salvar_img_filial.php" method="POST" enctype="multipart/form-data">
-            <h1 id="nova_foto">Inserir nova foto:</h1>
-            <p>Selecione uma imagem:</p>
-              <input type="file" id="imagem" name="imagem">
-              <input type="submit" value="Enviar">
+
           </form>
 
-        <!-- Seção de inputs imagem -->
-        </section>
       </section>
     </section>
   </main>
