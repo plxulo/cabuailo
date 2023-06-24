@@ -116,18 +116,34 @@
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
                 $preco_promocao = $linhas["preco_promocao"];
+                $imagem = $linhas["img_produto"];
+                $i = base64_encode($imagem);
 
-                echo
-                ("
-                  <div class='conteinerCardCompras'>
-                      <div class='cardCompras'>
-                          <img src='../image/pastaCabelo.jpg' class='imgProduto'>
+                if($preco_promocao == null) {
+                  echo
+                  ("
+                    <div class='conteinerCardCompras'>
+                        <div class='cardCompras'>
+                          <img src='data:image/jpeg;base64," . $i . "'  class='imgProduto'>
                           <h4> $nome_produto </h4>
-                          <p> $preco_produto</p>
-                          <p2>R$ $preco_promocao</p2>      
+                          <p2>R$ $preco_produto</p2>     
+                        </div>
+                    </div>
+                  ");
+                }
+                else {
+                  echo("
+                    <div class='conteinerCardCompras'>
+                      <div class='cardCompras'>
+                        <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                        <h4> $nome_produto </h4>
+                        <p>R$ $preco_produto</p>
+                        <p2>R$ $preco_promocao</p2>      
                       </div>
                   </div>
+                  
                 ");
+                 }
               }
             ?>
           </div>

@@ -5,7 +5,6 @@
     if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
     {
         unset($_SESSION['email']);
-        unset($_SESSION['senha']);
         header('Location: loginUsuario.php');
     }
     $logado = $_SESSION['email'];
@@ -63,11 +62,12 @@
 
              while( $linhas = $comando->fetch()){
                 $nome_barbeiro = $linhas["nome_func"];
+                $id_barbeiro = $linhas["id_func"];
                 $imagem = $linhas["foto_funcionario"];
                 $i = base64_encode($imagem);
                 
                 echo("
-                    <a href='agendar.php' class='cardProficional'>
+                    <a href='agendar.php?id_filial=$id_filial.id_fuc=$id_barbeiro' class='cardProficional'>
                         <div class='box-imgBarbeiro'>
                             <img src='data:image/jpeg;base64," . $i . "' class='imgFuncionario'>
                         </div>
