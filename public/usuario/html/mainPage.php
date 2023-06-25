@@ -19,145 +19,141 @@
     <title>Cabuailo</title>
 </head>
 <body>
-    <header>
-        <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-        <section class="textoLocal">
-            <h1>Localização atual</h1>
-            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
-        </section>
-    
-        <div class="fotoPerfil">
-            <a href="sair.php"></a>
-            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        </div>
-    </header>
-    <main>
-        <section1>
-                <p>Oferta especial para você</p>
-                <h>Descontos de 25%</h>
-                <button class="desconto">Resgatar cupom</button>
-        </section1>
+<header>
+    <button class="mapa"><ion-icon name="settings"></ion-icon></button>
+    <section class="textoLocal">
+        <h1>Localização atual</h1>
+        <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
+    </section>
+  
+    <div class="fotoPerfil">
+        <a href="sair.php"></a>
+        <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
+    </div>
+</header>
+<main>
+    <section1>
+        <p>Oferta especial para você</p>
+        <h>Descontos de 25%</h>
+        <button class="desconto">Resgatar cupom</button>
+    </section1>
        
-        <section3>
-            <h>Serviços</h>
-            <div class="botoes3">
-                <button class="meuBotao" onclick="mostrarDiv(1)">
-                    <ion-icon name="storefront-outline" class="icones_servicos"></ion-icon>
-                    <p>Barbearias</p>
-                </button>
-                <button class="meuBotao" onclick="mostrarDiv(2)">
-                    <ion-icon name="bag-outline" class="icones_servicos"></ion-icon>
-                    <p>Comprar</p>
-                </button>
-                <button class="meuBotao" onclick="mostrarDiv(3)">
-                    <ion-icon name="home-outline" class="icones_servicos"></ion-icon>
-                    <p>Delivery</p>
-                </button>
+    <section3>
+        <h>Serviços</h>
+        <div class="botoes3">
+            <button class="meuBotao" onclick="mostrarDiv(1)">
+                <ion-icon name="storefront-outline" class="icones_servicos"></ion-icon>
+                <p>Barbearias</p>
+            </button>
+            <button class="meuBotao" onclick="mostrarDiv(2)">
+                <ion-icon name="bag-outline" class="icones_servicos"></ion-icon>
+                <p>Comprar</p>
+            </button>
+            <button class="meuBotao" onclick="mostrarDiv(3)">
+                <ion-icon name="home-outline" class="icones_servicos"></ion-icon>
+                <p>Delivery</p>
+            </button>
+        </div>
+        <div id="div1" class="minhaDiv">
+            <div class="divBarbearias">
+                <h1>Barbearias</h1>
+                <section>
+                    <?php
+                        include("../php/conecta.php");
+                        $comando = $pdo->prepare("SELECT * FROM filiais");
+                        $resultado = $comando->execute();
+
+                        while( $linhas = $comando->fetch()){
+                            $nome = $linhas["nome"];
+                            $endereco = $linhas["endereco"];
+                            $imagem = $linhas["imagem_filial"];
+                            $i = base64_encode($imagem);
+                            $id = $linhas["id_filial"];
+                               
+                            echo("
+                                <a href='vermais.php?id_filial=".$id."' class='cardBarbearia'>
+                                    <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
+                                    <article>
+                                        <h3>
+                                            $nome                                                                
+                                        </h3>
+                                                
+                                        <p>
+                                            $endereco
+                                        </p>
+                                        <div class='stars'>    
+                                            <img src='../image/estrela.svg' width='15px'>
+                                            <img src='../image/estrela.svg' width='15px'>
+                                            <img src='../image/estrela.svg' width='15px'>
+                                            <img src='../image/estrela.svg' width='15px'>
+                                            <img src='../image/estrela.svg' width='15px'>        
+                                        </div>
+                                           
+                                    </article>
+                                </a>
+                            ");
+                        }
+                    ?>
+
+                </section>
+
             </div>
-                <div id="div1" class="minhaDiv">
-                        <div class="divBarbearias">
-                            <h1>Barbearias</h1>
-                            <section>
-                            <?php
-                                include("../php/conecta.php");
-                                $comando = $pdo->prepare("SELECT * FROM filiais");
-                                $resultado = $comando->execute();
-
-                                while( $linhas = $comando->fetch()){
-                                    $nome = $linhas["nome"];
-                                    $endereco = $linhas["endereco"];
-                                    $imagem = $linhas["imagem_filial"];
-                                    $i = base64_encode($imagem);
-                                    $id = $linhas["id_filial"];
-
-
-                                    //Tentar arrumar a exibição de imagem class='imgProduto'>
-                                    ////<img src='data:$tipo;base64,$imagem' class='imgProduto'> A principio é esse codigo
-                                
-                                    echo("
-                                        <div class='cardBarbearia'>
-                                        <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
-                                            <article>
-                                                <h3>
-                                                    $nome                                                                
-                                                </h3>
-                                                
-                                                <p>
-                                                    $endereco
-                                                </p>
-                                                <div class='stars'>    
-                                                    <img src='../image/estrela.svg' width='15px'>
-                                                    <img src='../image/estrela.svg' width='15px'>
-                                                    <img src='../image/estrela.svg' width='15px'>
-                                                    <img src='../image/estrela.svg' width='15px'>
-                                                    <img src='../image/estrela.svg' width='15px'>
-                                                </div>
-                                                <div class='vermais'>
-                                                    <ion-icon name='arrow-forward-outline'></ion-icon>
-                                                    <a href='vermais.php?id_filial=".$id."'><p1>Ver mais</p1></a>
-                                                </div>
-                                            </article>
-                                    </div>
-                                    ");
-                                                
-                                }
-                            ?>  
-                        </section>
-                        <!--
-                            ?php
-                            include("../php/conecta.php"); //Conecta com o banco de dados
-                            $comando = $pdo->prepare("SELECT * FROM filiais");
+        </div>
+        <div id="div2" class="minhaDiv">
+            <div class="divCompras">
+                <h1>Compras</h1>
+                    <div class='conteinerCompras'>
+                        <?php
+                            include("../php/conecta.php");
+                            $comando = $pdo->prepare("SELECT * FROM produtos");
                             $resultado = $comando->execute();
 
                             while( $linhas = $comando->fetch()){
-                                $nome = $linhas["nome"];
-                                $endereco = $linhas["endereco"];
-                                $filial_adm = $linhas["filial_adm"];
-                                echo("
-
-                        ?> -->
-
-                    </div>
-                </div>
-                <div id="div2" class="minhaDiv">
-                    <div class="divCompras">
-                        <h1>Compras</h1>
-                        <div class='conteinerCompras'>
-                            <?php
-                                include("../php/conecta.php");
-                                $comando = $pdo->prepare("SELECT * FROM produtos");
-                                $resultado = $comando->execute();
-
-                                while( $linhas = $comando->fetch()){
-                                    $nome_produto = $linhas["nome_produto"];
-                                    $preco_produto = $linhas["preco_produto"];
-                                    $preco_promocao = $linhas["preco_promocao"];
+                                $id_produto = $linhas["id_produto"];
+                                $nome_produto = $linhas["nome_produto"];
+                                $preco_produto = $linhas["preco_produto"];
+                                $preco_promocao = $linhas["preco_promocao"];
+                                $imagem = $linhas["img_produto"];
+                                $i = base64_encode($imagem);
                                     
+                                if($preco_promocao == null) {
                                     echo("
-                                                <div class='conteinerCardCompras'>
-                                                    <div class='cardCompras'>
-                                                        <img src='../image/pastaCabelo.jpg' class='imgProduto'>
-                                                        <h4> $nome_produto </h4>
-                                                        <p> $preco_produto</p>
-                                                        <p2>R$ $preco_promocao</p2>      
-                                                    </div>
-                                                </div>
-                                        ");
+                                    <a href='produto.php?id_produto=$id_produto' class='conteinerCardCompras'>
+                                        <div class='cardCompras'>
+                                            <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                                            <h4> $nome_produto </h4>
+                                            <p2>R$ $preco_produto</p2>     
+                                        </div>
+                                    </a>
+                                    ");
+                                    }
+                                else {
+                                    echo("
+                                    <a href='produto.php?id_produto=$id_produto' class='conteinerCardCompras'>
+                                        <div class='cardCompras'>
+                                            <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                                            <h4> $nome_produto </h4>
+                                            <p>R$ $preco_promocao</p>
+                                            <p2>R$ $preco_produto</p2>      
+                                        </div>
+                                    </a>
+                                    ");
                                 }
-                            ?>
-                        </div>
+                            }
+                        ?>
                     </div>
                 </div>
-                <div id="div3" class="minhaDiv">
-                    <div class="divDelivery">
+            </div>
+            <div id="div3" class="minhaDiv">
+                <div class="divDelivery">
                         
-                    </div>
                 </div>
+            </div>
 
-        </section3>
-        <section4>
-            <img src="">
-        </section4>
+    </section3>
+    <section4>
+        <img src="">
+    </section4>
     </main>
     <nav>
         <ul>

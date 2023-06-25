@@ -321,3 +321,182 @@ section3 {
     gap: 15px;
 }
 
+section3 h {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 24px;
+}
+
+.botoes3 {
+    width: 90%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 25px;
+}
+
+.meuBotao {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+}
+
+.icones_servicos {
+    font-size: 24px;
+}
+
+.minhaDiv {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.divBarbearias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.divBarbearias h1 {
+    font-size: 1.5rem;
+    font-family: 'Prompt', sans-serif;
+
+}
+
+.divBarbearias section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+.cardBarbearia {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--branco-diferente);
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+.cardBarbearia article {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-left: 5px;
+}
+
+.cardBarbearia article h3 {
+    font-size: 1.2rem;
+    margin-left: 0px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+}
+
+.cardBarbearia article p {
+    font-size: 0.9rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+.cardBarbearia article .stars {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgCard {
+    width: 30%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.vermais {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.divCompras {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+.divCompras h1 {
+    font-size: 1.5rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+.conteinerCompras {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.conteinerCardCompras {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
+
+.cardCompras {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--branco-diferente);
+}
+
+.imgProduto {
+    width: 80px;
+    height: 80px;
+}
+
+.cardCompras h4 {
+    width: 90%;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+}
+
+.cardCompras p {
+    color: #E0115F;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.cardCompras p2 {
+    color: #00c957;
+    font-size: 1rem;
+}

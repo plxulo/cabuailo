@@ -36,15 +36,23 @@
             <h>Nome Produto</h>
         </div>
         <div class="box-imagem-produto">
-            <img src="../image">
+            <img src="../image/pastaCabelo.jpg" class="imagem-produto">
         </div>
-        <p>R$ 50,00</p>
+        <div class="preco">
+            <p>R$ 50,00</p>
+        </div>
         <div class="descricao">
-            <div class="envio">
-                <img src="../image/image 1.svg">
-                <p>Enviamos para todo o pais</p>
+            <div class="entrega">
+                <div class="envio">  
+                    <img src="../image/image 1.svg" class="envioSVG">
+                    <p2>Enviamos para todo o pais</p2>
+                </div>
+                <p>Calcular prazo de entrega<ion-icon name="location-outline"></ion-icon></p>
             </div>
-            <p>Descricao do produto</p>
+            <h>Descricao do produto</h>
+            <p>A melhor e mais comrada pasta capilar do mercado.</p>
+            <hr style="border-color: black; border-width: 1px; margin-top: 15px;">
+
         </div>
         <div class="quantidade">
             <p>Disponivel no estoque: </p>
@@ -56,6 +64,7 @@
                 <option value="3">4</option>
             </select>
         </div>
+        <button class="adcionarCarrinho">Adcionar ao carrinho</button>
     </main>
     <nav>
         <ul>
