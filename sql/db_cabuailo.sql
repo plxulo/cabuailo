@@ -37,6 +37,7 @@ CREATE TABLE funcionarios (
     nivel_acesso VARCHAR(255) NOT NULL,
     adm_superior INT(6),
     filial INT(6),
+    foto_funcionario MEDIUMBLOB,
     FOREIGN KEY (filial) REFERENCES filiais(id_filial),
     FOREIGN KEY (adm_superior) REFERENCES usuarios_admin(id_adm)
 );
@@ -74,4 +75,12 @@ CREATE TABLE imagem_pfp_user (
     imagem MEDIUMBLOB,
     pfp_user INT(6),
     FOREIGN KEY (pfp_user) REFERENCES usuarios(id)
+);
+
+CREATE TABLE app_comentarios (
+    comentario VARCHAR(500),
+    id_usuario INT,
+    id_filial INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_filial) REFERENCES filiais(id_filial)
 );

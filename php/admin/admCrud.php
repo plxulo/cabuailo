@@ -30,6 +30,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="Website Icon" type="png" href="../../public/imagens/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -64,7 +65,6 @@
             <a href="admProdutos.php">Adicionar Produtos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
-            <a href="#">Ajuda</a>
             <a href="admPerfil.php">Perfil</a>
             <a href="admConfig.php">Configurações</a>
             <a href="../adm_logout.php">Sair</a>
@@ -133,7 +133,7 @@
           </section>
 
           <!-- Formulário para inserção de usuários no sistema -->
-          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST">
+          <form id="formulario_inserir" class="formulario" style="display:none;" aria-label="Formulário de inserção de usuários" action="../inserir_func.php" method="POST" enctype="multipart/form-data">
             <section class="input">
               <input type="text" placeholder="Nome do funcionário" name="nome">
               <input type="text" placeholder="Senha" name="senha">
@@ -171,6 +171,14 @@
                 </select>
               </div>
             </div>
+            <hr width="100%">
+            <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial" style="display:flex;width:100%;flex-direction:row;justify-content:space-between">
+              <header aria-labelledby="foto_atual" title="Foto da filial atual">
+                <h2 style="margin:0">Imagem do funcionário:</h2>
+                <p style="margin-top:0">Selecione uma imagem:</p>
+                  <input type="file" id="imagem" name="imagem_funcionario" accept="image/*" required>
+              </header>
+            </section>
             <button type="submit" class="botao_acao">Inserir Funcionário</button>
           </form>
 

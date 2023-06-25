@@ -42,9 +42,8 @@
             while( $linhas = $comando->fetch()){
                 $nome = $linhas["nome"];
                 $endereco = $linhas["endereco"];
-                $imagem = $linhas["imagem_filial"];
                 $descricao = $linhas["descricao"];
-                $imagem = $linhas["imagem_filial"];
+                $imagem = $linhas["imagem"];
                 $i = base64_encode($imagem);
                 echo("
                     <h>$nome</h>

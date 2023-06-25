@@ -27,7 +27,7 @@ $inserir_produto->bindParam(':id', $id);
 $inserir_produto->execute();
 
 // Selecionar para exibir na tabela:
-if($inserir_produto === TRUE)
+if($inserir_produto)
 {
   // Inserção bem sucedida:
   echo ("<script type = text/javascript>");

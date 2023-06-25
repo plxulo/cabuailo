@@ -8,6 +8,8 @@
     header('Location: loginUsuario.php');
   }
   $logado = $_SESSION['usuario'];
+
+  unset($_SESSION['id_filial']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,6 +21,16 @@
   <link rel="stylesheet" href="../css/mainPage.css">
   <title>Cabuailo</title>
 </head>
+
+<style>
+  .collapsed-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 90%; /* Ajuste o valor conforme necessário */
+    cursor: pointer;
+  }
+</style>
 
 <body>
   <!-- Banner com localização do usuário: -->
@@ -72,7 +84,7 @@
               {
                 $nome = $linhas["nome"];
                 $endereco = $linhas["endereco"];
-                $imagem = $linhas["imagem_filial"];
+                $imagem = $linhas["imagem"];
                 $i = base64_encode($imagem);
                 $id = $linhas["id_filial"];
 
@@ -82,7 +94,9 @@
                     <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
                     <article>
                       <h3>$nome</h3>
-                      <p>$endereco</p>
+                      <div class='collapsed-text' onclick='expandText(this)'>
+                        <p>$endereco</p>
+                      </div>
                       <div class='stars'>    
                           <img src='../image/estrela.svg' width='15px'>
                           <img src='../image/estrela.svg' width='15px'>
@@ -224,6 +238,12 @@
     var botaoSelecionado = document.querySelector(".meuBotao:nth-child(" + divIndex + ")");
     divSelecionada.style.display = "block";
     botaoSelecionado.style.backgroundColor = "#D8315B";
+  }
+  function expandText(element) {
+    element.classList.toggle("collapsed-text");
+    element.style.whiteSpace = "normal";
+    element.style.maxWidth = "none";
+    element.onclick = null;
   }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
