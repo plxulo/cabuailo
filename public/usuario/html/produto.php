@@ -43,7 +43,7 @@
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
                 $descricao = $linhas["descricao"];
-
+                $id = $_SESSION["id"];
                 echo ("
                     <div class='titulo'>
                         <h>$nome_produto</h>
@@ -52,7 +52,7 @@
                         <img src='../image/pastaCabelo.jpg' class='imagem-produto'>
                     </div>
                     <div class='preco'>
-                        <p>R$ $preco_produto</p>
+                        <p>R$ $preco_produto </p>
                     </div>
                     <div class='descricao'>
                         <div class='entrega'>
@@ -69,19 +69,23 @@
                 ");
             }
         ?>
-        </div>
-        <div class="quantidade">
-            <p>Disponivel no estoque: </p>
+    </div>
+    <div class="quantidade">
+        <p>Disponível no estoque:</p>
+        <form method="POST" action="../php/colocaCarrinho.php">
+            <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
+            <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
             <label for="quantidade">Quantidade:</label>
             <select id="quantidade" name="quantidade">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="3">4</option>
+                <option value="4">4</option>
             </select>
-        </div>   
-         <button type="submit" class="adcionarCarrinho">Adcionar ao carrinho</button>
-    </main>
+            <button type="submit" class="adicionarCarrinho">Adicionar ao carrinho</button>
+        </form>
+    </div>   
+</main>
     <nav>
         <ul>
             <li class="list active">
