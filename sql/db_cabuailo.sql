@@ -46,6 +46,7 @@ CREATE TABLE produtos (
     id_produto INT(6) PRIMARY KEY AUTO_INCREMENT,
     nome_produto VARCHAR(255) NOT NULL,
     preco_produto FLOAT(10,2) NOT NULL,
+    preco_promocao FLOAT(10,2),
     descricao_produto VARCHAR(255) NOT NULL,
     quantidade_produto INT(6) NOT NULL,
     imagem_produto MEDIUMBLOB,
@@ -78,9 +79,29 @@ CREATE TABLE imagem_pfp_user (
 );
 
 CREATE TABLE app_comentarios (
+    id INT PRIMARY KEY,
     comentario VARCHAR(500),
     id_usuario INT,
     id_filial INT,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (id_filial) REFERENCES filiais(id_filial)
+);
+
+CREATE TABLE servicos (
+    id INT PRIMARY KEY,
+    filial INT,
+    servicos VARCHAR(90),
+    FOREIGN KEY (filial) REFERENCES filiais(id_filial)
+);
+
+CREATE TABLE app_agendamentos (
+    id INT PRIMARY KEY,
+    id_usuario INT,
+    id_funcionario INT,
+    id_filial INT,
+    servico_escolhido INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_func),
+    FOREIGN KEY (id_filial) REFERENCES filiais(id_filial),
+    FOREIGN KEY (servico_escolhido) REFERENCES servicos(id)
 );

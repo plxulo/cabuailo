@@ -66,7 +66,7 @@
                 $i = base64_encode($imagem);
                 
                 echo("
-                    <a href='agendar.php?id_filial=$id_filial.id_fuc=$id_barbeiro' class='cardProficional'>
+                    <a href='agendar.php?id_filial=$id_filial&id_func=$id_barbeiro' class='cardProficional'>
                         <div class='box-imgBarbeiro'>
                             <img src='data:image/jpeg;base64," . $i . "' class='imgFuncionario'>
                         </div>

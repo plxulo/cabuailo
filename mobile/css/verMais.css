@@ -163,7 +163,6 @@ header {
 }
 
 /*HEADER*/
-/*HEADER*/
 header {
     width: 100%;
     height: 9vh;
@@ -329,5 +328,8 @@ form .btnComentar {
     align-items: left;
     text-align: left;
     margin-top: 25px;
+}
+
+.boxComentario:last-child {
     margin-bottom: 50px;
 }

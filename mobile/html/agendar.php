@@ -1,11 +1,16 @@
+<?php
+    include("../php/conecta.php");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/calendario.css">
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/calendario.css">
+    <link rel="stylesheet" type="text/css" href="../css/appAgendar.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -22,7 +27,51 @@
         </div>
     </header>
     <main>
-        
+        <section1>
+            <h1>Falta pouco para terminar seu agendamento!</h1>
+        </section1>
+        <section>
+            <p>Funcionário escolhido:</p>
+            <?php
+                $id_filial = $_GET['id_filial'];
+                $id_func = $_GET['id_func'];
+
+                $comando = $pdo->prepare("SELECT * FROM funcionarios WHERE filial = $id_filial");
+                $resultado = $comando->execute();
+
+                while( $linhas = $comando->fetch()) {
+                    $nome_barbeiro = $linhas["nome_func"];
+                    $id_barbeiro = $linhas["id_func"];
+                    $imagem = $linhas["foto_funcionario"];
+                    $i = base64_encode($imagem);
+                    
+                    echo("
+                        <div class='box-imgBarbeiro'>
+                            <img src='data:image/jpeg;base64," . $i . "' class='imgFuncionario' width='200px' height='200px'>
+                        </div>
+                        <h5>$nome_barbeiro</h5> 
+                        <br>
+                    "); 
+                }
+            ?>
+        </section>
+        <form action="" style="display:flex; flex-direction:column">
+            <label for="">Data do agendamento:</label>
+            <input type="date">
+            <label for="">Forma de pagamento:</label>
+            <select name="" id="">
+                <option value="">Dinheiro</option>
+                <option value="">PIX</option>
+                <option value="">Cartão</option>
+            </select>
+            <label>Serviços desejados</label>
+            <div style="display:flex; justify-content:space-between">
+                <input type="checkbox"><p>Corte e barba</p>
+                <input type="checkbox"><p>Manicure ou pedicure</p>
+                <input type="checkbox"><p>Piercing</p>
+            </div>
+            <button type="submit">Agendar</button>
+        </form>
     </main>
     <nav>
         <ul>

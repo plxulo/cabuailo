@@ -130,7 +130,7 @@
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
                 $preco_promocao = $linhas["preco_promocao"];
-                $imagem = $linhas["img_produto"];
+                $imagem = $linhas["imagem_produto"];
                 $i = base64_encode($imagem);
 
                 if($preco_promocao == null) {
