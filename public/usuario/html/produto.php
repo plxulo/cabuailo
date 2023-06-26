@@ -32,27 +32,43 @@
         </div>
     </header>
     <main>
-        <div class="titulo">
-            <h>Nome Produto</h>
-        </div>
-        <div class="box-imagem-produto">
-            <img src="../image/pastaCabelo.jpg" class="imagem-produto">
-        </div>
-        <div class="preco">
-            <p>R$ 50,00</p>
-        </div>
-        <div class="descricao">
-            <div class="entrega">
-                <div class="envio">  
-                    <img src="../image/image 1.svg" class="envioSVG">
-                    <p2>Enviamos para todo o pais</p2>
-                </div>
-                <p>Calcular prazo de entrega<ion-icon name="location-outline"></ion-icon></p>
-            </div>
-            <h>Descricao do produto</h>
-            <p>A melhor e mais comrada pasta capilar do mercado.</p>
-            <hr style="border-color: black; border-width: 1px; margin-top: 15px;">
+        <?php
+            $id_produto = $_GET['id_produto'];
 
+            include("../php/conecta.php");
+            $comando = $pdo->prepare("SELECT * FROM produtos where id_produto = $id_produto");
+            $resultado = $comando->execute();
+
+            while( $linhas = $comando->fetch()){
+                $nome_produto = $linhas["nome_produto"];
+                $preco_produto = $linhas["preco_produto"];
+                $descricao = $linhas["descricao"];
+
+                echo ("
+                    <div class='titulo'>
+                        <h>$nome_produto</h>
+                    </div>
+                    <div class='box-imagem-produto'>
+                        <img src='../image/pastaCabelo.jpg' class='imagem-produto'>
+                    </div>
+                    <div class='preco'>
+                        <p>R$ $preco_produto</p>
+                    </div>
+                    <div class='descricao'>
+                        <div class='entrega'>
+                            <div class='envio'>  
+                                <img src='../image/image 1.svg' class='envioSVG'>
+                                <p2>Enviamos para todo o pais</p2>
+                            </div>
+                            <p>Calcular prazo de entrega<ion-icon name='location-outline'></ion-icon></p>
+                        </div>
+                        <h>Descricao do produto</h>
+                        <p>$descricao</p>
+                        <hr style='border-color: black; border-width: 1px; margin-top: 15px;'>
+                    </div>
+                ");
+            }
+        ?>
         </div>
         <div class="quantidade">
             <p>Disponivel no estoque: </p>
@@ -63,8 +79,8 @@
                 <option value="3">3</option>
                 <option value="3">4</option>
             </select>
-        </div>
-        <button class="adcionarCarrinho">Adcionar ao carrinho</button>
+        </div>   
+         <button type="submit" class="adcionarCarrinho">Adcionar ao carrinho</button>
     </main>
     <nav>
         <ul>
