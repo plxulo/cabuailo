@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include("conecta.php");
 
     $id
@@ -7,5 +9,4 @@
     
     $comando = $pdo->prepare("INSERT INTO carrinho (id_usuario, id_produto, quantidade) VALUES('$id', '$id_produto', '$quantidade')");
     $resultado = $comando->execute();
-    header("Location: ../html/loginUsuario.php");
 ?>

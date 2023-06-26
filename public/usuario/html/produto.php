@@ -8,6 +8,8 @@
         header('Location: loginUsuario.php');
     }
     $logado = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
+    print_r($id_usuario);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,7 +45,6 @@
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
                 $descricao = $linhas["descricao"];
-                $id = $_SESSION["id"];
                 echo ("
                     <div class='titulo'>
                         <h>$nome_produto</h>
@@ -72,9 +73,8 @@
     </div>
     <div class="quantidade">
         <p>Disponível no estoque:</p>
-        <form method="POST" action="../php/colocaCarrinho.php">
             <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
-            <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
+            <input type="hidden" name="id_produto" value="<?php echo  $id_produto;?>">
             <label for="quantidade">Quantidade:</label>
             <select id="quantidade" name="quantidade">
                 <option value="1">1</option>
@@ -83,7 +83,6 @@
                 <option value="4">4</option>
             </select>
             <button type="submit" class="adicionarCarrinho">Adicionar ao carrinho</button>
-        </form>
     </div>   
 </main>
     <nav>
