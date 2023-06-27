@@ -26,12 +26,6 @@ main .secao_container {
   align-items: flex-start;
 }
 
-.secao_container form .input {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
-
 main .descricao_geral {
   display: flex;
   flex-direction: column;
@@ -89,6 +83,18 @@ button:hover {
 .formulario input {
   width: 100%;
   justify-content: space-between;
+  background: none;
+  border: solid 1px var(--cor-escura);
+}
+
+.input input::placeholder {
+  color: var(--cor-escura);
+}
+
+.secao_container form .input {
+  display: flex;
+  width: 100%;
+  gap: 10px;
 }
 
 input {
@@ -134,6 +140,10 @@ form .select_container select {
   border: 1px solid var(--cor-escura);
   border-radius: 40px;
   width: 100%;
+}
+
+.foto_funcionario {
+  color: var(--cor-escura);
 }
 
 .botao_acao {

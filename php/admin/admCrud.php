@@ -177,7 +177,7 @@
               <header aria-labelledby="foto_atual" title="Foto da filial atual">
                 <h2 style="margin:0">Imagem do funcionário:</h2>
                 <p style="margin-top:0">Selecione uma imagem:</p>
-                  <input type="file" id="imagem" name="imagem_funcionario" accept="image/*" required>
+                  <input class="foto_funcionario" type="file" id="imagem" name="imagem_funcionario" accept="image/*" required>
               </header>
             </section>
             <button type="submit" class="botao_acao">Inserir Funcionário</button>

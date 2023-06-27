@@ -121,11 +121,13 @@
           </section>
           <hr width="100%">
           <p>Esta é a sua senha de administrador. Você não tem nenhuma senha gerada ainda.</p>
-          <input type="text" class="senha" placeholder="Senha anterior" onkeyup="validar_senha()">
-          <input type="text" class="senha" placeholder="Nova senha" onkeyup="validar_senha()">
-          <input type="text" class="senha" placeholder="Confirmar nova senha" onkeyup="validar_senha()">
-          <p>A senha deve ter no mínimo 8 caracteres, incluindo letras e números. <a><b>Saiba mais.</b></a></p>
-          <button>Alterar senha</button>
+          <form action="../alterar_senha.php" method="POST" class="form_alterar">
+            <input type="password" class="senha" name="senha_anterior" placeholder="Senha anterior" onkeyup="validar_senha()">
+            <input type="password" class="senha" placeholder="Nova senha" onkeyup="validar_senha()">
+            <input type="password" class="senha" name="nova_senha" placeholder="Confirmar nova senha" onkeyup="validar_senha()">
+            <p>A senha deve ter no mínimo 8 caracteres, incluindo letras e números. <a><b>Saiba mais.</b></a></p>
+            <button type="submit">Alterar senha</button>
+          </form>
         </section>
 
         <!-- Verificar senhas de outras filiais -->

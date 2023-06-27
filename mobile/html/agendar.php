@@ -60,7 +60,7 @@
         </section>
         <form action="../php/processar_agendamento.php" method="POST" style="display:flex; flex-direction:column">
             <label for="data_agendamento">Data do agendamento:</label>
-            <input type="date" id="data_agendamento" name="data_agendamento">
+            <input type="datetime-local" id="data_agendamento" name="data_agendamento">
             <label for="forma_pagamento">Forma de pagamento:</label>
             <select name="forma_pagamento" id="forma_pagamento">
                 <option value="Dinheiro">Dinheiro</option>

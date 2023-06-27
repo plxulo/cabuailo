@@ -1,6 +1,5 @@
 <?php
   //Arquivo para fazer logout do usuário
-
   session_start();
 
   // Desatribuir sessão:

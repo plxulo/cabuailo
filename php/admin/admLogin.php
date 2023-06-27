@@ -41,11 +41,11 @@
       <form aria-label="Formulário de login" class="login" action="../valida_login.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
-            <input type="text" name="user">
+            <input type="text" name="user" placeholder="Usuário">
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input type="password" name="password">
+            <input type="password" name="password" placeholder="Senha">
           </section>
           <a href="#">Esqueci minha senha</a>
           <button aria-label="Entrar na sua conta" name="entrar" type="submit">Entrar na sua Conta</button>

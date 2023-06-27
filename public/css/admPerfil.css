@@ -75,3 +75,7 @@ form {
 .nova_foto form input {
   width: 100%;
 }
+
+section .excluir_conta p {
+  margin-bottom: 10px;
+}

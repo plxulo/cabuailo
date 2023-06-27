@@ -96,7 +96,7 @@ CREATE TABLE servicos (
 
 CREATE TABLE app_agendamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    data_agendamento DATE,
+    data_agendamento DATETIME,
     id_usuario INT,
     id_funcionario INT,
     id_filial INT,
@@ -104,5 +104,4 @@ CREATE TABLE app_agendamentos (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_func),
     FOREIGN KEY (id_filial) REFERENCES filiais(id_filial),
-    FOREIGN KEY (servico_escolhido) REFERENCES servicos(id)
 );
