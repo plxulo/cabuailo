@@ -8,6 +8,7 @@
   para a index.php.
   */
   include("../conecta.php");
+  include("../painel_info.php");
 
   session_start();
 
@@ -52,7 +53,7 @@
   <!-- Carregar scripts AJAX para Google Charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-
+    /*
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -77,7 +78,7 @@
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
-
+    */
   </script>
 
   <title>Painel Principal</title>
@@ -102,6 +103,7 @@
             <a href="empCadastrados.php">Empreendimentos cadastrados</a>
             <a href="admFiliais.php">Adicionar Filiais</a>
             <a href="admProdutos.php">Adicionar Produtos</a>
+            <a href="admAgendamentos.php">Agendamentos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%"/>
             <a href="admPerfil.php">Perfil</a>
@@ -299,5 +301,35 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="../../public/js/perfil.js"></script>
+<script type="text/javascript">
+  // Carregue a biblioteca do Google Charts
+  google.charts.load('current', {'packages':['corechart']});
 
+  // Defina a função de callback para o carregamento da biblioteca
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Função para desenhar o gráfico
+  function drawChart() {
+    // Crie uma tabela de dados
+    var data = new google.visualization.DataTable();
+
+    // Defina as colunas da tabela
+    data.addColumn('string', 'Mês');
+    data.addColumn('number', 'Total de Clientes');
+
+    // Adicione os dados à tabela
+    data.addRows(<?php echo $json; ?>);
+
+    // Configurar as opções do gráfico
+    var options = {
+      title: 'Número de Clientes por Mês',
+      hAxis: {title: 'Mês'},
+      vAxis: {title: 'Total de Clientes'}
+    };
+
+    // Crie o gráfico de colunas
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
 </html>

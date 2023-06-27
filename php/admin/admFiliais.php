@@ -73,6 +73,7 @@
             <a href="empCadastrados.php">Empreendimentos cadastrados</a>
             <a href="admFiliais.php">Adicionar Filiais</a>
             <a href="admProdutos.php">Adicionar Produtos</a>
+            <a href="admAgendamentos.php">Agendamentos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
             <a href="admPerfil.php">Perfil</a>

@@ -65,6 +65,7 @@
             <a href="empCadastrados.php">Empreendimentos cadastrados</a>
             <a href="admFiliais.php">Adicionar Filiais</a>
             <a href="admProdutos.php">Adicionar Produtos</a>
+            <a href="admAgendamentos.php">Agendamentos</a>
             <a href="admSeguranca.php">Segurança</a>
             <hr width="100%">
             <a href="#">Ajuda</a>
@@ -190,9 +191,11 @@
           <?php
             // Selecionar o nome do usuário que enviou comentário por chave estrangeira:
             $selecionar_comentario = $pdo->prepare
-            ("SELECT app_comentarios.*, usuarios.usuario
+            ("SELECT app_comentarios.*, usuarios.usuario, filiais.nome
             FROM app_comentarios INNER JOIN usuarios 
             ON app_comentarios.id_usuario = usuarios.id 
+            INNER JOIN filiais
+            ON app_comentarios.id_filial = filiais.id_filial
             ");
             $selecionar_comentario->execute();
 
@@ -213,8 +216,9 @@
                   // O nome de cada entrada, eu utilizarei o seguinte código
                   // Para atribuir o valor da entrada nome para a variável e exibi-lá:
                   $comentario = $row_comentario["comentario"];
+                  $filial = $row_comentario["nome"];
                   echo("<div>");
-                    echo("<h2 style='margin-bottom:0'>" . $nome . "</h2>");
+                    echo("<div style='display:flex; align-items:flex-end'><h2 style='margin-bottom:0'>" . $nome . ",</h2><p style='margin:0; margin-left:10px'>$filial</p></div>");
                     echo("<br>");
                     echo("<p style='margin-top:0'>" . $comentario . "</p> <a href='../excluir_comentario.php?id=" . $row_comentario["id"] . "'>Excluir</a>");
                   echo("</div>");

@@ -36,7 +36,10 @@
                 $id_filial = $_GET['id_filial'];
                 $id_func = $_GET['id_func'];
 
-                $comando = $pdo->prepare("SELECT * FROM funcionarios WHERE filial = $id_filial");
+                $_SESSION['id_funcionario'] = $id_func;
+                $_SESSION['id_filial'] = $id_filial;
+
+                $comando = $pdo->prepare("SELECT * FROM funcionarios WHERE filial = $id_filial AND id_func = $id_func");
                 $resultado = $comando->execute();
 
                 while( $linhas = $comando->fetch()) {
@@ -55,20 +58,20 @@
                 }
             ?>
         </section>
-        <form action="" style="display:flex; flex-direction:column">
-            <label for="">Data do agendamento:</label>
-            <input type="date">
-            <label for="">Forma de pagamento:</label>
-            <select name="" id="">
-                <option value="">Dinheiro</option>
-                <option value="">PIX</option>
-                <option value="">Cartão</option>
+        <form action="../php/processar_agendamento.php" method="POST" style="display:flex; flex-direction:column">
+            <label for="data_agendamento">Data do agendamento:</label>
+            <input type="date" id="data_agendamento" name="data_agendamento">
+            <label for="forma_pagamento">Forma de pagamento:</label>
+            <select name="forma_pagamento" id="forma_pagamento">
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="PIX">PIX</option>
+                <option value="Cartão">Cartão</option>
             </select>
             <label>Serviços desejados</label>
             <div style="display:flex; justify-content:space-between">
-                <input type="checkbox"><p>Corte e barba</p>
-                <input type="checkbox"><p>Manicure ou pedicure</p>
-                <input type="checkbox"><p>Piercing</p>
+                <input type="checkbox" name="servico[]" value="Corte e barba"><p>Corte e barba</p>
+                <input type="checkbox" name="servico[]" value="Manicure"><p>Manicure ou pedicure</p>
+                <input type="checkbox" name="servico[]" value="Piercing"><p>Piercing</p>
             </div>
             <button type="submit">Agendar</button>
         </form>

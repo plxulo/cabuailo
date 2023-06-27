@@ -60,8 +60,7 @@ $logado = $_SESSION['email'];
               <p>$descricao</p>
           </div>
 
-          <a href='https://www.google.com/maps/search/?api=1&query=$endereco
-          '><p2><ion-icon name='location-sharp' class='iconeLocal'></ion-icon>&nbsp;$endereco</p2></a>
+          <a href='https://www.google.com/maps/search/?api=1&query=$endereco'><p2><ion-icon name='location-sharp' class='iconeLocal'></ion-icon>&nbsp;$endereco</p2></a>
 
           <a href='escolherBarbeiro.php?id_filial=" . $id_filial . "'' style='width: 100%; text-decoration: none'>
               <button class='btnAgendar'>    
