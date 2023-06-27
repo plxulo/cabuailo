@@ -73,7 +73,7 @@
     </div>
     <div class="quantidade">
         <p>Disponível no estoque:</p>
-            <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
+        <form action="../php/colocaCarrinho.php">
             <input type="hidden" name="id_produto" value="<?php echo  $id_produto;?>">
             <label for="quantidade">Quantidade:</label>
             <select id="quantidade" name="quantidade">
@@ -83,6 +83,7 @@
                 <option value="4">4</option>
             </select>
             <button type="submit" class="adicionarCarrinho">Adicionar ao carrinho</button>
+        </form>
     </div>   
 </main>
     <nav>

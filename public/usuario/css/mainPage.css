@@ -44,6 +44,19 @@ nav {
     z-index: 9999;
 }
 
+.campoEscondido {
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 9vh; /* Ajuste a posição vertical conforme necessário */
+    right: 0;
+    background-color: var(--branco-diferente);
+    padding: 10px;
+    z-index: 10000;
+    flex-direction: column;
+    gap: 5px;
+}
+
 nav ul {
     display: flex;
     width: 350px;

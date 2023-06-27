@@ -9,7 +9,6 @@
     }
     $logado = $_SESSION['email'];
     $id_usuario = $_SESSION['id'];
-    echo $id_usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,18 +20,22 @@
     <title>Cabuailo</title>
 </head>
 <body>
-<header>
+    <header>
     <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-    <section class="textoLocal">
-        <h1>Localização atual</h1>
-        <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
-    </section>
-  
-    <div class="fotoPerfil">
-        <a href="sair.php"></a>
-        <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-    </div>
-</header>
+        <section class="textoLocal">
+            <h1>Localização atual</h1>
+            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
+        </section>
+        
+        <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+
+        <div class="campoEscondido" id="campoLinks">
+            <p>Seu email</p>
+            <a href="#">Meus Dados</a>
+            <a href="../php/sair.php">Sair</a>
+        </div>
+        </div>     
+    </header>
 <main>
     <section1>
         <p>Oferta especial para você</p>
@@ -172,7 +175,7 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/agendar.html">
+                <a href="../html/agendar.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agenda</span>
                 </a>
@@ -220,6 +223,21 @@
     botaoSelecionado.style.backgroundColor = "#D8315B";
 }
 mostrarDiv(1);
+</script>
+<script>
+    var campoVisivel = false;
+
+    function mostrarCampo() {
+    var campoLinks = document.getElementById('campoLinks');
+  
+    if (campoVisivel) {
+    campoLinks.style.display = 'none';
+    campoVisivel = false;
+  } else {
+    campoLinks.style.display = 'flex';
+    campoVisivel = true;
+  }
+}
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

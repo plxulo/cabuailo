@@ -1,33 +1,43 @@
+<?php
+    //inicia a seção
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        header('Location: loginUsuario.php');
+    }
+    $logado = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/calendario.css">
+    <link rel="stylesheet" href="../css/agendar.css">
     <title>Cabuailo</title>
 </head>
 <body>
-    <header>
+<header>
         <button class="mapa"><ion-icon name="settings"></ion-icon></button>
         <section class="textoLocal">
             <h1>Localização atual</h1>
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
-    
-        <div class="fotoPerfil">
-            <a href="sair.php"></a>
-            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        </div>
-    </header>
-    <main>
-        <?php
-            $id_filial = $_GET['id_filial'];
-            $id_func = $_GET['id'];     
-        ?>
         
-    </main>
+        <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+
+        <div class="campoEscondido" id="campoLinks">
+            <p>Seu email</p>
+            <a href="#">Meus Dados</a>
+            <a href="../php/sair.php">Sair</a>
+        </div>     
+</header>
+<main>
+        
+</main>
     <nav>
         <ul>
             <li class="list">
@@ -89,6 +99,21 @@
     var botaoSelecionado = document.querySelector(".meuBotao:nth-child(" + divIndex + ")");
     divSelecionada.style.display = "block";
     botaoSelecionado.style.backgroundColor = "#D8315B";
+}
+</script>
+<script>
+    var campoVisivel = false;
+
+    function mostrarCampo() {
+    var campoLinks = document.getElementById('campoLinks');
+  
+    if (campoVisivel) {
+    campoLinks.style.display = 'none';
+    campoVisivel = false;
+  } else {
+    campoLinks.style.display = 'flex';
+    campoVisivel = true;
+  }
 }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

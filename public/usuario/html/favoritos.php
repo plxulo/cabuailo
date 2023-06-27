@@ -1,3 +1,15 @@
+<?php
+    //inicia a seção
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        header('Location: loginUsuario.php');
+    }
+    $logado = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,11 +26,18 @@
             <h1>Localização atual</h1>
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
-    
-        <div class="fotoPerfil">
-            <a href="sair.php"></a>
-            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        </div>
+        
+        <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+
+        <div class="campoEscondido" id="campoLinks">
+            <p>Seu email</p>
+            <a href="#">Meus Dados</a>
+            <a href="../php/sair.php">Sair</a>
+        </div>     
+    </header>
+</div>
+  </div>
+
     </header>
     <main>
         <h>Suas barbearias favoritas:</h>
@@ -37,10 +56,7 @@
                         <img src='../image/estrela.svg' width='15px'>
                         <img src='../image/estrela.svg' width='15px'>
                     </div>
-                    <div class='vermais'>
-                        <ion-icon name='arrow-forward-outline'></ion-icon>
-                        <a href='#'><p1>Ver mais</p1></a>
-                    </div>  
+                    
                 </article>                
             </div>
             <div class="cardFavoritos">
@@ -134,6 +150,21 @@
         var card = icon.closest('.cardFavoritos');
         card.parentNode.removeChild(card);
     }
+</script>
+<script>
+    var campoVisivel = false;
+
+    function mostrarCampo() {
+    var campoLinks = document.getElementById('campoLinks');
+  
+    if (campoVisivel) {
+    campoLinks.style.display = 'none';
+    campoVisivel = false;
+  } else {
+    campoLinks.style.display = 'flex';
+    campoVisivel = true;
+  }
+}
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

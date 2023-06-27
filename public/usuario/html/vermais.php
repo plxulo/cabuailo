@@ -9,7 +9,6 @@
     }
     $logado = $_SESSION['email'];
     $id_usuario = $_SESSION['id'];
-    echo $id_usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
