@@ -9,7 +9,6 @@
     }
     $logado = $_SESSION['email'];
     $id_usuario = $_SESSION['id'];
-    print_r($id_usuario);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,8 +32,8 @@
             <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
         </div>
     </header>
-    <main>
-        <?php
+<main>
+    <?php
             $id_produto = $_GET['id_produto'];
 
             include("../php/conecta.php");
@@ -66,25 +65,19 @@
                         <h>Descricao do produto</h>
                         <p>$descricao</p>
                         <hr style='border-color: black; border-width: 1px; margin-top: 15px;'>
+                    </div>      
+                    <div class='quantidade'>
+                        <p>Disponível no estoque:</p>
+                        <form action='../php/colocaCarrinho.php' method='POST'>
+                            <input type='hidden' name='id_produtoForm' value=' $id_produto '>
+                            <label for='quantidade'>Quantidade:</label>
+                            <input type='number' class='inputQuantidade' name='quantidade'>
+                            <button type='submit' class='adicionarCarrinho'>Adicionar ao carrinho</button>
+                        </form>
                     </div>
-                ");
+                ");   
             }
-        ?>
-    </div>
-    <div class="quantidade">
-        <p>Disponível no estoque:</p>
-        <form action="../php/colocaCarrinho.php">
-            <input type="hidden" name="id_produto" value="<?php echo  $id_produto;?>">
-            <label for="quantidade">Quantidade:</label>
-            <select id="quantidade" name="quantidade">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            <button type="submit" class="adicionarCarrinho">Adicionar ao carrinho</button>
-        </form>
-    </div>   
+    ?>   
 </main>
     <nav>
         <ul>

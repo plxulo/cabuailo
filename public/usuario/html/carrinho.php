@@ -37,7 +37,80 @@
 </header>
 <main>
     <h>Seu carrinho</h>
+    <div class="boxCarrinho">
+        <div class="lineCarrinho">
+            <p>Produtos</p>
+        </div>
+        <div class="containerProdutos">
+            <?php
+                include("../php/conecta.php");
+                $id_usuario = $_SESSION['id'];
+                $comando = $pdo->prepare("SELECT * FROM produtos INNER JOIN carrinho 
+                ON produtos.id_produto = carrinho.id_produto WHERE carrinho.id_usuario = $id_usuario;");
+                $resultado = $comando->execute();
 
+                while( $linhas = $comando->fetch()){
+                    $nome_produto = $linhas["nome_produto"];
+                    $preco_produto = $linhas["preco_produto"];
+                    $preco_promocao = $linhas["preco_promocao"];
+                    $imagem = $linhas["img_produto"];
+                    $i = base64_encode($imagem);
+                    
+                    if($preco_promocao == null)
+                    echo("
+                        <div class='boxCardProduto'>
+                            <div class='boxImgProduto'>
+                                <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                            </div>
+                            <p>$nome_produto</p>
+                            <div class='preco'>
+                                <p>Preço R$ $preco_produto</p>
+                            </div>
+                            <a href='tirarCarrinho'> 
+                                <ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon>
+                            </a>
+                        </div>
+                    ");
+                    else {
+                        echo("
+                        <div class='boxCardProduto'>
+                            <div class='boxImgProduto'>
+                                <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                            </div>
+                            <p>$nome_produto</p>
+                            <div class='preco'>
+                                <p>Preço R$ $preco_produto</p>
+                            </div>
+                            <a href='tirarCarrinho'> 
+                                <ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon>
+                            </a>
+                        </div>
+                        ");
+                    }
+                }
+            ?>
+        </div>
+        <div class="bottomCarrinho"></div>
+    </div>
+    <div class="pagamento">
+        <p>Escolher Modo de pagamento: </p>
+        <select id="quantidade" name="quantidade">
+            <option value="1">Pix</option>
+            <option value="2">Boleto</option>
+            <option value="3">Cartão</option>
+        </select>
+    </div>
+    <div class="entrega">
+        <p>Local de entrega: </p>
+        <input class="inputCep" type="number" placeholder="CEP">
+    </div>
+    <div class="total">
+
+    </div>
+    <div class="botoes">
+        <button class="confirmarCompra">Confirmar compra</button>
+        <button class="limparCarrinho"><a href="../php/limparCarrinho.php"></a>Limpar Carrinho</button>   
+    </div>
 </main>
         <nav>
             <ul>

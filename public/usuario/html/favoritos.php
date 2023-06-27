@@ -42,43 +42,39 @@
     <main>
         <h>Suas barbearias favoritas:</h>
         <div class="divFavoritos">
-            <div class="cardFavoritos">
-                <img src="../image/barbearia1.jpeg" class="imgCard">
-                <article>   
-                    <div class="subDivFavoritos">
-                        <h3>Barbearia 1</h3> <ion-icon name="bookmark-outline" class="logoFavorito" onclick="removerCard(this)"></ion-icon>
+            <?php 
+                include("../php/conecta.php");
+                $comando = $pdo->prepare("SELECT filiais.nome, filiais.endereco, filiais.imagem_filial FROM usuarios JOIN favoritos ON usuarios.id = favoritos.id_usuario 
+                JOIN filiais ON favoritos.id_filial = filiais.id_filial WHERE usuarios.id = $id_usuario;");
+                $resultado = $comando->execute();
+                
+                while( $linhas = $comando->fetch()){
+                    $nome = $linhas["nome"];
+                    $endereco = $linhas["endereco"];
+                    $imagem = $linhas["imagem_filial"];
+                    $i = base64_encode($imagem);
+
+                    echo("
+                    <div class='cardFavoritos'>
+                        <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
+                        <article>   
+                            <div class='subDivFavoritos'>
+                                <h3>$nome</h3> <ion-icon name='bookmark-outline' class='logoFavorito' onclick='removerCard(this)'></ion-icon>
+                            </div>
+                            <p>$endereco</p>
+                            <div class='stars'>    
+                                <img src='../image/estrela.svg' width='15px'>
+                                <img src='../image/estrela.svg' width='15px'>
+                                <img src='../image/estrela.svg' width='15px'>
+                                <img src='../image/estrela.svg' width='15px'>
+                                <img src='../image/estrela.svg' width='15px'>
+                            </div>
+                            
+                        </article>                
                     </div>
-                    <p>Endereco</p>
-                    <div class='stars'>    
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                    </div>
-                    
-                </article>                
-            </div>
-            <div class="cardFavoritos">
-                <img src="../image/barbearia1.jpeg" class="imgCard">
-                <article>   
-                    <div class="subDivFavoritos">
-                        <h3>Nome</h3> <ion-icon name="bookmark-outline" class="logoFavorito" onclick="removerCard(this)"></ion-icon>
-                    </div>
-                    <p>Endereco</p>
-                    <div class='stars'>    
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                        <img src='../image/estrela.svg' width='15px'>
-                    </div>
-                    <div class='vermais'>
-                        <ion-icon name='arrow-forward-outline'></ion-icon>
-                        <a href='#'><p1>Ver mais</p1></a>
-                    </div>  
-                </article>                
-            </div>
+                    ");
+                }
+            ?>
         </div>
     </main>
     

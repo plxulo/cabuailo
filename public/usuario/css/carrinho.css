@@ -20,7 +20,6 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: ;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
@@ -233,7 +232,7 @@ header {
 /* MAIN */
 main {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,6 +251,130 @@ main h {
     margin-top: 10px;
 }
 
+.boxCarrinho {
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--branco-diferente);
+}
+
+.lineCarrinho {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top-right-radius: 10px;    
+    border-top-left-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.lineCarrinho p {
+    font-size: 1.1rem;
+    display: flex;
+    margin-left: 15px;
+}
+
+.containerProdutos {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.bottomCarrinho {
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.boxCardProduto {
+    width: 360;
+    height: 110px;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 5px;
+    align-items: center;
+    gap: 5px;
+}
+
+.boxImgProduto {
+    width: 110px;
+    height: 100%;
+}
+
+.imgProduto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxCardProduto p {
+    width: 150px;
+}
+
+.preco p {
+    width: 55px;
+}
+
+.tirarCarrinho {
+    font-size: 1.5rem;
+    display: flex;
+    margin-left: 5px;
+    color: var(--vermelho);
+}
+
+.pagamento {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.entrega {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.limparCarrinho {
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: #ff3636;
+    color: #FFFFFF;
+}
+
+.confirmarCompra {
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--azul-escuro);
+    color: #FFFAFF;
+}
+
+.botoes {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
 /*
 .input-box {
     position: relative;
