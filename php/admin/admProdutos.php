@@ -157,7 +157,7 @@
                   <h1 id="nova_foto">Insira uma imagem do produto:</h1>
                   <p>Selecione uma imagem:</p>
                 </header>
-                <input type="file" id="imagem" name="imagem">
+                <input type="file" id="imagem" name="imagem" onchange="exibir_imagem(event)">
                 <input type="submit" value="Enviar">
               </div>
             </section>
@@ -166,6 +166,7 @@
 
         <header aria-label="Prévia do produto" class="previa_produto">
           <h1>Aqui é exibida a prévia do produto que vocë deseja adicionar:</h1>
+          <img id="preview_imagem" src="" alt="Imagem preview" width="250px" height="250px"/>
         </header>
 
         <section aria-label="Lista de produtos cadastrados">
@@ -246,5 +247,19 @@
   </main>
 </body>
 <script src="../../public/js/perfil.js"></script>
+<script>
+  function exibir_imagem(event) {
+    var input = event.target;
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
+      reader.onload = function(e) {
+        var imagem_preview = document.getElementById("preview_imagem");
+        imagem_preview.src = e.target.result;
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
 </html>

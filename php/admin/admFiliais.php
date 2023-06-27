@@ -150,12 +150,10 @@
             <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
               <header aria-labelledby="foto_atual" title="Foto da filial atual">
                 <p>Selecione uma imagem:</p>
-                  <input type="file" id="imagem" name="imagem">
+                  <input type="file" id="imagem" name="imagem" onchange="exibir_imagem(event)">
               </header>
               <p id="foto_atual">Estas são suas fotos atuais:</p>
-              <?php
-                echo '<img src="data:image/jpeg;base64,' . $foto_perfil . '" alt="Foto de Perfil" width="200px" height="200px">';
-              ?>
+              <img id="preview_imagem" src="" alt="Imagem preview" width="250px" height="250px"/>
             </section>
 
             <section class="areas_texto" style="display:flex; flex-direction: row; gap: 20px">
@@ -185,5 +183,19 @@
   </main>
 </body>
 <script src="../../public/js/perfil.js"></script>
+<script>
+  function exibir_imagem(event) {
+    var input = event.target;
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
+      reader.onload = function(e) {
+        var imagem_preview = document.getElementById("preview_imagem");
+        imagem_preview.src = e.target.result;
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
 </html>

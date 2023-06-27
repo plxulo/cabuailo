@@ -37,41 +37,56 @@
   $senha = $retorno->getPassword();
   $email = $retorno->getEmail();
 
-  // Variável $sql prepara uma inserção dentro do banco de dados:
-  $sql = $pdo->prepare("INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha) VALUES (?,?,?)");
+  // Verificar se o usuário já existe:
+  $verificar = $pdo->prepare("SELECT * FROM usuarios_admin WHERE adm_nome = :adm_nome");
+  $verificar->bindParam(':adm_nome', $nome);
+  $verificar->execute();
 
-  // bindParam(ordem na consulta, variável) para proteger o banco de dados de SQL injection:
-  $sql->bindParam(1, $nome);
-  $sql->bindParam(2, $email);
-  $sql->bindParam(3, $senha);
-
-  // Selecionar o id_usuario da última inserção:
-  $query = $pdo->prepare("SELECT id_adm FROM usuarios_admin ORDER BY id_adm DESC LIMIT 1");
-  $executar_insert = $sql->execute();
-  $executar_query = $query->execute();
-
-  // Após a consulta, armazenar o valor do id_adm na sessão:
-  $query_id = $query->fetch(PDO::FETCH_ASSOC);
-  $id_usuario = $query_id['id_adm'];
-
-  if($executar_insert === TRUE)
+  if($verificar->rowCount() > 0)
   {
-    // Inserção bem sucedida:
-    $_SESSION['id'] = $id_usuario;
-    $_SESSION['user'] = $nome;
-    $_SESSION['senha'] = $senha;
-    $_SESSION['foto_perfil'] = 'default.png';
-    header('Location: admin/admPainel.php');
+    echo ("<script type = text/javascript>");
+      echo ("alert('Usuário já existe.');");
+      echo ("window.location = 'admin/admCadastro.php'");
+    echo ("</script>");   
   }
   else
   {
-    // Inserção falhou:
-    unset($_SESSION['user']);
-    unset($_SESSION['id']);
+    // Variável $sql prepara uma inserção dentro do banco de dados:
+    $sql = $pdo->prepare("INSERT INTO usuarios_admin (adm_nome, adm_email, adm_senha) VALUES (?,?,?)");
 
-    echo ("<script type = text/javascript>");
-      echo ("alert('Erro ao cadastrar o usuário, por favor, tente novamente.');");
-      echo ("window.location = 'admin/admCadastro.php'");
-    echo ("</script>");    
+    // bindParam(ordem na consulta, variável) para proteger o banco de dados de SQL injection:
+    $sql->bindParam(1, $nome);
+    $sql->bindParam(2, $email);
+    $sql->bindParam(3, $senha);
+
+    // Selecionar o id_usuario da última inserção:
+    $query = $pdo->prepare("SELECT id_adm FROM usuarios_admin ORDER BY id_adm DESC LIMIT 1");
+    $executar_insert = $sql->execute();
+    $executar_query = $query->execute();
+
+    // Após a consulta, armazenar o valor do id_adm na sessão:
+    $query_id = $query->fetch(PDO::FETCH_ASSOC);
+    $id_usuario = $query_id['id_adm'];
+
+    if($executar_insert === TRUE)
+    {
+      // Inserção bem sucedida:
+      $_SESSION['id'] = $id_usuario;
+      $_SESSION['user'] = $nome;
+      $_SESSION['senha'] = $senha;
+      $_SESSION['foto_perfil'] = 'default.png';
+      header('Location: admin/admPainel.php');
+    }
+    else
+    {
+      // Inserção falhou:
+      unset($_SESSION['user']);
+      unset($_SESSION['id']);
+
+      echo ("<script type = text/javascript>");
+        echo ("alert('Erro ao cadastrar o usuário, por favor, tente novamente.');");
+        echo ("window.location = 'admin/admCadastro.php'");
+      echo ("</script>");    
+    }
   }
 ?>

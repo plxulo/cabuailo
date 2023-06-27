@@ -13,7 +13,7 @@
 
   // Operador de coalescência nula para evitar o erro de null no PHP:
   $logado = $_SESSION['user'];
-  $foto_perfil = $_SESSION['foto_perfil'] ?? 'default.png';
+  $foto_perfil = $_SESSION['foto_perfil'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -172,10 +172,10 @@
                   echo "<tr>";
                 }
               } else {
-                // Nenhum funcionário existe:
+                // Nenhum agendamento existe:
                 echo ("<tr>");
                 echo ("<td>");
-                echo ("NÃO HÁ FUNCIONÁRIOS CADASTRADOS");
+                echo ("Nenhum agendamento no momento");
                 echo ("</td>");
                 echo ("</tr>");
               }

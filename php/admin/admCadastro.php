@@ -41,17 +41,17 @@
       <form aria-label="Formulário de login" class="login" action="../cadastrar_adm.php" method="post">
           <label for="usuario">Nome de usuário:</label>
           <section class="input_box">
-            <input id="usuario" type="text" name="user" required="">
+            <input id="usuario" type="text" name="user" required="" placeholder="Nome">
           </section>
 
           <label for="email">Email:</label>
           <section class="input_box">
-            <input id="email" type="email" name="email" required="">
+            <input id="email" type="email" name="email" required="" placeholder="Email">
           </section>
 
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input id="senha" type="password" name="password" required="">
+            <input id="senha" type="password" name="password" required="" placeholder="Senha">
           </section>
           <a href="#">Termos de uso</a>
           <button aria-label="Entrar na sua conta" name="entrar" type="submit">Criar conta</button>

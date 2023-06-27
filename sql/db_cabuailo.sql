@@ -96,6 +96,7 @@ CREATE TABLE servicos (
 
 CREATE TABLE app_agendamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    data_agendamento DATE,
     id_usuario INT,
     id_funcionario INT,
     id_filial INT,
