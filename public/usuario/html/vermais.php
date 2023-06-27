@@ -64,6 +64,10 @@
                         <a href='escolherBarbeiro.php?id_filial=".$id_filial."''>Agendar</a>
                         <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>
                     </button>
+                    <button class='btnAgendar'>
+                        <a>Adcionar favorita</a>
+                        <ion-icon name='bookmark'></ion-icon>
+                    </button>
                 ");
             }
         ?>
