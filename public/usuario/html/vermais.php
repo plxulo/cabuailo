@@ -5,10 +5,11 @@
     if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
     {
         unset($_SESSION['email']);
-        unset($_SESSION['senha']);
         header('Location: loginUsuario.php');
     }
     $logado = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
+    echo $id_usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,11 +27,10 @@
             <h1>Localização atual</h1>
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
-    
-        <div class="fotoPerfil">
-            <a href="sair.php"></a>
-            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        </div>
+
+        <a href="sair.php" class="fotoPerfil">
+            sair
+        </a>
     </header>
     <main>
         <?php
@@ -64,10 +64,15 @@
                         <a href='escolherBarbeiro.php?id_filial=".$id_filial."''>Agendar</a>
                         <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>
                     </button>
-                    <button class='btnAgendar'>
-                        <a>Adcionar favorita</a>
-                        <ion-icon name='bookmark'></ion-icon>
-                    </button>
+                        <form action='../php/favoritar.php' method='POST'>
+                            <a>Adcionar favorita</a>
+                            <input type='hidden' value=' $id_usuario' name='id_usuarioForm'>
+                            <input type='hidden' value=' $id_filial' name='id_filialForm'>
+                            <button type='submit' class='btnAgendar'>
+                                Cadastrar
+                                <ion-icon name='bookmark'></ion-icon>
+                            </button>
+                        </form>
                 ");
             }
         ?>

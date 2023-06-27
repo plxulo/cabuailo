@@ -1,6 +1,7 @@
+
 <?php
     session_start();
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header("Location: loginUsuario.php");
+    session_unset();
+    session_destroy();
+    header("Location: ../html/loginUsuario.php");
 ?>
