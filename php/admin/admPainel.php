@@ -314,7 +314,7 @@
     var data = new google.visualization.DataTable();
 
     // Defina as colunas da tabela
-    data.addColumn('string', 'Mês');
+    data.addColumn('string', 'Ano');
     data.addColumn('number', 'Total de Clientes');
 
     // Adicione os dados à tabela
@@ -322,8 +322,8 @@
 
     // Configurar as opções do gráfico
     var options = {
-      title: 'Número de Clientes por Mês',
-      hAxis: {title: 'Mês'},
+      title: 'Número de Clientes por Ano',
+      hAxis: {title: 'Ano'},
       vAxis: {title: 'Total de Clientes'}
     };
 
