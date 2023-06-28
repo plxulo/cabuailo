@@ -245,78 +245,73 @@ main {
     background-color: var(--branco-fundo);
 }
 
-main h {
-    font-size: 1.3rem;
+.novoAgendamento {
+    width: 90%;
+    height: 80px;
     display: flex;
-    margin-top: 20px;
+    flex-direction: row;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.3rem;
+    color: var(--azul-claro);
+    border-bottom: 1px solid;
 }
 
-.divFavoritos {
+.novoAgendamento p {
+    font-size: 1.2rem;
+    color: var(--azul-claro);
+}
+
+.agendamentos {
     width: 90%;
-    height: 400px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    margin-top: 10px;
 }
 
-.cardFavoritos {
+.agendamentos h {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.lineAgendamentos {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.textBarb {
+    width: 60%;
+    
+}
+
+.cardAgendamento {
     width: 100%;
     height: 100px;
+    display: flex;
+    flex-direction: row;
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
     background-color: var(--branco-diferente);
-}
-
-.cardFavoritos article {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-left: 5px;
-}
-
-.cardFavoritos article h3 {
-    font-size: 1.2rem;
-    margin-left: 0px;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 100;
-}
-
-.cardFavoritos article p {
-    font-size: 0.9rem;
-    font-family: 'Prompt', sans-serif;
-}
-
-.cardFavoritos article .stars {
-    display: flex;
-    flex-direction: row;
 }
 
 .imgCard {
     width: 30%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #0A2463;
 }
 
-.vermais {
-    width: 100%;
+.infoBarbearia {
+    width: 40%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
 }
 
-.subDivFavoritos {
+.dataAgendamento {
+    width: 30%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding-right: 10px;
-}
-
-.logoFavorito {
-    font-size: 20px;
 }

@@ -50,6 +50,7 @@
                 $resultado = $comando->execute();
 
                 while( $linhas = $comando->fetch()){
+                    $id_produto = $linhas["id_produto"];
                     $nome_produto = $linhas["nome_produto"];
                     $preco_produto = $linhas["preco_produto"];
                     $preco_promocao = $linhas["preco_promocao"];
@@ -66,9 +67,10 @@
                             <div class='preco'>
                                 <p>Preço R$ $preco_produto</p>
                             </div>
-                            <a href='tirarCarrinho'> 
-                                <ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon>
-                            </a>
+                            <form action='../php/tirarCarrinho.php' method='POST'>
+                                <input type='hidden' name='id_produto' value=' $id_produto'>
+                                <button type='submit'><ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon><button>
+                            </form>
                         </div>
                     ");
                     else {
@@ -81,9 +83,10 @@
                             <div class='preco'>
                                 <p>Preço R$ $preco_produto</p>
                             </div>
-                            <a href='tirarCarrinho'> 
-                                <ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon>
-                            </a>
+                            <form action='../php/tirarCarrinho.php' method='POST'>
+                                <input type='hidden' name='id_produto' value=' $id_produto'>
+                                <button type='submit'><ion-icon class='tirarCarrinho' name='close-circle-sharp'></ion-icon><button>
+                            </form>
                         </div>
                         ");
                     }
@@ -109,7 +112,7 @@
     </div>
     <div class="botoes">
         <button class="confirmarCompra">Confirmar compra</button>
-        <button class="limparCarrinho"><a href="../php/limparCarrinho.php"></a>Limpar Carrinho</button>   
+        <a href="../php/limparCarrinho.php"><button class="limparCarrinho">Limpar Carrinho</button></a>
     </div>
 </main>
         <nav>

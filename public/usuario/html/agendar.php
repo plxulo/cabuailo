@@ -47,8 +47,13 @@
 			<div class="textData"><p>Data</p></div>
 		</div>
         <?php
+            $id_usuario = $_SESSION['id'];
             include("../php/conecta.php");
-            $comando = $pdo->prepare("SELECT * FROM app_agendamentos");
+            $comando = $pdo->prepare("SELECT app_agendamentos.*, usuarios.usuario, funcionarios.nome_func,
+             filiais.nome FROM app_agendamentos INNER JOIN filiais ON app_agendamentos.id_filial = filiais.id_filial 
+             INNER JOIN usuarios ON app_agendamentos.id_usuario = usuarios.id INNER JOIN funcionarios ON app_agendamentos.id_funcionario = funcionarios.id_func WHERE
+              app_agendamentos.id_usuario = $id_usuario;")
+            ");
             $resultado = $comando->execute();
 
             while( $linhas = $comando->fetch()){
@@ -60,13 +65,13 @@
                             <img src='../image/barbearia1.jpeg'>
                         </div>
                         <div class='infoBarbearia'>
-                            <p>Osmar's barber Shop Club</p>
+                            <p></p>
                         </div>
                         <div class='dataAgendamento'>
                             20/06 20:30
                         </div>
                     </div>
-                ")
+                ");
             }
         ?>
 	</div>    
