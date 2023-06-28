@@ -21,22 +21,55 @@
 </head>
 <body>
 <header>
-        <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-        <section class="textoLocal">
-            <h1>Localização atual</h1>
-            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
-        </section>
+   <button class="mapa"><ion-icon name="settings"></ion-icon></button>
+   <section class="textoLocal">
+      <h1>Localização atual</h1>
+         <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
+      </section>
         
-        <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+  <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
 
-        <div class="campoEscondido" id="campoLinks">
-            <p>Seu email</p>
-            <a href="#">Meus Dados</a>
-            <a href="../php/sair.php">Sair</a>
-        </div>     
+   <div class="campoEscondido" id="campoLinks">
+      <p>Seu email</p>
+      <a href="#">Meus Dados</a>
+      <a href="../php/sair.php">Sair</a>
+   </div>     
 </header>
 <main>
-        
+   <a href="../html/mainPage.php"	 class="novoAgendamento">	
+		<ion-icon name="add-outline"></ion-icon>
+		<p>Fazer novo agendamento</p>
+	</a>
+	<div class="agendamentos">
+		<h>Seus agendamentos</h>
+		<div class="lineAgendamentos">
+			<div class="textBarb"><p>Barbearia</p></div>
+			<div class="textData"><p>Data</p></div>
+		</div>
+        <?php
+            include("../php/conecta.php");
+            $comando = $pdo->prepare("SELECT * FROM app_agendamentos");
+            $resultado = $comando->execute();
+
+            while( $linhas = $comando->fetch()){
+                $nome = $linhas["nome"];
+               
+                echo("
+                    <div class='cardAgendamento'>
+                        <div class='imgCard'>
+                            <img src='../image/barbearia1.jpeg'>
+                        </div>
+                        <div class='infoBarbearia'>
+                            <p>Osmar's barber Shop Club</p>
+                        </div>
+                        <div class='dataAgendamento'>
+                            20/06 20:30
+                        </div>
+                    </div>
+                ")
+            }
+        ?>
+	</div>    
 </main>
     <nav>
         <ul>
