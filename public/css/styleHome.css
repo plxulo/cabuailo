@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;900&display=swap');
-
-/* responsividade */
-
-@media (max-width: 1370px) {
-  .navlinks {
-=======
 /* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
 * {
   -webkit-box-sizing: border-box;
@@ -111,7 +103,6 @@ html::-webkit-scrollbar-button {
 @media (max-width: 1809px) {
 
   .botao_nav button {
->>>>>>> paulo
     display: none;
   }
 
@@ -119,11 +110,7 @@ html::-webkit-scrollbar-button {
     display: block;
   }
 
-<<<<<<< HEAD
-  .line {
-=======
   .linha_hamburguer {
->>>>>>> paulo
     width: 25px;
     height: 3px;
     background-color: #fff;
@@ -131,49 +118,20 @@ html::-webkit-scrollbar-button {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 1370px) {
-=======
 /* Este faz o menu hamburguer sumir */
 @media screen and (min-width: 1810px) {
->>>>>>> paulo
   .hamburger {
     display: none;
   }
 }
 
-<<<<<<< HEAD
-.line {
-=======
 .linha_hamburguer {
->>>>>>> paulo
   width: 25px;
   height: 3px;
   background-color: #fff;
   margin: 5px;
 }
 
-<<<<<<< HEAD
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Overpass', sans-serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  background: #202020;
-  overflow-x: hidden;
-}
-
-navbar {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  padding: 0px 80px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-=======
 /* Configurações Navbar */
 navbar {
   width: 100%;
@@ -181,31 +139,15 @@ navbar {
   position: fixed;
   padding: 0px 0px 0px 80px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
->>>>>>> paulo
   backdrop-filter: blur(10px);
   z-index: 1;
 }
 
-<<<<<<< HEAD
-=======
 /* Animação da navbar com base no estado do scroll com transição gradual */
->>>>>>> paulo
 navbar {
   transition: all 700ms ease-in-out;
 }
 
-<<<<<<< HEAD
-.scroll-down navbar {
-  transform: translate3d(0, -100%, 0);
-}
-
-.scroll-up navbar {
-  filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
-}
-
-.navbar {
-  width: 100%;
-=======
 /* Move a navbar pra cima em relação posição original em 2 dimensões (x (horizontal), y (vertical)) */
 .scroll-down navbar {
   transform: translate(0, -100%);
@@ -219,22 +161,15 @@ navbar {
 nav {
   width: 100%;
   --contentWidth: 100%;
->>>>>>> paulo
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-<<<<<<< HEAD
-}
-
-.navbar a {
-=======
   padding: 2rem max(2rem, 50vw - var(--contentWidth) / 2);
   gap: 125px;
 }
 
 nav .navlinks a {
->>>>>>> paulo
   color: white;
   font-size: 25px;
   text-decoration: none;
@@ -242,20 +177,6 @@ nav .navlinks a {
   transition: 0.3s;
 }
 
-<<<<<<< HEAD
-.navbar a:hover {
-  color: #3299cc;
-}
-
-.d2 {
-  height: 100vh;
-  height: 100svh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-=======
 nav .navlinks a:hover {
   color: #3299cc;
 }
@@ -316,16 +237,10 @@ h1 {
 .conteudo_principal {
   height: 100vh;
   height: 100svh;
->>>>>>> paulo
   background: url("../imagens/fundo_menu_cabuailo.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-<<<<<<< HEAD
-}
-
-.-titulo {
-=======
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -333,7 +248,6 @@ h1 {
 }
 
 .sobre_cabuailo {
->>>>>>> paulo
   color: white;
   display: flex;
   flex-direction: column;
@@ -342,19 +256,6 @@ h1 {
   width: clamp(20rem, 100%, 70rem);
 }
 
-<<<<<<< HEAD
-p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-h1 {
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 900;
-  font-style: normal;
-}
-
-.container-button {
-=======
 .sobre_cabuailo p {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin: 0;
@@ -372,7 +273,6 @@ h1 {
 }
 
 .botao_container {
->>>>>>> paulo
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -390,8 +290,6 @@ h1 {
   backdrop-filter: blur(15px);
 }
 
-<<<<<<< HEAD
-=======
 .botao_positivo:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.3);
@@ -402,7 +300,6 @@ main .sobre_cabuailo .texto_secundario {
   font-size: clamp(1rem, 2vw, 1rem);
 }
 
->>>>>>> paulo
 .botao_saiba {
   width: clamp(5em, 15em, 20em);
   padding: 1em;
@@ -410,55 +307,19 @@ main .sobre_cabuailo .texto_secundario {
   text-align: left;
   color: white;
   border-left: solid 5px #FFF;
-<<<<<<< HEAD
-=======
   border-radius: 0px;
->>>>>>> paulo
   border-bottom: none;
   border-right: none;
   border-top: none;
   background: none;
-<<<<<<< HEAD
-  transition: 1s;
-}
-
-@media (min-width: 50px) and (max-width: 450px) {
-    .container-button {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-}
-
-button {
-  width: clamp(5em, 15em, 20em);
-=======
 }
 
 button {
   width: clamp(5em, 100%, 20em);
->>>>>>> paulo
   padding: 1rem;
   font-size: clamp(1em, 2.5vw, 2em);
   color: white;
   border: solid rgba(217, 217, 217, 0.01);
-<<<<<<< HEAD
-  transition: 1s;
-}
-
-.botao_positivo:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-section {
-  height: 100vh;
-  height: 100svh;
-  width: 100%;
-  background: #675d50;
-  filter: drop-shadow(0 -25px 20px rgb(40, 40, 40));
-=======
   border-radius: 40px;
   transition: 1s;
 }
@@ -493,24 +354,10 @@ button:hover {
 }
 
 .container_testimonial {
->>>>>>> paulo
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-}
-
-.text {
-  color: white;
-  padding: 0px 80px;
-}
-
-/* estes estilos são aplicados apenas a classe animated-text */
-.hidden .animated-text {
-=======
 }
 
 /* Serviços Cabuailo */
@@ -707,16 +554,6 @@ button:hover {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-}
-
-.card_planos .img {
-  height: 10.375rem;
-  width: 10.375rem;
-  border-radius: 100%;
-  background: linear-gradient(45deg, purple, pink, blue);
-  background-size: 150%;
-  margin-bottom: 1rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card_planos .img img {
@@ -940,17 +777,11 @@ li {
 
 /* Estes estilos são aplicados apenas a classe animated-text */
 .hidden .animated_text {
->>>>>>> paulo
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-<<<<<<< HEAD
-.visible .animated-text {
-  opacity: 1;
-  transform: translateY(0);
-=======
 .visible .animated_text {
   opacity: 1;
   transform: translateY(0);
@@ -1022,5 +853,4 @@ li {
     display: flex;
     flex-direction: column;
   }
->>>>>>> paulo
 }

@@ -248,6 +248,11 @@
 </body>
 <script src="../../public/js/perfil.js"></script>
 <script>
+  function enviar_id(id)
+  {
+    window.open("../excluir_prod.php?id_prod=" + id,"_self");
+  }
+
   function exibir_imagem(event) {
     var input = event.target;
     if (input.files && input.files[0]) {

@@ -30,22 +30,22 @@
       <img class="logo_cabuailo" src="../../public/imagens/logo.png" alt="Logo da Cabuailo">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
-        <p>Faça Login para acessar o sistema</p>
+        <p>Cadastre-se no melhor aplicativo de barbearias do mercado!</p>
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
       <form aria-label="Formulário de login" class="login" action="../php/crude.php" method="post">
           <label for="usuario">Seu nome:</label>
           <section class="input_box">
-            <input type="text" name="nome">
+            <input type="text" name="nome" placeholder="Nome">
           </section>
           <label for="email">Email: </label>
           <section class="input_box">
-            <input type="email" name="email">
+            <input type="email" name="email" placeholder="Email">
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input type="password" name="senha">
+            <input type="password" name="senha" placeholder="Senha">
           </section>
           <a href="../html/loginUsuario.php">Fazer-login</a>
           <button aria-label="Cadastrar-se" name="inserir2" type="submit">Cadastrar-se</button>

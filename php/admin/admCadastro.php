@@ -76,9 +76,9 @@
     <section class="navegacao_footer">
       <ul class="links_navegacao_footer">
         <h1>Outras páginas!</h1>
-        <a href="../homeScreen.html"><li>Home</li></a>
-        <a href="../cadastro.html"><li>Cadastro empresa</li></a>
-        <a href="#"><li>Cadastro cliente</li></a>
+        <a href="../../public/html/homeScreen.html"><li>Home</li></a>
+        <a href="admCadastro.php"><li>Cadastro empresa</li></a>
+        <a href="../../mobile/html/cadastroCliente.php"><li>Cadastro cliente</li></a>
         <a href="#"><li>Termos de uso</li></a>
       </ul>
     </section>

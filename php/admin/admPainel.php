@@ -10,8 +10,6 @@
   include("../conecta.php");
   include("../painel_info.php");
 
-  session_start();
-
   if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['senha']) == true))
   {
     header('location: admLogin.php');

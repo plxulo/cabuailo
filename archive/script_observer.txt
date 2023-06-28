@@ -1,0 +1,36 @@
+  //const textElement = document.querySelector(".hidden"); // Selecionar os elementos de classe hidden
+  //const textElement2 = document.querySelector(".sec2 .hidden");
+
+  //function mostrarTexto() {
+    //if (window.pageYOffset >= 1000) { // Se a posição Y da página for >= 1000
+      //textElement.classList.add("visible"); // O estilo css visible será adicionado
+    //} else {
+      //textElement.classList.remove("visible"); // Caso contrário será removido (por padrão temos a seção como hidden)
+    //}
+    //if (window.pageYOffset >= 2000) { // Se a posição Y da página for >= 2000
+      //textElement2.classList.add("visible"); // O estilo css visible será adicionado
+    //} else {
+      //textElement2.classList.remove("visible"); // Caso contrário será removido (por padrão temos a seção como hidden)
+    //}
+  //}
+
+  //window.addEventListener("scroll", mostrarTexto); // Chamar a função mostrarTexto durante o scroll
+
+  //const secao = document.getElementById("secao_servicos");
+  //const sections = document.querySelectorAll('.section');
+
+  //function callback(entries, observer) {
+  //  entries.forEach(entry => {
+  //    if (entry.isIntersecting) {
+  //      console.log('A seção está sendo exibida na janela.');
+  //      navbar.style.background = 'var(--cor-escura)';
+  //    } else {
+  //      console.log('A seção não está sendo exibida na janela.');
+  //      navbar.style.background = 'none';
+  //    }
+  //  });
+  //}
+  const observer = new IntersectionObserver(callback);
+  sections.forEach(section => {
+    observer.observe(section);
+  });

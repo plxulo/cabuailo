@@ -1,8 +1,11 @@
 <?php
   include("conecta.php");
+  session_start();
 
-  $sql = $pdo->prepare("SELECT FLOOR(YEAR(data_agendamento) / 5) * 5 AS ano_raio, COUNT(DISTINCT id_usuario) AS total_clientes 
-  FROM app_agendamentos 
+  $id_adm = $_SESSION['id'];
+
+  $sql = $pdo->prepare("SELECT app_agendamentos.id_filial, filiais.id_filial, FLOOR(YEAR(data_agendamento) / 5) * 5 AS ano_raio, COUNT(DISTINCT id_usuario) AS total_clientes 
+  FROM app_agendamentos INNER JOIN filiais ON app_agendamentos.id_filial = filiais.id_filial WHERE filiais.filial_adm = $id_adm
   GROUP BY FLOOR(YEAR(data_agendamento) / 5) * 5");
   $sql->execute();
 
@@ -22,7 +25,6 @@
   //echo $total_clientes;
 
   $json = json_encode($dados);
-
   /*
   $sql = $pdo->prepare("SELECT FLOOR(MONTH(data_agendamento) / 2) * 2 AS ano_raio, COUNT(DISTINCT id_usuario) AS total_clientes
                         FROM app_agendamentos 
