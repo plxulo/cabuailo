@@ -59,7 +59,8 @@
                         <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
                         <article>   
                             <div class='subDivFavoritos'>
-                                <h3>$nome</h3> <ion-icon name='bookmark-outline' class='logoFavorito' onclick='removerCard(this)'></ion-icon>
+                                <h3>$nome</h3> 
+                                <a class='desfavoritar' href='deletarFavorito'><ion-icon name='close-circle'></ion-icon></ion-icon></a>
                             </div>
                             <p>$endereco</p>
                             <div class='stars'>    
@@ -93,19 +94,19 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/agendar.html">
+                <a href="../html/agendar.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agendar</span>
                 </a>
             </li>
             <li class="list active">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/perfil.html">
+                <a href="../html/perfil.php">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="text">Perfil</span>
                 </a>

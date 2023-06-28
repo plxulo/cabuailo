@@ -283,7 +283,7 @@ main {
 }
 
 .textBarb {
-    width: 60%;
+    width: 75%;
     
 }
 
@@ -304,9 +304,40 @@ main {
     background-color: #0A2463;
 }
 
+.imgFilial {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
 .infoBarbearia {
     width: 40%;
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.infoBarbearia p1 {
+    height: 50%;
+    font-size: 1.1rem;
+    display: flex;
+    margin-left: 5px;
+}
+
+.infoBarbearia p2 {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #FFFAFF;
+    text-decoration: none;
+
+}
+
+.infoBarbearia a {
+    text-decoration: none;
 }
 
 .dataAgendamento {
@@ -314,4 +345,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnVerMais {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: var(--azul-escuro);
+    border-radius: 50px;
+    margin-left: 10px;
 }

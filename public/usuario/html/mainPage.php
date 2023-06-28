@@ -181,13 +181,13 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/perfil.html">
+                <a href="../html/perfil.php">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="text">Perfil</span>
                 </a>

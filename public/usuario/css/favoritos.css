@@ -266,6 +266,7 @@ main h {
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    text-decoration: none;
     background-color: var(--branco-diferente);
 }
 
@@ -319,4 +320,19 @@ main h {
 
 .logoFavorito {
     font-size: 20px;
+}
+
+.desfavoritar {
+    text-decoration: none;
+    color: #D8315B;
+    font-size: 1.5rem;
+}
+
+.desfavoritar a {
+    text-decoration: none;
+    color: var(--vermelho);
+}
+
+.logo_favorito {
+    font-size: 1.3rem;
 }

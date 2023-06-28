@@ -50,25 +50,29 @@
             $id_usuario = $_SESSION['id'];
             include("../php/conecta.php");
             $comando = $pdo->prepare("SELECT app_agendamentos.*, usuarios.usuario, funcionarios.nome_func,
-             filiais.nome FROM app_agendamentos INNER JOIN filiais ON app_agendamentos.id_filial = filiais.id_filial 
+             filiais.nome, filiais.imagem_filial FROM app_agendamentos INNER JOIN filiais ON app_agendamentos.id_filial = filiais.id_filial 
              INNER JOIN usuarios ON app_agendamentos.id_usuario = usuarios.id INNER JOIN funcionarios ON app_agendamentos.id_funcionario = funcionarios.id_func WHERE
-              app_agendamentos.id_usuario = $id_usuario;")
-            ");
+              app_agendamentos.id_usuario = $id_usuario;");
             $resultado = $comando->execute();
 
             while( $linhas = $comando->fetch()){
-                $nome = $linhas["nome"];
-               
+                $nome_filial = $linhas["nome"];
+                $nome_funcionario = $linhas["nome_func"];
+                $data_agendamento = $linhas["data_agendamento"];
+                $imagem = $linhas["imagem_filial"];
+                $i = base64_encode($imagem);
+                
                 echo("
                     <div class='cardAgendamento'>
                         <div class='imgCard'>
-                            <img src='../image/barbearia1.jpeg'>
+                            <img src='data:image/jpeg;base64," . $i . "' class='imgFilial'>
                         </div>
                         <div class='infoBarbearia'>
-                            <p></p>
+                            <p1>$nome_filial</p1>
+                            <a href='verMaisAgendamento.php' class='btnVerMais'><p2>Ver mais...</p2></a>
                         </div>
                         <div class='dataAgendamento'>
-                            20/06 20:30
+                            $data_agendamento
                         </div>
                     </div>
                 ");
@@ -91,19 +95,19 @@
                 </a>
             </li>
             <li class="list active">
-                <a href="../html/agendar.html">
+                <a href="../html/agendar.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agenda</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/perfil.html">
+                <a href="../html/perfil.php">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="text">Perfil</span>
                 </a>

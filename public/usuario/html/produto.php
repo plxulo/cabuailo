@@ -44,12 +44,15 @@
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
                 $descricao = $linhas["descricao"];
+                $imagem = $linhas["img_produto"];
+                $i = base64_encode($imagem);
+
                 echo ("
                     <div class='titulo'>
                         <h>$nome_produto</h>
                     </div>
                     <div class='box-imagem-produto'>
-                        <img src='../image/pastaCabelo.jpg' class='imagem-produto'>
+                        <img src='data:image/jpeg;base64," . $i . "'  class='imagem-produto'>
                     </div>
                     <div class='preco'>
                         <p>R$ $preco_produto </p>
@@ -94,19 +97,19 @@
                 </a>
             </li>
             <li class="list">
-                <a href="../html/agendar.html">
+                <a href="../html/agendar.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agenda</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/perfil.html">
+                <a href="../html/perfil.php">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="text">Perfil</span>
                 </a>

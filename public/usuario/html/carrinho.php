@@ -130,7 +130,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="../html/agendar.html">
+                    <a href="../html/agendar.php">
                         <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                         <span class="text">Agenda</span>
                     </a>
@@ -142,7 +142,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="../html/perfil.html">
+                    <a href="../html/perfil.php">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
                         <span class="text">Perfil</span>
                     </a>
