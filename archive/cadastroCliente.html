@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/styleCadastro.css" type="text/css" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <main class="form-container cor--branca">
+        <!-- TITULO E SUBTITULO -->
+        <header class="main--text">
+            <p><a href="../html/homeScreen.html">voltar ao início</a></p>
+            <h1>CRIAR CONTA</h1>
+            <p>já possuo uma conta. <a href="../html/LoginScreen.html">fazer login</a></p>
+        </header>
+
+        <form class="form cor--branca">
+            <p>Nome de usuário: </p>
+            <input type="email" placeholder="Seu nome" required="" class="limpavel--botao cor--branca">
+            <p>Email: </p>
+            <input type="email" placeholder="Seu email" required="" class="limpavel--botao cor--branca">
+            <p>Senha: </p>
+            <input type="password" placeholder="Sua senha" required="" class="limpavel--botao cor--branca">
+            <p>Confirmar senha: </p>
+            <input type="password" placeholder="Sua senha" required="" class="limpavel--botao cor--branca">
+            <p class="--escondido" id="senhaIncorreta">Usuário ou senha inválidos.</p>
+
+            <button onclick="validarSenha()"" class=" cor--branca">Criar conta</button>
+            <button onclick="limparCampos()" id="limpar" class="cor--branca">Limpar</button>
+        </form>
+    </main>
+    <script src="../js/private/scriptLimpar.js"></script>
+    <script src="../js/private/scriptValidar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+/*
+  Algumas configurações gerais do CSS como:
+  - Navbar aside
+  - Barra topo
+  - Container main
+  - Container em coluna
+
+  Estão no arquivo admCSS.css, dentro da pasta "global"
+  cabuailo > public > global > admCSS.css
+
+  Caso queira editar encontre lá! ^
+  *não edita, por favor, faça alterações neste arquivo, não no global.
+*/
+
+main .secao_container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 25px;
+}
+
+.secao_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+main .descricao_geral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.descricao_geral h1 {
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.descricao_geral p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.container_botoes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container_botoes button {
+  width: clamp(5em, 60%, 6em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+  border: 1px solid var(--cor-clara);
+  border-radius: 40px;
+  transition: .5s;
+}
+
+button:hover {
+  border: solid 1px var(--cor-escura);
+  background: var(--cor-clara);
+  color: var(--cor-escura);
+  cursor: pointer;
+}
+
+.container_botoes input {
+  width: 75%;
+}
+
+/* Formulário c/ javascript */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.formulario input {
+  width: 100%;
+  justify-content: space-between;
+  background: none;
+  border: solid 1px var(--cor-escura);
+  color: var(--cor-escura);
+}
+
+.input input::placeholder {
+  color: var(--cor-escura);
+}
+
+.secao_container form .input {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+input {
+  width: clamp(5em, 100%, 20em);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1em);
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+  border: none;
+  border-radius: 40px;
+  transition: .5s;
+}
+
+input::placeholder {
+  color: var(--cor-clara);
+  margin-left: 50px;
+}
+
+.formulario label {
+  width: 100%;
+  text-align: left;
+}
+
+form .select_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+form .secao_container div {
+  width: 100%;
+}
+
+form .select_container select {
+  width: 100%;
+}
+
+.select_container select {
+  padding: 16px;
+  background: var(--cor-clara);
+  border: 1px solid var(--cor-escura);
+  border-radius: 40px;
+  width: 100%;
+}
+
+.foto_funcionario {
+  color: var(--cor-escura);
+}
+
+.botao_acao {
+  width: clamp(5em, 100%, 100%);
+  padding: 1rem;
+  font-size: clamp(1em, 2.5vw, 1.5em);
+  border: 1px solid var(--cor-clara);
+  border-radius: 40px;
+  transition: .5s;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+}
+
+.tabela_usuarios {
+  width: 100%;
+  border: 1px solid var(--cor-escura);
+  padding: 0px 0px 16px 0px;
+}
+
+/* Tabela com cadastros */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead th {
+  background-color: var(--cor-escura);
+  color: var(--cor-clara);
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  color: var(--cor-escura);
+}
+
+tbody td:last-child {
+  text-align: left;
+}
+
+tbody td:last-child a {
+  color: #f00;
+  margin-left: 10px;
+}

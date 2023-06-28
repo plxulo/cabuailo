@@ -1,0 +1,232 @@
+/* Configuração global CSS, não utilizar tamanhos ou configurações de estilo */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  /* Configuração do body / html, aqui podemos utilizar cores e configurações de estilo */
+  body {
+    background: var(--cor-clara);
+    color: var(--cor-escura);
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1rem;
+  }
+  
+  /* Variáveis */
+  :root {
+    --cor-clara: #f7f7f7;
+    --cor-escura: #2C3639;
+  }
+  
+  /* Configurar background wave */
+   main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../image/waves.svg);
+    background-size: 150%;
+    background-position: right;
+    background-repeat: no-repeat;
+    animation: wave 20s ease;
+    transition: all 1s ease;
+  } 
+  
+  @keyframes wave {
+    from {
+      background-position-y: bottom;
+    }
+  
+    to {
+      background-position-y: top;
+    }
+  }
+  
+  @media (min-width: 0px) and (max-width: 1320px) {
+    main {
+      background-size: 200%;
+    }
+  }
+  
+  @media (max-width: 680px) {
+    main {
+      background-size: 300%;
+    }
+  }
+  
+  /* Container do login principal */
+  main .principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .principal h1 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .logo_cabuailo {
+    width: 95px;
+    height: 95px;
+  }
+  
+  .principal .login {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 50px;
+    border-radius: 10px;
+    gap: 10px;
+    color: var(--cor-clara);
+    background: var(--cor-escura);
+  }
+  
+  .input_box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input_box input {
+    border-radius: 40px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .input_box .icon {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    font-size: 1.2em;
+    color: var(--cor-escura);
+    z-index: 1;
+  }
+  
+  .login a {
+    color: var(--cor-clara);
+    width: fit-content;
+  }
+  
+  .login button {
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cor-clara);
+    border-radius: 40px;
+    background: linear-gradient(90deg, #0e63d3, #0096c7);
+  }
+  
+  .login button:hover {
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px 75px 50px 75px;
+    width: 100%;
+    gap: 25px;
+    background: var(--cor-escura);
+    color: var(--cor-clara);
+  }
+  
+  footer .nome_empresa {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 25px;
+  }
+  
+  .info_cabuailo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    width: 35%;
+    height: fit-content;
+    gap: 10px;
+  }
+  
+  footer .links_navegacao_footer {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer .links_navegacao_footer a {
+    color: var(--cor-clara);
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  footer .links_navegacao_footer a:hover {
+    color: #3299cc;
+  }
+  
+  li {  
+    display: inline-block;
+  }
+  
+  @media (max-width: 1000px) {
+    .principal .login {
+      width: 100%;
+    }
+  
+    .input_box .icon {
+      position: relative;
+      top: 10%;
+      left: 10%;
+      font-size: 1.2em;
+      color: var(--cor-escura);
+      z-index: 1;
+    }
+  
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    footer .info_cabuailo {
+      flex-direction: column;
+    }
+  
+    .navegacao_footer {
+      width: 75%;
+    }
+  
+    .navegacao_footer a {
+      align-self: center;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .principal .login {
+      background: none;
+      color: var(--cor-escura);
+    }
+  
+    .login a {
+      color: var(--cor-escura);
+    }
+  
+    
+    .navegacao_footer a {
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+  }

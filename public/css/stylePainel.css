@@ -1,0 +1,204 @@
+/*
+  Algumas configurações gerais do CSS como:
+  - Navbar aside
+  - Barra topo
+  - Container main
+  - Container em coluna
+
+  Estão no arquivo admCSS.css, dentro da pasta "global"
+  cabuailo > public > global > admCSS.css
+
+  Caso queira editar encontre lá! ^
+  *não edita, por favor, faça alterações neste arquivo, não no global.
+*/
+
+.container_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 0px 100px 100px 100px;
+}
+
+.descricao_geral h1 {
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+section .container_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+section .clientes_rendimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+}
+
+section .fluxo_caixa {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  gap: 20px;
+}
+
+.grafico {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+  padding: 0px 30px 0px 30px;
+  border-radius: 25px;
+  width: 100%;
+  height: 215px;
+  background: #ffff;
+}
+
+.grafico_texto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grafico_texto h1 {
+  font-size: 1.2rem;
+}
+
+.grafico_grande {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+  padding: 0px 30px 0px 30px;
+  border-radius: 25px;
+  width: 100%;
+  height: 450px;
+  background: #ffff;
+}
+
+.grafico_grande .grafico_texto h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.grafico_texto .valor_entrada h2 {
+  color: rgb(113, 181, 11);
+  margin-bottom: 0;
+}
+
+.grafico_texto .valor_saida h2 {
+  color: var(--cor-escura);
+  margin-bottom: 0;
+}
+
+.grafico_texto h4 {
+  text-align: center;
+  color: #757575;
+  margin-top: 0;
+}
+
+/* Tabela com cadastros de produtos */
+.tabela_vendas header h1 {
+  font-size: 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead th {
+  background-color: var(--cor-escura);
+  color: var(--cor-clara);
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  color: var(--cor-escura);
+}
+
+tbody td:last-child {
+  text-align: left;
+}
+
+tbody td:last-child a {
+  color: #f00;
+  margin-left: 10px;
+}
+
+/* Arredondar tabela */
+.tabela_redonda {
+  border-radius: 10px;
+}
+
+.tabela_redonda th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.tabela_redonda th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.tabela_redonda tr:first-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.tabela_redonda tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px 0px 50px 0px;
+  width: 100%;
+  gap: 25px;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+}
+
+footer .nome_empresa {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 25px;
+}
+
+.info_cabuailo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  width: 35%;
+  height: fit-content;
+  gap: 10px;
+}
+
+footer .links_navegacao_footer {
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .links_navegacao_footer a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer .links_navegacao_footer a:hover {
+  color: #3299cc;
+}
+
+li {  
+  display: inline-block;
+}

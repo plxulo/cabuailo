@@ -1,0 +1,6 @@
+As vezes o CSS parece não funcionar nos arquivos PHP.
+Para solucionar isso, atualize o cache do seu navegador:
+
+Ctrl + Shift + R
+
+Feito isso as atualizações feitas no CSS devem funcionar!

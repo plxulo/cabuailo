@@ -5,6 +5,7 @@ tanto para clientes quanto para empreendendores (cabeleireiros, serviços de bel
 agendamentos de serviços, com data, seleção de pacote, hora e local, sistema de avaliações, etc.
 Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, agendas, preços, planos e pacotes.
 
+![Imagem do painel principal página inicial de administrador](/github/image/painel-principal.png)
 # Documentação
 
 - *(16/03/2023)*
@@ -29,3 +30,30 @@ Empreendedores podem cadastrar seus estabelecimentos e gerenciar funcionários, 
     - Criação de um arquivo JavaScript, para funcionamento de botões específicos "limpar" formulário (procurar forma melhor de realizar a função)
     - Nomes de arquivos organizados
     * Talvez a página de login esteja feita
+    
+- *(11/04/2023)*
+    - Início da implementação de um design responsivo
+    - Design do layout sendo trabalhado no FIGMA
+    - Tela de Login e Cadastro quase concluídas
+    - Desenvolvimento do banco de dados (já salva dados como email e senha em um banco de dados)
+
+- *(12/04/2023)*
+    - Substituir o design responsivo com media query e utilizar CSS moderno (clamp, min, max)
+
+- *(24/05/2023)*
+    - Trello equipe criado
+    - Layout homepage atualizado
+    - Tela login para o sistema concluída
+    - Autenticação
+    - Conexão e exibição de tabelas com PHP
+    - Comentários nos códigos
+    - FIGMA layouts de páginas do sistema
+    - Página de CRUD feita com JavaScript e integração com banco de dados
+    - Painel principal front-end concluido, necessário implementação do Google Charts para dados
+    - Aba de segurança criada, gerenciamento de senhas (apenas front-end, realziar backend e alguns scripts regex)
+    - Tela configurações tera apenas tema escuro, considerar opção de aumentar fonte
+    - Criar script para tema escuro, decidir se criar apenas CSS ou com JavaScript
+    - Painel sobre filiais incompleto
+    - Painel ajuda incompleto
+    - Painel perfil incompleto
+    - Global CSS

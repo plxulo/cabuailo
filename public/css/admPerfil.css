@@ -1,0 +1,81 @@
+p {
+  margin: 0;
+}
+
+main .container_column {
+  display: flex;
+  gap: 40px;
+}
+
+.configs {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.inputs h1 {
+  margin: 0;
+}
+
+.configs input {
+  border-radius: 40px;
+  background: var(--cor-clara);
+  border: 1px solid var(--cor-escura);
+  color: var(--cor-escura);
+}
+
+.inputs input {
+  border-radius: 40px;
+  background: var(--cor-clara);
+  border: 1px solid var(--cor-escura);
+  color: var(--cor-escura);
+}
+
+.inputs, .configs input::placeholder {
+  color: var(--cor-escura);
+}
+
+button {
+  width: 8rem;
+  font-size: 1rem;
+  padding: .7rem;
+  background: var(--cor-escura);
+  color: var(--cor-clara);
+  border: 1px solid var(--cor-clara);
+  border-radius: 40px;
+  transition: .5s;
+}
+
+h2 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nova_foto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nova_foto form {
+  width: 30%;
+  margin-top: 1rem;
+}
+
+.nova_foto form input {
+  width: 100%;
+}
+
+section .excluir_conta p {
+  margin-bottom: 10px;
+}

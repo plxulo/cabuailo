@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,3 +56,97 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
+=======
+
+<!-- 
+  Página de cadastro para empreendimentos
+  Seguimos padrão ARIA (Accessible Rich Internet Applications) para dividir os elementos em seções
+  Isso se deve ao fator de acessibilidade para pessoas com dificuldades
+  https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/HTML5.html 
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styleCadastro.css">
+  <title>Cadastre-se</title>
+  <link rel="icon" href="icone.ico" widht="100%">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script defer src="../js/sBar.js"></script>
+  <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script defer src="/public/js/preLoader.js"></script>
+
+</head>
+
+<body>
+  <!-- Tela de carregamento
+    <div id="pre_loader">
+    </div>
+  -->
+
+  <main class="conteudo_cadastro">
+    <!-- Texto aside -->
+    <aside>
+      <header aria-label="Saiba mais">
+        <h2>Cabuailo</h2>
+        <p>O cabuailo é o chuairmi do hosmen</p>
+        <button><a href="homeScreen.html">Saiba Mais</a></button>
+      </header>
+    </aside>
+
+    <!-- Formulário para cadastro de usuários com banco de dados -->
+    <form aria-labelledby="cadastre-se" class="user_cadastro" action="../../php/login.php" method="post">
+
+      <h2 id="cadastre-se">Cadastre-se</h2>
+      
+      <div class="input_box">
+        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+        <input type="text" name="user" required>
+        <label>Seu nome</label>
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" name="email" required>
+        <label>Seu e-mail ou número de telefone</label>
+      </div>
+
+      <div class="input_box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" name="senha" required>
+        <label>Sua senha</label>
+      </div>
+
+      <div class="termos_uso">
+        <label>
+          <input name="termos-de-uso" type="checkbox">Aceito os
+          <a href="https://www.chabad.org/library/bible_cdo/aid/9920#lt=he">termos de uso</a>
+        </label>
+      </div>
+
+      <!-- Entrar com google -->
+      <div class="entrarGoogle"></div>
+
+      <!-- Enviar formulário -->
+      <button type="submit" class="btn_cadastro">Cadastre-se</button>
+
+      <!-- Texto de baixo -->
+      <div class="fazer_login">
+        <p>Já possui uma conta? &nbsp;<a href="/public/html/LoginScreen.html">Fazer login</a></p>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+
+</html>
+
+<!-- Feito por SENAS TECH em 2023 -->
+>>>>>>> paulo
