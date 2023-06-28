@@ -103,5 +103,5 @@ CREATE TABLE app_agendamentos (
     servico_escolhido VARCHAR(45),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_func),
-    FOREIGN KEY (id_filial) REFERENCES filiais(id_filial),
+    FOREIGN KEY (id_filial) REFERENCES filiais(id_filial)
 );

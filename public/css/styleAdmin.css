@@ -85,6 +85,7 @@ button:hover {
   justify-content: space-between;
   background: none;
   border: solid 1px var(--cor-escura);
+  color: var(--cor-escura);
 }
 
 .input input::placeholder {
