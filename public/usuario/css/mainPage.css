@@ -186,6 +186,17 @@ header {
     background-color: var(--branco-diferente);
 }
 
+.logoCabuailo {
+    width: 200px;
+    height: 100%;
+}
+
+.imgLogo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .textoLocal {
     display: flex;
     flex-direction: column;

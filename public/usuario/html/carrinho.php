@@ -45,7 +45,7 @@
             <?php
                 include("../php/conecta.php");
                 $id_usuario = $_SESSION['id'];
-                $comando = $pdo->prepare("SELECT * FROM produtos INNER JOIN carrinho 
+                $comando = $pdo->prepare("SELECT *, carrinho.preco * carrinho.quantidade AS subtotal FROM produtos INNER JOIN carrinho 
                 ON produtos.id_produto = carrinho.id_produto WHERE carrinho.id_usuario = $id_usuario;");
                 $resultado = $comando->execute();
 
@@ -54,6 +54,7 @@
                     $nome_produto = $linhas["nome_produto"];
                     $preco_produto = $linhas["preco_produto"];
                     $preco_promocao = $linhas["preco_promocao"];
+                    $subtotal = $linhas["subtotal"];
                     $imagem = $linhas["img_produto"];
                     $i = base64_encode($imagem);
                     
@@ -65,7 +66,7 @@
                             </div>
                             <p>$nome_produto</p>
                             <div class='preco'>
-                                <p>Preço R$ $preco_produto</p>
+                                <p>Preço R$ $subtotal</p>
                             </div>
                             <form action='../php/tirarCarrinho.php' method='POST'>
                                 <input type='hidden' name='id_produto' value=' $id_produto'>
@@ -81,7 +82,7 @@
                             </div>
                             <p>$nome_produto</p>
                             <div class='preco'>
-                                <p>Preço R$ $preco_produto</p>
+                                <p>Preço R$ $subtotal</p>
                             </div>
                             <form action='../php/tirarCarrinho.php' method='POST'>
                                 <input type='hidden' name='id_produto' value=' $id_produto'>
@@ -108,10 +109,25 @@
         <input class="inputCep" type="number" placeholder="CEP">
     </div>
     <div class="total">
+        <?php
+            include("../php/conecta.php");
+            $id_usuario = $_SESSION['id'];
+            $comando = $pdo->prepare("SELECT SUM(preco * quantidade) AS total FROM carrinho WHERE id_usuario = $id_usuario;");
+            $resultado = $comando->execute();
 
+            while( $linhas = $comando->fetch()){
+                $total = $linhas["total"];
+                
+                echo("
+                    <p> Total: R$ $total</p>
+                ");
+            }
+        ?>
     </div>
     <div class="botoes">
-        <button class="confirmarCompra">Confirmar compra</button>
+        <form action="../php/confirmarCompra.php" method="post"></form>
+            <button class="confirmarCompra">Confirmar compra</button>
+        </form>
         <a href="../php/limparCarrinho.php"><button class="limparCarrinho">Limpar Carrinho</button></a>
     </div>
 </main>

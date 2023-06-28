@@ -245,78 +245,79 @@ main {
     background-color: var(--branco-fundo);
 }
 
-main h {
-    font-size: 1.3rem;
-    display: flex;
-    margin-top: 20px;
-}
-
-.divFavoritos {
+.boxUsuario {
     width: 90%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.cardFavoritos {
-    width: 100%;
-    height: 100px;
-    border-radius: 10px;
+    height: 15vh;
     display: flex;
     flex-direction: row;
-    background-color: var(--branco-diferente);
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
 }
 
-.cardFavoritos article {
-    width: 70%;
+.box_img_usuario {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--marrom);
+}
+
+.imgUsuario {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    color: white;
+}
+
+.box_info_usuario {
+    width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-left: 5px;
+    padding: 10px;
+    align-items: center;
 }
 
-.cardFavoritos article h3 {
-    font-size: 1.2rem;
-    margin-left: 0px;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 100;
-}
-
-.cardFavoritos article p {
-    font-size: 0.9rem;
-    font-family: 'Prompt', sans-serif;
-}
-
-.cardFavoritos article .stars {
-    display: flex;
-    flex-direction: row;
-}
-
-.imgCard {
-    width: 30%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.vermais {
+.box_info_usuario p {
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    font-size: 1.3rem;
 }
 
-.subDivFavoritos {
+.box_info_usuario p2 {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+    font-size: 1rem;
+}
+
+.boxOpcoes {
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.opcao {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.opcao a {
+    text-decoration: none;
+    color: black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding-right: 10px;
-}
-
-.logoFavorito {
-    font-size: 20px;
 }

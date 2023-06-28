@@ -46,7 +46,7 @@
                 $descricao = $linhas["descricao"];
                 $imagem = $linhas["img_produto"];
                 $i = base64_encode($imagem);
-
+                
                 echo ("
                     <div class='titulo'>
                         <h>$nome_produto</h>
@@ -73,8 +73,14 @@
                         <p>Disponível no estoque:</p>
                         <form action='../php/colocaCarrinho.php' method='POST'>
                             <input type='hidden' name='id_produtoForm' value=' $id_produto '>
-                            <label for='quantidade'>Quantidade:</label>
-                            <input type='number' class='inputQuantidade' name='quantidade'>
+                            <input type='hidden' name='preco_produtoForm' value='$preco_produto'>
+                            <div class='inputQuandidade'>    
+                                <label for='quantidade'>Quantidade:</label>
+
+                                <button onclick='Subtrair();' class='menos'> - </button>
+                                    <input class='numero' value='1' name='numero' id='numero' type='number'>
+                                <button onclick='Adicionar();' class='mais'>+</button>
+                            </div>
                             <button type='submit' class='adicionarCarrinho'>Adicionar ao carrinho</button>
                         </form>
                     </div>
@@ -144,6 +150,19 @@
     divSelecionada.style.display = "block";
     botaoSelecionado.style.backgroundColor = "#D8315B";
 }
+</script>
+<script>
+    function Adicionar()
+    {
+        numero.value=parseInt(numero.value)+1 
+    }
+    function Subtrair()
+    {
+        if(numero.value >1)
+        {
+            numero.value=parseInt(numero.value)-1
+        }
+    }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -20,22 +20,20 @@
     <title>Cabuailo</title>
 </head>
 <body>
-    <header>
+<header>
     <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-        <section class="textoLocal">
-            <h1>Localização atual</h1>
-            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
-        </section>
+    <section class="logoCabuailo">
+        <!-- <img src="../image/logoCabuailo.svg" class="imgLogo"> -->
+    </section>
         
-        <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+    <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
 
-        <div class="campoEscondido" id="campoLinks">
-            <p>Seu email</p>
-            <a href="#">Meus Dados</a>
-            <a href="../php/sair.php">Sair</a>
-        </div>
-        </div>     
-    </header>
+    <div class="campoEscondido" id="campoLinks">
+        <p>Seu email</p>
+        <a href="#">Meus Dados</a>
+        <a href="../php/sair.php">Sair</a>
+    </div>    
+</header>
 <main>
     <section1>
         <p>Oferta especial para você</p>

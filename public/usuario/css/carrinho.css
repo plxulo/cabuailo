@@ -240,7 +240,6 @@ main {
     padding-bottom: 60px; /* Ajuste a altura do nav */
     overflow-y: auto;
     height: calc(100vh - 120px);
-
     background-color: var(--branco-fundo);
 }
 

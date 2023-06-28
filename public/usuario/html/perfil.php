@@ -35,44 +35,87 @@
             <a href="../php/sair.php">Sair</a>
         </div>     
 </header>
-    <main>
+<main>
+    <div class="boxUsuario">
+        <?php
+            $id_usuario = $_SESSION['id'];
+            include("../php/conecta.php");
+            $comando = $pdo->prepare("SELECT * FROM usuarios where id = $id_usuario");
+            $resultado = $comando->execute();
 
-    </main>
-    <nav>
-        <ul>
-            <li class="list">
-                <a href="../html/mainPage.php">
-                    <span class="icon"><ion-icon name="home"></ion-icon></span>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="../html/carrinho.php">
-                    <span class="icon"><ion-icon name="notifications"></ion-icon></span>
-                    <span class="text">Notificações</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="../html/agendar.php">
-                    <span class="icon"><ion-icon name="calendar"></ion-icon></span>
-                    <span class="text">Agenda</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="../html/favoritos.php">
-                    <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
-                    <span class="text">Favoritos</span>
-                </a>
-            </li>
-            <li class="list active">
-                <a href="../html/perfil.php">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <span class="text">Perfil</span>
-                </a>
-            </li>
-            <div class="indicador"></div>
-        </ul>
-    </nav>
+            while( $linhas = $comando->fetch()){
+                $nome = $linhas["usuario"];
+                $email = $linhas["email"];
+                $imagem = $linhas["imagem_usuario"];
+                $i = base64_encode($imagem);
+
+                if($imagem == null) {
+                echo("
+                <div class='box_img_usuario'>
+                    <ion-icon name='person-circle' class='imgUsuario'></ion-icon>
+                </div>
+                <div class='box_info_usuario'>
+                    <p>$nome</p>
+                    <p2>$email</p2>
+                </div>
+                ");}
+                else {
+                    echo("
+                    <div class='box_img_usuario'>
+                        <img src='data:image/jpeg;base64," . $i . "'  class='imgUsuario'>
+                    </div>
+                    <div class='box_info_usuario'>
+                        <p>$nome</p>
+                        <p2>$email</p2>
+                    </div>
+                ");
+                }
+
+            }
+        ?>
+    </div>
+    <div class="boxOpcoes">
+        <div class="opcao"><a href="#">Adicionar endereço <ion-icon class="setinha" name="chevron-forward-outline"></ion-icon></a></div>
+        <div class="opcao"><a href="#">Foto de perfil <ion-icon class="setinha" name="chevron-forward-outline"></ion-icon></a></div>
+        <div class="opcao"><a href="#">Alterar Senha <ion-icon class="setinha" name="chevron-forward-outline"></ion-icon></a></div>
+        <div class="opcao"><a href="../php/sair.php" class="sairConta">Sair da conta <ion-icon class="setinha" name="chevron-forward-outline"></ion-icon></a></div>
+    </div>
+</main>
+<nav>
+    <ul>
+        <li class="list">
+            <a href="../html/mainPage.php">
+                <span class="icon"><ion-icon name="home"></ion-icon></span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="../html/carrinho.php">
+                <span class="icon"><ion-icon name="notifications"></ion-icon></span>
+                <span class="text">Notificações</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="../html/agendar.php">
+                <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                <span class="text">Agenda</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="../html/favoritos.php">
+                <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
+                <span class="text">Favoritos</span>
+            </a>
+        </li>
+        <li class="list active">
+            <a href="../html/perfil.php">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <span class="text">Perfil</span>
+            </a>
+        </li>
+        <div class="indicador"></div>
+    </ul>
+</nav>
 </body>
 <script>
     const list = document.querySelectorAll('.list');

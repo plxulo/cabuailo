@@ -5,8 +5,13 @@
     $id_usuario = $_SESSION['id'];
     $id_produto = $_POST["id_produtoForm"];
     $quantidade = $_POST["quantidade"];
+    $preco_produto = $_POST["preco_produtoForm"];
 
-    $comando = $pdo->prepare("INSERT INTO carrinho (id_usuario, id_produto, quantidade) VALUES('$id_usuario', '$id_produto', '$quantidade')");
+    if($quantidade < 1) {
+        $quantidade = 1;
+    }
+
+    $comando = $pdo->prepare("INSERT INTO carrinho (id_usuario, id_produto, quantidade, preco) VALUES('$id_usuario', '$id_produto', '$quantidade', $preco_produto)");
     $resultado = $comando->execute();
 
     header("Location: ../html/carrinho.php")
