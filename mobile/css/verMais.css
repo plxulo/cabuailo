@@ -158,11 +158,87 @@ header {
     margin-top: 0;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     justify-content: space-between;
     align-items: center;
     background-color: var(--branco-diferente);
 }
 
+header .logoCabuailo {
+    width: 140px;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoCabuailo .imgLogo {
+    width: 75%;
+    height: 75%;
+
+}
+
+.textoLocal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.iconeLocal {
+    font-size: 20px;
+    color: red;
+    justify-content: center;
+}
+
+.campoEscondido {
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 9vh; /* Ajuste a posição vertical conforme necessário */
+    right: 0;
+    background-color: var(--branco-diferente);
+    padding: 10px;
+    z-index: 10000;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.textoLocal p {
+    margin-top: 4px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa {
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    margin-left: 15px;
+    color: var(--marrom);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.fotoPerfil {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 /*HEADER*/
 /*HEADER*/
 header {
@@ -226,11 +302,18 @@ header {
 
 main {
     width: 100%;
+    height: 82vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 90px; /* Ajuste a altura do header */
+    padding-bottom: 60px; /* Ajuste a altura do nav */
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+
+    background-color: var(--branco-fundo);
 }
+
 
 main h {
     font-size: 1.4rem;
