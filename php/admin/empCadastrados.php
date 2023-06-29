@@ -189,6 +189,7 @@
             <p>Você pode excluir comentários indesejados, caso queira.</p>
           </header>
           <?php
+            $id_adm = $_SESSION['id'];
             // Selecionar o nome do usuário que enviou comentário por chave estrangeira:
             $selecionar_comentario = $pdo->prepare
             ("SELECT app_comentarios.*, usuarios.usuario, filiais.nome
@@ -196,6 +197,7 @@
             ON app_comentarios.id_usuario = usuarios.id 
             INNER JOIN filiais
             ON app_comentarios.id_filial = filiais.id_filial
+            WHERE filial_adm = $id_adm
             ");
             $selecionar_comentario->execute();
 
