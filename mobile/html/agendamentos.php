@@ -16,69 +16,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/verMais.css">
+    <link rel="stylesheet" href="../css/agendar.css">
     <title>Cabuailo</title>
 </head>
 <body>
-    <header>
-        <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-        <section class="textoLocal">
-            <h1>Localização atual</h1>
-            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
-        </section>
+<header>
+   <button class="mapa"><ion-icon name="settings"></ion-icon></button>
+   <section class="textoLocal">
+      <h1>Localização atual</h1>
+         <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
+      </section>
+        
+  <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
 
-        <a href="sair.php" class="fotoPerfil">
-            sair
-        </a>
-    </header>
-    <main>
+   <div class="campoEscondido" id="campoLinks">
+      <p>Seu email</p>
+      <a href="#">Meus Dados</a>
+      <a href="../php/sair.php">Sair</a>
+   </div>     
+</header>
+<main>
+   <a href="../html/mainPage.php"	 class="novoAgendamento">	
+		<ion-icon name="add-outline"></ion-icon>
+		<p>Fazer novo agendamento</p>
+	</a>
+	<div class="agendamentos" style="display:flex; gap:10px">
+		<h>Seus agendamentos</h>
+		<div class="lineAgendamentos">
+			<div class="textBarb"><p>Barbearia</p></div>
+			<div class="textData"><p>Data</p></div>
+		</div>
         <?php
-            $id_filial = $_GET['id_filial'];
-            $_SESSION['id_filial'] = $id_filial;
-
+            $id_usuario = $_SESSION['id'];
             include("../php/conecta.php");
-            $comando = $pdo->prepare("SELECT * FROM filiais WHERE id_filial = $id_filial");
+            $comando = $pdo->prepare("SELECT app_agendamentos.*, usuarios.usuario, funcionarios.nome_func,
+                                    filiais.nome, filiais.imagem FROM app_agendamentos INNER JOIN filiais ON app_agendamentos.id_filial = filiais.id_filial 
+                                    INNER JOIN usuarios ON app_agendamentos.id_usuario = usuarios.id INNER JOIN funcionarios ON app_agendamentos.id_funcionario = funcionarios.id_func WHERE
+                                    app_agendamentos.id_usuario = $id_usuario;");
             $resultado = $comando->execute();
 
             while( $linhas = $comando->fetch()){
-                $nome = $linhas["nome"];
-                $endereco = $linhas["endereco"];
+                $nome_filial = $linhas["nome"];
+                $nome_funcionario = $linhas["nome_func"];
+                $data_agendamento = $linhas["data_agendamento"];
                 $imagem = $linhas["imagem"];
-                $descricao = $linhas["descricao"];
                 $i = base64_encode($imagem);
-
+                
                 echo("
-                    <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia' width='100%' height='100%'>
-
-                    <h><b>$nome</b></h>
-
-                    <div class='boxSobreNos'>
-                        <p>$descricao</p>
+                    <div class='cardAgendamento'>
+                        <div class='imgCard'>
+                            <img src='data:image/jpeg;base64," . $i . "' class='imgFilial'>
+                        </div>
+                        <div class='infoBarbearia'>
+                            <p1>$nome_filial</p1>
+                            <a href='verMaisAgendamento.php' class='btnVerMais'><p2>Ver mais...</p2></a>
+                        </div>
+                        <div class='dataAgendamento'>
+                            $data_agendamento
+                        </div>
                     </div>
-
-                    <a href='https://www.google.com/maps/search/?api=1&query=$endereco'><p2><ion-icon name='location-sharp' class='iconeLocal'></ion-icon>&nbsp;$endereco</p2></a>
-
-                    <a href='escolherBarbeiro.php?id_filial=" . $id_filial . "'' style='width: 90%; align-items:center; text-decoration: none'>
-                        <button class='btnAgendar' style='width: 100%; text-decoration: none'>
-                            <p>Agendar</p>
-                            <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>
-                        </button>
-                    </a>
-                    <form action='../php/favoritar.php' method='POST' style='width: 90%; text-decoration: none'>
-                        <input type='hidden' value=' $id_usuario' name='id_usuarioForm'>
-                        <input type='hidden' value=' $id_filial' name='id_filialForm'>
-                        <button type='submit' class='btnAgendar' style='width: 100%; text-decoration: none'>
-                            Favoritar esta barbearia
-                            <ion-icon name='bookmark'></ion-icon>
-                        </button>
-                    </form>
                 ");
             }
         ?>
-    </main>
+	</div>    
+</main>
     <nav>
         <ul>
-            <li class="list active">
+            <li class="list">
                 <a href="../html/mainPage.php">
                     <span class="icon"><ion-icon name="home"></ion-icon></span>
                     <span class="text">Home</span>
@@ -90,7 +94,7 @@
                     <span class="text">Carrinho</span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="../html/agendamentos.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agenda</span>
@@ -139,6 +143,22 @@
     botaoSelecionado.style.backgroundColor = "#D8315B";
 }
 </script>
+<script>
+    var campoVisivel = false;
+
+    function mostrarCampo() {
+    var campoLinks = document.getElementById('campoLinks');
+  
+    if (campoVisivel) {
+    campoLinks.style.display = 'none';
+    campoVisivel = false;
+  } else {
+    campoLinks.style.display = 'flex';
+    campoVisivel = true;
+  }
+}
+</script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</script>
 </html>

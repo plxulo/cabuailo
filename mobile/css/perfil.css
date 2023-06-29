@@ -20,6 +20,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    justify-content: ;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
@@ -32,12 +33,15 @@ nav {
     height: 70px;
     font-size: 20px;
     background-color: var(--branco-diferente);
-    position: absolute;
-    bottom: 8px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 nav ul {
@@ -115,6 +119,7 @@ nav ul li.active a .text {
     background-color: transparent;
     border-top-right-radius: 20px;
     box-shadow: 1px -10px 0 0 var(--branco-fundo);
+    z-index: 10;
 }
 
 .indicador::after {
@@ -127,6 +132,7 @@ nav ul li.active a .text {
     background-color: transparent;
     border-top-left-radius: 20px;
     box-shadow: -1px -10px 0 0 var(--branco-fundo);
+    z-index: 10;
 }
 
 nav ul li:nth-child(1).active ~ .indicador {
@@ -157,22 +163,27 @@ header {
     margin-top: 0;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     justify-content: space-between;
     align-items: center;
     background-color: var(--branco-diferente);
 }
 
-/*HEADER*/
-/*HEADER*/
-header {
-    width: 100%;
-    height: 9vh;
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.campoEscondido {
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 9vh; /* Ajuste a posição vertical conforme necessário */
+    right: 0;
     background-color: var(--branco-diferente);
+    padding: 10px;
+    z-index: 10000;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .textoLocal {
@@ -199,10 +210,6 @@ header {
     align-items: center;
 }
 
-.textoLocal h1 {
-    margin-top: 4px;
-}
-
 .mapa {
     width: 40px;
     height: 40px;
@@ -223,68 +230,94 @@ header {
     margin-right: 15px;
 }
 
+/* MAIN */
 main {
     width: 100%;
+    height: 82vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 90px; /* Ajuste a altura do header */
+    padding-bottom: 60px; /* Ajuste a altura do nav */
+    overflow-y: auto;
+    height: calc(100vh - 120px);
 
-}
-
-main h {
-    font-size: 1.4rem;
-    display: flex;
-    margin-top: 30px;
-}
-
-.cardEscolhaProficional {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--branco-diferente);
-    margin-top: 20px;
-    border-radius: 15px;
-}
-
-.cardEscolhaProficional h2 {
-    font-size: 1.5rem;
-    font-weight: 100;
-    display: flex;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-.cardProficional {
-    width: 90%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    padding-left: 10px;
-    align-items: center;
-    border-radius: 15px;
-    text-decoration: none;
-    color: black;
     background-color: var(--branco-fundo);
 }
 
-.cardProficional h5 {
-    font-size: 1.3rem;
-    font-weight: 100;
+.boxUsuario {
+    width: 90%;
+    height: 15vh;
     display: flex;
-    margin-left: 15px;
-    text-decoration: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
 }
 
-.box-imgBarbeiro {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Define a forma circular */
-    overflow: hidden; /* Oculta qualquer parte da imagem que exceda a forma da div */
+.box_img_usuario {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--marrom);
 }
 
-.imgFuncionario {
+.imgUsuario {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta a imagem para preencher completamente a div */
+    object-fit: cover;
+    border-radius: 50%;
+    color: white;
+}
+
+.box_info_usuario {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
+.box_info_usuario p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.box_info_usuario p2 {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+    font-size: 1rem;
+}
+
+.boxOpcoes {
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.opcao {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.opcao a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

@@ -30,7 +30,7 @@
       <img class="logo_cabuailo" src="../../public/imagens/logo.png" alt="Logo da Cabuailo">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
-        <p>Faça Login na cabuailo</p>
+        <p>Faça Login para acessar o sistema</p>
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->

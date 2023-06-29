@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/cadastroCliente.css">
+  <link rel="stylesheet" href="../css/styleLogin.css">
 
   <title>Painel Principal</title>
 </head>
@@ -30,16 +30,12 @@
       <img class="logo_cabuailo" src="../../public/imagens/logo.png" alt="Logo da Cabuailo">
       <header style="text-align: center;">
         <h1>Bem-vindo(a) ao Cabuailo</h1> 
-        <p>Faça Login para acessar o sistema</p>
+        <p>Faça Login na cabuailo</p>
       </header>
 
       <!-- Formulário de autenticação com banco de dados -->
-      <form aria-label="Formulário de login" class="login" action="../php/crude.php" method="post">
-          <label for="usuario">Seu nome:</label>
-          <section class="input_box">
-            <input type="text" name="nome" placeholder="Nome">
-          </section>
-          <label for="email">Email: </label>
+      <form class="login" action="../php/validacao.php" method="post">
+          <label for="usuario">Email:</label>
           <section class="input_box">
             <input type="email" name="email" placeholder="Email">
           </section>
@@ -47,8 +43,8 @@
           <section class="input_box">
             <input type="password" name="senha" placeholder="Senha">
           </section>
-          <a href="../html/loginUsuario.php">Fazer-login</a>
-          <button aria-label="Cadastrar-se" name="inserir2" type="submit">Cadastrar-se</button>
+          <a href="../html/cadastroCliente.php">Cadastrar-se</a>
+          <input type="submit" class="logar" name="submit" value="Entrar"> 
           <section id="error_message"></section>
       </form>
 
@@ -59,7 +55,7 @@
 
 </body>
 
-<script>
+<!-- <script>
   const form = document.querySelector("form");
 
   // Adiciona um ouvinte de eventos para o envio do formulário
@@ -86,7 +82,7 @@
       form.submit();
     }
   });
-</script>
+</script>-->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/verMais.css">
+    <link rel="stylesheet" href="../css/produto.css">
     <title>Cabuailo</title>
 </head>
 <body>
@@ -26,56 +26,68 @@
             <h1>Localização atual</h1>
             <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
         </section>
-
-        <a href="sair.php" class="fotoPerfil">
-            sair
-        </a>
+    
+        <div class="fotoPerfil">
+            <a href="sair.php"></a>
+            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
+        </div>
     </header>
-    <main>
-        <?php
-            $id_filial = $_GET['id_filial'];
-            $_SESSION['id_filial'] = $id_filial;
+<main>
+    <?php
+            $id_produto = $_GET['id_produto'];
 
             include("../php/conecta.php");
-            $comando = $pdo->prepare("SELECT * FROM filiais WHERE id_filial = $id_filial");
+            $comando = $pdo->prepare("SELECT * FROM produtos where id_produto = $id_produto");
             $resultado = $comando->execute();
 
             while( $linhas = $comando->fetch()){
-                $nome = $linhas["nome"];
-                $endereco = $linhas["endereco"];
-                $imagem = $linhas["imagem"];
-                $descricao = $linhas["descricao"];
+                $nome_produto = $linhas["nome_produto"];
+                $preco_produto = $linhas["preco_produto"];
+                $descricao = $linhas["descricao_produto"];
+                $imagem = $linhas["imagem_produto"];
                 $i = base64_encode($imagem);
-
-                echo("
-                    <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia' width='100%' height='100%'>
-
-                    <h><b>$nome</b></h>
-
-                    <div class='boxSobreNos'>
-                        <p>$descricao</p>
+                
+                echo ("
+                    <div class='titulo'>
+                        <h>$nome_produto</h>
                     </div>
+                    <div class='box-imagem-produto'>
+                        <img src='data:image/jpeg;base64," . $i . "'  class='imagem-produto'>
+                    </div>
+                    <div class='preco'>
+                        <p>R$ $preco_produto </p>
+                    </div>
+                    <div class='descricao'>
+                        <div class='entrega'>
+                            <div class='envio'>  
+                                <img src='../image/image 1.svg' class='envioSVG'>
+                                <p2>Enviamos para todo o pais</p2>
+                            </div>
+                            <p>Calcular prazo de entrega<ion-icon name='location-outline'></ion-icon></p>
+                        </div>
+                        <h>Descricao do produto</h>
+                        <p>$descricao</p>
+                        <hr style='border-color: black; border-width: 1px; margin-top: 15px;'>
+                    </div>      
+                    <div class='quantidade'>
+                        <p>Disponível no estoque:</p>
+                        <form action='../php/colocaCarrinho.php' method='POST'>
+                            <input type='hidden' name='id_produtoForm' value=' $id_produto '>
+                            <input type='hidden' name='preco_produtoForm' value='$preco_produto'>
+                            <div class='inputQuandidade'>    
+                                <label for='quantidade'>Quantidade:</label>
 
-                    <a href='https://www.google.com/maps/search/?api=1&query=$endereco'><p2><ion-icon name='location-sharp' class='iconeLocal'></ion-icon>&nbsp;$endereco</p2></a>
-
-                    <a href='escolherBarbeiro.php?id_filial=" . $id_filial . "'' style='width: 90%; align-items:center; text-decoration: none'>
-                        <button class='btnAgendar' style='width: 100%; text-decoration: none'>
-                            <p>Agendar</p>
-                            <ion-icon name='calendar-outline' class='iconeAgendamento'></ion-icon>
-                        </button>
-                    </a>
-                    <form action='../php/favoritar.php' method='POST' style='width: 90%; text-decoration: none'>
-                        <input type='hidden' value=' $id_usuario' name='id_usuarioForm'>
-                        <input type='hidden' value=' $id_filial' name='id_filialForm'>
-                        <button type='submit' class='btnAgendar' style='width: 100%; text-decoration: none'>
-                            Favoritar esta barbearia
-                            <ion-icon name='bookmark'></ion-icon>
-                        </button>
-                    </form>
-                ");
+                                <button onclick='Subtrair();' class='menos'> - </button>
+                                    <input class='numero' value='1' name='numero' id='numero' type='number'>
+                                <button onclick='Adicionar();' class='mais'>+</button>
+                            </div>
+                            <button type='submit' class='adicionarCarrinho'>Adicionar ao carrinho</button>
+                        </form>
+                    </div>
+                ");   
             }
-        ?>
-    </main>
+    ?>   
+</main>
     <nav>
         <ul>
             <li class="list active">
@@ -138,6 +150,19 @@
     divSelecionada.style.display = "block";
     botaoSelecionado.style.backgroundColor = "#D8315B";
 }
+</script>
+<script>
+    function Adicionar()
+    {
+        numero.value=parseInt(numero.value)+1 
+    }
+    function Subtrair()
+    {
+        if(numero.value >1)
+        {
+            numero.value=parseInt(numero.value)-1
+        }
+    }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

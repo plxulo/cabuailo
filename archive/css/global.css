@@ -20,6 +20,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    justify-content: ;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
@@ -221,70 +222,4 @@ header {
     width: 40px;
     height: 40px;
     margin-right: 15px;
-}
-
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-main h {
-    font-size: 1.4rem;
-    display: flex;
-    margin-top: 30px;
-}
-
-.cardEscolhaProficional {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--branco-diferente);
-    margin-top: 20px;
-    border-radius: 15px;
-}
-
-.cardEscolhaProficional h2 {
-    font-size: 1.5rem;
-    font-weight: 100;
-    display: flex;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-.cardProficional {
-    width: 90%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    padding-left: 10px;
-    align-items: center;
-    border-radius: 15px;
-    text-decoration: none;
-    color: black;
-    background-color: var(--branco-fundo);
-}
-
-.cardProficional h5 {
-    font-size: 1.3rem;
-    font-weight: 100;
-    display: flex;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-.box-imgBarbeiro {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Define a forma circular */
-    overflow: hidden; /* Oculta qualquer parte da imagem que exceda a forma da div */
-}
-
-.imgFuncionario {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para preencher completamente a div */
 }

@@ -5,6 +5,7 @@
     if((!isset($_SESSION['email']) == true ) and (!isset($_SESSION['senha']) == true))
     {
         unset($_SESSION['email']);
+        unset($_SESSION['senha']);
         header('Location: loginUsuario.php');
     }
     $logado = $_SESSION['email'];
@@ -73,9 +74,7 @@
                         <h5>$nome_barbeiro</h5> 
                     </a>
                     <br>
-                "); 
-
-                             
+                ");
             }
         ?>
         </div>
@@ -95,19 +94,19 @@
                 </a>
             </li>
             <li class="list active">
-                <a href="../html/agendar.html">
+                <a href="../html/agendamentos.php">
                     <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                     <span class="text">Agenda</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/favoritos.html">
+                <a href="../html/favoritos.php">
                     <span class="icon"><ion-icon name="bookmarks"></ion-icon></span>
                     <span class="text">Favoritos</span>
                 </a>
             </li>
             <li class="list">
-                <a href="../html/perfil.html">
+                <a href="../html/perfil.php">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="text">Perfil</span>
                 </a>
@@ -124,8 +123,7 @@
      this.classList.add('active');
     }
     list.forEach((item) => item.addEventListener('click', activeLink));
- </script>
-<script>
+
     function mostrarDiv(divIndex) {
     var divs = document.querySelectorAll(".minhaDiv");
     var botoes = document.querySelectorAll(".meuBotao");

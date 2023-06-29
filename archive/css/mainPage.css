@@ -20,7 +20,6 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: ;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
@@ -173,19 +172,6 @@ header {
     background-color: var(--branco-diferente);
 }
 
-.campoEscondido {
-    display: none;
-    width: 300px;
-    position: absolute;
-    top: 9vh; /* Ajuste a posição vertical conforme necessário */
-    right: 0;
-    background-color: var(--branco-diferente);
-    padding: 10px;
-    z-index: 10000;
-    flex-direction: column;
-    gap: 5px;
-}
-
 .textoLocal {
     display: flex;
     flex-direction: column;
@@ -245,32 +231,170 @@ main {
     background-color: var(--branco-fundo);
 }
 
-main h {
-    font-size: 1.3rem;
+main section1 {
+    width: 90%;
+    height: 15vh;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-image: url(../image/fundo_menu_cabuailo.png);
+    background-size: cover;
+    background-position: center;
     display: flex;
-    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
 }
 
-.divFavoritos {
+main section1 p {
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    font-weight: 500;
+}
+
+main section1 h {
+    font-size: 25px;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    font-weight: 700;
+}
+
+main section1 .desconto {
+    width: 40%;
+    height: 30px;
+    background-color: var(--vermelho);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+section2 {
+    margin-top: 15px;
     width: 90%;
-    height: 400px;
+    height: 55px;
+}
+
+section2 h1 {
+    font-size: 20px;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    color: black;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    outline: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    padding: 0 25px 0 45px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: black;
+    z-index: 10;
+}
+
+section3 {
+    width: 90%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-.cardFavoritos {
+section3 h {
     width: 100%;
-    height: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 24px;
+}
+
+.botoes3 {
+    width: 90%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 25px;
+}
+
+.meuBotao {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
     border-radius: 10px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+}
+
+.icones_servicos {
+    font-size: 24px;
+}
+
+.minhaDiv {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.divBarbearias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.divBarbearias h1 {
+    font-size: 1.5rem;
+    font-family: 'Prompt', sans-serif;
+
+}
+
+.divBarbearias section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 15px;
+}
+
+.cardBarbearia {
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: var(--branco-diferente);
     display: flex;
     flex-direction: row;
-    text-decoration: none;
-    background-color: var(--branco-diferente);
+
 }
 
-.cardFavoritos article {
+.cardBarbearia article {
     width: 70%;
     height: 100%;
     display: flex;
@@ -280,19 +404,19 @@ main h {
     padding-left: 5px;
 }
 
-.cardFavoritos article h3 {
+.cardBarbearia article h3 {
     font-size: 1.2rem;
     margin-left: 0px;
     font-family: 'Prompt', sans-serif;
     font-weight: 100;
 }
 
-.cardFavoritos article p {
+.cardBarbearia article p {
     font-size: 0.9rem;
     font-family: 'Prompt', sans-serif;
 }
 
-.cardFavoritos article .stars {
+.cardBarbearia article .stars {
     display: flex;
     flex-direction: row;
 }
@@ -310,29 +434,65 @@ main h {
     align-items: center;
 }
 
-.subDivFavoritos {
+.divCompras {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+.divCompras h1 {
+    font-size: 1.5rem;
+    font-family: 'Prompt', sans-serif;
+}
+
+.conteinerCompras {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.conteinerCardCompras {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
 }
 
-.logoFavorito {
-    font-size: 20px;
+.cardCompras {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--branco-diferente);
 }
 
-.desfavoritar {
-    text-decoration: none;
-    color: #D8315B;
-    font-size: 1.5rem;
+.imgProduto {
+    width: 80px;
+    height: 80px;
 }
 
-.desfavoritar a {
-    text-decoration: none;
-    color: var(--vermelho);
+.cardCompras h4 {
+    width: 90%;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
 }
 
-.logo_favorito {
-    font-size: 1.3rem;
+.cardCompras p {
+    color: #E0115F;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.cardCompras p2 {
+    color: #00c957;
+    font-size: 1rem;
 }

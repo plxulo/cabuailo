@@ -25,7 +25,10 @@
 
     if($agendar) 
     {
-        header("Location: ../html/mainPage.php");
+        echo("<script type=text/javascript>");
+        echo("alert('Agendamento realizado com sucesso!');");
+        echo("window.location = '../html/mainPage.php';");     
+        echo("</script>");
     }
 
 ?>
