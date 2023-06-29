@@ -111,7 +111,9 @@
                             echo
                             ("
                             <a href='vermais.php?id_filial=".$id."' class='cardBarbearia'>
-                                <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
+                                <div class='imgCard'>
+                                    <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia'>
+                                </div>
                                 <article>
                                     <h3>
                                         $nome                                                                
@@ -159,7 +161,9 @@
                                     echo("
                                     <a href='produto.php?id_produto=$id_produto' class='conteinerCardCompras'>
                                         <div class='cardCompras'>
-                                            <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                                            <div class='imgCard'>
+                                                <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia'>
+                                            </div>
                                             <h4> $nome_produto </h4>
                                             <p2>R$ $preco_produto</p2>     
                                         </div>
@@ -170,7 +174,9 @@
                                     echo("
                                     <a href='produto.php?id_produto=$id_produto' class='conteinerCardCompras'>
                                         <div class='cardCompras'>
-                                            <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
+                                            <div class='imgCard'>
+                                                <img src='data:image/jpeg;base64," . $i . "' class='imgBarbearia'>
+                                            </div>
                                             <h4> $nome_produto </h4>
                                             <p>R$ $preco_produto</p>
                                             <p2>R$ $preco_promocao</p2>      
