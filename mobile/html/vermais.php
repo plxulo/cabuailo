@@ -102,6 +102,48 @@
                 ");
             }
         ?>
+    <form action="../php/processar_comentario.php" method="POST" class="frm_comentario" style="text-align: center;">
+    <label class="texto_formulario" for="comentario">Comente sobre esta barbearia:</label><br>
+    <input type="text" class="frm_comentario" name="frm_comentario" id="comentario">
+    <br>
+    <input type="submit" name="frm_submit" id="frm_submit" class="btnComentar" value="Comentar">
+    </form>
+    <h2>Comentários e avaliações:</h2>
+    <hr width="100%"/>
+    <?php
+      // Selecionar o nome do usuário que enviou comentário por chave estrangeira:
+      $selecionar_comentario = $pdo->prepare
+      ("SELECT app_comentarios.*, usuarios.usuario
+      FROM app_comentarios INNER JOIN usuarios 
+      ON app_comentarios.id_usuario = usuarios.id 
+      WHERE app_comentarios.id_filial = :id_filial
+      ");
+      $selecionar_comentario->bindValue(":id_filial", $id_filial);
+      $selecionar_comentario->execute();
+
+      if($selecionar_comentario->rowCount() == 0)
+      {
+          echo("<p style='margin-bottom: 50px'>Nenhum comentário no momento.</p>");
+      }
+      else
+      {
+          while($row_comentario = $selecionar_comentario->fetch())
+          {
+              // Caso deseje exibir o nome do usuário na sessão sem definir
+              // Uma entrada de input "nome" para o mesmo, utilize a tabela e sessão.
+              $nome = $row_comentario["usuario"];
+
+              // Nesse caso, como eu possuo uma entrada para o nome e desejo exibir
+              // O nome de cada entrada, eu utilizarei o seguinte código
+              // Para atribuir o valor da entrada nome para a variável e exibi-lá:
+              $comentario = $row_comentario["comentario"];
+              echo("<div class='boxComentario'>");
+                echo("<h2 style='margin-bottom:0'>" . $nome . "</h2>");
+                echo("<p>" . $comentario . "</p>");
+              echo("</div>");
+          }
+      }
+    ?>
     </main>
     <nav>
         <ul>
