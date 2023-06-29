@@ -11,7 +11,7 @@
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <link rel="Website Icon" type="png" href="../../public/imagens/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -38,15 +38,15 @@
       <form aria-label="Formulário de login" class="login" action="../php/crude.php" method="post">
           <label for="usuario">Seu nome:</label>
           <section class="input_box">
-            <input type="text" name="nome" placeholder="Nome">
+            <input type="text" name="nome" placeholder="Nome" required="">
           </section>
           <label for="email">Email: </label>
           <section class="input_box">
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email" required="">
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input type="password" name="senha" placeholder="Senha">
+            <input type="password" name="senha" placeholder="Senha" required="">
           </section>
           <a href="../html/loginUsuario.php">Fazer-login</a>
           <button aria-label="Cadastrar-se" name="inserir2" type="submit">Cadastrar-se</button>

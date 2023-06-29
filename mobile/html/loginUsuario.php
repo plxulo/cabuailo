@@ -38,11 +38,11 @@
       <form class="login" action="../php/validacao.php" method="post">
           <label for="usuario">Email:</label>
           <section class="input_box">
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email" required="">
           </section>
           <label for="senha">Senha:</label>
           <section class="input_box">
-            <input type="password" name="senha" placeholder="Senha">
+            <input type="password" name="senha" placeholder="Senha" required="">
           </section>
           <a href="../html/cadastroCliente.php">Cadastrar-se</a>
           <input type="submit" class="logar" name="submit" value="Entrar"> 
