@@ -22,15 +22,33 @@
 <body>
     <header>
         <button class="mapa"><ion-icon name="settings"></ion-icon></button>
-        <section class="textoLocal">
-            <h1>Localização atual</h1>
-            <p><ion-icon name="location-sharp" class="iconeLocal"></ion-icon>Joinville</p>
+        <section class="logoCabuailo">
+            <img src="../image/imgLogo (3).png" class="imgLogo" width="70%"> 
         </section>
     
-        <div class="fotoPerfil">
-            <a href="sair.php"></a>
-            <ion-icon name="person-circle-sharp" class="fotoPerfil"></ion-icon>
-        </div>
+        <?php
+        $id_usuario = $_SESSION['id'];
+        include("../php/conecta.php");
+        $comando = $pdo->prepare("SELECT imagem FROM usuarios where id = $id_usuario");
+        $resultado = $comando->execute();
+        
+        while ($linhas = $comando->fetch()) {
+            $imagem = $linhas["imagem"];
+            $i = base64_encode($imagem);
+            
+            if($imagem == null) {
+            echo("
+                <ion-icon name='person-circle-sharp' class='fotoPerfil' onclick='mostrarCampo()'></ion-icon>
+            ");
+            }
+            else {
+            echo("
+                <img src='data:image/jpeg;base64," . $i . "' class='fotoPerfil' onclick='mostrarCampo()'>
+            ");
+            }
+        }
+
+    ?>
     </header>
 <main>
     <?php

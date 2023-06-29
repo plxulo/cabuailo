@@ -8,7 +8,7 @@
     header('Location: loginUsuario.php');
   }
   $logado = $_SESSION['usuario'];
-
+  $id_usuario = $_SESSION['id'];
   unset($_SESSION['id_filial']);
 ?>
 <!DOCTYPE html>
@@ -35,11 +35,33 @@
 <header>
     <button class="mapa"><ion-icon name="settings"></ion-icon></button>
     <section class="logoCabuailo">
-        <!-- <img src="../image/logoCabuailo.svg" class="imgLogo"> -->
+        <img src="../image/imgLogo (3).png" class="imgLogo" width="70%"> 
     </section>
         
-    <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon>
+    <!-- <ion-icon name="person-circle-sharp" class="fotoPerfil" onclick="mostrarCampo()"></ion-icon> -->
+    <?php
+        $id_usuario = $_SESSION['id'];
+        include("../php/conecta.php");
+        $comando = $pdo->prepare("SELECT imagem FROM usuarios where id = $id_usuario");
+        $resultado = $comando->execute();
+        
+        while ($linhas = $comando->fetch()) {
+            $imagem = $linhas["imagem"];
+            $i = base64_encode($imagem);
+            
+            if($imagem == null) {
+            echo("
+                <ion-icon name='person-circle-sharp' class='fotoPerfil' onclick='mostrarCampo()'></ion-icon>
+            ");
+            }
+            else {
+            echo("
+                <img src='data:image/jpeg;base64," . $i . "' class='fotoPerfil' onclick='mostrarCampo()'>
+            ");
+            }
+        }
 
+    ?>
     <div class="campoEscondido" id="campoLinks">
         <p>Seu email</p>
         <a href="#">Meus Dados</a>
@@ -151,8 +173,8 @@
                                         <div class='cardCompras'>
                                             <img src='data:image/jpeg;base64," . $i . "' class='imgProduto'>
                                             <h4> $nome_produto </h4>
-                                            <p>R$ $preco_promocao</p>
-                                            <p2>R$ $preco_produto</p2>      
+                                            <p>R$ $preco_produto</p>
+                                            <p2>R$ $preco_promocao</p2>      
                                         </div>
                                     </a>
                                     ");
