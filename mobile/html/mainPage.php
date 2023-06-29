@@ -98,7 +98,7 @@
                 <section>
                     <?php
                         include("../php/conecta.php");
-                        $comando = $pdo->prepare("SELECT * FROM filiais");
+                        $comando = $pdo->prepare("SELECT * FROM filiais WHERE delivery='null' OR delivery='N'");
                         $resultado = $comando->execute();
 
                         while ($linhas = $comando->fetch()) 
@@ -139,7 +139,7 @@
             </div>
         </div>
         <div id="div2" class="minhaDiv">
-            <div class="divCompras">
+            <div class="divBarbearias">
                 <h1>Compras</h1>
                     <div class='conteinerCompras'>
                         <?php
@@ -185,7 +185,45 @@
                 </div>
             </div>
         <div id="div3" class="minhaDiv">
-            <div class="divDelivery">
+            <div class="divBarbearias">
+                <h1>Barbearias</h1>
+                <?php
+                    $comando = $pdo->prepare("SELECT * FROM filiais WHERE delivery = 'S'");
+                    $resultado = $comando->execute();
+
+                    while ($linhas = $comando->fetch()) 
+                    {
+                        $nome = $linhas["nome"];
+                        $endereco = $linhas["endereco"];
+                        $imagem = $linhas["imagem"];
+                        $i = base64_encode($imagem);
+                        $id = $linhas["id_filial"];
+
+                        echo
+                        ("
+                        <a href='vermais.php?id_filial=".$id."' class='cardBarbearia'>
+                            <img src='data:image/jpeg;base64," . $i . "' class='imgCard'>
+                            <article>
+                                <h3>
+                                    $nome                                                                
+                                </h3>
+                                        
+                                <p>
+                                    $endereco
+                                </p>
+                                <div class='stars'>    
+                                    <img src='../image/estrela.svg' width='15px'>
+                                    <img src='../image/estrela.svg' width='15px'>
+                                    <img src='../image/estrela.svg' width='15px'>
+                                    <img src='../image/estrela.svg' width='15px'>
+                                    <img src='../image/estrela.svg' width='15px'>        
+                                </div>
+                                
+                            </article>
+                        </a>
+                        ");
+                    }
+                ?>
             </div>
         </div>
 

@@ -27,6 +27,7 @@ CREATE TABLE filiais (
     servicos VARCHAR(255),
     filial_adm INT(6),
     imagem MEDIUMBLOB,
+    delivery BOOLEAN,
     FOREIGN KEY (filial_adm) REFERENCES usuarios_admin(id_adm)
 );
 
