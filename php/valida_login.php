@@ -32,20 +32,27 @@
       $pegar_imagem->bindParam(':id', $id_usuario);
       $pegar_imagem->execute();
 
-      // Pegar os dados da foto para atribuir a sessão:
-      $dados = $pegar_imagem->fetch(PDO::FETCH_ASSOC);
-      $imagem = $dados['imagem'];
-      $img_encode = base64_encode($imagem);
-
-      if($dados)
+      if($pegar_imagem->rowCount() > 0)
       {
-        $_SESSION['foto_perfil'] = $img_encode;
+        // Pegar os dados da foto para atribuir a sessão:
+        $dados = $pegar_imagem->fetch(PDO::FETCH_ASSOC);
+        $imagem = $dados['imagem'];
+        $img_encode = base64_encode($imagem);
+
+        if($dados)
+        {
+          $_SESSION['foto_perfil'] = $img_encode;
+        }
+        else
+        {
+          echo "<script type = text/javascript>";
+          echo "window.alert('Erro ao consultar!')";
+          echo "</script>";
+        }
       }
       else
       {
-        echo "<script type = text/javascript>";
-        echo "window.alert('Erro ao consultar!')";
-        echo "</script>";
+        $_SESSION['foto_perfil'] = 'default.png';
       }
 
       header("Location: admin/admPainel.php");
