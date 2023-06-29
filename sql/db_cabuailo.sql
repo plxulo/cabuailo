@@ -106,3 +106,12 @@ CREATE TABLE app_agendamentos (
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_func),
     FOREIGN KEY (id_filial) REFERENCES filiais(id_filial)
 );
+
+CREATE TABLE pedidos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    filial INT,
+    id_cliente INT,
+    valor INT,
+    FOREIGN KEY (filial) REFERENCES filiais(id_filial),
+    FOREIGN KEY (id_cliente) REFERENCES usuarios(id)
+);

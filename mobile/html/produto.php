@@ -19,6 +19,74 @@
     <link rel="stylesheet" href="../css/produto.css">
     <title>Cabuailo</title>
 </head>
+<style>
+    .adicionarCarrinho {
+        height: 40px;
+        padding: 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: var(--azul-claro);
+        color: var(--branco-diferente);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .inputQuantidade {
+        display: flex;
+    }
+
+    .numero {
+        width: 10%;
+        height: 29px;
+        text-align: center;
+        border: none;
+        border-radius: 90px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    }
+    .menos, .mais {
+        border-radius: 90px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: none;
+        background-color: var(--azul-claro);
+        color: var(--branco-diferente);
+        font-size: 1.2rem;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .preco_original {
+        color: #E0115F;
+        text-decoration: line-through;
+    }
+
+    .quantidade {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .container_entrega_preco {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .entrega {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: right;
+        text-align: right;
+    }
+
+</style>
 <body>
     <header>
         <button class="mapa"><ion-icon name="settings"></ion-icon></button>
@@ -61,6 +129,7 @@
             while( $linhas = $comando->fetch()){
                 $nome_produto = $linhas["nome_produto"];
                 $preco_produto = $linhas["preco_produto"];
+                $preco_promocao = $linhas["preco_promocao"];
                 $descricao = $linhas["descricao_produto"];
                 $imagem = $linhas["imagem_produto"];
                 $i = base64_encode($imagem);
@@ -72,18 +141,21 @@
                     <div class='box-imagem-produto'>
                         <img src='data:image/jpeg;base64," . $i . "'  class='imagem-produto'>
                     </div>
-                    <div class='preco'>
-                        <p>R$ $preco_produto </p>
+                    <div class='container_entrega_preco'>
+                        <div class='preco'>
+                            <p><b>R$ $preco_promocao</b></p>
+                            <p2 class='preco_original'>R$ $preco_produto </p2>
+                        </div>
+                        <div class='entrega'>
+                        <div class='envio'>  
+                            <img src='../image/image 1.svg' class='envioSVG'>
+                            <p2>Entrega rápída</p2>
+                        </div>
+                        <p><ion-icon name='location-outline'></ion-icon>Prazo entrega</p>
+                        </div>
                     </div>
                     <div class='descricao'>
-                        <div class='entrega'>
-                            <div class='envio'>  
-                                <img src='../image/image 1.svg' class='envioSVG'>
-                                <p2>Enviamos para todo o pais</p2>
-                            </div>
-                            <p>Calcular prazo de entrega<ion-icon name='location-outline'></ion-icon></p>
-                        </div>
-                        <h>Descricao do produto</h>
+                        <h>Descrição do produto</h>
                         <p>$descricao</p>
                         <hr style='border-color: black; border-width: 1px; margin-top: 15px;'>
                     </div>      
@@ -173,12 +245,14 @@
     function Adicionar()
     {
         numero.value=parseInt(numero.value)+1 
+        event.preventDefault();
     }
     function Subtrair()
     {
         if(numero.value >1)
         {
             numero.value=parseInt(numero.value)-1
+            event.preventDefault();
         }
     }
 </script>
