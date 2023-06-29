@@ -145,6 +145,11 @@
             <!-- CEP -->
             <label for="cep">Este será o CEP em exibição no aplicativo</label>
             <input id="cep" type="number" placeholder="CEP do empreendimento." name="cep">
+
+            <!-- DELIVERY? -->
+            <label for="delivery">Sua barbearia está disponível para delivery de barbeiros?</label>
+            <input id="delivery" type="text" placeholder="Disponível? (S/N)" maxlength="1" name="delivery">
+
             <hr width="100%">
             <h2>Insira agora as imagens que ficarão em exibição:</h2>
             <section aria-labelledby="nova_foto" class="inputs nova_foto" title="Adicionar fotos da sua filial">
