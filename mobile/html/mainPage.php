@@ -9,7 +9,6 @@
   }
   $logado = $_SESSION['usuario'];
   $id_usuario = $_SESSION['id'];
-  unset($_SESSION['id_filial']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

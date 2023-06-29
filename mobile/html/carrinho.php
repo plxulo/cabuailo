@@ -126,7 +126,23 @@
     </div>
     <div class="botoes">
         <form action="../php/confirmarCompra.php" method="post"></form>
-            <button class="confirmarCompra">Confirmar compra</button>
+            <?php
+                if(isset($_SESSION['id_filial']))
+                {
+                    $id_filial = $_SESSION['id_filial'];
+                    echo 
+                    "<a href='../php/confirmarCompra.php?id_filial=" . $id_filial . "&valor=" . $total . "'>
+                        <button class='confirmarCompra'>Confirmar compra</button>
+                    </a>";
+                }
+                else
+                {
+                    echo 
+                    "<a href='../php/confirmarCompra.php'>
+                        <button class='confirmarCompra'>Confirmar compra</button>
+                    </a>";
+                }
+            ?>
         </form>
         <a href="../php/limparCarrinho.php"><button class="limparCarrinho">Limpar Carrinho</button></a>
     </div>
@@ -146,7 +162,7 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="../html/agendar.php">
+                    <a href="../html/agendamentos.php">
                         <span class="icon"><ion-icon name="calendar"></ion-icon></span>
                         <span class="text">Agenda</span>
                     </a>
