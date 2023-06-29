@@ -64,7 +64,7 @@
     ?>
     <div class="campoEscondido" id="campoLinks">
         <p>Seu email</p>
-        <a href="#">Meus Dados</a>
+        <a href="../html/perfil.php">Meus Dados</a>
         <a href="../php/sair.php">Sair</a>
     </div>    
 </header>

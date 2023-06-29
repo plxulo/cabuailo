@@ -172,6 +172,67 @@ header {
     background-color: var(--branco-diferente);
 }
 
+
+header .logoCabuailo {
+    width: 140px;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoCabuailo .imgLogo {
+    width: 75%;
+    height: 75%;
+
+}
+
+.textoLocal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.iconeLocal {
+    font-size: 20px;
+    color: red;
+    justify-content: center;
+}
+
+
+.textoLocal p {
+    margin-top: 4px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa {
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    margin-left: 15px;
+    color: var(--marrom);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.fotoPerfil {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .campoEscondido {
     display: none;
     width: 300px;
