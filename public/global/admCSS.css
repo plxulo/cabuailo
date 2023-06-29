@@ -29,7 +29,8 @@
   
   /* Variáveis */
   :root {
-    --cor-clara: #f7f7f7;
+    /*--cor-clara: #f7f7f7;*/
+    --cor-clara: #ffff;
     --cor-escura: #2C3639;
   }
   
