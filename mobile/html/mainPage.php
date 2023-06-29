@@ -98,7 +98,7 @@
                 <section>
                     <?php
                         include("../php/conecta.php");
-                        $comando = $pdo->prepare("SELECT * FROM filiais WHERE delivery='null' OR delivery='N'");
+                        $comando = $pdo->prepare("SELECT * FROM filiais");
                         $resultado = $comando->execute();
 
                         while ($linhas = $comando->fetch()) 
